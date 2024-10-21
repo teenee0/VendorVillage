@@ -1,35 +1,44 @@
+{% load static %}
+
 <header>
-    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
-    <div class="container">
-      <a class="navbar-brand d-md-none" href="#">
-        <svg class="bi" width="24" height="24"><use xlink:href="#aperture"></use></svg>
-        Aperture
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-collapse collapse justify-content-between" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">
+                <img src="{% static 'icons/^.svg' %}" alt="^ Icon" width="24" height="24">
+                <img src="{% static 'icons/v.svg' %}" alt="V Icon" width="24" height="24">
+                VendorVillage
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+        </ul>
+
+        <!-- Форма поиска, выровненная по центру -->
+        <form class="d-flex mx-auto" role="search">
+          <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" style="width: 400px">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <!-- Место для добавления других элементов, если нужно -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                Cart
+                </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Account</a>
+          </li>
+        </ul>
+      </div>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasLabel">Aperture</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav flex-grow-1 justify-content-between">
-            <li class="nav-item"><a class="nav-link" href="#">
-              <svg class="bi" width="24" height="24"><use xlink:href="#aperture"></use></svg>
-            </a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Tour</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Enterprise</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-              <svg class="bi" width="24" height="24"><use xlink:href="#cart"></use></svg>
-            </a></li>
-          </ul>
-        </div>
-      </div>
     </div>
   </nav>
-</header>>
+</header>
