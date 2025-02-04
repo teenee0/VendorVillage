@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} Страница продуктов {% endblock %}
+{% block content %}
+    <div class="row">
+    {% for product in products %}
+        {%  include "products/product_card.html" %}
+    {% endfor %}
+    </div>
+{% endblock %}

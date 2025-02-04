@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+  <h1 class="mb-4">{{ category.name }}</h1>
+
+  <!-- Если у категории есть подкатегории, выводим их как "фильтры" -->
+  {% if subcategories %}
+    <div class="mb-3">
+      <p><strong>Подкатегории:</strong></p>
+      <ul class="list-group list-group-horizontal justify-content-between align-items-center ">
+        {% for child in subcategories %}
+          <li class="list-group-item" style="background: url('{{ child.small_image.url }}') no-repeat center center; background-size: cover; border-radius: 30px">
+              <a href="{% url 'marketplace:category_products' child.id %}" class="text-decoration-none" style="display: block;  color: #ffffff; font-weight: bold">
+                {{ child.name }}
+              </a>
+          </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <!-- Форма поиска. При submit останемся на той же странице, но добавим ?search=... -->
+{#  <form method="get" class="mb-4">#}
+{#    <div class="row gx-2 gy-2 align-items-end">#}
+{#      <div class="col-auto">#}
+{#        <label for="search" class="form-label">Поиск по названию:</label>#}
+{#        <input type="text" name="search" id="search" class="form-control"#}
+{#               value="{{ search_query|default_if_none:'' }}">#}
+{#      </div>#}
+{#      <div class="col-auto">#}
+{#        <button type="submit" class="btn btn-primary">Искать</button>#}
+{#      </div>#}
+{#    </div>#}
+{#  </form>#}
+
+  <!-- Проверяем, есть ли товары на текущей странице -->
+{% if page_obj and page_obj.object_list %}
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for product in page_obj.object_list %}
+      {% include "marketplace/includes/product_card.html" %}  
+
+    {% endfor %}
+  </div>
+
+    {% include 'marketplace/includes/pagination.html' %}
+
+  {% else %}
+    <p>Нет товаров в этой категории (или по текущему поиску).</p>
+  {% endif %}
+</div>
+{% endblock %}

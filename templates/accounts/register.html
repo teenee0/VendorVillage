@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="mb-4 text-center">Регистрация</h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="{{ form.username.id_for_label }}" class="form-label">Имя пользователя</label>
+          {% render_field form.username class="form-control" placeholder="Введите имя пользователя" %}
+        </div>
+        <div class="mb-3">
+          <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+          {% render_field form.email class="form-control" placeholder="Введите адрес электронной почты" %}
+        </div>
+        <div class="mb-3">
+          <label for="{{ form.password1.id_for_label }}" class="form-label">Пароль</label>
+          {% render_field form.password1 class="form-control" placeholder="Введите пароль" %}
+        </div>
+        <div class="mb-3">
+          <label for="{{ form.password2.id_for_label }}" class="form-label">Повторите пароль</label>
+          {% render_field form.password2 class="form-control" placeholder="Повторите пароль" %}
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+      </form>
+      <p class="mt-3 text-center">
+        Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Войти</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

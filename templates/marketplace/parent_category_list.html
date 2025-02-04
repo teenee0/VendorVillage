@@ -1,0 +1,26 @@
+<!-- marketplace/templates/marketplace/parent_category_list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4">Категории</h1>
+
+    {% if parent_cats %}
+        <div class="row">
+            {% for cat in parent_cats %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100" style="background-image: url('{{ cat.big_image.url }}'); background-size: cover; background-position: center;">
+                        <div class="card-body d-flex align-items-center justify-content-center" style="background: rgba(0, 0, 0, 0.5);">
+                            <a href="{% url 'marketplace:child_category_list' cat.id %}" class="text-decoration-none text-white">
+                                <h3 class="text-center">{{ cat.name }}</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-muted">Нет родительских категорий.</p>
+    {% endif %}
+</div>
+{% endblock %}

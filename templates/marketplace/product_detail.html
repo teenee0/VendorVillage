@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6">
+                      {% if images %}
+                      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          {% for image in images %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                              <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ product.name }}">
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                      {% else %}
+                        <img src="{% static 'img/no_image.jpg' %}" class="img-fluid" alt="Нет изображения">
+                      {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">SKU: BST-498</div>
+                        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+                        
+                        <div class="fs-5 mb-5">
+                            {% if product.discount > 0 %}
+                            <span class="text-decoration-line-through">{{ product.discount }} тг</span>
+                            <span>{{ product.price }} тг.</span>
+                            {% else %}
+                            <span>{{ product.price }} тг.</span>
+                            {% endif %}
+                        </div>
+                    
+                        <p class="lead">{{ product.description }}</p>
+                        <p class="lead">
+                            <strong>Категория:</strong>
+                            {% if product.category %}
+                              <a href="{% url 'marketplace:child_category_list' product.category.id %}">
+                                  <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    {{ product.category.name }}
+                                </button>
+                              </a>
+                            {% else %}
+                              <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    Не указано
+                                </button>
+                            {% endif %}
+                          </p>
+                          <p class="lead">
+                            <strong>Магазин:</strong>
+                            <a href="{% url 'marketplace:product_detail' product.id %}">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    {{ product.business.name }}
+                                </button>
+                            </a>
+                          </p>
+                          <p class="lead">
+                            <strong>Осталось:</strong>
+                            <button class="btn btn-outline-dark">
+                                    <i></i>
+                                    {{ product.stock_quantity }}
+                                </button>
+
+                          </p>
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </section>
+    {% if same_products %}
+  <div class="mt-5">
+    <h2 class="mb-4">Похожие товары</h2>
+    <div id="sameProductsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for product in same_products %}
+          {% if forloop.first or forloop.counter0|divisibleby:4 %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <div class="row row-cols-1 row-cols-md-4 g-4">
+          {% endif %}
+          
+          {% include "marketplace/includes/product_card.html" %} 
+          
+          {% if forloop.counter|divisibleby:4 or forloop.last %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sameProductsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущая</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#sameProductsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующая</span>
+      </button>
+    </div>
+  </div>
+  {% endif %}
+    
+{% endblock %}

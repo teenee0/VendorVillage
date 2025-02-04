@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4">Панель управления бизнесом</h2>
+  
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      Добро пожаловать, {{ business.business_name }}!
+    </div>
+    <div class="card-body">
+      <p><strong>Описание:</strong> {{ business.description|default:"Описание не указано" }}</p>
+      <p><strong>Адрес:</strong> {{ business.address|default:"Адрес не указан" }}</p>
+      <p><strong>Контактный телефон:</strong> {{ business.phone|default:"Не указан" }}</p>
+      <!-- Можно вывести другую информацию, например, дату создания -->
+      <p><strong>Дата регистрации:</strong> {{ business.created_at|date:"d M Y" }}</p>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex flex-wrap">
+        <a href="{% url 'marketplace:product_list' %}" class="btn btn-outline-primary me-2 mb-2">
+          Управление товарами
+        </a>
+        <a href="#" class="btn btn-outline-secondary me-2 mb-2">
+          Управление заказами
+        </a>
+        <a href="#" class="btn btn-outline-info me-2 mb-2">
+          Статистика продаж
+        </a>
+        <!-- Добавьте другие ссылки для управления бизнесом по необходимости -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

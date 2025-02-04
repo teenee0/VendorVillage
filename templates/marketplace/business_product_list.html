@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'marketplace/includes/admin_header.html' %}
+    {% if page_obj and page_obj.object_list %}
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for product in page_obj.object_list %}
+      {% include "marketplace/includes/product_card.html" %}  
+
+    {% endfor %}
+  </div>
+
+    {% include 'marketplace/includes/pagination.html' %}
+
+  {% else %}
+    <p>Нет товаров.</p>
+  {% endif %}
+{% endblock %}

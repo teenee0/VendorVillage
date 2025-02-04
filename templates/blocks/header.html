@@ -7,14 +7,14 @@
       <div class="navbar-collapse collapse justify-content-between" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">
+            <a class="nav-link " aria-current="page" href="{% url 'core:main' %}">
                 <img src="{% static 'icons/^.svg' %}" alt="^ Icon" width="24" height="24">
                 <img src="{% static 'icons/v.svg' %}" alt="V Icon" width="24" height="24">
                 VendorVillage
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" href="{% url 'core:bussiness_categories_list' %}">Categories</a>
           </li>
         </ul>
 
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Account</a>
+            <a class="nav-link" href="{%  url 'accounts:account' %}">Account</a>
           </li>
         </ul>
       </div>

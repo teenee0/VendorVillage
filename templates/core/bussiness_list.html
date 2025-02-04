@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4">Список видов бизнеса</h1>
+
+    {% if business_types %}
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for bt in business_types %}
+                <div class="col">
+                    <div class="card h-100">
+                        <!-- Обратите внимание: чтобы stretched-link работала, 
+                             нужен класс position-relative на карточке ИЛИ на card-body -->
+                        <div class="card-body position-relative">
+                            <h5 class="card-title">{{ bt.name }}</h5>
+                            <p class="card-text">{{ bt.description }}</p>
+                            <!-- Если в bt.url_name что-то вроде "mall:main", используем напрямую -->
+                            {% if bt.url %}
+                              <a href="{% url bt.url %}" class="stretched-link"></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Пока нет видов бизнеса.</p>
+    {% endif %}
+</div>
+{% endblock %}

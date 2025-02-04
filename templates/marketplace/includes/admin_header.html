@@ -1,0 +1,35 @@
+{% load static %}
+<div class="container">
+  <header class="d-flex justify-content-center py-3">
+    {% url 'core:edit_business' business.id as edit_url %}
+    {% url 'marketplace:business_product_list' business.id as products_url %}
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="{{ edit_url }}" class="nav-link {% if request.path == edit_url %}active{% endif %}" aria-current="page">
+          Основная информация
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ products_url }}" class="nav-link {% if request.path == products_url %}active{% endif %}">
+          Товары
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/pricing/" class="nav-link {% if request.path == '/pricing/' %}active{% endif %}">
+          Pricing
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/faqs/" class="nav-link {% if request.path == '/faqs/' %}active{% endif %}">
+          FAQs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/about/" class="nav-link {% if request.path == '/about/' %}active{% endif %}">
+          About
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>
+
