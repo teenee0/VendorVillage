@@ -24,7 +24,7 @@
     {% if edit %}
     <a href="{% url 'marketplace:product_edit' product.id %}" class="stretched-link"></a>
         {% else %}
-    <a href="{% url 'marketplace:product_edit' product.id %}" class="stretched-link"></a>
+    <a href="{% url 'marketplace:product_detail' product.id %}" class="stretched-link"></a>
         {% endif %}
 
   </div>
