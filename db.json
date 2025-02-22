@@ -1,1 +1,1303 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2025-02-01T03:21:00.382Z", "user": 1, "content_type": 13, "object_id": "1", "object_repr": "Маркетплейс", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2025-02-01T03:22:27.857Z", "user": 1, "content_type": 13, "object_id": "2", "object_repr": "ТРЦ", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2025-02-01T03:23:15.326Z", "user": 1, "content_type": 13, "object_id": "2", "object_repr": "ТРЦ", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2025-02-01T03:24:46.382Z", "user": 1, "content_type": 13, "object_id": "3", "object_repr": "Рестораны", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2025-02-01T03:31:07.631Z", "user": 1, "content_type": 13, "object_id": "1", "object_repr": "Маркетплейс", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2025-02-01T03:31:14.991Z", "user": 1, "content_type": 13, "object_id": "2", "object_repr": "ТРЦ", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2025-02-01T03:31:25.304Z", "user": 1, "content_type": 13, "object_id": "3", "object_repr": "Рестораны", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2025-02-01T03:40:56.112Z", "user": 1, "content_type": 13, "object_id": "1", "object_repr": "Маркетплейс", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2025-02-01T03:41:05.379Z", "user": 1, "content_type": 13, "object_id": "2", "object_repr": "ТРЦ", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2025-02-01T03:41:12.588Z", "user": 1, "content_type": 13, "object_id": "3", "object_repr": "Рестораны", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2025-02-03T00:24:19.019Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Обувь", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2025-02-03T00:24:31.271Z", "user": 1, "content_type": 17, "object_id": "2", "object_repr": "Одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2025-02-03T00:24:39.285Z", "user": 1, "content_type": 17, "object_id": "3", "object_repr": "Товары для дома", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2025-02-03T00:24:54.984Z", "user": 1, "content_type": 17, "object_id": "4", "object_repr": "Автотовары", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2025-02-03T00:32:18.940Z", "user": 1, "content_type": 17, "object_id": "5", "object_repr": "Кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2025-02-03T00:32:27.417Z", "user": 1, "content_type": 17, "object_id": "6", "object_repr": "Шлепки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2025-02-03T00:59:41.181Z", "user": 1, "content_type": 14, "object_id": "1", "object_repr": "Империя", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2025-02-03T01:00:29.095Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2025-02-03T01:01:35.263Z", "user": 1, "content_type": 16, "object_id": "1", "object_repr": "Image for Кроссовки Адидас", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2025-02-03T01:02:01.817Z", "user": 1, "content_type": 16, "object_id": "2", "object_repr": "Image for Кроссовки Адидас", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2025-02-03T01:05:55.580Z", "user": 1, "content_type": 17, "object_id": "7", "object_repr": "Высокие кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2025-02-03T01:13:04.076Z", "user": 1, "content_type": 17, "object_id": "8", "object_repr": "Низкие кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2025-02-03T01:33:32.579Z", "user": 1, "content_type": 17, "object_id": "5", "object_repr": "Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2025-02-03T01:33:37.324Z", "user": 1, "content_type": 17, "object_id": "7", "object_repr": "Высокие кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2025-02-03T01:33:40.279Z", "user": 1, "content_type": 17, "object_id": "8", "object_repr": "Низкие кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2025-02-03T01:33:47.376Z", "user": 1, "content_type": 17, "object_id": "6", "object_repr": "Шлепки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 27, "fields": {"action_time": "2025-02-03T01:38:04.940Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 28, "fields": {"action_time": "2025-02-03T01:39:54.152Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 29, "fields": {"action_time": "2025-02-03T01:45:59.258Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 30, "fields": {"action_time": "2025-02-03T01:52:47.978Z", "user": 1, "content_type": 17, "object_id": "9", "object_repr": "Верхняя одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 31, "fields": {"action_time": "2025-02-03T01:53:15.861Z", "user": 1, "content_type": 17, "object_id": "10", "object_repr": "Шубы", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 32, "fields": {"action_time": "2025-02-03T01:54:00.811Z", "user": 1, "content_type": 18, "object_id": "2", "object_repr": "Шуба Зеленая", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 33, "fields": {"action_time": "2025-02-03T01:54:35.855Z", "user": 1, "content_type": 18, "object_id": "3", "object_repr": "Шуба какая то", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2025-02-03T01:55:03.155Z", "user": 1, "content_type": 16, "object_id": "3", "object_repr": "Image for Шуба Зеленая", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2025-02-03T01:55:11.055Z", "user": 1, "content_type": 16, "object_id": "4", "object_repr": "Image for Шуба какая то", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2025-02-03T01:56:26.316Z", "user": 1, "content_type": 17, "object_id": "11", "object_repr": "Хз че еще написать", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 37, "fields": {"action_time": "2025-02-03T01:56:52.650Z", "user": 1, "content_type": 17, "object_id": "11", "object_repr": "Еще более высокие кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 38, "fields": {"action_time": "2025-02-03T02:07:54.934Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 39, "fields": {"action_time": "2025-02-03T02:27:36.052Z", "user": 1, "content_type": 17, "object_id": "12", "object_repr": "Куртра", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 40, "fields": {"action_time": "2025-02-03T02:27:45.450Z", "user": 1, "content_type": 17, "object_id": "12", "object_repr": "Куртка", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 41, "fields": {"action_time": "2025-02-03T02:28:19.320Z", "user": 1, "content_type": 18, "object_id": "4", "object_repr": "Куртка какая то", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 42, "fields": {"action_time": "2025-02-03T02:28:42.317Z", "user": 1, "content_type": 18, "object_id": "5", "object_repr": "Куртка еще какая то", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 43, "fields": {"action_time": "2025-02-03T02:29:09.940Z", "user": 1, "content_type": 18, "object_id": "6", "object_repr": "Шубка", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 44, "fields": {"action_time": "2025-02-03T02:29:31.104Z", "user": 1, "content_type": 18, "object_id": "7", "object_repr": "Шубка еще", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 45, "fields": {"action_time": "2025-02-03T02:29:51.153Z", "user": 1, "content_type": 18, "object_id": "8", "object_repr": "Шуба синия", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 46, "fields": {"action_time": "2025-02-03T02:31:54.886Z", "user": 1, "content_type": 18, "object_id": "9", "object_repr": "Шуба зеленая", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 47, "fields": {"action_time": "2025-02-03T02:32:04.901Z", "user": 1, "content_type": 18, "object_id": "10", "object_repr": "Шубааа", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 48, "fields": {"action_time": "2025-02-03T02:32:16.551Z", "user": 1, "content_type": 18, "object_id": "11", "object_repr": "Шубаа", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 49, "fields": {"action_time": "2025-02-03T02:32:35.993Z", "user": 1, "content_type": 18, "object_id": "12", "object_repr": "Шуба из норки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 50, "fields": {"action_time": "2025-02-03T02:33:16.963Z", "user": 1, "content_type": 18, "object_id": "13", "object_repr": "Куртка Черная", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 51, "fields": {"action_time": "2025-02-03T02:33:42.415Z", "user": 1, "content_type": 18, "object_id": "14", "object_repr": "Куртка черная", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 52, "fields": {"action_time": "2025-02-03T02:34:41.904Z", "user": 1, "content_type": 16, "object_id": "5", "object_repr": "Image for Куртка какая то", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 53, "fields": {"action_time": "2025-02-03T02:34:50.518Z", "user": 1, "content_type": 16, "object_id": "6", "object_repr": "Image for Куртка еще какая то", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 54, "fields": {"action_time": "2025-02-03T02:34:58.114Z", "user": 1, "content_type": 16, "object_id": "7", "object_repr": "Image for Шубка", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 55, "fields": {"action_time": "2025-02-03T02:35:05.445Z", "user": 1, "content_type": 16, "object_id": "8", "object_repr": "Image for Шубка еще", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 56, "fields": {"action_time": "2025-02-03T02:35:13.857Z", "user": 1, "content_type": 16, "object_id": "9", "object_repr": "Image for Шуба синия", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 57, "fields": {"action_time": "2025-02-03T02:35:30.725Z", "user": 1, "content_type": 16, "object_id": "10", "object_repr": "Image for Шуба зеленая", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 58, "fields": {"action_time": "2025-02-03T02:35:37.546Z", "user": 1, "content_type": 16, "object_id": "11", "object_repr": "Image for Шубааа", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 59, "fields": {"action_time": "2025-02-03T02:35:43.660Z", "user": 1, "content_type": 16, "object_id": "12", "object_repr": "Image for Шубаа", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 60, "fields": {"action_time": "2025-02-03T02:35:51.704Z", "user": 1, "content_type": 16, "object_id": "13", "object_repr": "Image for Шуба из норки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 61, "fields": {"action_time": "2025-02-03T02:35:56.620Z", "user": 1, "content_type": 16, "object_id": "14", "object_repr": "Image for Куртка Черная", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 62, "fields": {"action_time": "2025-02-03T02:36:08.477Z", "user": 1, "content_type": 16, "object_id": "15", "object_repr": "Image for Куртка черная", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 63, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "12", "object_repr": "Куртка", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 64, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "11", "object_repr": "Еще более высокие кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 65, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "10", "object_repr": "Шубы", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 66, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "9", "object_repr": "Верхняя одежда", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 67, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "8", "object_repr": "Низкие кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 68, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "7", "object_repr": "Высокие кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 69, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "6", "object_repr": "Шлепки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 70, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "5", "object_repr": "Кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 71, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "4", "object_repr": "Автотовары", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 72, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "3", "object_repr": "Товары для дома", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 73, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "2", "object_repr": "Одежда", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 74, "fields": {"action_time": "2025-02-03T02:46:30.415Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Обувь", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 75, "fields": {"action_time": "2025-02-03T02:46:46.549Z", "user": 1, "content_type": 17, "object_id": "13", "object_repr": "Мужское", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 76, "fields": {"action_time": "2025-02-03T02:46:51.331Z", "user": 1, "content_type": 17, "object_id": "13", "object_repr": "Мужское", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 77, "fields": {"action_time": "2025-02-03T02:47:08.342Z", "user": 1, "content_type": 17, "object_id": "14", "object_repr": "Женское", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 78, "fields": {"action_time": "2025-02-03T02:47:29.527Z", "user": 1, "content_type": 17, "object_id": "15", "object_repr": "Автотовары", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 79, "fields": {"action_time": "2025-02-03T02:47:34.702Z", "user": 1, "content_type": 17, "object_id": "14", "object_repr": "Женское", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 80, "fields": {"action_time": "2025-02-03T02:47:34.702Z", "user": 1, "content_type": 17, "object_id": "13", "object_repr": "Мужское", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 81, "fields": {"action_time": "2025-02-03T02:47:45.634Z", "user": 1, "content_type": 17, "object_id": "16", "object_repr": "Одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 82, "fields": {"action_time": "2025-02-03T02:49:15.109Z", "user": 1, "content_type": 17, "object_id": "17", "object_repr": "Мужское", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 83, "fields": {"action_time": "2025-02-03T02:49:47.404Z", "user": 1, "content_type": 17, "object_id": "18", "object_repr": "Женское", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 84, "fields": {"action_time": "2025-02-03T02:56:47.026Z", "user": 1, "content_type": 17, "object_id": "19", "object_repr": "Кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 85, "fields": {"action_time": "2025-02-03T02:57:05.213Z", "user": 1, "content_type": 17, "object_id": "19", "object_repr": "Женские Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 86, "fields": {"action_time": "2025-02-03T02:57:16.367Z", "user": 1, "content_type": 17, "object_id": "18", "object_repr": "Женская одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 87, "fields": {"action_time": "2025-02-03T02:57:26.544Z", "user": 1, "content_type": 17, "object_id": "17", "object_repr": "Мужская одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 88, "fields": {"action_time": "2025-02-03T02:58:02.576Z", "user": 1, "content_type": 17, "object_id": "20", "object_repr": "Верхняя Одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 89, "fields": {"action_time": "2025-02-03T02:59:33.941Z", "user": 1, "content_type": 17, "object_id": "20", "object_repr": "Верхняя Одежда", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 90, "fields": {"action_time": "2025-02-03T02:59:54.019Z", "user": 1, "content_type": 17, "object_id": "21", "object_repr": "Верхняя одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 91, "fields": {"action_time": "2025-02-03T03:00:47.116Z", "user": 1, "content_type": 17, "object_id": "22", "object_repr": "Мужская обувь", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 92, "fields": {"action_time": "2025-02-03T03:00:50.179Z", "user": 1, "content_type": 17, "object_id": "23", "object_repr": "Мужские кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 93, "fields": {"action_time": "2025-02-03T03:01:10.037Z", "user": 1, "content_type": 17, "object_id": "18", "object_repr": "Женское", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 94, "fields": {"action_time": "2025-02-03T03:01:16.318Z", "user": 1, "content_type": 17, "object_id": "17", "object_repr": "Мужское", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 95, "fields": {"action_time": "2025-02-03T03:01:47.270Z", "user": 1, "content_type": 17, "object_id": "24", "object_repr": "Женская обувь", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 96, "fields": {"action_time": "2025-02-03T03:01:54.314Z", "user": 1, "content_type": 17, "object_id": "19", "object_repr": "Женские Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Parent\"]}}]"}}, {"model": "admin.logentry", "pk": 97, "fields": {"action_time": "2025-02-03T03:02:02.149Z", "user": 1, "content_type": 17, "object_id": "19", "object_repr": "Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 98, "fields": {"action_time": "2025-02-03T03:02:09.835Z", "user": 1, "content_type": 17, "object_id": "23", "object_repr": "Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 99, "fields": {"action_time": "2025-02-03T03:02:18.276Z", "user": 1, "content_type": 17, "object_id": "20", "object_repr": "Верхняя одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 100, "fields": {"action_time": "2025-02-03T03:02:45.228Z", "user": 1, "content_type": 18, "object_id": "2", "object_repr": "Шуба Зеленая", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 101, "fields": {"action_time": "2025-02-03T03:02:55.889Z", "user": 1, "content_type": 18, "object_id": "3", "object_repr": "Шуба какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 102, "fields": {"action_time": "2025-02-03T03:03:09.786Z", "user": 1, "content_type": 18, "object_id": "4", "object_repr": "Куртка какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 103, "fields": {"action_time": "2025-02-03T03:03:21.989Z", "user": 1, "content_type": 18, "object_id": "5", "object_repr": "Куртка еще какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 104, "fields": {"action_time": "2025-02-03T03:03:27.212Z", "user": 1, "content_type": 18, "object_id": "6", "object_repr": "Шубка", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 105, "fields": {"action_time": "2025-02-03T03:03:35.805Z", "user": 1, "content_type": 18, "object_id": "7", "object_repr": "Шубка еще", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 106, "fields": {"action_time": "2025-02-03T03:03:42.630Z", "user": 1, "content_type": 18, "object_id": "8", "object_repr": "Шуба синия", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 107, "fields": {"action_time": "2025-02-03T03:03:48.243Z", "user": 1, "content_type": 18, "object_id": "10", "object_repr": "Шубааа", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 108, "fields": {"action_time": "2025-02-03T03:03:51.385Z", "user": 1, "content_type": 18, "object_id": "11", "object_repr": "Шубаа", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 109, "fields": {"action_time": "2025-02-03T03:03:56.402Z", "user": 1, "content_type": 18, "object_id": "12", "object_repr": "Шуба из норки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 110, "fields": {"action_time": "2025-02-03T03:04:04.243Z", "user": 1, "content_type": 18, "object_id": "13", "object_repr": "Куртка Черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 111, "fields": {"action_time": "2025-02-03T03:04:08.581Z", "user": 1, "content_type": 18, "object_id": "14", "object_repr": "Куртка черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 112, "fields": {"action_time": "2025-02-03T03:04:20.542Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 113, "fields": {"action_time": "2025-02-03T03:05:53.621Z", "user": 1, "content_type": 18, "object_id": "12", "object_repr": "Шуба из норки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 114, "fields": {"action_time": "2025-02-03T03:34:30.263Z", "user": 1, "content_type": 23, "object_id": "1", "object_repr": "Цвет", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 115, "fields": {"action_time": "2025-02-03T03:34:39.814Z", "user": 1, "content_type": 23, "object_id": "2", "object_repr": "Материал", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 116, "fields": {"action_time": "2025-02-03T03:34:50.552Z", "user": 1, "content_type": 23, "object_id": "3", "object_repr": "Состав", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 117, "fields": {"action_time": "2025-02-03T03:36:04.697Z", "user": 1, "content_type": 24, "object_id": "1", "object_repr": "Верхняя одежда - Цвет (обязательно)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 118, "fields": {"action_time": "2025-02-03T03:36:14.574Z", "user": 1, "content_type": 24, "object_id": "2", "object_repr": "Верхняя одежда - Состав (обязательно)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 119, "fields": {"action_time": "2025-02-03T03:36:21.585Z", "user": 1, "content_type": 24, "object_id": "3", "object_repr": "Верхняя одежда - Материал (обязательно)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 120, "fields": {"action_time": "2025-02-03T03:40:32.909Z", "user": 1, "content_type": 18, "object_id": "14", "object_repr": "Куртка черная", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"\\u041c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b: \\u0421\\u0438\\u043d\\u0442\\u0438\\u043f\\u043e\\u043d (\\u0434\\u043b\\u044f \\u041a\\u0443\\u0440\\u0442\\u043a\\u0430 \\u0447\\u0435\\u0440\\u043d\\u0430\\u044f)\"}}, {\"added\": {\"name\": \"\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"\\u0421\\u043e\\u0441\\u0442\\u0430\\u0432: 100% \\u043d\\u0430\\u0442\\u0443\\u0440\\u0430\\u043b\\u044c\\u043d\\u0430\\u044f \\u043a\\u043e\\u0436\\u0430 (\\u0434\\u043b\\u044f \\u041a\\u0443\\u0440\\u0442\\u043a\\u0430 \\u0447\\u0435\\u0440\\u043d\\u0430\\u044f)\"}}, {\"added\": {\"name\": \"\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"\\u0426\\u0432\\u0435\\u0442: \\u0427\\u0435\\u0440\\u043d\\u044b\\u0439 (\\u0434\\u043b\\u044f \\u041a\\u0443\\u0440\\u0442\\u043a\\u0430 \\u0447\\u0435\\u0440\\u043d\\u0430\\u044f)\"}}]"}}, {"model": "admin.logentry", "pk": 121, "fields": {"action_time": "2025-02-03T03:41:36.742Z", "user": 1, "content_type": 24, "object_id": "4", "object_repr": "Одежда - Материал (обязательно)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 122, "fields": {"action_time": "2025-02-03T03:42:50.916Z", "user": 1, "content_type": 24, "object_id": "4", "object_repr": "Одежда - Материал (обязательно)", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 123, "fields": {"action_time": "2025-02-03T03:43:18.415Z", "user": 1, "content_type": 24, "object_id": "5", "object_repr": "Кроссовки - Материал (не обязательно)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 124, "fields": {"action_time": "2025-02-03T03:43:53.309Z", "user": 1, "content_type": 23, "object_id": "4", "object_repr": "Размеры", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 125, "fields": {"action_time": "2025-02-03T03:48:19.331Z", "user": 1, "content_type": 17, "object_id": "23", "object_repr": "Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 126, "fields": {"action_time": "2025-02-03T03:48:25.303Z", "user": 1, "content_type": 17, "object_id": "23", "object_repr": "Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Depth\"]}}]"}}, {"model": "admin.logentry", "pk": 127, "fields": {"action_time": "2025-02-03T03:54:25.310Z", "user": 1, "content_type": 17, "object_id": "17", "object_repr": "Мужское", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Page identificator\"]}}]"}}, {"model": "admin.logentry", "pk": 128, "fields": {"action_time": "2025-02-03T03:54:32.229Z", "user": 1, "content_type": 17, "object_id": "18", "object_repr": "Женское", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Page identificator\"]}}]"}}, {"model": "admin.logentry", "pk": 129, "fields": {"action_time": "2025-02-03T04:12:38.550Z", "user": 1, "content_type": 17, "object_id": "24", "object_repr": "Женская обувь", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Parent\"]}}]"}}, {"model": "admin.logentry", "pk": 130, "fields": {"action_time": "2025-02-03T04:12:50.375Z", "user": 1, "content_type": 17, "object_id": "24", "object_repr": "Женская обувь", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 131, "fields": {"action_time": "2025-02-03T04:12:50.388Z", "user": 1, "content_type": 17, "object_id": "23", "object_repr": "Кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 132, "fields": {"action_time": "2025-02-03T04:12:50.398Z", "user": 1, "content_type": 17, "object_id": "22", "object_repr": "Мужская обувь", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 133, "fields": {"action_time": "2025-02-03T04:12:50.409Z", "user": 1, "content_type": 17, "object_id": "21", "object_repr": "Верхняя одежда", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 134, "fields": {"action_time": "2025-02-03T04:12:50.419Z", "user": 1, "content_type": 17, "object_id": "20", "object_repr": "Верхняя одежда", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 135, "fields": {"action_time": "2025-02-03T04:12:50.432Z", "user": 1, "content_type": 17, "object_id": "19", "object_repr": "Кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 136, "fields": {"action_time": "2025-02-03T04:12:50.438Z", "user": 1, "content_type": 17, "object_id": "18", "object_repr": "Женское", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 137, "fields": {"action_time": "2025-02-03T04:12:50.448Z", "user": 1, "content_type": 17, "object_id": "17", "object_repr": "Мужское", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 138, "fields": {"action_time": "2025-02-03T04:12:50.458Z", "user": 1, "content_type": 17, "object_id": "16", "object_repr": "Одежда", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 139, "fields": {"action_time": "2025-02-03T04:12:50.469Z", "user": 1, "content_type": 17, "object_id": "15", "object_repr": "Автотовары", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 140, "fields": {"action_time": "2025-02-03T04:13:09.783Z", "user": 1, "content_type": 17, "object_id": "25", "object_repr": "Одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 141, "fields": {"action_time": "2025-02-03T04:13:19.996Z", "user": 1, "content_type": 17, "object_id": "26", "object_repr": "Одежда - Женская", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 142, "fields": {"action_time": "2025-02-03T04:13:36.659Z", "user": 1, "content_type": 17, "object_id": "27", "object_repr": "Одежда - Женская - Кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 143, "fields": {"action_time": "2025-02-03T04:13:53.901Z", "user": 1, "content_type": 17, "object_id": "28", "object_repr": "Одежда - Мужская", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 144, "fields": {"action_time": "2025-02-03T04:14:08.452Z", "user": 1, "content_type": 17, "object_id": "29", "object_repr": "Одежда - Мужская - Обувь", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 145, "fields": {"action_time": "2025-02-03T04:14:15.930Z", "user": 1, "content_type": 17, "object_id": "27", "object_repr": "Одежда - Женская - Кроссовки", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 146, "fields": {"action_time": "2025-02-03T04:14:25.233Z", "user": 1, "content_type": 17, "object_id": "30", "object_repr": "Одежда - Женская - Обувь", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 147, "fields": {"action_time": "2025-02-03T04:14:33.650Z", "user": 1, "content_type": 17, "object_id": "31", "object_repr": "Одежда - Женская - Обувь - Кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 148, "fields": {"action_time": "2025-02-03T04:14:40.798Z", "user": 1, "content_type": 17, "object_id": "32", "object_repr": "Одежда - Мужская - Обувь - Кроссовки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 149, "fields": {"action_time": "2025-02-03T04:14:49.213Z", "user": 1, "content_type": 17, "object_id": "33", "object_repr": "Одежда - Женская - Верхняя одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 150, "fields": {"action_time": "2025-02-03T04:14:58.619Z", "user": 1, "content_type": 17, "object_id": "34", "object_repr": "Одежда - Мужская - Верхняя одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 151, "fields": {"action_time": "2025-02-03T04:15:11.648Z", "user": 1, "content_type": 17, "object_id": "35", "object_repr": "Одежда - Женская - Верхняя одежда - Шубы", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 152, "fields": {"action_time": "2025-02-03T04:15:19.808Z", "user": 1, "content_type": 17, "object_id": "36", "object_repr": "Одежда - Женская - Верхняя одежда - Куртки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 153, "fields": {"action_time": "2025-02-03T04:15:36.838Z", "user": 1, "content_type": 17, "object_id": "37", "object_repr": "Одежда - Мужская - Верхняя одежда - Куртки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 154, "fields": {"action_time": "2025-02-03T04:17:26.341Z", "user": 1, "content_type": 18, "object_id": "14", "object_repr": "Куртка черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 155, "fields": {"action_time": "2025-02-03T04:17:31.901Z", "user": 1, "content_type": 18, "object_id": "13", "object_repr": "Куртка Черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 156, "fields": {"action_time": "2025-02-03T04:17:36.476Z", "user": 1, "content_type": 18, "object_id": "12", "object_repr": "Шуба из норки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 157, "fields": {"action_time": "2025-02-03T04:17:40.355Z", "user": 1, "content_type": 18, "object_id": "11", "object_repr": "Шубаа", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 158, "fields": {"action_time": "2025-02-03T04:17:43.874Z", "user": 1, "content_type": 18, "object_id": "11", "object_repr": "Шубаа", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 159, "fields": {"action_time": "2025-02-03T04:17:47.800Z", "user": 1, "content_type": 18, "object_id": "10", "object_repr": "Шубааа", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 160, "fields": {"action_time": "2025-02-03T04:17:52.904Z", "user": 1, "content_type": 18, "object_id": "9", "object_repr": "Шуба зеленая", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 161, "fields": {"action_time": "2025-02-03T04:17:58.296Z", "user": 1, "content_type": 18, "object_id": "8", "object_repr": "Шуба синия", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 162, "fields": {"action_time": "2025-02-03T04:18:03.146Z", "user": 1, "content_type": 18, "object_id": "7", "object_repr": "Шубка еще", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 163, "fields": {"action_time": "2025-02-03T04:18:06.226Z", "user": 1, "content_type": 18, "object_id": "7", "object_repr": "Шубка еще", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 164, "fields": {"action_time": "2025-02-03T04:19:47.068Z", "user": 1, "content_type": 18, "object_id": "6", "object_repr": "Шубка", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 165, "fields": {"action_time": "2025-02-03T04:19:52.462Z", "user": 1, "content_type": 18, "object_id": "5", "object_repr": "Куртка еще какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 166, "fields": {"action_time": "2025-02-03T04:19:57.738Z", "user": 1, "content_type": 18, "object_id": "4", "object_repr": "Куртка какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 167, "fields": {"action_time": "2025-02-03T04:20:00.645Z", "user": 1, "content_type": 18, "object_id": "4", "object_repr": "Куртка какая то", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 168, "fields": {"action_time": "2025-02-03T04:20:04.710Z", "user": 1, "content_type": 18, "object_id": "3", "object_repr": "Шуба какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 169, "fields": {"action_time": "2025-02-03T04:20:08.632Z", "user": 1, "content_type": 18, "object_id": "2", "object_repr": "Шуба Зеленая", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 170, "fields": {"action_time": "2025-02-03T04:20:31.876Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Адидас", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 171, "fields": {"action_time": "2025-02-03T04:23:49.615Z", "user": 1, "content_type": 17, "object_id": "38", "object_repr": "Автотовары", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 172, "fields": {"action_time": "2025-02-03T04:23:58.323Z", "user": 1, "content_type": 17, "object_id": "39", "object_repr": "Мебель", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 173, "fields": {"action_time": "2025-02-03T04:24:06.745Z", "user": 1, "content_type": 17, "object_id": "40", "object_repr": "Для дачи", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 174, "fields": {"action_time": "2025-02-03T04:24:15.801Z", "user": 1, "content_type": 17, "object_id": "41", "object_repr": "Электроника", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 175, "fields": {"action_time": "2025-02-03T04:35:39.633Z", "user": 1, "content_type": 17, "object_id": "38", "object_repr": "Автотовары", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 176, "fields": {"action_time": "2025-02-03T04:43:40.532Z", "user": 1, "content_type": 17, "object_id": "38", "object_repr": "Автотовары", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 177, "fields": {"action_time": "2025-02-03T04:43:53.055Z", "user": 1, "content_type": 17, "object_id": "40", "object_repr": "Для дачи", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 178, "fields": {"action_time": "2025-02-03T04:43:59.641Z", "user": 1, "content_type": 17, "object_id": "39", "object_repr": "Мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 179, "fields": {"action_time": "2025-02-03T04:44:04.781Z", "user": 1, "content_type": 17, "object_id": "40", "object_repr": "Для дачи", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 180, "fields": {"action_time": "2025-02-03T04:44:14.565Z", "user": 1, "content_type": 17, "object_id": "39", "object_repr": "Мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 181, "fields": {"action_time": "2025-02-03T04:44:22.382Z", "user": 1, "content_type": 17, "object_id": "25", "object_repr": "Одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 182, "fields": {"action_time": "2025-02-03T04:44:33.028Z", "user": 1, "content_type": 17, "object_id": "41", "object_repr": "Электроника", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 183, "fields": {"action_time": "2025-02-03T05:07:36.535Z", "user": 1, "content_type": 17, "object_id": "26", "object_repr": "Одежда - Женская", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 184, "fields": {"action_time": "2025-02-03T05:07:50.801Z", "user": 1, "content_type": 17, "object_id": "28", "object_repr": "Одежда - Мужская", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 185, "fields": {"action_time": "2025-02-03T05:33:41.759Z", "user": 1, "content_type": 17, "object_id": "33", "object_repr": "Одежда - Женская - Верхняя одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 186, "fields": {"action_time": "2025-02-03T05:33:51.980Z", "user": 1, "content_type": 17, "object_id": "36", "object_repr": "Одежда - Женская - Верхняя одежда - Куртки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 187, "fields": {"action_time": "2025-02-03T05:33:58.863Z", "user": 1, "content_type": 17, "object_id": "35", "object_repr": "Одежда - Женская - Верхняя одежда - Шубы", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 188, "fields": {"action_time": "2025-02-03T05:34:06.163Z", "user": 1, "content_type": 17, "object_id": "30", "object_repr": "Одежда - Женская - Обувь", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 189, "fields": {"action_time": "2025-02-03T05:34:14.457Z", "user": 1, "content_type": 17, "object_id": "31", "object_repr": "Одежда - Женская - Обувь - Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 190, "fields": {"action_time": "2025-02-03T05:34:26.308Z", "user": 1, "content_type": 17, "object_id": "34", "object_repr": "Одежда - Мужская - Верхняя одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 191, "fields": {"action_time": "2025-02-03T05:34:32.893Z", "user": 1, "content_type": 17, "object_id": "37", "object_repr": "Одежда - Мужская - Верхняя одежда - Куртки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 192, "fields": {"action_time": "2025-02-03T05:34:38.661Z", "user": 1, "content_type": 17, "object_id": "29", "object_repr": "Одежда - Мужская - Обувь", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 193, "fields": {"action_time": "2025-02-03T05:34:43.347Z", "user": 1, "content_type": 17, "object_id": "32", "object_repr": "Одежда - Мужская - Обувь - Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 194, "fields": {"action_time": "2025-02-03T06:03:44.505Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 195, "fields": {"action_time": "2025-02-03T06:05:58.034Z", "user": 1, "content_type": 18, "object_id": "15", "object_repr": "Дикие Кроссы", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"Product Image\", \"object\": \"Image for \\u0414\\u0438\\u043a\\u0438\\u0435 \\u041a\\u0440\\u043e\\u0441\\u0441\\u044b\"}}, {\"added\": {\"name\": \"\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"\\u0426\\u0432\\u0435\\u0442: \\u0411\\u0435\\u043b\\u044b\\u0439 (\\u0434\\u043b\\u044f \\u0414\\u0438\\u043a\\u0438\\u0435 \\u041a\\u0440\\u043e\\u0441\\u0441\\u044b)\"}}]"}}, {"model": "admin.logentry", "pk": 196, "fields": {"action_time": "2025-02-03T07:53:59.212Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Кроссовки Adidas", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 197, "fields": {"action_time": "2025-02-03T08:28:30.219Z", "user": 1, "content_type": 18, "object_id": "2", "object_repr": "Шуба Зеленая", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 198, "fields": {"action_time": "2025-02-03T08:28:39.655Z", "user": 1, "content_type": 18, "object_id": "3", "object_repr": "Шуба какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 199, "fields": {"action_time": "2025-02-03T08:28:47.084Z", "user": 1, "content_type": 18, "object_id": "4", "object_repr": "Куртка какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 200, "fields": {"action_time": "2025-02-03T08:28:55.784Z", "user": 1, "content_type": 18, "object_id": "5", "object_repr": "Куртка еще какая то", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 201, "fields": {"action_time": "2025-02-03T08:29:03.276Z", "user": 1, "content_type": 18, "object_id": "6", "object_repr": "Шубка", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 202, "fields": {"action_time": "2025-02-03T08:29:10.076Z", "user": 1, "content_type": 18, "object_id": "7", "object_repr": "Шубка еще", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 203, "fields": {"action_time": "2025-02-03T08:29:17.447Z", "user": 1, "content_type": 18, "object_id": "8", "object_repr": "Шуба синия", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 204, "fields": {"action_time": "2025-02-03T08:29:23.315Z", "user": 1, "content_type": 18, "object_id": "10", "object_repr": "Шубааа", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 205, "fields": {"action_time": "2025-02-03T08:29:25.844Z", "user": 1, "content_type": 18, "object_id": "11", "object_repr": "Шубаа", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 206, "fields": {"action_time": "2025-02-03T08:29:33.251Z", "user": 1, "content_type": 18, "object_id": "9", "object_repr": "Шуба зеленая", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 207, "fields": {"action_time": "2025-02-03T08:29:42.409Z", "user": 1, "content_type": 18, "object_id": "6", "object_repr": "Шубка", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 208, "fields": {"action_time": "2025-02-03T08:29:46.408Z", "user": 1, "content_type": 18, "object_id": "8", "object_repr": "Шуба синия", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 209, "fields": {"action_time": "2025-02-03T08:29:49.098Z", "user": 1, "content_type": 18, "object_id": "9", "object_repr": "Шуба зеленая", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 210, "fields": {"action_time": "2025-02-03T08:29:51.330Z", "user": 1, "content_type": 18, "object_id": "10", "object_repr": "Шубааа", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 211, "fields": {"action_time": "2025-02-03T08:29:58.531Z", "user": 1, "content_type": 18, "object_id": "11", "object_repr": "Шубаа", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 212, "fields": {"action_time": "2025-02-03T08:30:05.476Z", "user": 1, "content_type": 18, "object_id": "12", "object_repr": "Шуба из норки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 213, "fields": {"action_time": "2025-02-03T08:30:12.381Z", "user": 1, "content_type": 18, "object_id": "13", "object_repr": "Куртка Черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 214, "fields": {"action_time": "2025-02-03T08:31:06.465Z", "user": 1, "content_type": 18, "object_id": "14", "object_repr": "Куртка черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 215, "fields": {"action_time": "2025-02-03T08:47:05.138Z", "user": 1, "content_type": 18, "object_id": "2", "object_repr": "Шуба Зеленая", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount\"]}}]"}}, {"model": "admin.logentry", "pk": 216, "fields": {"action_time": "2025-02-03T08:47:17.696Z", "user": 1, "content_type": 18, "object_id": "14", "object_repr": "Куртка черная", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount\"]}}]"}}, {"model": "admin.logentry", "pk": 217, "fields": {"action_time": "2025-02-03T09:03:49.045Z", "user": 1, "content_type": 17, "object_id": "36", "object_repr": "Одежда - Женская - Верхняя одежда - Куртки на синтепоне", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 218, "fields": {"action_time": "2025-02-03T09:04:21.299Z", "user": 1, "content_type": 17, "object_id": "42", "object_repr": "Одежда - Женская - Верхняя одежда - Дубленки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 219, "fields": {"action_time": "2025-02-03T09:04:42.487Z", "user": 1, "content_type": 17, "object_id": "43", "object_repr": "Одежда - Женская - Верхняя одежда - Парки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 220, "fields": {"action_time": "2025-02-03T09:05:01.336Z", "user": 1, "content_type": 17, "object_id": "44", "object_repr": "Одежда - Женская - Верхняя одежда - Утепленные пальто", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 221, "fields": {"action_time": "2025-02-03T09:05:18.948Z", "user": 1, "content_type": 17, "object_id": "45", "object_repr": "Одежда - Женская - Верхняя одежда - Горнолыжные куртки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 222, "fields": {"action_time": "2025-02-03T09:59:16.825Z", "user": 1, "content_type": 17, "object_id": "46", "object_repr": "Одежда - Мужская - Брюки", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 223, "fields": {"action_time": "2025-02-03T09:59:46.898Z", "user": 1, "content_type": 17, "object_id": "47", "object_repr": "Одежда - Мужская - Кофты", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 224, "fields": {"action_time": "2025-02-03T10:00:04.837Z", "user": 1, "content_type": 17, "object_id": "48", "object_repr": "Одежда - Мужская - Джинсы", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 225, "fields": {"action_time": "2025-02-03T10:00:27.759Z", "user": 1, "content_type": 17, "object_id": "49", "object_repr": "Одежда - Мужская - Домашняя одежда", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 226, "fields": {"action_time": "2025-02-03T10:57:35.239Z", "user": 1, "content_type": 17, "object_id": "46", "object_repr": "Одежда - Мужская - Брюки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 227, "fields": {"action_time": "2025-02-03T10:57:41.816Z", "user": 1, "content_type": 17, "object_id": "34", "object_repr": "Одежда - Мужская - Верхняя одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 228, "fields": {"action_time": "2025-02-03T10:57:49.594Z", "user": 1, "content_type": 17, "object_id": "48", "object_repr": "Одежда - Мужская - Джинсы", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 229, "fields": {"action_time": "2025-02-03T10:58:11.390Z", "user": 1, "content_type": 17, "object_id": "49", "object_repr": "Одежда - Мужская - Домашняя одежда", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 230, "fields": {"action_time": "2025-02-03T10:58:17.764Z", "user": 1, "content_type": 17, "object_id": "49", "object_repr": "Одежда - Мужская - Домашняя одежда", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 231, "fields": {"action_time": "2025-02-03T10:58:22.651Z", "user": 1, "content_type": 17, "object_id": "47", "object_repr": "Одежда - Мужская - Кофты", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 232, "fields": {"action_time": "2025-02-03T10:58:28.182Z", "user": 1, "content_type": 17, "object_id": "29", "object_repr": "Одежда - Мужская - Обувь", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 233, "fields": {"action_time": "2025-02-03T10:58:36.058Z", "user": 1, "content_type": 17, "object_id": "32", "object_repr": "Одежда - Мужская - Обувь - Кроссовки", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Small image\"]}}]"}}, {"model": "admin.logentry", "pk": 234, "fields": {"action_time": "2025-02-03T11:13:16.710Z", "user": 1, "content_type": 17, "object_id": "50", "object_repr": "Аксессуары", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 235, "fields": {"action_time": "2025-02-03T11:16:30.229Z", "user": 1, "content_type": 17, "object_id": "39", "object_repr": "Мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 236, "fields": {"action_time": "2025-02-03T11:19:07.977Z", "user": 1, "content_type": 17, "object_id": "51", "object_repr": "Мебель - Кухонная мебель", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 237, "fields": {"action_time": "2025-02-03T11:20:29.906Z", "user": 1, "content_type": 17, "object_id": "51", "object_repr": "Мебель - Кухонная мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Big image\"]}}]"}}, {"model": "admin.logentry", "pk": 238, "fields": {"action_time": "2025-02-03T11:23:30.443Z", "user": 1, "content_type": 17, "object_id": "52", "object_repr": "Мебель - Мягкая мебель", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 239, "fields": {"action_time": "2025-02-03T11:28:01.880Z", "user": 1, "content_type": 17, "object_id": "53", "object_repr": "Мебель - Твердая мебель", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 240, "fields": {"action_time": "2025-02-03T11:29:27.923Z", "user": 1, "content_type": 17, "object_id": "53", "object_repr": "Мебель - Твердая мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Ordering\"]}}]"}}, {"model": "admin.logentry", "pk": 241, "fields": {"action_time": "2025-02-03T11:29:31.360Z", "user": 1, "content_type": 17, "object_id": "52", "object_repr": "Мебель - Мягкая мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Ordering\"]}}]"}}, {"model": "admin.logentry", "pk": 242, "fields": {"action_time": "2025-02-03T11:29:34.243Z", "user": 1, "content_type": 17, "object_id": "51", "object_repr": "Мебель - Кухонная мебель", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Ordering\"]}}]"}}, {"model": "admin.logentry", "pk": 243, "fields": {"action_time": "2025-02-03T12:40:16.846Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Businessmen", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 244, "fields": {"action_time": "2025-02-03T12:41:27.839Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 245, "fields": {"action_time": "2025-02-03T12:50:10.381Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Businessmen", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Users\"]}}]"}}, {"model": "admin.logentry", "pk": 246, "fields": {"action_time": "2025-02-03T12:55:10.386Z", "user": 1, "content_type": 2, "object_id": "1", "object_repr": "Marketplace_businessmen", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 247, "fields": {"action_time": "2025-02-03T12:56:09.950Z", "user": 1, "content_type": 2, "object_id": "2", "object_repr": "Mall_testing", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 248, "fields": {"action_time": "2025-02-03T13:02:21.715Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 249, "fields": {"action_time": "2025-02-03T13:03:16.554Z", "user": 1, "content_type": 12, "object_id": "1", "object_repr": "root", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 250, "fields": {"action_time": "2025-02-03T13:17:13.138Z", "user": 1, "content_type": 2, "object_id": "3", "object_repr": "test", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 251, "fields": {"action_time": "2025-02-03T13:17:24.866Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 252, "fields": {"action_time": "2025-02-03T13:17:41.346Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 253, "fields": {"action_time": "2025-02-03T13:17:47.734Z", "user": 1, "content_type": 12, "object_id": "1", "object_repr": "root", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 254, "fields": {"action_time": "2025-02-03T13:26:24.578Z", "user": 1, "content_type": 2, "object_id": "4", "object_repr": "Business", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 255, "fields": {"action_time": "2025-02-03T13:27:19.948Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 256, "fields": {"action_time": "2025-02-03T13:27:24.068Z", "user": 1, "content_type": 12, "object_id": "1", "object_repr": "root", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 257, "fields": {"action_time": "2025-02-03T13:28:24.555Z", "user": 1, "content_type": 2, "object_id": "2", "object_repr": "Mall_testing", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 258, "fields": {"action_time": "2025-02-03T13:28:24.555Z", "user": 1, "content_type": 2, "object_id": "1", "object_repr": "Marketplace_businessmen", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 259, "fields": {"action_time": "2025-02-03T13:28:24.555Z", "user": 1, "content_type": 2, "object_id": "3", "object_repr": "test", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 260, "fields": {"action_time": "2025-02-03T13:30:33.924Z", "user": 1, "content_type": 2, "object_id": "5", "object_repr": "User", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 261, "fields": {"action_time": "2025-02-03T13:31:12.054Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 262, "fields": {"action_time": "2025-02-03T13:31:46.762Z", "user": 1, "content_type": 2, "object_id": "5", "object_repr": "User", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 263, "fields": {"action_time": "2025-02-03T13:32:23.697Z", "user": 1, "content_type": 2, "object_id": "5", "object_repr": "User", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 264, "fields": {"action_time": "2025-02-03T13:33:14.400Z", "user": 1, "content_type": 2, "object_id": "5", "object_repr": "User", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 265, "fields": {"action_time": "2025-02-03T14:25:42.530Z", "user": 1, "content_type": 14, "object_id": "1", "object_repr": "Империя", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Background image\"]}}]"}}, {"model": "admin.logentry", "pk": 266, "fields": {"action_time": "2025-02-03T23:56:53.961Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 267, "fields": {"action_time": "2025-02-04T02:05:05.638Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Background image\"]}}]"}}, {"model": "admin.logentry", "pk": 268, "fields": {"action_time": "2025-02-04T02:15:28.744Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 269, "fields": {"action_time": "2025-02-04T02:30:27.826Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 270, "fields": {"action_time": "2025-02-04T02:30:41.494Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 271, "fields": {"action_time": "2025-02-04T02:53:56.914Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 272, "fields": {"action_time": "2025-02-04T02:56:09.124Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 273, "fields": {"action_time": "2025-02-04T02:57:20.885Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 274, "fields": {"action_time": "2025-02-04T03:06:04.286Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 275, "fields": {"action_time": "2025-02-04T03:06:13.277Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "Artur", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 276, "fields": {"action_time": "2025-02-04T15:39:16.700Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 277, "fields": {"action_time": "2025-02-06T04:04:57.175Z", "user": 1, "content_type": 17, "object_id": "54", "object_repr": "Автотовары - Тест", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 278, "fields": {"action_time": "2025-02-06T07:34:40.073Z", "user": 1, "content_type": 18, "object_id": "20", "object_repr": "Петр", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"Product Image\", \"object\": \"Image for \\u041f\\u0435\\u0442\\u0440\"}}]"}}, {"model": "admin.logentry", "pk": 279, "fields": {"action_time": "2025-02-06T07:35:18.444Z", "user": 1, "content_type": 18, "object_id": "21", "object_repr": "ui", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"Product Image\", \"object\": \"Image for ui\"}}]"}}, {"model": "admin.logentry", "pk": 280, "fields": {"action_time": "2025-02-06T07:38:40.095Z", "user": 1, "content_type": 18, "object_id": "22", "object_repr": "rty", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"Product Image\", \"object\": \"Image for rty\"}}]"}}, {"model": "admin.logentry", "pk": 281, "fields": {"action_time": "2025-02-06T07:39:32.720Z", "user": 1, "content_type": 18, "object_id": "22", "object_repr": "rty", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"On the main\"]}}]"}}, {"model": "admin.logentry", "pk": 282, "fields": {"action_time": "2025-02-06T10:49:03.294Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Slug\"]}}]"}}, {"model": "admin.logentry", "pk": 283, "fields": {"action_time": "2025-02-06T10:49:10.500Z", "user": 1, "content_type": 14, "object_id": "1", "object_repr": "Империя", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Slug\"]}}]"}}, {"model": "admin.logentry", "pk": 284, "fields": {"action_time": "2025-02-21T13:21:10.570Z", "user": 1, "content_type": 14, "object_id": "2", "object_repr": "Hot_Shmot", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"}}, {"model": "admin.logentry", "pk": 285, "fields": {"action_time": "2025-02-21T13:25:33.795Z", "user": 1, "content_type": 17, "object_id": "25", "object_repr": "Одежда и обувь", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 286, "fields": {"action_time": "2025-02-21T13:27:05.856Z", "user": 1, "content_type": 17, "object_id": "55", "object_repr": "Одежда и обувь - Женская - Обувь - Туфли", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 287, "fields": {"action_time": "2025-02-21T14:36:15.897Z", "user": 1, "content_type": 14, "object_id": "1", "object_repr": "Империя", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Html template\"]}}]"}}, {"model": "admin.logentry", "pk": 288, "fields": {"action_time": "2025-02-22T10:06:27.871Z", "user": 1, "content_type": 14, "object_id": "3", "object_repr": "Атто", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 289, "fields": {"action_time": "2025-02-22T10:53:38.351Z", "user": 1, "content_type": 14, "object_id": "3", "object_repr": "Атто", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Product detail template\"]}}]"}}, {"model": "admin.logentry", "pk": 290, "fields": {"action_time": "2025-02-22T10:58:01.704Z", "user": 1, "content_type": 14, "object_id": "3", "object_repr": "Атто", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Product detail template\"]}}]"}}, {"model": "admin.logentry", "pk": 291, "fields": {"action_time": "2025-02-22T10:58:39.236Z", "user": 1, "content_type": 14, "object_id": "3", "object_repr": "Атто", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Html template\"]}}]"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add group", "content_type": 2, "codename": "add_group"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change group", "content_type": 2, "codename": "change_group"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete group", "content_type": 2, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view group", "content_type": 2, "codename": "view_group"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add permission", "content_type": 3, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change permission", "content_type": 3, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete permission", "content_type": 3, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view permission", "content_type": 3, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add content type", "content_type": 4, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change content type", "content_type": 4, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete content type", "content_type": 4, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view content type", "content_type": 4, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add session", "content_type": 5, "codename": "add_session"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change session", "content_type": 5, "codename": "change_session"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete session", "content_type": 5, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view session", "content_type": 5, "codename": "view_session"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add menu category", "content_type": 6, "codename": "add_menucategory"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change menu category", "content_type": 6, "codename": "change_menucategory"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete menu category", "content_type": 6, "codename": "delete_menucategory"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view menu category", "content_type": 6, "codename": "view_menucategory"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add restaurant", "content_type": 7, "codename": "add_restaurant"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change restaurant", "content_type": 7, "codename": "change_restaurant"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete restaurant", "content_type": 7, "codename": "delete_restaurant"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view restaurant", "content_type": 7, "codename": "view_restaurant"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add restaurant order item", "content_type": 8, "codename": "add_restaurantorderitem"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change restaurant order item", "content_type": 8, "codename": "change_restaurantorderitem"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete restaurant order item", "content_type": 8, "codename": "delete_restaurantorderitem"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view restaurant order item", "content_type": 8, "codename": "view_restaurantorderitem"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add table reservation", "content_type": 9, "codename": "add_tablereservation"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change table reservation", "content_type": 9, "codename": "change_tablereservation"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete table reservation", "content_type": 9, "codename": "delete_tablereservation"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view table reservation", "content_type": 9, "codename": "view_tablereservation"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add menu item", "content_type": 10, "codename": "add_menuitem"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change menu item", "content_type": 10, "codename": "change_menuitem"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete menu item", "content_type": 10, "codename": "delete_menuitem"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view menu item", "content_type": 10, "codename": "view_menuitem"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add restaurant order", "content_type": 11, "codename": "add_restaurantorder"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change restaurant order", "content_type": 11, "codename": "change_restaurantorder"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete restaurant order", "content_type": 11, "codename": "delete_restaurantorder"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view restaurant order", "content_type": 11, "codename": "view_restaurantorder"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can add Пользователь", "content_type": 12, "codename": "add_user"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can change Пользователь", "content_type": 12, "codename": "change_user"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can delete Пользователь", "content_type": 12, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can view Пользователь", "content_type": 12, "codename": "view_user"}}, {"model": "auth.permission", "pk": 49, "fields": {"name": "Can add business type", "content_type": 13, "codename": "add_businesstype"}}, {"model": "auth.permission", "pk": 50, "fields": {"name": "Can change business type", "content_type": 13, "codename": "change_businesstype"}}, {"model": "auth.permission", "pk": 51, "fields": {"name": "Can delete business type", "content_type": 13, "codename": "delete_businesstype"}}, {"model": "auth.permission", "pk": 52, "fields": {"name": "Can view business type", "content_type": 13, "codename": "view_businesstype"}}, {"model": "auth.permission", "pk": 53, "fields": {"name": "Can add business", "content_type": 14, "codename": "add_business"}}, {"model": "auth.permission", "pk": 54, "fields": {"name": "Can change business", "content_type": 14, "codename": "change_business"}}, {"model": "auth.permission", "pk": 55, "fields": {"name": "Can delete business", "content_type": 14, "codename": "delete_business"}}, {"model": "auth.permission", "pk": 56, "fields": {"name": "Can view business", "content_type": 14, "codename": "view_business"}}, {"model": "auth.permission", "pk": 57, "fields": {"name": "Can add Роль", "content_type": 15, "codename": "add_role"}}, {"model": "auth.permission", "pk": 58, "fields": {"name": "Can change Роль", "content_type": 15, "codename": "change_role"}}, {"model": "auth.permission", "pk": 59, "fields": {"name": "Can delete Роль", "content_type": 15, "codename": "delete_role"}}, {"model": "auth.permission", "pk": 60, "fields": {"name": "Can view Роль", "content_type": 15, "codename": "view_role"}}, {"model": "auth.permission", "pk": 61, "fields": {"name": "Can add Product Image", "content_type": 16, "codename": "add_productimage"}}, {"model": "auth.permission", "pk": 62, "fields": {"name": "Can change Product Image", "content_type": 16, "codename": "change_productimage"}}, {"model": "auth.permission", "pk": 63, "fields": {"name": "Can delete Product Image", "content_type": 16, "codename": "delete_productimage"}}, {"model": "auth.permission", "pk": 64, "fields": {"name": "Can view Product Image", "content_type": 16, "codename": "view_productimage"}}, {"model": "auth.permission", "pk": 65, "fields": {"name": "Can add Категория товара", "content_type": 17, "codename": "add_category"}}, {"model": "auth.permission", "pk": 66, "fields": {"name": "Can change Категория товара", "content_type": 17, "codename": "change_category"}}, {"model": "auth.permission", "pk": 67, "fields": {"name": "Can delete Категория товара", "content_type": 17, "codename": "delete_category"}}, {"model": "auth.permission", "pk": 68, "fields": {"name": "Can view Категория товара", "content_type": 17, "codename": "view_category"}}, {"model": "auth.permission", "pk": 69, "fields": {"name": "Can add Товар", "content_type": 18, "codename": "add_product"}}, {"model": "auth.permission", "pk": 70, "fields": {"name": "Can change Товар", "content_type": 18, "codename": "change_product"}}, {"model": "auth.permission", "pk": 71, "fields": {"name": "Can delete Товар", "content_type": 18, "codename": "delete_product"}}, {"model": "auth.permission", "pk": 72, "fields": {"name": "Can view Товар", "content_type": 18, "codename": "view_product"}}, {"model": "auth.permission", "pk": 73, "fields": {"name": "Can add mall floor", "content_type": 19, "codename": "add_mallfloor"}}, {"model": "auth.permission", "pk": 74, "fields": {"name": "Can change mall floor", "content_type": 19, "codename": "change_mallfloor"}}, {"model": "auth.permission", "pk": 75, "fields": {"name": "Can delete mall floor", "content_type": 19, "codename": "delete_mallfloor"}}, {"model": "auth.permission", "pk": 76, "fields": {"name": "Can view mall floor", "content_type": 19, "codename": "view_mallfloor"}}, {"model": "auth.permission", "pk": 77, "fields": {"name": "Can add mall shop", "content_type": 20, "codename": "add_mallshop"}}, {"model": "auth.permission", "pk": 78, "fields": {"name": "Can change mall shop", "content_type": 20, "codename": "change_mallshop"}}, {"model": "auth.permission", "pk": 79, "fields": {"name": "Can delete mall shop", "content_type": 20, "codename": "delete_mallshop"}}, {"model": "auth.permission", "pk": 80, "fields": {"name": "Can view mall shop", "content_type": 20, "codename": "view_mallshop"}}, {"model": "auth.permission", "pk": 81, "fields": {"name": "Can add mall", "content_type": 21, "codename": "add_mall"}}, {"model": "auth.permission", "pk": 82, "fields": {"name": "Can change mall", "content_type": 21, "codename": "change_mall"}}, {"model": "auth.permission", "pk": 83, "fields": {"name": "Can delete mall", "content_type": 21, "codename": "delete_mall"}}, {"model": "auth.permission", "pk": 84, "fields": {"name": "Can view mall", "content_type": 21, "codename": "view_mall"}}, {"model": "auth.permission", "pk": 85, "fields": {"name": "Can add Атрибут товара", "content_type": 22, "codename": "add_productattribute"}}, {"model": "auth.permission", "pk": 86, "fields": {"name": "Can change Атрибут товара", "content_type": 22, "codename": "change_productattribute"}}, {"model": "auth.permission", "pk": 87, "fields": {"name": "Can delete Атрибут товара", "content_type": 22, "codename": "delete_productattribute"}}, {"model": "auth.permission", "pk": 88, "fields": {"name": "Can view Атрибут товара", "content_type": 22, "codename": "view_productattribute"}}, {"model": "auth.permission", "pk": 89, "fields": {"name": "Can add attribute", "content_type": 23, "codename": "add_attribute"}}, {"model": "auth.permission", "pk": 90, "fields": {"name": "Can change attribute", "content_type": 23, "codename": "change_attribute"}}, {"model": "auth.permission", "pk": 91, "fields": {"name": "Can delete attribute", "content_type": 23, "codename": "delete_attribute"}}, {"model": "auth.permission", "pk": 92, "fields": {"name": "Can view attribute", "content_type": 23, "codename": "view_attribute"}}, {"model": "auth.permission", "pk": 93, "fields": {"name": "Can add Атрибут категории", "content_type": 24, "codename": "add_categoryattribute"}}, {"model": "auth.permission", "pk": 94, "fields": {"name": "Can change Атрибут категории", "content_type": 24, "codename": "change_categoryattribute"}}, {"model": "auth.permission", "pk": 95, "fields": {"name": "Can delete Атрибут категории", "content_type": 24, "codename": "delete_categoryattribute"}}, {"model": "auth.permission", "pk": 96, "fields": {"name": "Can view Атрибут категории", "content_type": 24, "codename": "view_categoryattribute"}}, {"model": "auth.permission", "pk": 97, "fields": {"name": "Can add kv store", "content_type": 25, "codename": "add_kvstore"}}, {"model": "auth.permission", "pk": 98, "fields": {"name": "Can change kv store", "content_type": 25, "codename": "change_kvstore"}}, {"model": "auth.permission", "pk": 99, "fields": {"name": "Can delete kv store", "content_type": 25, "codename": "delete_kvstore"}}, {"model": "auth.permission", "pk": 100, "fields": {"name": "Can view kv store", "content_type": 25, "codename": "view_kvstore"}}, {"model": "auth.group", "pk": 4, "fields": {"name": "Business", "permissions": [54, 56, 81, 82, 83, 84, 73, 74, 75, 76, 77, 78, 79, 80, 89, 90, 91, 92, 69, 70, 71, 72, 61, 62, 63, 64, 21, 37, 38, 39, 40, 25, 26, 27, 28, 41, 42, 43, 44, 29, 30, 31, 32, 33, 34, 35, 36]}}, {"model": "auth.group", "pk": 5, "fields": {"name": "User", "permissions": [56, 52, 60, 48, 84, 76, 80, 92, 68, 96, 72, 64, 24, 40, 28, 41, 42, 43, 44, 29, 30, 31, 32, 33, 34, 35, 36]}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "restaurants", "model": "menucategory"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "restaurants", "model": "restaurant"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "restaurants", "model": "restaurantorderitem"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "restaurants", "model": "tablereservation"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "restaurants", "model": "menuitem"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "restaurants", "model": "restaurantorder"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "core", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 13, "fields": {"app_label": "core", "model": "businesstype"}}, {"model": "contenttypes.contenttype", "pk": 14, "fields": {"app_label": "core", "model": "business"}}, {"model": "contenttypes.contenttype", "pk": 15, "fields": {"app_label": "core", "model": "role"}}, {"model": "contenttypes.contenttype", "pk": 16, "fields": {"app_label": "marketplace", "model": "productimage"}}, {"model": "contenttypes.contenttype", "pk": 17, "fields": {"app_label": "marketplace", "model": "category"}}, {"model": "contenttypes.contenttype", "pk": 18, "fields": {"app_label": "marketplace", "model": "product"}}, {"model": "contenttypes.contenttype", "pk": 19, "fields": {"app_label": "mall", "model": "mallfloor"}}, {"model": "contenttypes.contenttype", "pk": 20, "fields": {"app_label": "mall", "model": "mallshop"}}, {"model": "contenttypes.contenttype", "pk": 21, "fields": {"app_label": "mall", "model": "mall"}}, {"model": "contenttypes.contenttype", "pk": 22, "fields": {"app_label": "marketplace", "model": "productattribute"}}, {"model": "contenttypes.contenttype", "pk": 23, "fields": {"app_label": "marketplace", "model": "attribute"}}, {"model": "contenttypes.contenttype", "pk": 24, "fields": {"app_label": "marketplace", "model": "categoryattribute"}}, {"model": "contenttypes.contenttype", "pk": 25, "fields": {"app_label": "thumbnail", "model": "kvstore"}}, {"model": "sessions.session", "pk": "5p0u14ulucffu03ktjlp97t46e1z0pmh", "fields": {"session_data": ".eJxVjDsOwjAQBe_iGln-r01JnzNYXnuDA8iR4qRC3J1ESgHtm5n3ZjFta41bpyVOhV2ZZJffDVN-UjtAeaR2n3me27pMyA-Fn7TzYS70up3u30FNve61kUBuzEH7UQsIQWdjHEEoDjwoawHRhyK8lpAsCGUF5iyVIbfTgoZ9vrXrNqE:1tln7t:U_RSVlUkOB16k0kF29x2MVZMrJUCkIbMaJ8iLIjzE8A", "expire_date": "2025-03-08T10:52:53.673Z"}}, {"model": "sessions.session", "pk": "gr90m92y2r55b5eofr2kyfnca7xli1di", "fields": {"session_data": ".eJxVjDsOwjAQBe_iGln-r01JnzNYXnuDA8iR4qRC3J1ESgHtm5n3ZjFta41bpyVOhV2ZZJffDVN-UjtAeaR2n3me27pMyA-Fn7TzYS70up3u30FNve61kUBuzEH7UQsIQWdjHEEoDjwoawHRhyK8lpAsCGUF5iyVIbfTgoZ9vrXrNqE:1tfEij:5e8vgcAtIN3NmXsz_aV14DU1nnc9HfyTWe9TspnYBtY", "expire_date": "2025-02-18T08:55:49.080Z"}}, {"model": "sessions.session", "pk": "pvtamtrxk2zongu7yz3aw779f8srmks0", "fields": {"session_data": ".eJxVjDsOwjAQBe_iGln2-k9JnzNY9u4GB1Ai5VMh7k4ipYB2Zt57i1y2teVt4TkPJK4CxOWX1YJPHg9BjzLeJ4nTuM5DlUciT7vIbiJ-3c7276CVpe3r4CmYHkApZNNXbzmi9Rp2FlPiVCIly5ScBWONJ2A0LjgVNaIG58TnC83WNvU:1tf8uc:nB-B1sIuirppZPfBnHUAHDGBL7nlUwDoABzMLqSYNnI", "expire_date": "2025-02-18T02:43:42.092Z"}}, {"model": "sessions.session", "pk": "r9c63vq7p7irq9ae2tavhwl26yi88qv0", "fields": {"session_data": ".eJxVjDsOwjAQBe_iGln-r01JnzNYXnuDA8iR4qRC3J1ESgHtm5n3ZjFta41bpyVOhV2ZZJffDVN-UjtAeaR2n3me27pMyA-Fn7TzYS70up3u30FNve61kUBuzEH7UQsIQWdjHEEoDjwoawHRhyK8lpAsCGUF5iyVIbfTgoZ9vrXrNqE:1tlSBv:jcIE8uWfyf7vrqd19czFYp49k_6ufDGYzJjMx1Dpb2E", "expire_date": "2025-03-07T12:31:39.668Z"}}, {"model": "core.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$870000$KluqxbIynjDygJAqIkHvz1$8lV97XHtLSktCNRMkAm2EHPFGb8gc8Q9+b102e7XkoQ=", "last_login": "2025-02-22T10:52:53.668Z", "is_superuser": true, "username": "root", "first_name": "", "last_name": "", "email": "", "is_staff": true, "is_active": true, "date_joined": "2025-02-01T03:20:04Z", "phone": null, "groups": [4], "user_permissions": []}}, {"model": "core.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$870000$joveHUPAANfFVjkN4LCYhD$Uu7SBSTUQUMPt2SjN3YpcZS87XDfGsu9IOg1MEB6kkE=", "last_login": "2025-02-04T02:43:42Z", "is_superuser": false, "username": "Artur", "first_name": "", "last_name": "", "email": "qwerty.gogi@mail.ru", "is_staff": false, "is_active": true, "date_joined": "2025-02-03T11:59:00Z", "phone": null, "groups": [5], "user_permissions": []}}, {"model": "core.role", "pk": 1, "fields": {"name": "Businessmen", "users": [2, 1]}}, {"model": "core.businesstype", "pk": 1, "fields": {"name": "Маркетплейс", "description": "Маркетплейс - торговая площадка со всем - всеми товарами", "url": "marketplace:main"}}, {"model": "core.businesstype", "pk": 2, "fields": {"name": "ТРЦ", "description": "Исследуйте торговые центры своего города! Смотрите ассортимент товаров, и не упустите самые большие скидки!", "url": "mall:main"}}, {"model": "core.businesstype", "pk": 3, "fields": {"name": "Рестораны", "description": "Хотите кушать? Тогда нажимай сюда, тут увидишь все рестораны своего города, сможешь заказать доставку и забронировать столик =)", "url": "restaurants:main"}}, {"model": "core.business", "pk": 1, "fields": {"owner": 1, "business_type": 1, "name": "Империя", "description": "Магазин империя - один из лучших магазинов вехрней одежды нашего города!", "address": "Гагарина", "phone": "87073945075", "business_logo": "", "html_template": "", "product_card_template": "", "product_detail_template": "", "background_image": "business/back_imperia.jpg", "created_at": "2025-02-03T00:59:41.179Z", "updated_at": "2025-02-21T14:36:15.896Z", "slug": "imperia"}}, {"model": "core.business", "pk": 2, "fields": {"owner": 2, "business_type": 1, "name": "Hot_Shmot", "description": "Hot_Shmot - magaz super hype odezhdii", "address": "Malika gabdullina", "phone": "87077077707", "business_logo": "", "html_template": "", "product_card_template": "", "product_detail_template": "", "background_image": "business/лого_бэк.webp", "created_at": "2025-02-03T06:03:44.504Z", "updated_at": "2025-02-21T13:21:10.569Z", "slug": "hot_shmot"}}, {"model": "core.business", "pk": 3, "fields": {"owner": 1, "business_type": 1, "name": "Атто", "description": "Атто аоокщоащкоащкоа", "address": "Габдулина 127А", "phone": "9999999991", "business_logo": "business_logo/мебель_твердая.jpg", "html_template": "atto/own_site_files/test.html", "product_card_template": "", "product_detail_template": "business/test_wazMfOH.html", "background_image": "business/мебель_твердая.jpg", "created_at": "2025-02-22T10:06:27.869Z", "updated_at": "2025-02-22T10:58:39.235Z", "slug": "atto"}}, {"model": "marketplace.category", "pk": 25, "fields": {"name": "Одежда и обувь", "parent": null, "description": "", "page_identificator": null, "big_image": "category_images/big_images/одежда.png", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:13:09.781Z", "updated_at": "2025-02-21T13:25:33.794Z", "lft": 1, "rght": 42, "tree_id": 5, "level": 0}}, {"model": "marketplace.category", "pk": 26, "fields": {"name": "Женская", "parent": 25, "description": "", "page_identificator": null, "big_image": "category_images/big_images/женская.png", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:13:19.995Z", "updated_at": "2025-02-03T05:07:36.533Z", "lft": 2, "rght": 23, "tree_id": 5, "level": 1}}, {"model": "marketplace.category", "pk": 28, "fields": {"name": "Мужская", "parent": 25, "description": "", "page_identificator": null, "big_image": "category_images/big_images/мужская.png", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:13:53.900Z", "updated_at": "2025-02-03T05:07:50.798Z", "lft": 24, "rght": 41, "tree_id": 5, "level": 1}}, {"model": "marketplace.category", "pk": 29, "fields": {"name": "Обувь", "parent": 28, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_zpKbEqd.jpg", "ordering": 0, "created_at": "2025-02-03T04:14:08.451Z", "updated_at": "2025-02-03T10:58:28.181Z", "lft": 37, "rght": 40, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 30, "fields": {"name": "Обувь", "parent": 26, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_vhkxvhp.jpg", "ordering": 0, "created_at": "2025-02-03T04:14:25.233Z", "updated_at": "2025-02-03T05:34:06.161Z", "lft": 17, "rght": 22, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 31, "fields": {"name": "Кроссовки", "parent": 30, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_3XciXRl.jpg", "ordering": 0, "created_at": "2025-02-03T04:14:33.648Z", "updated_at": "2025-02-03T05:34:14.456Z", "lft": 18, "rght": 19, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 32, "fields": {"name": "Кроссовки", "parent": 29, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/1200x600-zinnwaldite-brown-solid-color-background_cHTCRXl.jpg", "ordering": 0, "created_at": "2025-02-03T04:14:40.797Z", "updated_at": "2025-02-03T10:58:36.056Z", "lft": 38, "rght": 39, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 33, "fields": {"name": "Верхняя одежда", "parent": 26, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких.jpg", "ordering": 0, "created_at": "2025-02-03T04:14:49.211Z", "updated_at": "2025-02-03T05:33:41.757Z", "lft": 3, "rght": 16, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 34, "fields": {"name": "Верхняя одежда", "parent": 28, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_lxCc03x.jpg", "ordering": 0, "created_at": "2025-02-03T04:14:58.618Z", "updated_at": "2025-02-03T10:57:41.815Z", "lft": 27, "rght": 30, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 35, "fields": {"name": "Шубы", "parent": 33, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_XDvAdLm.jpg", "ordering": 0, "created_at": "2025-02-03T04:15:11.647Z", "updated_at": "2025-02-03T05:33:58.862Z", "lft": 14, "rght": 15, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 36, "fields": {"name": "Куртки на синтепоне", "parent": 33, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_txWRPz9.jpg", "ordering": 0, "created_at": "2025-02-03T04:15:19.806Z", "updated_at": "2025-02-03T09:03:49.044Z", "lft": 8, "rght": 9, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 37, "fields": {"name": "Куртки", "parent": 34, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_L1XWrc1.jpg", "ordering": 0, "created_at": "2025-02-03T04:15:36.837Z", "updated_at": "2025-02-03T05:34:32.891Z", "lft": 28, "rght": 29, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 38, "fields": {"name": "Автотовары", "parent": null, "description": "", "page_identificator": null, "big_image": "category_images/big_images/автозапчасти.jpg", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:23:49.615Z", "updated_at": "2025-02-03T04:43:40.532Z", "lft": 1, "rght": 4, "tree_id": 1, "level": 0}}, {"model": "marketplace.category", "pk": 39, "fields": {"name": "Мебель", "parent": null, "description": "", "page_identificator": null, "big_image": "category_images/big_images/мебель_GVl0HZu.png", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:23:58.322Z", "updated_at": "2025-02-03T11:16:30.228Z", "lft": 1, "rght": 8, "tree_id": 4, "level": 0}}, {"model": "marketplace.category", "pk": 40, "fields": {"name": "Для дачи", "parent": null, "description": "", "page_identificator": null, "big_image": "category_images/big_images/дача.jpg", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:24:06.744Z", "updated_at": "2025-02-03T04:44:04.780Z", "lft": 1, "rght": 2, "tree_id": 3, "level": 0}}, {"model": "marketplace.category", "pk": 41, "fields": {"name": "Электроника", "parent": null, "description": "", "page_identificator": null, "big_image": "category_images/big_images/ноутбук.jpg", "small_image": "", "ordering": 0, "created_at": "2025-02-03T04:24:15.801Z", "updated_at": "2025-02-03T04:44:33.026Z", "lft": 1, "rght": 2, "tree_id": 6, "level": 0}}, {"model": "marketplace.category", "pk": 42, "fields": {"name": "Дубленки", "parent": 33, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_QC50Neq.jpg", "ordering": 0, "created_at": "2025-02-03T09:04:21.297Z", "updated_at": "2025-02-03T09:04:21.297Z", "lft": 6, "rght": 7, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 43, "fields": {"name": "Парки", "parent": 33, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_O34kMIM.jpg", "ordering": 0, "created_at": "2025-02-03T09:04:42.485Z", "updated_at": "2025-02-03T09:04:42.485Z", "lft": 10, "rght": 11, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 44, "fields": {"name": "Утепленные пальто", "parent": 33, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_VQv6MCW.jpg", "ordering": 0, "created_at": "2025-02-03T09:05:01.335Z", "updated_at": "2025-02-03T09:05:01.335Z", "lft": 12, "rght": 13, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 45, "fields": {"name": "Горнолыжные куртки", "parent": 33, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_T1uNZxV.jpg", "ordering": 0, "created_at": "2025-02-03T09:05:18.946Z", "updated_at": "2025-02-03T09:05:18.946Z", "lft": 4, "rght": 5, "tree_id": 5, "level": 3}}, {"model": "marketplace.category", "pk": 46, "fields": {"name": "Брюки", "parent": 28, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_xCfp0zv.jpg", "ordering": 0, "created_at": "2025-02-03T09:59:16.823Z", "updated_at": "2025-02-03T10:57:35.237Z", "lft": 25, "rght": 26, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 47, "fields": {"name": "Кофты", "parent": 28, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_APZBj4k.jpg", "ordering": 0, "created_at": "2025-02-03T09:59:46.897Z", "updated_at": "2025-02-03T10:58:22.650Z", "lft": 35, "rght": 36, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 48, "fields": {"name": "Джинсы", "parent": 28, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_RfNMtZu.jpg", "ordering": 0, "created_at": "2025-02-03T10:00:04.836Z", "updated_at": "2025-02-03T10:57:49.593Z", "lft": 31, "rght": 32, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 49, "fields": {"name": "Домашняя одежда", "parent": 28, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_4gCnCGW.jpg", "ordering": 0, "created_at": "2025-02-03T10:00:27.758Z", "updated_at": "2025-02-03T10:58:17.763Z", "lft": 33, "rght": 34, "tree_id": 5, "level": 2}}, {"model": "marketplace.category", "pk": 50, "fields": {"name": "Аксессуары", "parent": null, "description": "", "page_identificator": null, "big_image": "category_images/big_images/аксессуары.jpg", "small_image": "", "ordering": 0, "created_at": "2025-02-03T11:13:16.709Z", "updated_at": "2025-02-03T11:13:16.709Z", "lft": 1, "rght": 2, "tree_id": 2, "level": 0}}, {"model": "marketplace.category", "pk": 51, "fields": {"name": "Кухонная мебель", "parent": 39, "description": "", "page_identificator": null, "big_image": "category_images/big_images/кух_мебель.jpg", "small_image": "category_images/small_images/фон_для_мелких_5ECKDjF.jpg", "ordering": 3, "created_at": "2025-02-03T11:19:07.976Z", "updated_at": "2025-02-03T11:29:34.242Z", "lft": 2, "rght": 3, "tree_id": 4, "level": 1}}, {"model": "marketplace.category", "pk": 52, "fields": {"name": "Мягкая мебель", "parent": 39, "description": "", "page_identificator": null, "big_image": "category_images/big_images/Мягк_мебель.webp", "small_image": "", "ordering": 2, "created_at": "2025-02-03T11:23:30.442Z", "updated_at": "2025-02-03T11:29:31.358Z", "lft": 4, "rght": 5, "tree_id": 4, "level": 1}}, {"model": "marketplace.category", "pk": 53, "fields": {"name": "Твердая мебель", "parent": 39, "description": "", "page_identificator": null, "big_image": "category_images/big_images/мебель_твердая.jpg", "small_image": "", "ordering": 1, "created_at": "2025-02-03T11:28:01.879Z", "updated_at": "2025-02-03T11:29:27.922Z", "lft": 6, "rght": 7, "tree_id": 4, "level": 1}}, {"model": "marketplace.category", "pk": 54, "fields": {"name": "Тест", "parent": 38, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/1200x600-zinnwaldite-brown-solid-color-background_n89pSNJ.jpg", "ordering": 0, "created_at": "2025-02-06T04:04:57.173Z", "updated_at": "2025-02-06T04:04:57.173Z", "lft": 2, "rght": 3, "tree_id": 1, "level": 1}}, {"model": "marketplace.category", "pk": 55, "fields": {"name": "Туфли", "parent": 30, "description": "", "page_identificator": null, "big_image": "", "small_image": "category_images/small_images/фон_для_мелких_CyCbuww.jpg", "ordering": 0, "created_at": "2025-02-21T13:27:05.855Z", "updated_at": "2025-02-21T13:27:05.855Z", "lft": 20, "rght": 21, "tree_id": 5, "level": 3}}, {"model": "marketplace.product", "pk": 2, "fields": {"business": 1, "category": 35, "name": "Шуба Зеленая", "description": "Легендарная модель из мягкого и блестящего меха норки, подчеркивает элегантность и статус.", "price": "2000000.00", "discount": "1780000.00", "stock_quantity": 19, "on_the_main": true, "created_at": "2025-02-03T01:54:00.811Z", "updated_at": "2025-02-06T03:49:02.970Z"}}, {"model": "marketplace.product", "pk": 3, "fields": {"business": 1, "category": 35, "name": "Шуба какая то", "description": "Роскошная и редкая шуба премиального класса с невероятно густым и шелковистым мехом.", "price": "200000.00", "discount": "0.00", "stock_quantity": 47, "on_the_main": true, "created_at": "2025-02-03T01:54:35.855Z", "updated_at": "2025-02-06T03:48:55.906Z"}}, {"model": "marketplace.product", "pk": 4, "fields": {"business": 1, "category": 36, "name": "Куртка какая то", "description": "Практичная и теплая модель из стриженой овчины, устойчива к влаге и износу.", "price": "200000.00", "discount": "0.00", "stock_quantity": 52, "on_the_main": true, "created_at": "2025-02-03T02:28:19.320Z", "updated_at": "2025-02-06T03:48:46.946Z"}}, {"model": "marketplace.product", "pk": 5, "fields": {"business": 1, "category": 36, "name": "Куртка еще какая то", "description": "Эффектная модель с длинным пушистым мехом, придающим объем и шикарный вид.", "price": "45000.00", "discount": "0.00", "stock_quantity": 45, "on_the_main": true, "created_at": "2025-02-03T02:28:42.316Z", "updated_at": "2025-02-06T03:48:41.985Z"}}, {"model": "marketplace.product", "pk": 6, "fields": {"business": 1, "category": 35, "name": "Шубка", "description": "Изящная и утонченная шуба с уникальным завитковым мехом, отлично подходит для делового образа.", "price": "1230000.00", "discount": "0.00", "stock_quantity": 8, "on_the_main": true, "created_at": "2025-02-03T02:29:09.940Z", "updated_at": "2025-02-06T03:48:37.393Z"}}, {"model": "marketplace.product", "pk": 7, "fields": {"business": 1, "category": 35, "name": "Шубка еще", "description": "Яркая и теплая модель с роскошным мехом лисы, добавляет выразительности образу.", "price": "4567890.00", "discount": "0.00", "stock_quantity": 6, "on_the_main": true, "created_at": "2025-02-03T02:29:31.103Z", "updated_at": "2025-02-06T03:48:32.694Z"}}, {"model": "marketplace.product", "pk": 8, "fields": {"business": 1, "category": 35, "name": "Шуба синия", "description": "Эксклюзивная шуба с невероятно мягким мехом шиншиллы, ценится за легкость и воздушность.", "price": "6000000.00", "discount": "0.00", "stock_quantity": 4, "on_the_main": true, "created_at": "2025-02-03T02:29:51.153Z", "updated_at": "2025-02-06T03:48:28.363Z"}}, {"model": "marketplace.product", "pk": 9, "fields": {"business": 1, "category": 35, "name": "Шуба зеленая", "description": "Многофункциональная модель с отстегивающимися рукавами или капюшоном, адаптируется к погоде.", "price": "45664875.00", "discount": "0.00", "stock_quantity": 56557, "on_the_main": true, "created_at": "2025-02-03T02:31:54.886Z", "updated_at": "2025-02-06T03:48:24.766Z"}}, {"model": "marketplace.product", "pk": 10, "fields": {"business": 1, "category": 35, "name": "Шубааа", "description": "Легкая и удобная модель, идеальна для повседневной носки и активного образа жизни.", "price": "34534.00", "discount": "0.00", "stock_quantity": 4, "on_the_main": true, "created_at": "2025-02-03T02:32:04.900Z", "updated_at": "2025-02-06T03:48:19.952Z"}}, {"model": "marketplace.product", "pk": 11, "fields": {"business": 1, "category": 35, "name": "Шубаа", "description": "Укороченная шуба с комфортным кроем, не сковывает движения и отлично подходит для водителей.", "price": "3455345.00", "discount": "0.00", "stock_quantity": 3, "on_the_main": true, "created_at": "2025-02-03T02:32:16.550Z", "updated_at": "2025-02-06T03:48:12.894Z"}}, {"model": "marketplace.product", "pk": 12, "fields": {"business": 1, "category": 35, "name": "Шуба из норки", "description": "Легкая, но теплая модель с особенной текстурой меха, стильный выбор на холодную погоду.", "price": "565666.00", "discount": "0.00", "stock_quantity": 90, "on_the_main": true, "created_at": "2025-02-03T02:32:35.993Z", "updated_at": "2025-02-06T03:48:07.686Z"}}, {"model": "marketplace.product", "pk": 13, "fields": {"business": 1, "category": 36, "name": "Куртка Черная", "description": "Статусная модель с густым, блестящим мехом, придающая роскоши и элегантности.", "price": "70000.00", "discount": "0.00", "stock_quantity": 127, "on_the_main": true, "created_at": "2025-02-03T02:33:16.962Z", "updated_at": "2025-02-06T03:48:04.063Z"}}, {"model": "marketplace.product", "pk": 14, "fields": {"business": 1, "category": 36, "name": "Куртка черная", "description": "Нежный и утонченный вариант для особых случаев, подчеркнет женственность и изысканность.", "price": "60000.00", "discount": "55000.00", "stock_quantity": 98, "on_the_main": true, "created_at": "2025-02-03T02:33:42.415Z", "updated_at": "2025-02-06T03:47:57.678Z"}}, {"model": "marketplace.product", "pk": 15, "fields": {"business": 2, "category": 32, "name": "Дикие Кроссы", "description": "", "price": "23000.00", "discount": "0.00", "stock_quantity": 100, "on_the_main": false, "created_at": "2025-02-03T06:05:58.031Z", "updated_at": "2025-02-03T06:05:58.031Z"}}, {"model": "marketplace.product", "pk": 16, "fields": {"business": 1, "category": 45, "name": "Шуба тест", "description": "Описание аааааааааа", "price": "34343.00", "discount": null, "stock_quantity": 12, "on_the_main": true, "created_at": "2025-02-06T02:10:25.640Z", "updated_at": "2025-02-06T03:17:52.523Z"}}, {"model": "marketplace.product", "pk": 19, "fields": {"business": 1, "category": 38, "name": "Тонировка", "description": "Описание", "price": "4000.00", "discount": null, "stock_quantity": 89, "on_the_main": true, "created_at": "2025-02-06T03:51:33.335Z", "updated_at": "2025-02-06T03:51:33.335Z"}}, {"model": "marketplace.product", "pk": 20, "fields": {"business": 1, "category": 35, "name": "Петр", "description": "iuo", "price": "78.00", "discount": null, "stock_quantity": 78, "on_the_main": true, "created_at": "2025-02-06T07:34:39.965Z", "updated_at": "2025-02-06T07:34:39.965Z"}}, {"model": "marketplace.product", "pk": 22, "fields": {"business": 1, "category": 35, "name": "rty", "description": "rty", "price": "5656.00", "discount": null, "stock_quantity": 67676, "on_the_main": true, "created_at": "2025-02-06T07:38:40.066Z", "updated_at": "2025-02-06T07:39:32.719Z"}}, {"model": "marketplace.product", "pk": 23, "fields": {"business": 2, "category": 32, "name": "Adidas", "description": "Adidas", "price": "30000.00", "discount": null, "stock_quantity": 47, "on_the_main": true, "created_at": "2025-02-06T07:58:38.113Z", "updated_at": "2025-02-06T07:58:38.113Z"}}, {"model": "marketplace.product", "pk": 24, "fields": {"business": 3, "category": 51, "name": "Шкаф", "description": "30х30х80", "price": "100000.00", "discount": null, "stock_quantity": 90, "on_the_main": true, "created_at": "2025-02-22T10:19:13.213Z", "updated_at": "2025-02-22T10:19:13.213Z"}}, {"model": "marketplace.attribute", "pk": 1, "fields": {"name": "Цвет"}}, {"model": "marketplace.attribute", "pk": 2, "fields": {"name": "Материал"}}, {"model": "marketplace.attribute", "pk": 3, "fields": {"name": "Состав"}}, {"model": "marketplace.attribute", "pk": 4, "fields": {"name": "Размеры"}}, {"model": "marketplace.productattribute", "pk": 1, "fields": {"product": 14, "attribute": 2, "value": "Синтипон"}}, {"model": "marketplace.productattribute", "pk": 2, "fields": {"product": 14, "attribute": 3, "value": "100% натуральная кожа"}}, {"model": "marketplace.productattribute", "pk": 3, "fields": {"product": 14, "attribute": 1, "value": "Черный"}}, {"model": "marketplace.productattribute", "pk": 4, "fields": {"product": 15, "attribute": 1, "value": "Белый"}}, {"model": "marketplace.productimage", "pk": 3, "fields": {"product": 2, "image": "product_images/империя_1.jpg", "created_at": "2025-02-03T01:55:03.155Z"}}, {"model": "marketplace.productimage", "pk": 4, "fields": {"product": 3, "image": "product_images/империя_2.jpg", "created_at": "2025-02-03T01:55:11.055Z"}}, {"model": "marketplace.productimage", "pk": 5, "fields": {"product": 4, "image": "product_images/империя_7.jpg", "created_at": "2025-02-03T02:34:41.904Z"}}, {"model": "marketplace.productimage", "pk": 6, "fields": {"product": 5, "image": "product_images/империя_8.jpg", "created_at": "2025-02-03T02:34:50.518Z"}}, {"model": "marketplace.productimage", "pk": 7, "fields": {"product": 6, "image": "product_images/империя_3.jpg", "created_at": "2025-02-03T02:34:58.113Z"}}, {"model": "marketplace.productimage", "pk": 8, "fields": {"product": 7, "image": "product_images/империя_4.jpg", "created_at": "2025-02-03T02:35:05.445Z"}}, {"model": "marketplace.productimage", "pk": 9, "fields": {"product": 8, "image": "product_images/империя_5.jpg", "created_at": "2025-02-03T02:35:13.856Z"}}, {"model": "marketplace.productimage", "pk": 10, "fields": {"product": 9, "image": "product_images/империя_12.jpg", "created_at": "2025-02-03T02:35:30.724Z"}}, {"model": "marketplace.productimage", "pk": 11, "fields": {"product": 10, "image": "product_images/империя_10.jpg", "created_at": "2025-02-03T02:35:37.546Z"}}, {"model": "marketplace.productimage", "pk": 12, "fields": {"product": 11, "image": "product_images/империя_11.jpg", "created_at": "2025-02-03T02:35:43.659Z"}}, {"model": "marketplace.productimage", "pk": 13, "fields": {"product": 12, "image": "product_images/империя_14.jpg", "created_at": "2025-02-03T02:35:51.703Z"}}, {"model": "marketplace.productimage", "pk": 14, "fields": {"product": 13, "image": "product_images/империя_6.jpg", "created_at": "2025-02-03T02:35:56.619Z"}}, {"model": "marketplace.productimage", "pk": 15, "fields": {"product": 14, "image": "product_images/империя_9.jpg", "created_at": "2025-02-03T02:36:08.476Z"}}, {"model": "marketplace.productimage", "pk": 16, "fields": {"product": 15, "image": "product_images/дикие_кроссы.jpg", "created_at": "2025-02-03T06:05:58.034Z"}}, {"model": "marketplace.productimage", "pk": 24, "fields": {"product": 2, "image": "product_images/аксессуары_bRC3DKu.jpg", "created_at": "2025-02-06T01:25:26.885Z"}}, {"model": "marketplace.productimage", "pk": 25, "fields": {"product": 2, "image": "product_images/военн_HlvUbKR.jpeg", "created_at": "2025-02-06T01:25:32.551Z"}}, {"model": "marketplace.productimage", "pk": 26, "fields": {"product": 16, "image": "product_images/аксессуары_rxC4Nl0.jpg", "created_at": "2025-02-06T02:10:25.648Z"}}, {"model": "marketplace.productimage", "pk": 30, "fields": {"product": 19, "image": "product_images/империя_3_VO0DgqC.jpg", "created_at": "2025-02-06T03:51:33.341Z"}}, {"model": "marketplace.productimage", "pk": 31, "fields": {"product": 20, "image": "product_images/мужская.webp", "created_at": "2025-02-06T07:34:39.967Z"}}, {"model": "marketplace.productimage", "pk": 33, "fields": {"product": 22, "image": "product_images/империя_3_GFVEsHQ.jpg", "created_at": "2025-02-06T07:38:40.069Z"}}, {"model": "marketplace.productimage", "pk": 34, "fields": {"product": 23, "image": "product_images/RTLADM982801_23954793_1_v1.webp", "created_at": "2025-02-06T07:58:38.123Z"}}, {"model": "marketplace.productimage", "pk": 35, "fields": {"product": 22, "image": "product_images/женская.png", "created_at": "2025-02-21T14:37:18.656Z"}}, {"model": "marketplace.productimage", "pk": 37, "fields": {"product": 24, "image": "atto/products/мебель_твердая.jpg", "created_at": "2025-02-22T10:36:32.121Z"}}]
+[
+{
+  "model": "core.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$KluqxbIynjDygJAqIkHvz1$8lV97XHtLSktCNRMkAm2EHPFGb8gc8Q9+b102e7XkoQ=",
+    "last_login": "2025-02-22T10:52:53.668Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-02-01T03:20:04Z",
+    "phone": null,
+    "groups": [
+      4
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$joveHUPAANfFVjkN4LCYhD$Uu7SBSTUQUMPt2SjN3YpcZS87XDfGsu9IOg1MEB6kkE=",
+    "last_login": "2025-02-04T02:43:42Z",
+    "is_superuser": false,
+    "username": "Artur",
+    "first_name": "",
+    "last_name": "",
+    "email": "qwerty.gogi@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-02-03T11:59:00Z",
+    "phone": null,
+    "groups": [
+      5
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.role",
+  "pk": 1,
+  "fields": {
+    "name": "Businessmen",
+    "users": [
+      2,
+      1
+    ]
+  }
+},
+{
+  "model": "core.businesstype",
+  "pk": 1,
+  "fields": {
+    "name": "РњР°СЂРєРµС‚РїР»РµР№СЃ",
+    "description": "РњР°СЂРєРµС‚РїР»РµР№СЃ - С‚РѕСЂРіРѕРІР°СЏ РїР»РѕС‰Р°РґРєР° СЃРѕ РІСЃРµРј - РІСЃРµРјРё С‚РѕРІР°СЂР°РјРё",
+    "url": "marketplace:main"
+  }
+},
+{
+  "model": "core.businesstype",
+  "pk": 2,
+  "fields": {
+    "name": "РўР Р¦",
+    "description": "РСЃСЃР»РµРґСѓР№С‚Рµ С‚РѕСЂРіРѕРІС‹Рµ С†РµРЅС‚СЂС‹ СЃРІРѕРµРіРѕ РіРѕСЂРѕРґР°! РЎРјРѕС‚СЂРёС‚Рµ Р°СЃСЃРѕСЂС‚РёРјРµРЅС‚ С‚РѕРІР°СЂРѕРІ, Рё РЅРµ СѓРїСѓСЃС‚РёС‚Рµ СЃР°РјС‹Рµ Р±РѕР»СЊС€РёРµ СЃРєРёРґРєРё!",
+    "url": "mall:main"
+  }
+},
+{
+  "model": "core.businesstype",
+  "pk": 3,
+  "fields": {
+    "name": "Р РµСЃС‚РѕСЂР°РЅС‹",
+    "description": "РҐРѕС‚РёС‚Рµ РєСѓС€Р°С‚СЊ? РўРѕРіРґР° РЅР°Р¶РёРјР°Р№ СЃСЋРґР°, С‚СѓС‚ СѓРІРёРґРёС€СЊ РІСЃРµ СЂРµСЃС‚РѕСЂР°РЅС‹ СЃРІРѕРµРіРѕ РіРѕСЂРѕРґР°, СЃРјРѕР¶РµС€СЊ Р·Р°РєР°Р·Р°С‚СЊ РґРѕСЃС‚Р°РІРєСѓ Рё Р·Р°Р±СЂРѕРЅРёСЂРѕРІР°С‚СЊ СЃС‚РѕР»РёРє =)",
+    "url": "restaurants:main"
+  }
+},
+{
+  "model": "core.business",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "business_type": 1,
+    "name": "РРјРїРµСЂРёСЏ",
+    "description": "РњР°РіР°Р·РёРЅ РёРјРїРµСЂРёСЏ - РѕРґРёРЅ РёР· Р»СѓС‡С€РёС… РјР°РіР°Р·РёРЅРѕРІ РІРµС…СЂРЅРµР№ РѕРґРµР¶РґС‹ РЅР°С€РµРіРѕ РіРѕСЂРѕРґР°!",
+    "address": "Р“Р°РіР°СЂРёРЅР°",
+    "phone": "87073945075",
+    "business_logo": "",
+    "html_template": "",
+    "product_card_template": "",
+    "product_detail_template": "",
+    "background_image": "business/back_imperia.jpg",
+    "created_at": "2025-02-03T00:59:41.179Z",
+    "updated_at": "2025-02-21T14:36:15.896Z",
+    "slug": "imperia"
+  }
+},
+{
+  "model": "core.business",
+  "pk": 2,
+  "fields": {
+    "owner": 2,
+    "business_type": 1,
+    "name": "Hot_Shmot",
+    "description": "Hot_Shmot - magaz super hype odezhdii",
+    "address": "Malika gabdullina",
+    "phone": "87077077707",
+    "business_logo": "",
+    "html_template": "",
+    "product_card_template": "",
+    "product_detail_template": "",
+    "background_image": "business/Р»РѕРіРѕ_Р±СЌРє.webp",
+    "created_at": "2025-02-03T06:03:44.504Z",
+    "updated_at": "2025-02-21T13:21:10.569Z",
+    "slug": "hot_shmot"
+  }
+},
+{
+  "model": "core.business",
+  "pk": 3,
+  "fields": {
+    "owner": 1,
+    "business_type": 1,
+    "name": "РђС‚С‚Рѕ",
+    "description": "РђС‚С‚Рѕ Р°РѕРѕРєС‰РѕР°С‰РєРѕР°С‰РєРѕР°",
+    "address": "Р“Р°Р±РґСѓР»РёРЅР° 127Рђ",
+    "phone": "9999999991",
+    "business_logo": "business_logo/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
+    "html_template": "atto/own_site_files/test.html",
+    "product_card_template": "",
+    "product_detail_template": "business/test_wazMfOH.html",
+    "background_image": "business/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
+    "created_at": "2025-02-22T10:06:27.869Z",
+    "updated_at": "2025-02-22T10:58:39.235Z",
+    "slug": "atto"
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 25,
+  "fields": {
+    "name": "РћРґРµР¶РґР° Рё РѕР±СѓРІСЊ",
+    "parent": null,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РѕРґРµР¶РґР°.png",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:13:09.781Z",
+    "updated_at": "2025-02-21T13:25:33.794Z",
+    "lft": 1,
+    "rght": 42,
+    "tree_id": 5,
+    "level": 0
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 26,
+  "fields": {
+    "name": "Р–РµРЅСЃРєР°СЏ",
+    "parent": 25,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/Р¶РµРЅСЃРєР°СЏ.png",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:13:19.995Z",
+    "updated_at": "2025-02-03T05:07:36.533Z",
+    "lft": 2,
+    "rght": 23,
+    "tree_id": 5,
+    "level": 1
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 28,
+  "fields": {
+    "name": "РњСѓР¶СЃРєР°СЏ",
+    "parent": 25,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РјСѓР¶СЃРєР°СЏ.png",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:13:53.900Z",
+    "updated_at": "2025-02-03T05:07:50.798Z",
+    "lft": 24,
+    "rght": 41,
+    "tree_id": 5,
+    "level": 1
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 29,
+  "fields": {
+    "name": "РћР±СѓРІСЊ",
+    "parent": 28,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_zpKbEqd.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:14:08.451Z",
+    "updated_at": "2025-02-03T10:58:28.181Z",
+    "lft": 37,
+    "rght": 40,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 30,
+  "fields": {
+    "name": "РћР±СѓРІСЊ",
+    "parent": 26,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_vhkxvhp.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:14:25.233Z",
+    "updated_at": "2025-02-03T05:34:06.161Z",
+    "lft": 17,
+    "rght": 22,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 31,
+  "fields": {
+    "name": "РљСЂРѕСЃСЃРѕРІРєРё",
+    "parent": 30,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_3XciXRl.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:14:33.648Z",
+    "updated_at": "2025-02-03T05:34:14.456Z",
+    "lft": 18,
+    "rght": 19,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 32,
+  "fields": {
+    "name": "РљСЂРѕСЃСЃРѕРІРєРё",
+    "parent": 29,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/1200x600-zinnwaldite-brown-solid-color-background_cHTCRXl.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:14:40.797Z",
+    "updated_at": "2025-02-03T10:58:36.056Z",
+    "lft": 38,
+    "rght": 39,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 33,
+  "fields": {
+    "name": "Р’РµСЂС…РЅСЏСЏ РѕРґРµР¶РґР°",
+    "parent": 26,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС….jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:14:49.211Z",
+    "updated_at": "2025-02-03T05:33:41.757Z",
+    "lft": 3,
+    "rght": 16,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 34,
+  "fields": {
+    "name": "Р’РµСЂС…РЅСЏСЏ РѕРґРµР¶РґР°",
+    "parent": 28,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_lxCc03x.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:14:58.618Z",
+    "updated_at": "2025-02-03T10:57:41.815Z",
+    "lft": 27,
+    "rght": 30,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 35,
+  "fields": {
+    "name": "РЁСѓР±С‹",
+    "parent": 33,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_XDvAdLm.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:15:11.647Z",
+    "updated_at": "2025-02-03T05:33:58.862Z",
+    "lft": 14,
+    "rght": 15,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 36,
+  "fields": {
+    "name": "РљСѓСЂС‚РєРё РЅР° СЃРёРЅС‚РµРїРѕРЅРµ",
+    "parent": 33,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_txWRPz9.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:15:19.806Z",
+    "updated_at": "2025-02-03T09:03:49.044Z",
+    "lft": 8,
+    "rght": 9,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 37,
+  "fields": {
+    "name": "РљСѓСЂС‚РєРё",
+    "parent": 34,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_L1XWrc1.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:15:36.837Z",
+    "updated_at": "2025-02-03T05:34:32.891Z",
+    "lft": 28,
+    "rght": 29,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 38,
+  "fields": {
+    "name": "РђРІС‚РѕС‚РѕРІР°СЂС‹",
+    "parent": null,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/Р°РІС‚РѕР·Р°РїС‡Р°СЃС‚Рё.jpg",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:23:49.615Z",
+    "updated_at": "2025-02-03T04:43:40.532Z",
+    "lft": 1,
+    "rght": 4,
+    "tree_id": 1,
+    "level": 0
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 39,
+  "fields": {
+    "name": "РњРµР±РµР»СЊ",
+    "parent": null,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РјРµР±РµР»СЊ_GVl0HZu.png",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:23:58.322Z",
+    "updated_at": "2025-02-03T11:16:30.228Z",
+    "lft": 1,
+    "rght": 8,
+    "tree_id": 4,
+    "level": 0
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 40,
+  "fields": {
+    "name": "Р”Р»СЏ РґР°С‡Рё",
+    "parent": null,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РґР°С‡Р°.jpg",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:24:06.744Z",
+    "updated_at": "2025-02-03T04:44:04.780Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 3,
+    "level": 0
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 41,
+  "fields": {
+    "name": "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
+    "parent": null,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РЅРѕСѓС‚Р±СѓРє.jpg",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T04:24:15.801Z",
+    "updated_at": "2025-02-03T04:44:33.026Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 6,
+    "level": 0
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 42,
+  "fields": {
+    "name": "Р”СѓР±Р»РµРЅРєРё",
+    "parent": 33,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_QC50Neq.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T09:04:21.297Z",
+    "updated_at": "2025-02-03T09:04:21.297Z",
+    "lft": 6,
+    "rght": 7,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 43,
+  "fields": {
+    "name": "РџР°СЂРєРё",
+    "parent": 33,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_O34kMIM.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T09:04:42.485Z",
+    "updated_at": "2025-02-03T09:04:42.485Z",
+    "lft": 10,
+    "rght": 11,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 44,
+  "fields": {
+    "name": "РЈС‚РµРїР»РµРЅРЅС‹Рµ РїР°Р»СЊС‚Рѕ",
+    "parent": 33,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_VQv6MCW.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T09:05:01.335Z",
+    "updated_at": "2025-02-03T09:05:01.335Z",
+    "lft": 12,
+    "rght": 13,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 45,
+  "fields": {
+    "name": "Р“РѕСЂРЅРѕР»С‹Р¶РЅС‹Рµ РєСѓСЂС‚РєРё",
+    "parent": 33,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_T1uNZxV.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T09:05:18.946Z",
+    "updated_at": "2025-02-03T09:05:18.946Z",
+    "lft": 4,
+    "rght": 5,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 46,
+  "fields": {
+    "name": "Р‘СЂСЋРєРё",
+    "parent": 28,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_xCfp0zv.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T09:59:16.823Z",
+    "updated_at": "2025-02-03T10:57:35.237Z",
+    "lft": 25,
+    "rght": 26,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 47,
+  "fields": {
+    "name": "РљРѕС„С‚С‹",
+    "parent": 28,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_APZBj4k.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T09:59:46.897Z",
+    "updated_at": "2025-02-03T10:58:22.650Z",
+    "lft": 35,
+    "rght": 36,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 48,
+  "fields": {
+    "name": "Р”Р¶РёРЅСЃС‹",
+    "parent": 28,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_RfNMtZu.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T10:00:04.836Z",
+    "updated_at": "2025-02-03T10:57:49.593Z",
+    "lft": 31,
+    "rght": 32,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 49,
+  "fields": {
+    "name": "Р”РѕРјР°С€РЅСЏСЏ РѕРґРµР¶РґР°",
+    "parent": 28,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_4gCnCGW.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-03T10:00:27.758Z",
+    "updated_at": "2025-02-03T10:58:17.763Z",
+    "lft": 33,
+    "rght": 34,
+    "tree_id": 5,
+    "level": 2
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 50,
+  "fields": {
+    "name": "РђРєСЃРµСЃСЃСѓР°СЂС‹",
+    "parent": null,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/Р°РєСЃРµСЃСЃСѓР°СЂС‹.jpg",
+    "small_image": "",
+    "ordering": 0,
+    "created_at": "2025-02-03T11:13:16.709Z",
+    "updated_at": "2025-02-03T11:13:16.709Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 2,
+    "level": 0
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 51,
+  "fields": {
+    "name": "РљСѓС…РѕРЅРЅР°СЏ РјРµР±РµР»СЊ",
+    "parent": 39,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РєСѓС…_РјРµР±РµР»СЊ.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_5ECKDjF.jpg",
+    "ordering": 3,
+    "created_at": "2025-02-03T11:19:07.976Z",
+    "updated_at": "2025-02-03T11:29:34.242Z",
+    "lft": 2,
+    "rght": 3,
+    "tree_id": 4,
+    "level": 1
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 52,
+  "fields": {
+    "name": "РњСЏРіРєР°СЏ РјРµР±РµР»СЊ",
+    "parent": 39,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РњСЏРіРє_РјРµР±РµР»СЊ.webp",
+    "small_image": "",
+    "ordering": 2,
+    "created_at": "2025-02-03T11:23:30.442Z",
+    "updated_at": "2025-02-03T11:29:31.358Z",
+    "lft": 4,
+    "rght": 5,
+    "tree_id": 4,
+    "level": 1
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 53,
+  "fields": {
+    "name": "РўРІРµСЂРґР°СЏ РјРµР±РµР»СЊ",
+    "parent": 39,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "category_images/big_images/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
+    "small_image": "",
+    "ordering": 1,
+    "created_at": "2025-02-03T11:28:01.879Z",
+    "updated_at": "2025-02-03T11:29:27.922Z",
+    "lft": 6,
+    "rght": 7,
+    "tree_id": 4,
+    "level": 1
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 54,
+  "fields": {
+    "name": "РўРµСЃС‚",
+    "parent": 38,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/1200x600-zinnwaldite-brown-solid-color-background_n89pSNJ.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-06T04:04:57.173Z",
+    "updated_at": "2025-02-06T04:04:57.173Z",
+    "lft": 2,
+    "rght": 3,
+    "tree_id": 1,
+    "level": 1
+  }
+},
+{
+  "model": "marketplace.category",
+  "pk": 55,
+  "fields": {
+    "name": "РўСѓС„Р»Рё",
+    "parent": 30,
+    "description": "",
+    "page_identificator": null,
+    "big_image": "",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_CyCbuww.jpg",
+    "ordering": 0,
+    "created_at": "2025-02-21T13:27:05.855Z",
+    "updated_at": "2025-02-21T13:27:05.855Z",
+    "lft": 20,
+    "rght": 21,
+    "tree_id": 5,
+    "level": 3
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 2,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р° Р—РµР»РµРЅР°СЏ",
+    "description": "Р›РµРіРµРЅРґР°СЂРЅР°СЏ РјРѕРґРµР»СЊ РёР· РјСЏРіРєРѕРіРѕ Рё Р±Р»РµСЃС‚СЏС‰РµРіРѕ РјРµС…Р° РЅРѕСЂРєРё, РїРѕРґС‡РµСЂРєРёРІР°РµС‚ СЌР»РµРіР°РЅС‚РЅРѕСЃС‚СЊ Рё СЃС‚Р°С‚СѓСЃ.",
+    "price": "2000000.00",
+    "discount": "1780000.00",
+    "stock_quantity": 19,
+    "on_the_main": true,
+    "created_at": "2025-02-03T01:54:00.811Z",
+    "updated_at": "2025-02-06T03:49:02.970Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 3,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р° РєР°РєР°СЏ С‚Рѕ",
+    "description": "Р РѕСЃРєРѕС€РЅР°СЏ Рё СЂРµРґРєР°СЏ С€СѓР±Р° РїСЂРµРјРёР°Р»СЊРЅРѕРіРѕ РєР»Р°СЃСЃР° СЃ РЅРµРІРµСЂРѕСЏС‚РЅРѕ РіСѓСЃС‚С‹Рј Рё С€РµР»РєРѕРІРёСЃС‚С‹Рј РјРµС…РѕРј.",
+    "price": "200000.00",
+    "discount": "0.00",
+    "stock_quantity": 47,
+    "on_the_main": true,
+    "created_at": "2025-02-03T01:54:35.855Z",
+    "updated_at": "2025-02-06T03:48:55.906Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 4,
+  "fields": {
+    "business": 1,
+    "category": 36,
+    "name": "РљСѓСЂС‚РєР° РєР°РєР°СЏ С‚Рѕ",
+    "description": "РџСЂР°РєС‚РёС‡РЅР°СЏ Рё С‚РµРїР»Р°СЏ РјРѕРґРµР»СЊ РёР· СЃС‚СЂРёР¶РµРЅРѕР№ РѕРІС‡РёРЅС‹, СѓСЃС‚РѕР№С‡РёРІР° Рє РІР»Р°РіРµ Рё РёР·РЅРѕСЃСѓ.",
+    "price": "200000.00",
+    "discount": "0.00",
+    "stock_quantity": 52,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:28:19.320Z",
+    "updated_at": "2025-02-06T03:48:46.946Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 5,
+  "fields": {
+    "business": 1,
+    "category": 36,
+    "name": "РљСѓСЂС‚РєР° РµС‰Рµ РєР°РєР°СЏ С‚Рѕ",
+    "description": "Р­С„С„РµРєС‚РЅР°СЏ РјРѕРґРµР»СЊ СЃ РґР»РёРЅРЅС‹Рј РїСѓС€РёСЃС‚С‹Рј РјРµС…РѕРј, РїСЂРёРґР°СЋС‰РёРј РѕР±СЉРµРј Рё С€РёРєР°СЂРЅС‹Р№ РІРёРґ.",
+    "price": "45000.00",
+    "discount": "0.00",
+    "stock_quantity": 45,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:28:42.316Z",
+    "updated_at": "2025-02-06T03:48:41.985Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 6,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±РєР°",
+    "description": "РР·СЏС‰РЅР°СЏ Рё СѓС‚РѕРЅС‡РµРЅРЅР°СЏ С€СѓР±Р° СЃ СѓРЅРёРєР°Р»СЊРЅС‹Рј Р·Р°РІРёС‚РєРѕРІС‹Рј РјРµС…РѕРј, РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РґРµР»РѕРІРѕРіРѕ РѕР±СЂР°Р·Р°.",
+    "price": "1230000.00",
+    "discount": "0.00",
+    "stock_quantity": 8,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:29:09.940Z",
+    "updated_at": "2025-02-06T03:48:37.393Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 7,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±РєР° РµС‰Рµ",
+    "description": "РЇСЂРєР°СЏ Рё С‚РµРїР»Р°СЏ РјРѕРґРµР»СЊ СЃ СЂРѕСЃРєРѕС€РЅС‹Рј РјРµС…РѕРј Р»РёСЃС‹, РґРѕР±Р°РІР»СЏРµС‚ РІС‹СЂР°Р·РёС‚РµР»СЊРЅРѕСЃС‚Рё РѕР±СЂР°Р·Сѓ.",
+    "price": "4567890.00",
+    "discount": "0.00",
+    "stock_quantity": 6,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:29:31.103Z",
+    "updated_at": "2025-02-06T03:48:32.694Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 8,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р° СЃРёРЅРёСЏ",
+    "description": "Р­РєСЃРєР»СЋР·РёРІРЅР°СЏ С€СѓР±Р° СЃ РЅРµРІРµСЂРѕСЏС‚РЅРѕ РјСЏРіРєРёРј РјРµС…РѕРј С€РёРЅС€РёР»Р»С‹, С†РµРЅРёС‚СЃСЏ Р·Р° Р»РµРіРєРѕСЃС‚СЊ Рё РІРѕР·РґСѓС€РЅРѕСЃС‚СЊ.",
+    "price": "6000000.00",
+    "discount": "0.00",
+    "stock_quantity": 4,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:29:51.153Z",
+    "updated_at": "2025-02-06T03:48:28.363Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 9,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р° Р·РµР»РµРЅР°СЏ",
+    "description": "РњРЅРѕРіРѕС„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ СЃ РѕС‚СЃС‚РµРіРёРІР°СЋС‰РёРјРёСЃСЏ СЂСѓРєР°РІР°РјРё РёР»Рё РєР°РїСЋС€РѕРЅРѕРј, Р°РґР°РїС‚РёСЂСѓРµС‚СЃСЏ Рє РїРѕРіРѕРґРµ.",
+    "price": "45664875.00",
+    "discount": "0.00",
+    "stock_quantity": 56557,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:31:54.886Z",
+    "updated_at": "2025-02-06T03:48:24.766Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 10,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р°Р°Р°",
+    "description": "Р›РµРіРєР°СЏ Рё СѓРґРѕР±РЅР°СЏ РјРѕРґРµР»СЊ, РёРґРµР°Р»СЊРЅР° РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё Рё Р°РєС‚РёРІРЅРѕРіРѕ РѕР±СЂР°Р·Р° Р¶РёР·РЅРё.",
+    "price": "34534.00",
+    "discount": "0.00",
+    "stock_quantity": 4,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:32:04.900Z",
+    "updated_at": "2025-02-06T03:48:19.952Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 11,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р°Р°",
+    "description": "РЈРєРѕСЂРѕС‡РµРЅРЅР°СЏ С€СѓР±Р° СЃ РєРѕРјС„РѕСЂС‚РЅС‹Рј РєСЂРѕРµРј, РЅРµ СЃРєРѕРІС‹РІР°РµС‚ РґРІРёР¶РµРЅРёСЏ Рё РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РІРѕРґРёС‚РµР»РµР№.",
+    "price": "3455345.00",
+    "discount": "0.00",
+    "stock_quantity": 3,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:32:16.550Z",
+    "updated_at": "2025-02-06T03:48:12.894Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 12,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РЁСѓР±Р° РёР· РЅРѕСЂРєРё",
+    "description": "Р›РµРіРєР°СЏ, РЅРѕ С‚РµРїР»Р°СЏ РјРѕРґРµР»СЊ СЃ РѕСЃРѕР±РµРЅРЅРѕР№ С‚РµРєСЃС‚СѓСЂРѕР№ РјРµС…Р°, СЃС‚РёР»СЊРЅС‹Р№ РІС‹Р±РѕСЂ РЅР° С…РѕР»РѕРґРЅСѓСЋ РїРѕРіРѕРґСѓ.",
+    "price": "565666.00",
+    "discount": "0.00",
+    "stock_quantity": 90,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:32:35.993Z",
+    "updated_at": "2025-02-06T03:48:07.686Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 13,
+  "fields": {
+    "business": 1,
+    "category": 36,
+    "name": "РљСѓСЂС‚РєР° Р§РµСЂРЅР°СЏ",
+    "description": "РЎС‚Р°С‚СѓСЃРЅР°СЏ РјРѕРґРµР»СЊ СЃ РіСѓСЃС‚С‹Рј, Р±Р»РµСЃС‚СЏС‰РёРј РјРµС…РѕРј, РїСЂРёРґР°СЋС‰Р°СЏ СЂРѕСЃРєРѕС€Рё Рё СЌР»РµРіР°РЅС‚РЅРѕСЃС‚Рё.",
+    "price": "70000.00",
+    "discount": "0.00",
+    "stock_quantity": 127,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:33:16.962Z",
+    "updated_at": "2025-02-06T03:48:04.063Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 14,
+  "fields": {
+    "business": 1,
+    "category": 36,
+    "name": "РљСѓСЂС‚РєР° С‡РµСЂРЅР°СЏ",
+    "description": "РќРµР¶РЅС‹Р№ Рё СѓС‚РѕРЅС‡РµРЅРЅС‹Р№ РІР°СЂРёР°РЅС‚ РґР»СЏ РѕСЃРѕР±С‹С… СЃР»СѓС‡Р°РµРІ, РїРѕРґС‡РµСЂРєРЅРµС‚ Р¶РµРЅСЃС‚РІРµРЅРЅРѕСЃС‚СЊ Рё РёР·С‹СЃРєР°РЅРЅРѕСЃС‚СЊ.",
+    "price": "60000.00",
+    "discount": "55000.00",
+    "stock_quantity": 98,
+    "on_the_main": true,
+    "created_at": "2025-02-03T02:33:42.415Z",
+    "updated_at": "2025-02-06T03:47:57.678Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 15,
+  "fields": {
+    "business": 2,
+    "category": 32,
+    "name": "Р”РёРєРёРµ РљСЂРѕСЃСЃС‹",
+    "description": "",
+    "price": "23000.00",
+    "discount": "0.00",
+    "stock_quantity": 100,
+    "on_the_main": false,
+    "created_at": "2025-02-03T06:05:58.031Z",
+    "updated_at": "2025-02-03T06:05:58.031Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 16,
+  "fields": {
+    "business": 1,
+    "category": 45,
+    "name": "РЁСѓР±Р° С‚РµСЃС‚",
+    "description": "РћРїРёСЃР°РЅРёРµ Р°Р°Р°Р°Р°Р°Р°Р°Р°Р°",
+    "price": "34343.00",
+    "discount": null,
+    "stock_quantity": 12,
+    "on_the_main": true,
+    "created_at": "2025-02-06T02:10:25.640Z",
+    "updated_at": "2025-02-06T03:17:52.523Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 19,
+  "fields": {
+    "business": 1,
+    "category": 38,
+    "name": "РўРѕРЅРёСЂРѕРІРєР°",
+    "description": "РћРїРёСЃР°РЅРёРµ",
+    "price": "4000.00",
+    "discount": null,
+    "stock_quantity": 89,
+    "on_the_main": true,
+    "created_at": "2025-02-06T03:51:33.335Z",
+    "updated_at": "2025-02-06T03:51:33.335Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 20,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "РџРµС‚СЂ",
+    "description": "iuo",
+    "price": "78.00",
+    "discount": null,
+    "stock_quantity": 78,
+    "on_the_main": true,
+    "created_at": "2025-02-06T07:34:39.965Z",
+    "updated_at": "2025-02-06T07:34:39.965Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 22,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "rty",
+    "description": "rty",
+    "price": "5656.00",
+    "discount": null,
+    "stock_quantity": 67676,
+    "on_the_main": true,
+    "created_at": "2025-02-06T07:38:40.066Z",
+    "updated_at": "2025-02-06T07:39:32.719Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 23,
+  "fields": {
+    "business": 2,
+    "category": 32,
+    "name": "Adidas",
+    "description": "Adidas",
+    "price": "30000.00",
+    "discount": null,
+    "stock_quantity": 47,
+    "on_the_main": true,
+    "created_at": "2025-02-06T07:58:38.113Z",
+    "updated_at": "2025-02-06T07:58:38.113Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 24,
+  "fields": {
+    "business": 3,
+    "category": 51,
+    "name": "РЁРєР°С„",
+    "description": "30С…30С…80",
+    "price": "100000.00",
+    "discount": null,
+    "stock_quantity": 90,
+    "on_the_main": true,
+    "created_at": "2025-02-22T10:19:13.213Z",
+    "updated_at": "2025-02-22T10:19:13.213Z"
+  }
+},
+{
+  "model": "marketplace.attribute",
+  "pk": 1,
+  "fields": {
+    "name": "Р¦РІРµС‚"
+  }
+},
+{
+  "model": "marketplace.attribute",
+  "pk": 2,
+  "fields": {
+    "name": "РњР°С‚РµСЂРёР°Р»"
+  }
+},
+{
+  "model": "marketplace.attribute",
+  "pk": 3,
+  "fields": {
+    "name": "РЎРѕСЃС‚Р°РІ"
+  }
+},
+{
+  "model": "marketplace.attribute",
+  "pk": 4,
+  "fields": {
+    "name": "Р Р°Р·РјРµСЂС‹"
+  }
+},
+{
+  "model": "marketplace.productattribute",
+  "pk": 1,
+  "fields": {
+    "product": 14,
+    "attribute": 2,
+    "value": "РЎРёРЅС‚РёРїРѕРЅ"
+  }
+},
+{
+  "model": "marketplace.productattribute",
+  "pk": 2,
+  "fields": {
+    "product": 14,
+    "attribute": 3,
+    "value": "100% РЅР°С‚СѓСЂР°Р»СЊРЅР°СЏ РєРѕР¶Р°"
+  }
+},
+{
+  "model": "marketplace.productattribute",
+  "pk": 3,
+  "fields": {
+    "product": 14,
+    "attribute": 1,
+    "value": "Р§РµСЂРЅС‹Р№"
+  }
+},
+{
+  "model": "marketplace.productattribute",
+  "pk": 4,
+  "fields": {
+    "product": 15,
+    "attribute": 1,
+    "value": "Р‘РµР»С‹Р№"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_1.jpg",
+    "created_at": "2025-02-03T01:55:03.155Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 3,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_2.jpg",
+    "created_at": "2025-02-03T01:55:11.055Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 4,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_7.jpg",
+    "created_at": "2025-02-03T02:34:41.904Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 5,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_8.jpg",
+    "created_at": "2025-02-03T02:34:50.518Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 6,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_3.jpg",
+    "created_at": "2025-02-03T02:34:58.113Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 7,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_4.jpg",
+    "created_at": "2025-02-03T02:35:05.445Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 8,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_5.jpg",
+    "created_at": "2025-02-03T02:35:13.856Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 9,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_12.jpg",
+    "created_at": "2025-02-03T02:35:30.724Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 10,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_10.jpg",
+    "created_at": "2025-02-03T02:35:37.546Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 12,
+  "fields": {
+    "product": 11,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_11.jpg",
+    "created_at": "2025-02-03T02:35:43.659Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 13,
+  "fields": {
+    "product": 12,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_14.jpg",
+    "created_at": "2025-02-03T02:35:51.703Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 14,
+  "fields": {
+    "product": 13,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_6.jpg",
+    "created_at": "2025-02-03T02:35:56.619Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 15,
+  "fields": {
+    "product": 14,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_9.jpg",
+    "created_at": "2025-02-03T02:36:08.476Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 16,
+  "fields": {
+    "product": 15,
+    "image": "product_images/РґРёРєРёРµ_РєСЂРѕСЃСЃС‹.jpg",
+    "created_at": "2025-02-03T06:05:58.034Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 24,
+  "fields": {
+    "product": 2,
+    "image": "product_images/Р°РєСЃРµСЃСЃСѓР°СЂС‹_bRC3DKu.jpg",
+    "created_at": "2025-02-06T01:25:26.885Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 25,
+  "fields": {
+    "product": 2,
+    "image": "product_images/РІРѕРµРЅРЅ_HlvUbKR.jpeg",
+    "created_at": "2025-02-06T01:25:32.551Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 26,
+  "fields": {
+    "product": 16,
+    "image": "product_images/Р°РєСЃРµСЃСЃСѓР°СЂС‹_rxC4Nl0.jpg",
+    "created_at": "2025-02-06T02:10:25.648Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 30,
+  "fields": {
+    "product": 19,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_3_VO0DgqC.jpg",
+    "created_at": "2025-02-06T03:51:33.341Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 31,
+  "fields": {
+    "product": 20,
+    "image": "product_images/РјСѓР¶СЃРєР°СЏ.webp",
+    "created_at": "2025-02-06T07:34:39.967Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 33,
+  "fields": {
+    "product": 22,
+    "image": "product_images/РёРјРїРµСЂРёСЏ_3_GFVEsHQ.jpg",
+    "created_at": "2025-02-06T07:38:40.069Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 34,
+  "fields": {
+    "product": 23,
+    "image": "product_images/RTLADM982801_23954793_1_v1.webp",
+    "created_at": "2025-02-06T07:58:38.123Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 35,
+  "fields": {
+    "product": 22,
+    "image": "product_images/Р¶РµРЅСЃРєР°СЏ.png",
+    "created_at": "2025-02-21T14:37:18.656Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 37,
+  "fields": {
+    "product": 24,
+    "image": "atto/products/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
+    "created_at": "2025-02-22T10:36:32.121Z"
+  }
+}
+]
