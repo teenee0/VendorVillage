@@ -1,0 +1,23 @@
+<input type="file" id="imageInput">
+<img id="preview" src="" alt="Preview">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<script>
+    const imageInput = document.getElementById('imageInput');
+    const preview = document.getElementById('preview');
+
+    imageInput.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            preview.src = event.target.result;
+            const cropper = new Cropper(preview, {
+                aspectRatio: 16 / 9,
+                viewMode: 1,
+            });
+        };
+
+        reader.readAsDataURL(file);
+    });
+</script>

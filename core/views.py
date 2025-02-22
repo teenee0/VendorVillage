@@ -1,6 +1,8 @@
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+
+from marketplace.models import Product
 from .forms import BusinessForm
 from core.models import Business
 from core.models import BusinessType
@@ -16,6 +18,16 @@ def bussiness_categories_list(request):
         'business_types': business_types
     }
     return render(request, 'core/bussiness_list.html', context)
+
+def business_site(request, slug):
+    business = get_object_or_404(Business, slug=slug)
+    products = business.products.all()
+    print(business.html_template)
+    if business.html_template:
+        print(business.html_template)
+        template = business.html_template
+        return render(request, str(template), {'business': business, 'products': products})
+    return render(request, 'business_defaults/business_default_page.html', {'business': business, 'products': products})
 
 
 
@@ -38,3 +50,8 @@ def edit_business(request, pk):
     else:
         raise Http404
 
+
+def sites(request):
+    businesses = Business.objects.all()
+    context = {'businesses': businesses}
+    return render(request,'core/businesses.html', context)

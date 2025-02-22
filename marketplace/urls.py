@@ -16,7 +16,10 @@ urlpatterns = [
     path('product/<int:pk>/', views.product_detail, name='product_detail'),
     # path('dashboard/', views.dashboard, name='dashboard'),
     path('business_product_list/<int:pk>/', views.business_product_list, name='business_product_list'),
-    path('product_edit/<int:pk>/', views.product_edit, name='product_edit'),
+    path('product/<int:pk>/edit/', views.product_edit, name='product_edit'),
+    path('product-image/<int:image_id>/delete/', views.product_image_delete, name='product_image_delete'),
+    path('product_/<int:pk>/add/', views.product_add, name='product_add'),
+    path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
 ]
 
 if settings.DEBUG:

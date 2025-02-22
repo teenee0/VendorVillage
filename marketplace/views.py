@@ -1,10 +1,10 @@
 from django.core.paginator import Paginator
-from django.http import Http404
+from django.http import Http404, HttpResponseForbidden
 
 from marketplace.models import Category
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from marketplace.forms import ProductForm, ProductImageInlineFormSet
+from marketplace.forms import ProductForm, ProductImageForm
 from .models import Product, ProductImage
 from core.models import Business
 
@@ -38,7 +38,7 @@ def child_category_list(request, pk):
     """
     category = get_object_or_404(Category, pk=pk)
 
-    if category.get_level() < 2:
+    if category.get_level() < 2 and category.get_children().count() >= 2:
         # Просто список детей
         children = category.children.all().order_by('ordering')
         return render(request, 'marketplace/child_category_list.html', {
@@ -59,7 +59,7 @@ def category_products(request, pk):
     ids = get_descendant_ids(category)
 
     # 1) Берём все товары, относящиеся к этой и вложенным категориям.
-    products_qs = Product.objects.filter(category_id__in=ids).order_by('-id')
+    products_qs = Product.objects.filter(category_id__in=ids, on_the_main=True).order_by('-id')
 
     subcategories = category.children.all().order_by('name')
 
@@ -137,10 +137,10 @@ def business_product_list(request, pk):
     """
     if request.user.groups.filter(name='Business').exists():
         business = get_object_or_404(Business, pk=pk, owner=request.user)
-        products = business.products.all()
+        products = business.products.all().order_by('-created_at')
         # 3) Пагинация
         page_number = request.GET.get('page', 1)
-        paginator = Paginator(products, 12)  # 12 товаров на страницу
+        paginator = Paginator(products, 11)  # 12 товаров на страницу
         page_obj = paginator.get_page(page_number)
         context = {
             'edit': True,
@@ -153,50 +153,98 @@ def business_product_list(request, pk):
         raise Http404
 
 
+
 @login_required
-def product_create(request, pk):
-    # Получаем бизнес текущего пользователя (предполагаем, что у пользователя есть бизнес)
-    business = get_object_or_404(Business, pk=pk, owner=request.user)
-    if not business:
-        # Если бизнеса нет, можно перенаправить на страницу создания бизнеса
-        return render('account:login')
-    context = {'business': business}
+def product_add(request, pk):
+    # Предполагаем, что у пользователя есть бизнес (поле owner в Business и related_name='businesses' в User)
+    business = get_object_or_404(Business, pk=pk)
+    if business.owner != request.user:
+        raise Http404
+
     if request.method == 'POST':
-        form = ProductForm(request.POST)
-        formset = ProductImageInlineFormSet(request.POST, request.FILES)
-        if form.is_valid() and formset.is_valid():
-            product = form.save(commit=False)
+        product_form = ProductForm(request.POST)
+        image_form = ProductImageForm(request.POST, request.FILES)
+        if product_form.is_valid() and image_form.is_valid():
+            product = product_form.save(commit=False)
             product.business = business
             product.save()
-            formset.instance = product
-            formset.save()
-            return redirect('marketplace:product_detail', pk=product.id)
+            # Если изображение было загружено, сохраняем его
+            if image_form.cleaned_data.get('image'):
+                new_image = image_form.save(commit=False)
+                new_image.product = product
+                new_image.save()
+            return redirect('marketplace:product_edit', pk=product.id)
     else:
-        form = ProductForm()
-        formset = ProductImageInlineFormSet(queryset=ProductImage.objects.none())
-    context.update({'form': form, 'formset': formset, 'action': 'Добавление товара'})
-    return render(request, 'marketplace/includes/product_form.html', context)
+        product_form = ProductForm()
+        image_form = ProductImageForm()
+
+    context = {
+        'product_form': product_form,
+        'image_form': image_form,
+        'action': 'Добавление товара',
+        'business': business,  # для кнопки "Назад"
+    }
+    return render(request, 'marketplace/includes/product_add.html', context)
+
+@login_required()
+def product_edit(request, pk):
+    product = get_object_or_404(Product, id=pk)
+    if product.business.owner != request.user:
+        raise Http404
+    if request.method == "POST":
+        # Если нажата кнопка сохранения данных товара
+        if 'save_product' in request.POST:
+            product_form = ProductForm(request.POST, instance=product)
+            image_form = ProductImageForm()  # пустая форма для изображения
+            if product_form.is_valid():
+                product_form.save()
+                return redirect('marketplace:product_edit', pk=product.id)
+        # Если нажата кнопка загрузки изображения
+        elif 'upload_image' in request.POST:
+            product_form = ProductForm(instance=product)  # форма товара для заполнения страницы
+            image_form = ProductImageForm(request.POST, request.FILES)
+            if image_form.is_valid():
+                new_image = image_form.save(commit=False)
+                new_image.product = product  # связываем изображение с товаром
+                new_image.save()
+                return redirect('marketplace:product_edit', pk=product.id)
+    else:
+        product_form = ProductForm(instance=product)
+        image_form = ProductImageForm()
+
+    images = product.images.all()  # получаем изображения, используя related_name 'images'
+
+    context = {
+        'product': product,
+        'product_form': product_form,
+        'image_form': image_form,
+        'images': images,
+    }
+    return render(request, 'marketplace/includes/product_edit.html', context)
 
 
 @login_required
-def product_edit(request, pk):
+def product_delete(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    # Проверяем, что текущий пользователь является владельцем бизнеса данного товара
+    # Проверяем, что текущий пользователь является владельцем бизнеса товара
     if product.business.owner != request.user:
-        return redirect('marketplace:product_detail', pk=product.id)  # или вернуть ошибку 403
+        raise Http404("Товар не найден")
 
-    if request.method == 'POST':
-        form = ProductForm(request.POST, instance=product)
-        formset = ProductImageInlineFormSet(request.POST, request.FILES, instance=product)
-        if form.is_valid() and formset.is_valid():
-            form.save()
-            formset.save()
-            return redirect('marketplace:product_detail', pk=product.id)
-    else:
-        form = ProductForm(instance=product)
-        formset = ProductImageInlineFormSet(instance=product)
-    return render(request, 'marketplace/includes/product_form.html',
-                  {'form': form, 'formset': formset, 'action': 'Редактирование товара'})
+    # Можно предусмотреть подтверждение удаления через POST,
+    # но для простоты примера удалим товар при GET-запросе.
+    product.delete()
+    # Перенаправляем пользователя на список товаров бизнеса
+    return redirect('marketplace:business_product_list', pk=product.business.id)
+
+@login_required
+def product_image_delete(request, image_id):
+    image = get_object_or_404(ProductImage, pk=image_id)
+    # Проверяем, что владелец товара совпадает с текущим пользователем
+    if image.product.business.owner != request.user:
+        return HttpResponseForbidden("Доступ запрещен")
+    product_id = image.product.id
+    image.delete()
+    return redirect('marketplace:product_edit', pk=product_id)
 
 
 

@@ -1,0 +1,142 @@
+html {
+    position: relative;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+/* Опциональные стили для улучшения внешнего вида */
+
+
+.navbar-nav .nav-link {
+    font-size: 1.7rem;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+.fab {
+    font-size: 1.5rem;
+}
+
+.fab:hover {
+    opacity: 0.7;
+    color: grey;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse {
+        justify-content: center;
+    }
+}
+/*это продукты*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.col {
+    flex: 1 1 calc(25% - 20px); /* 4 колонки на большом экране */
+    box-sizing: border-box;
+    max-width: calc(25% - 20px);
+}
+
+@media (max-width: 992px) {
+    .col {
+        flex: 1 1 calc(33.33% - 20px); /* 3 колонки на среднем экране */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .col {
+        flex: 1 1 calc(50% - 20px); /* 2 колонки на маленьком экране */
+        max-width: calc(50% - 20px);
+    }
+}
+
+.card {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto; /* Высота автоматически подстраивается под размер экрана */
+    object-fit: contain; /* Изображение будет уменьшаться и сохранять пропорции */
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+/*это продукты*/
+
+/*faq*/
+.btn btn-link collapsed{
+    text-decoration: none;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: #333333;
+}
+.btn-link:hover {
+    text-decoration: none;
+    color: red;
+}
+
+
+
+
+
+

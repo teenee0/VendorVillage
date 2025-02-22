@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'mptt',
     'accounts',
     'widget_tweaks',
+    'django_bootstrap5',
+
 
 ]
 
@@ -64,8 +66,7 @@ ROOT_URLCONF = 'VendorVillage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'media/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +77,7 @@ TEMPLATES = [
             ],
         },
     },
+
 ]
 
 WSGI_APPLICATION = 'VendorVillage.wsgi.application'

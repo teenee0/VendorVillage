@@ -10,7 +10,7 @@
                         <div class="carousel-inner">
                           {% for image in images %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                              <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ product.name }}">
+                              <img src="{{ image.image.url }}" class="card-img-top" style="width: 100%; height: 45rem; object-fit: cover" alt="{{ product.name }}">
                             </div>
                           {% endfor %}
                         </div>
@@ -33,8 +33,8 @@
                         
                         <div class="fs-5 mb-5">
                             {% if product.discount > 0 %}
-                            <span class="text-decoration-line-through">{{ product.discount }} тг</span>
-                            <span>{{ product.price }} тг.</span>
+                            <span class="text-decoration-line-through">{{ product.price }} тг</span>
+                            <span>{{ product.discount }} тг.</span>
                             {% else %}
                             <span>{{ product.price }} тг.</span>
                             {% endif %}

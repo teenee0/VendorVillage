@@ -1,4 +1,4 @@
-
+from PIL import Image
 from django.db import models
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
@@ -61,9 +61,9 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    discount = models.DecimalField(max_digits=10, decimal_places=2, default=None)
+    discount = models.DecimalField(max_digits=10, decimal_places=2, default=None, null=True, blank=True)
     stock_quantity = models.PositiveIntegerField(default=0)
-
+    on_the_main = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -130,7 +130,10 @@ class ProductAttribute(models.Model):
     def __str__(self):
         return f"{self.attribute.name}: {self.value} (для {self.product.name})"
 
-
+def product_image_path(instance, filename):
+    # instance.product.business.slug -> получаем slug бизнеса
+    slug = instance.product.business.slug
+    return f"{slug}/products/{filename}"
 
 class ProductImage(models.Model):
     """
@@ -141,9 +144,17 @@ class ProductImage(models.Model):
         on_delete=models.CASCADE,
         related_name='images'
     )
-    image = models.ImageField(upload_to='product_images/')
+    image = models.ImageField(upload_to=product_image_path)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сначала сохраняем изображение
+
+        img = Image.open(self.image.path)  # Открываем изображение
+        output_size = (300, 500)  # Указываем нужный размер
+        img.thumbnail(output_size)  # Масштабируем изображение
+        img.save(self.image.path)
 
     class Meta:
         verbose_name = 'Product Image'

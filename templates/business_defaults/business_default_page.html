@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container mt-5">
+    <!-- Выводим название бизнеса -->
+    <h1 class="mb-4 text-center">{{ business.name }}</h1>
+    
+    <!-- Вы можете добавить дополнительную информацию о бизнесе, если нужно -->
+    <p class="text-center">{{ business.description }}</p>
+    
+    <!-- Проверка, используете ли вы пагинацию (page_obj) или просто список products -->
+    {% if page_obj and page_obj.object_list %}
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for product in page_obj.object_list %}
+          {% include "marketplace/includes/product_card.html" with product=product edit=False %}
+        {% endfor %}
+      </div>
+      <!-- Включаем пагинацию -->
+      {% include 'marketplace/includes/pagination.html' %}
+    {% else %}
+      <!-- Если у вас нет пагинации, используйте просто products -->
+      {% if products %}
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          {% for product in products %}
+            {% include "marketplace/includes/product_card.html" with product=product edit=False %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center">Товаров пока нет.</p>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}

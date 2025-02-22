@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-1 g-4 justify-content-center mt-1">
+    {% for business in businesses %}
+      <div class="col d-flex justify-content-center">
+        <a href="{% url 'core:site' business.slug %}" class="text-decoration-none w-100">
+          <div class="card h-100 shadow-sm position-relative" style="
+               border-radius: 15px;
+               background: url('{{ business.background_image.url }}') no-repeat center center;
+               background-size: cover;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 15px; height: 100%;">
+              <div class="card-body text-left" style="color: #ffffff;">
+                <h5 class="card-title">{{ business.name }}</h5>
+                <p class="card-text">{{ business.description|default:"Описание не задано" }}</p>
+                <p class="card-text"><strong>Адрес:</strong> {{ business.address|default:"Не указан" }}</p>
+                <p class="card-text"><strong>Телефон:</strong> {{ business.phone|default:"Не указан" }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
