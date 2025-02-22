@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/media/atto/own_site_files/main/css/main.css">
+{#    <link rel="stylesheet" href="/media/atto/own_site_files/main/css/main.css">#}
     <title>Miledi магазин одежды</title>
 </head>
 <body>
@@ -66,20 +66,19 @@
         </div>
     </div>
 
-    <div class="row">
-        {% for product in products %}
-            <div class="col">
-                <div class="card">
-                    <img class="card-img-top" src="{{ product.img.url }}" alt="{{ product.title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.title }}</h5>
-                        <p>_____</p>
-                        <p class="card-title">{{ product.price }}</p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+    {% if page_obj and page_obj.object_list %}
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for product in page_obj.object_list %}
+      {% include "marketplace/includes/product_card.html" %}
+
+    {% endfor %}
+  </div>
+
+    {% include 'marketplace/includes/pagination.html' %}
+
+  {% else %}
+    <p>Нет товаров в этой категории (или по текущему поиску).</p>
+  {% endif %}
 </div>
 
 
