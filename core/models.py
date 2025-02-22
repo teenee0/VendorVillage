@@ -78,7 +78,7 @@ class Business(models.Model):
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
     business_logo = models.ImageField(upload_to=business_logo_path, blank=True, null=True)
-    html_template = models.FileField(upload_to=html_template_pathpip, blank=True, null=True)
+    html_template = models.FileField(upload_to=html_template_path, blank=True, null=True)
     product_card_template = models.FileField(upload_to='business/', blank=True, null=True)
     product_detail_template = models.FileField(upload_to='business/', blank=True, null=True)
     background_image = models.ImageField(upload_to=business_bg_path, blank=True, null=True)
