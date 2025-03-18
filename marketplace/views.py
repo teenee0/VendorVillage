@@ -46,7 +46,7 @@ def child_category_list(request, pk):
             'children': children
         })
     else:
-        print(1)
+
         return redirect('marketplace:category_products', pk=pk)
 
 

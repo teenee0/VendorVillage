@@ -22,8 +22,8 @@ def bussiness_categories_list(request):
 
 def business_site(request, slug):
     business = get_object_or_404(Business, slug=slug)
-    products = business.products.all()
-    print(business.html_template)
+    products = business.products.filter(on_the_main=True)
+    # print(business.html_template)
     if business.html_template:
         print(business.html_template)
         page_number = request.GET.get('page', 1)
@@ -32,8 +32,8 @@ def business_site(request, slug):
         template = business.html_template
         return render(request, str(template),
                       {'business': business,
-                       'page_obj': page_obj,})
-    return render(request, 'business_defaults/business_default_page.html', {'business': business, 'products': products})
+                       'products': products})
+    return render(request, 'business_defaults/default_site.html', {'business': business, 'products': products})
 
 
 
