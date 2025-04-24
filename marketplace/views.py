@@ -1,3 +1,5 @@
+from itertools import product
+
 from django.core.paginator import Paginator
 from django.http import Http404, HttpResponseForbidden
 
@@ -137,6 +139,7 @@ def category_products(request, pk):
 @api_view(["GET"])
 def category_products_api(request, pk):
     category = get_object_or_404(Category, pk=pk)
+    print(category)
     ids = get_descendant_ids(category)
 
     products_qs = Product.objects.filter(
@@ -180,10 +183,22 @@ def category_products_api(request, pk):
         page_obj = paginator.page(paginator.num_pages)
 
     serializer = ProductSerializer(page_obj, many=True)
+    ancestors = category.get_ancestors(include_self=True)
+
+    # Формируем breadcrumbs
+    breadcrumbs = [
+        {
+            "id": ancestor.id,
+            "name": ancestor.name,
+            "url": f"/marketplace/categories/{ancestor.id}"
+        }
+        for ancestor in ancestors
+    ]
 
     return Response(
         {
             "category": CategorySerializer(category).data,
+            "breadcrumbs": breadcrumbs,
             "subcategories": CategorySerializer(
                 category.children.all().order_by("name"), many=True
             ).data,
@@ -247,9 +262,21 @@ def product_detail_api(request, pk):
     same_products_serializer = ProductSerializer(
         same_products, many=True, context={"request": request}
     )
+    ancestors = product.category.get_ancestors(include_self=True)
+
+    # Формируем breadcrumbs
+    breadcrumbs = [
+        {
+            "id": ancestor.id,
+            "name": ancestor.name,
+            "url": f"/marketplace/categories/{ancestor.id}"
+        }
+        for ancestor in ancestors
+    ]
+    print(breadcrumbs)
 
     return Response(
-        {"product": serializer.data, "same_products": same_products_serializer.data}
+        {"breadcrumbs": breadcrumbs, "product": serializer.data, "same_products": same_products_serializer.data}
     )
 
 
