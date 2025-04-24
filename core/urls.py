@@ -13,5 +13,9 @@ urlpatterns = [
     path('sites/', views.sites, name='sites'),
     path('site/<slug:slug>/', views.business_site, name='site'),
 ]
+# API
+urlpatterns.extend([
+    path('api/business-categories/', views.business_categories_api, name='business_categories_api'),
+])
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

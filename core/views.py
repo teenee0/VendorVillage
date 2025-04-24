@@ -6,7 +6,10 @@ from django.contrib.auth.decorators import login_required
 from marketplace.models import Product
 from .forms import BusinessForm
 from core.models import Business
-from core.models import BusinessType
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import BusinessTypeSerializer
+from .models import BusinessType
 
 
 # Create your views here.
@@ -19,6 +22,14 @@ def bussiness_categories_list(request):
         'business_types': business_types
     }
     return render(request, 'core/bussiness_list.html', context)
+
+
+@api_view(['GET'])
+def business_categories_api(request):
+    business_types = BusinessType.objects.all()
+    serializer = BusinessTypeSerializer(business_types, many=True)
+    return Response(serializer.data)
+
 
 def business_site(request, slug):
     business = get_object_or_404(Business, slug=slug)

@@ -22,5 +22,14 @@ urlpatterns = [
     path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
 ]
 
+# API
+urlpatterns.extend([
+    path('api/categories/', views.marketplace_categories_api, name='marketplace_categories_api'),
+    path('api/categories/<int:pk>/', views.child_category_api, name='child_category_api'),
+    path('api/categories/<int:pk>/products/', views.category_products_api, name='category_products_api'),
+    path('api/products/<int:pk>/', views.product_detail_api, name='product_detail_api'),
+
+])
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

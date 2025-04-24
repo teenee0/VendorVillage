@@ -46,9 +46,18 @@ INSTALLED_APPS = [
     'accounts',
     'widget_tweaks',
     'django_bootstrap5',
-
+    'rest_framework',
+    'corsheaders',
+    'django_elasticsearch_dsl',
 
 ]
+
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'http://localhost:9200'  # Добавьте http:// в начало
+    },
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,6 +68,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Адрес вашего React-приложения
 ]
 
 ROOT_URLCONF = 'VendorVillage.urls'
