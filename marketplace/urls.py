@@ -22,7 +22,7 @@ urlpatterns = [
     path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
 ]
 
-# API
+# API MARKETA
 urlpatterns.extend([
     path('api/categories/', views.marketplace_categories_api, name='marketplace_categories_api'),
     path('api/categories/<int:pk>/', views.child_category_api, name='child_category_api'),

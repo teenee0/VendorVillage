@@ -7,7 +7,8 @@ from .models import (
     ProductImage,
     Attribute,
     CategoryAttribute,
-    ProductAttribute
+    ProductAttribute,
+    AttributeValue
 )
 
 @admin.register(Category)
@@ -49,3 +50,9 @@ class CategoryAttributeAdmin(admin.ModelAdmin):
     list_display = ('category', 'attribute', 'required')
     list_filter = ('category', 'required')
     search_fields = ('category__name', 'attribute__name')
+    
+@admin.register(AttributeValue)
+class AttributeValueAdmin(admin.ModelAdmin):
+    list_display = ('attribute', 'value')
+    list_filter = ('attribute', 'value')
+    search_fields = ('attribute', 'value')

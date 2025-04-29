@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-7gt8gic8*7r_xh=fzplybh1($q#)do^b-g)cg!ms3x&zex=4jz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -47,10 +48,40 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_bootstrap5',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'django_elasticsearch_dsl',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
 
 ]
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=90),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    'AUTH_COOKIE': 'access',  # Имя для access-токена
+    'AUTH_COOKIE_REFRESH': 'refresh',  # Имя для refresh-токена (или 'refresh_token')
+}
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+]
+
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+# TODO Добавить умный поиск elastick search
 
 ELASTICSEARCH_DSL = {
     'default': {
@@ -60,6 +91,7 @@ ELASTICSEARCH_DSL = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -68,12 +100,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-]
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Адрес вашего React-приложения
 ]
 
 ROOT_URLCONF = 'VendorVillage.urls'
@@ -104,7 +130,7 @@ WSGI_APPLICATION = 'VendorVillage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db_0_1.sqlite3',
     }
 }
 # DATABASES = {

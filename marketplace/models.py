@@ -74,15 +74,31 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
 class Attribute(models.Model):
     """
     Справочник атрибутов.
     Пример: 'Цвет', 'Материал', 'Размер', 'Бренд'
     """
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True)  # Например: "Размер", "Цвет"
+    has_predefined_values = models.BooleanField(default=False)  # Есть ли фиксированные значения?
 
     def __str__(self):
         return self.name
+
+class AttributeValue(models.Model):
+    """
+    Здесь у нас будут параметры для некторых атрибутов, например если у нас есть размер
+    то здесь будет храниться XXS XS S M L XL XXL и так далее
+    """
+    attribute = models.ForeignKey(Attribute, on_delete=models.CASCADE, related_name='values')
+    value = models.CharField(max_length=100)  # Например: "XL", "Красный"
+
+    class Meta:
+        unique_together = ('attribute', 'value')  # Исключаем дубликаты
+
+    def __str__(self):
+        return f"{self.attribute.name}: {self.value}"
 
 class CategoryAttribute(models.Model):
     category = models.ForeignKey(
@@ -110,25 +126,28 @@ class CategoryAttribute(models.Model):
 
 
 class ProductAttribute(models.Model):
-    product = models.ForeignKey(
-        Product,
-        on_delete=models.CASCADE,
-        related_name='attributes'
-    )
-    attribute = models.ForeignKey(
-        Attribute,
-        on_delete=models.CASCADE,
-        related_name='product_attributes'
-    )
-    value = models.CharField(max_length=255)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='attributes')
+    category_attribute = models.ForeignKey(CategoryAttribute, on_delete=models.CASCADE)
+    
+    # Если у атрибута есть predefined_values — выбираем из них, иначе — произвольное значение
+    predefined_value = models.ForeignKey(AttributeValue, on_delete=models.PROTECT, null=True, blank=True)
+    custom_value = models.CharField(max_length=255, blank=True)  # Для атрибутов без фиксированных значений
 
     class Meta:
-        unique_together = ('product', 'attribute')
-        verbose_name = "Атрибут товара"
-        verbose_name_plural = "Атрибуты товаров"
+        unique_together = ('product', 'category_attribute')  # У товара может быть только один размер/цвет
 
-    def __str__(self):
-        return f"{self.attribute.name}: {self.value} (для {self.product.name})"
+    def clean(self):
+        # Валидация: запрещаем произвольные значения для атрибутов с predefined_values
+        if self.category_attribute.attribute.has_predefined_values and not self.predefined_value:
+            raise ValidationError(f"Для атрибута '{self.category_attribute.attribute.name}' нужно выбрать значение из списка")
+        
+        # Запрещаем predefined_value для атрибутов без фиксированных значений
+        if not self.category_attribute.attribute.has_predefined_values and self.predefined_value:
+            raise ValidationError(f"Атрибут '{self.category_attribute.attribute.name}' не поддерживает предустановленные значения")
+
+    @property
+    def display_value(self):
+        return self.predefined_value.value if self.predefined_value else self.custom_value
 
 def product_image_path(instance, filename):
     # instance.product.business.slug -> получаем slug бизнеса

@@ -18,8 +18,8 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
 
+urlpatterns = [
     path('', include('core.urls')),
     path('marketplace/', include('marketplace.urls', namespace='marketplace')),
     path('mall/', include('mall.urls', namespace='mall')),
