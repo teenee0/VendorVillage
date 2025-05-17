@@ -53,6 +53,11 @@ from rest_framework import status
 from django.contrib.auth import authenticate
 from .serializers import UserSerializer
 from .JWT_AUTH import CookieJWTAuthentication 
+from core.models import Business
+from .serializers import UserSerializer, BusinessSerializer
+from core.models import User
+from django.shortcuts import get_object_or_404
+from .serializers import UserSerializer
 
 class RegisterView(APIView):
     permission_classes = [AllowAny]
@@ -162,15 +167,13 @@ def account_view(request):
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def account_info(request):
-    user = request.user
-    is_business = user.roles.filter(name='Business').exists()
-    return Response({
-        'username': user.username,
-        'email': user.email,
-        'phone': user.phone,
-        'is_business': is_business,
-        'roles': [r.name for r in user.roles.all()]
-    })
+    user = get_object_or_404(User, pk=request.user.pk)
+    serializer = UserSerializer(user)
+    
+    # Добавляем дополнительные данные, если пользователь - владелец бизнеса
+    data = serializer.data
+    
+    return Response(data)
 
 
 @api_view(['POST'])

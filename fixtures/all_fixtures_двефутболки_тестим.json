@@ -1,0 +1,2579 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2025-04-29T22:30:56.241Z",
+            "user": 1,
+            "content_type": 16,
+            "object_id": "1",
+            "object_repr": "Размер",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2025-04-29T22:31:16.726Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "1",
+            "object_repr": "Размер: XS",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2025-04-29T22:31:22.248Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "2",
+            "object_repr": "Размер: S",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2025-04-29T22:31:28.126Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "3",
+            "object_repr": "Размер: M",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2025-04-29T22:31:36.291Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "4",
+            "object_repr": "Размер: L",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2025-04-29T22:31:42.517Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "5",
+            "object_repr": "Размер: XXL",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2025-04-29T22:31:51.400Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "6",
+            "object_repr": "Размер: XL",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2025-04-29T22:37:18.676Z",
+            "user": 1,
+            "content_type": 19,
+            "object_id": "1",
+            "object_repr": "Верхняя одежда - Размер (обязательно)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2025-04-29T22:39:50.591Z",
+            "user": 1,
+            "content_type": 20,
+            "object_id": "1",
+            "object_repr": "Это будет типо шуба",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2025-04-29T22:41:31.975Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Это будет типо шуба — L",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 L\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 L\"}}, {\"added\": {\"name\": \"product variant attribute\", \"object\": \"ProductVariantAttribute object (1)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2025-04-29T22:44:06.124Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "2",
+            "object_repr": "Это будет типо шуба — M",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 M\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 M\"}}, {\"added\": {\"name\": \"product variant attribute\", \"object\": \"ProductVariantAttribute object (2)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2025-04-29T22:44:43.134Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "2",
+            "object_repr": "Это будет типо шуба — M",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2025-04-29T22:44:51.219Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Это будет типо шуба — ",
+            "action_flag": 2,
+            "change_message": "[{\"deleted\": {\"name\": \"product variant attribute\", \"object\": \"ProductVariantAttribute object (None)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2025-04-29T22:46:16.930Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Это будет типо шуба — S",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"product variant attribute\", \"object\": \"ProductVariantAttribute object (3)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2025-04-29T22:46:27.561Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Это будет типо шуба — S",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2025-04-29T22:47:03.188Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "3",
+            "object_repr": "Это будет типо шуба — L",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 L\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 L\"}}, {\"added\": {\"name\": \"product variant attribute\", \"object\": \"ProductVariantAttribute object (4)\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2025-04-29T22:48:13.119Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "4",
+            "object_repr": "Это будет типо шуба — ",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 \"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 \"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2025-04-29T22:48:20.510Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "3",
+            "object_repr": "Это будет типо шуба — L",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 L\", \"fields\": [\"Is main\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2025-04-29T22:48:27.776Z",
+            "user": 1,
+            "content_type": 21,
+            "object_id": "1",
+            "object_repr": "Это будет типо шуба — S",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430\", \"object\": \"Image for \\u042d\\u0442\\u043e \\u0431\\u0443\\u0434\\u0435\\u0442 \\u0442\\u0438\\u043f\\u043e \\u0448\\u0443\\u0431\\u0430 \\u2014 S\", \"fields\": [\"Is main\"]}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 4,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 4,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 4,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 4,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 5,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 5,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 5,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 5,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add menu category",
+            "content_type": 6,
+            "codename": "add_menucategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change menu category",
+            "content_type": 6,
+            "codename": "change_menucategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete menu category",
+            "content_type": 6,
+            "codename": "delete_menucategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view menu category",
+            "content_type": 6,
+            "codename": "view_menucategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add menu item",
+            "content_type": 7,
+            "codename": "add_menuitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change menu item",
+            "content_type": 7,
+            "codename": "change_menuitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete menu item",
+            "content_type": 7,
+            "codename": "delete_menuitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view menu item",
+            "content_type": 7,
+            "codename": "view_menuitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add restaurant",
+            "content_type": 8,
+            "codename": "add_restaurant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change restaurant",
+            "content_type": 8,
+            "codename": "change_restaurant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete restaurant",
+            "content_type": 8,
+            "codename": "delete_restaurant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view restaurant",
+            "content_type": 8,
+            "codename": "view_restaurant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add restaurant order",
+            "content_type": 9,
+            "codename": "add_restaurantorder"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change restaurant order",
+            "content_type": 9,
+            "codename": "change_restaurantorder"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete restaurant order",
+            "content_type": 9,
+            "codename": "delete_restaurantorder"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view restaurant order",
+            "content_type": 9,
+            "codename": "view_restaurantorder"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add restaurant order item",
+            "content_type": 10,
+            "codename": "add_restaurantorderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change restaurant order item",
+            "content_type": 10,
+            "codename": "change_restaurantorderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete restaurant order item",
+            "content_type": 10,
+            "codename": "delete_restaurantorderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view restaurant order item",
+            "content_type": 10,
+            "codename": "view_restaurantorderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add table reservation",
+            "content_type": 11,
+            "codename": "add_tablereservation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change table reservation",
+            "content_type": 11,
+            "codename": "change_tablereservation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete table reservation",
+            "content_type": 11,
+            "codename": "delete_tablereservation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view table reservation",
+            "content_type": 11,
+            "codename": "view_tablereservation"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add business type",
+            "content_type": 12,
+            "codename": "add_businesstype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change business type",
+            "content_type": 12,
+            "codename": "change_businesstype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete business type",
+            "content_type": 12,
+            "codename": "delete_businesstype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view business type",
+            "content_type": 12,
+            "codename": "view_businesstype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 49,
+        "fields": {
+            "name": "Can add Пользователь",
+            "content_type": 13,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 50,
+        "fields": {
+            "name": "Can change Пользователь",
+            "content_type": 13,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 51,
+        "fields": {
+            "name": "Can delete Пользователь",
+            "content_type": 13,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 52,
+        "fields": {
+            "name": "Can view Пользователь",
+            "content_type": 13,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 53,
+        "fields": {
+            "name": "Can add business",
+            "content_type": 14,
+            "codename": "add_business"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 54,
+        "fields": {
+            "name": "Can change business",
+            "content_type": 14,
+            "codename": "change_business"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 55,
+        "fields": {
+            "name": "Can delete business",
+            "content_type": 14,
+            "codename": "delete_business"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 56,
+        "fields": {
+            "name": "Can view business",
+            "content_type": 14,
+            "codename": "view_business"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 57,
+        "fields": {
+            "name": "Can add Роль",
+            "content_type": 15,
+            "codename": "add_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 58,
+        "fields": {
+            "name": "Can change Роль",
+            "content_type": 15,
+            "codename": "change_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 59,
+        "fields": {
+            "name": "Can delete Роль",
+            "content_type": 15,
+            "codename": "delete_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 60,
+        "fields": {
+            "name": "Can view Роль",
+            "content_type": 15,
+            "codename": "view_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 61,
+        "fields": {
+            "name": "Can add attribute",
+            "content_type": 16,
+            "codename": "add_attribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 62,
+        "fields": {
+            "name": "Can change attribute",
+            "content_type": 16,
+            "codename": "change_attribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 63,
+        "fields": {
+            "name": "Can delete attribute",
+            "content_type": 16,
+            "codename": "delete_attribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 64,
+        "fields": {
+            "name": "Can view attribute",
+            "content_type": 16,
+            "codename": "view_attribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 65,
+        "fields": {
+            "name": "Can add attribute value",
+            "content_type": 17,
+            "codename": "add_attributevalue"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 66,
+        "fields": {
+            "name": "Can change attribute value",
+            "content_type": 17,
+            "codename": "change_attributevalue"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 67,
+        "fields": {
+            "name": "Can delete attribute value",
+            "content_type": 17,
+            "codename": "delete_attributevalue"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 68,
+        "fields": {
+            "name": "Can view attribute value",
+            "content_type": 17,
+            "codename": "view_attributevalue"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 69,
+        "fields": {
+            "name": "Can add Категория товара",
+            "content_type": 18,
+            "codename": "add_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 70,
+        "fields": {
+            "name": "Can change Категория товара",
+            "content_type": 18,
+            "codename": "change_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 71,
+        "fields": {
+            "name": "Can delete Категория товара",
+            "content_type": 18,
+            "codename": "delete_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 72,
+        "fields": {
+            "name": "Can view Категория товара",
+            "content_type": 18,
+            "codename": "view_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 73,
+        "fields": {
+            "name": "Can add Атрибут категории",
+            "content_type": 19,
+            "codename": "add_categoryattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 74,
+        "fields": {
+            "name": "Can change Атрибут категории",
+            "content_type": 19,
+            "codename": "change_categoryattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 75,
+        "fields": {
+            "name": "Can delete Атрибут категории",
+            "content_type": 19,
+            "codename": "delete_categoryattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 76,
+        "fields": {
+            "name": "Can view Атрибут категории",
+            "content_type": 19,
+            "codename": "view_categoryattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 77,
+        "fields": {
+            "name": "Can add Товар",
+            "content_type": 20,
+            "codename": "add_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 78,
+        "fields": {
+            "name": "Can change Товар",
+            "content_type": 20,
+            "codename": "change_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 79,
+        "fields": {
+            "name": "Can delete Товар",
+            "content_type": 20,
+            "codename": "delete_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 80,
+        "fields": {
+            "name": "Can view Товар",
+            "content_type": 20,
+            "codename": "view_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 81,
+        "fields": {
+            "name": "Can add product variant",
+            "content_type": 21,
+            "codename": "add_productvariant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 82,
+        "fields": {
+            "name": "Can change product variant",
+            "content_type": 21,
+            "codename": "change_productvariant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 83,
+        "fields": {
+            "name": "Can delete product variant",
+            "content_type": 21,
+            "codename": "delete_productvariant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 84,
+        "fields": {
+            "name": "Can view product variant",
+            "content_type": 21,
+            "codename": "view_productvariant"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 85,
+        "fields": {
+            "name": "Can add Изображение варианта товара",
+            "content_type": 22,
+            "codename": "add_productvariantimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 86,
+        "fields": {
+            "name": "Can change Изображение варианта товара",
+            "content_type": 22,
+            "codename": "change_productvariantimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 87,
+        "fields": {
+            "name": "Can delete Изображение варианта товара",
+            "content_type": 22,
+            "codename": "delete_productvariantimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 88,
+        "fields": {
+            "name": "Can view Изображение варианта товара",
+            "content_type": 22,
+            "codename": "view_productvariantimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 89,
+        "fields": {
+            "name": "Can add product variant attribute",
+            "content_type": 23,
+            "codename": "add_productvariantattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 90,
+        "fields": {
+            "name": "Can change product variant attribute",
+            "content_type": 23,
+            "codename": "change_productvariantattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 91,
+        "fields": {
+            "name": "Can delete product variant attribute",
+            "content_type": 23,
+            "codename": "delete_productvariantattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 92,
+        "fields": {
+            "name": "Can view product variant attribute",
+            "content_type": 23,
+            "codename": "view_productvariantattribute"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 93,
+        "fields": {
+            "name": "Can add mall",
+            "content_type": 24,
+            "codename": "add_mall"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 94,
+        "fields": {
+            "name": "Can change mall",
+            "content_type": 24,
+            "codename": "change_mall"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 95,
+        "fields": {
+            "name": "Can delete mall",
+            "content_type": 24,
+            "codename": "delete_mall"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 96,
+        "fields": {
+            "name": "Can view mall",
+            "content_type": 24,
+            "codename": "view_mall"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 97,
+        "fields": {
+            "name": "Can add mall floor",
+            "content_type": 25,
+            "codename": "add_mallfloor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 98,
+        "fields": {
+            "name": "Can change mall floor",
+            "content_type": 25,
+            "codename": "change_mallfloor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 99,
+        "fields": {
+            "name": "Can delete mall floor",
+            "content_type": 25,
+            "codename": "delete_mallfloor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 100,
+        "fields": {
+            "name": "Can view mall floor",
+            "content_type": 25,
+            "codename": "view_mallfloor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 101,
+        "fields": {
+            "name": "Can add mall shop",
+            "content_type": 26,
+            "codename": "add_mallshop"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 102,
+        "fields": {
+            "name": "Can change mall shop",
+            "content_type": 26,
+            "codename": "change_mallshop"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 103,
+        "fields": {
+            "name": "Can delete mall shop",
+            "content_type": 26,
+            "codename": "delete_mallshop"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 104,
+        "fields": {
+            "name": "Can view mall shop",
+            "content_type": 26,
+            "codename": "view_mallshop"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 105,
+        "fields": {
+            "name": "Can add Token",
+            "content_type": 27,
+            "codename": "add_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 106,
+        "fields": {
+            "name": "Can change Token",
+            "content_type": 27,
+            "codename": "change_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 107,
+        "fields": {
+            "name": "Can delete Token",
+            "content_type": 27,
+            "codename": "delete_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 108,
+        "fields": {
+            "name": "Can view Token",
+            "content_type": 27,
+            "codename": "view_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 109,
+        "fields": {
+            "name": "Can add Token",
+            "content_type": 28,
+            "codename": "add_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 110,
+        "fields": {
+            "name": "Can change Token",
+            "content_type": 28,
+            "codename": "change_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 111,
+        "fields": {
+            "name": "Can delete Token",
+            "content_type": 28,
+            "codename": "delete_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 112,
+        "fields": {
+            "name": "Can view Token",
+            "content_type": 28,
+            "codename": "view_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 113,
+        "fields": {
+            "name": "Can add blacklisted token",
+            "content_type": 29,
+            "codename": "add_blacklistedtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 114,
+        "fields": {
+            "name": "Can change blacklisted token",
+            "content_type": 29,
+            "codename": "change_blacklistedtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 115,
+        "fields": {
+            "name": "Can delete blacklisted token",
+            "content_type": 29,
+            "codename": "delete_blacklistedtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 116,
+        "fields": {
+            "name": "Can view blacklisted token",
+            "content_type": 29,
+            "codename": "view_blacklistedtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 117,
+        "fields": {
+            "name": "Can add outstanding token",
+            "content_type": 30,
+            "codename": "add_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 118,
+        "fields": {
+            "name": "Can change outstanding token",
+            "content_type": 30,
+            "codename": "change_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 119,
+        "fields": {
+            "name": "Can delete outstanding token",
+            "content_type": 30,
+            "codename": "delete_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 120,
+        "fields": {
+            "name": "Can view outstanding token",
+            "content_type": 30,
+            "codename": "view_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 4,
+        "fields": {
+            "name": "Business",
+            "permissions": [
+                54,
+                56,
+                61,
+                62,
+                63,
+                64,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                89,
+                90,
+                91,
+                92,
+                21,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 5,
+        "fields": {
+            "name": "User",
+            "permissions": [
+                56,
+                48,
+                60,
+                52,
+                96,
+                64,
+                68,
+                72,
+                76,
+                80,
+                84,
+                92,
+                24,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                40,
+                41,
+                42,
+                43,
+                44
+            ]
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "restaurants",
+            "model": "menucategory"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "restaurants",
+            "model": "menuitem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "restaurants",
+            "model": "restaurant"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "restaurants",
+            "model": "restaurantorder"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "restaurants",
+            "model": "restaurantorderitem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "restaurants",
+            "model": "tablereservation"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {
+            "app_label": "core",
+            "model": "businesstype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {
+            "app_label": "core",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 14,
+        "fields": {
+            "app_label": "core",
+            "model": "business"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 15,
+        "fields": {
+            "app_label": "core",
+            "model": "role"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 16,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "attribute"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 17,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "attributevalue"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 18,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "category"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 19,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "categoryattribute"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 20,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "product"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 21,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "productvariant"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 22,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "productvariantimage"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 23,
+        "fields": {
+            "app_label": "marketplace",
+            "model": "productvariantattribute"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 24,
+        "fields": {
+            "app_label": "mall",
+            "model": "mall"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 25,
+        "fields": {
+            "app_label": "mall",
+            "model": "mallfloor"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 26,
+        "fields": {
+            "app_label": "mall",
+            "model": "mallshop"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 27,
+        "fields": {
+            "app_label": "authtoken",
+            "model": "token"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 28,
+        "fields": {
+            "app_label": "authtoken",
+            "model": "tokenproxy"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 29,
+        "fields": {
+            "app_label": "token_blacklist",
+            "model": "blacklistedtoken"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 30,
+        "fields": {
+            "app_label": "token_blacklist",
+            "model": "outstandingtoken"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "cal4av2899htgmishjigrnbio4b6mj06",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGln-r01JnzNYXnuDA8iR4qRC3J1ESgHtm5n3ZjFta41bpyVOhV2ZZJffDVN-UjtAeaR2n3me27pMyA-Fn7TzYS70up3u30FNve61kUBuzEH7UQsIQWdjHEEoDjwoawHRhyK8lpAsCGUF5iyVIbfTgoZ9vrXrNqE:1u9tTN:LJ6bISvtKwlmWfUgwzpIawmvfwsRWFPCxgDOWTAwLWo",
+            "expire_date": "2025-05-13T22:30:41.401Z"
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$KluqxbIynjDygJAqIkHvz1$8lV97XHtLSktCNRMkAm2EHPFGb8gc8Q9+b102e7XkoQ=",
+            "last_login": "2025-04-29T22:30:41.400Z",
+            "is_superuser": true,
+            "username": "root",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-02-01T03:20:04Z",
+            "phone": null,
+            "groups": [
+                4
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$joveHUPAANfFVjkN4LCYhD$Uu7SBSTUQUMPt2SjN3YpcZS87XDfGsu9IOg1MEB6kkE=",
+            "last_login": "2025-02-04T02:43:42Z",
+            "is_superuser": false,
+            "username": "Artur",
+            "first_name": "",
+            "last_name": "",
+            "email": "qwerty.gogi@mail.ru",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-03T11:59:00Z",
+            "phone": null,
+            "groups": [
+                5
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.role",
+        "pk": 1,
+        "fields": {
+            "name": "Businessmen",
+            "users": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.businesstype",
+        "pk": 1,
+        "fields": {
+            "name": "Маркетплейс",
+            "description": "Маркетплейс - торговая площадка со всем - всеми товарами",
+            "url": "marketplace/categories"
+        }
+    },
+    {
+        "model": "core.businesstype",
+        "pk": 2,
+        "fields": {
+            "name": "ТРЦ",
+            "description": "Исследуйте торговые центры своего города! Смотрите ассортимент товаров, и не упустите самые большие скидки!",
+            "url": "mall/main"
+        }
+    },
+    {
+        "model": "core.businesstype",
+        "pk": 3,
+        "fields": {
+            "name": "Рестораны",
+            "description": "Хотите кушать? Тогда нажимай сюда, тут увидишь все рестораны своего города, сможешь заказать доставку и забронировать столик =)",
+            "url": "restaurants/main"
+        }
+    },
+    {
+        "model": "core.business",
+        "pk": 1,
+        "fields": {
+            "owner": 1,
+            "business_type": 1,
+            "name": "Империя",
+            "description": "Магазин империя - один из лучших магазинов вехрней одежды нашего города!",
+            "address": "Гагарина",
+            "phone": "87073945075",
+            "business_logo": "",
+            "html_template": "",
+            "product_card_template": "",
+            "product_detail_template": "",
+            "background_image": "business/back_imperia.jpg",
+            "created_at": "2025-02-03T00:59:41.179Z",
+            "updated_at": "2025-02-21T14:36:15.896Z",
+            "slug": "imperia"
+        }
+    },
+    {
+        "model": "core.business",
+        "pk": 2,
+        "fields": {
+            "owner": 2,
+            "business_type": 1,
+            "name": "Hot_Shmot",
+            "description": "Hot_Shmot - magaz super hype odezhdii",
+            "address": "Malika gabdullina",
+            "phone": "87077077707",
+            "business_logo": "",
+            "html_template": "",
+            "product_card_template": "",
+            "product_detail_template": "",
+            "background_image": "business/лого_бэк.webp",
+            "created_at": "2025-02-03T06:03:44.504Z",
+            "updated_at": "2025-02-21T13:21:10.569Z",
+            "slug": "hot_shmot"
+        }
+    },
+    {
+        "model": "core.business",
+        "pk": 3,
+        "fields": {
+            "owner": 1,
+            "business_type": 1,
+            "name": "Атто",
+            "description": "Атто аоокщоащкоащкоа",
+            "address": "Габдулина 127А",
+            "phone": "9999999991",
+            "business_logo": "business_logo/мебель_твердая.jpg",
+            "html_template": "atto/own_site_files/test.html",
+            "product_card_template": "",
+            "product_detail_template": "business/test_wazMfOH.html",
+            "background_image": "business/мебель_твердая.jpg",
+            "created_at": "2025-02-22T10:06:27.869Z",
+            "updated_at": "2025-02-22T10:58:39.235Z",
+            "slug": "atto"
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 25,
+        "fields": {
+            "name": "Одежда и обувь",
+            "parent": null,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/одежда.png",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:13:09.781Z",
+            "updated_at": "2025-02-21T13:25:33.794Z",
+            "lft": 1,
+            "rght": 42,
+            "tree_id": 5,
+            "level": 0
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 26,
+        "fields": {
+            "name": "Женская",
+            "parent": 25,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/женская.png",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:13:19.995Z",
+            "updated_at": "2025-02-03T05:07:36.533Z",
+            "lft": 2,
+            "rght": 23,
+            "tree_id": 5,
+            "level": 1
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 28,
+        "fields": {
+            "name": "Мужская",
+            "parent": 25,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/мужская.png",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:13:53.900Z",
+            "updated_at": "2025-02-03T05:07:50.798Z",
+            "lft": 24,
+            "rght": 41,
+            "tree_id": 5,
+            "level": 1
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 29,
+        "fields": {
+            "name": "Обувь",
+            "parent": 28,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_zpKbEqd.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:14:08.451Z",
+            "updated_at": "2025-02-03T10:58:28.181Z",
+            "lft": 37,
+            "rght": 40,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 30,
+        "fields": {
+            "name": "Обувь",
+            "parent": 26,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_vhkxvhp.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:14:25.233Z",
+            "updated_at": "2025-02-03T05:34:06.161Z",
+            "lft": 17,
+            "rght": 22,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 31,
+        "fields": {
+            "name": "Кроссовки",
+            "parent": 30,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_3XciXRl.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:14:33.648Z",
+            "updated_at": "2025-02-03T05:34:14.456Z",
+            "lft": 18,
+            "rght": 19,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 32,
+        "fields": {
+            "name": "Кроссовки",
+            "parent": 29,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/1200x600-zinnwaldite-brown-solid-color-background_cHTCRXl.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:14:40.797Z",
+            "updated_at": "2025-02-03T10:58:36.056Z",
+            "lft": 38,
+            "rght": 39,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 33,
+        "fields": {
+            "name": "Верхняя одежда",
+            "parent": 26,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:14:49.211Z",
+            "updated_at": "2025-02-03T05:33:41.757Z",
+            "lft": 3,
+            "rght": 16,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 34,
+        "fields": {
+            "name": "Верхняя одежда",
+            "parent": 28,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_lxCc03x.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:14:58.618Z",
+            "updated_at": "2025-02-03T10:57:41.815Z",
+            "lft": 27,
+            "rght": 30,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 35,
+        "fields": {
+            "name": "Шубы",
+            "parent": 33,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_XDvAdLm.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:15:11.647Z",
+            "updated_at": "2025-02-03T05:33:58.862Z",
+            "lft": 14,
+            "rght": 15,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 36,
+        "fields": {
+            "name": "Куртки на синтепоне",
+            "parent": 33,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_txWRPz9.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:15:19.806Z",
+            "updated_at": "2025-02-03T09:03:49.044Z",
+            "lft": 8,
+            "rght": 9,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 37,
+        "fields": {
+            "name": "Куртки",
+            "parent": 34,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_L1XWrc1.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:15:36.837Z",
+            "updated_at": "2025-02-03T05:34:32.891Z",
+            "lft": 28,
+            "rght": 29,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 38,
+        "fields": {
+            "name": "Автотовары",
+            "parent": null,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/автозапчасти.jpg",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:23:49.615Z",
+            "updated_at": "2025-02-03T04:43:40.532Z",
+            "lft": 1,
+            "rght": 4,
+            "tree_id": 1,
+            "level": 0
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 39,
+        "fields": {
+            "name": "Мебель",
+            "parent": null,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/мебель_GVl0HZu.png",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:23:58.322Z",
+            "updated_at": "2025-02-03T11:16:30.228Z",
+            "lft": 1,
+            "rght": 8,
+            "tree_id": 4,
+            "level": 0
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 40,
+        "fields": {
+            "name": "Для дачи",
+            "parent": null,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/дача.jpg",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:24:06.744Z",
+            "updated_at": "2025-02-03T04:44:04.780Z",
+            "lft": 1,
+            "rght": 2,
+            "tree_id": 3,
+            "level": 0
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 41,
+        "fields": {
+            "name": "Электроника",
+            "parent": null,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/ноутбук.jpg",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T04:24:15.801Z",
+            "updated_at": "2025-02-03T04:44:33.026Z",
+            "lft": 1,
+            "rght": 2,
+            "tree_id": 6,
+            "level": 0
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 42,
+        "fields": {
+            "name": "Дубленки",
+            "parent": 33,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_QC50Neq.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T09:04:21.297Z",
+            "updated_at": "2025-02-03T09:04:21.297Z",
+            "lft": 6,
+            "rght": 7,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 43,
+        "fields": {
+            "name": "Парки",
+            "parent": 33,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_O34kMIM.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T09:04:42.485Z",
+            "updated_at": "2025-02-03T09:04:42.485Z",
+            "lft": 10,
+            "rght": 11,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 44,
+        "fields": {
+            "name": "Утепленные пальто",
+            "parent": 33,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_VQv6MCW.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T09:05:01.335Z",
+            "updated_at": "2025-02-03T09:05:01.335Z",
+            "lft": 12,
+            "rght": 13,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 45,
+        "fields": {
+            "name": "Горнолыжные куртки",
+            "parent": 33,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_T1uNZxV.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T09:05:18.946Z",
+            "updated_at": "2025-02-03T09:05:18.946Z",
+            "lft": 4,
+            "rght": 5,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 46,
+        "fields": {
+            "name": "Брюки",
+            "parent": 28,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_xCfp0zv.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T09:59:16.823Z",
+            "updated_at": "2025-02-03T10:57:35.237Z",
+            "lft": 25,
+            "rght": 26,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 47,
+        "fields": {
+            "name": "Кофты",
+            "parent": 28,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_APZBj4k.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T09:59:46.897Z",
+            "updated_at": "2025-02-03T10:58:22.650Z",
+            "lft": 35,
+            "rght": 36,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 48,
+        "fields": {
+            "name": "Джинсы",
+            "parent": 28,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_RfNMtZu.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T10:00:04.836Z",
+            "updated_at": "2025-02-03T10:57:49.593Z",
+            "lft": 31,
+            "rght": 32,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 49,
+        "fields": {
+            "name": "Домашняя одежда",
+            "parent": 28,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_4gCnCGW.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-03T10:00:27.758Z",
+            "updated_at": "2025-02-03T10:58:17.763Z",
+            "lft": 33,
+            "rght": 34,
+            "tree_id": 5,
+            "level": 2
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 50,
+        "fields": {
+            "name": "Аксессуары",
+            "parent": null,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/аксессуары.jpg",
+            "small_image": "",
+            "ordering": 0,
+            "created_at": "2025-02-03T11:13:16.709Z",
+            "updated_at": "2025-02-03T11:13:16.709Z",
+            "lft": 1,
+            "rght": 2,
+            "tree_id": 2,
+            "level": 0
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 51,
+        "fields": {
+            "name": "Кухонная мебель",
+            "parent": 39,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/кух_мебель.jpg",
+            "small_image": "category_images/small_images/фон_для_мелких_5ECKDjF.jpg",
+            "ordering": 3,
+            "created_at": "2025-02-03T11:19:07.976Z",
+            "updated_at": "2025-02-03T11:29:34.242Z",
+            "lft": 2,
+            "rght": 3,
+            "tree_id": 4,
+            "level": 1
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 52,
+        "fields": {
+            "name": "Мягкая мебель",
+            "parent": 39,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/Мягк_мебель.webp",
+            "small_image": "",
+            "ordering": 2,
+            "created_at": "2025-02-03T11:23:30.442Z",
+            "updated_at": "2025-02-03T11:29:31.358Z",
+            "lft": 4,
+            "rght": 5,
+            "tree_id": 4,
+            "level": 1
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 53,
+        "fields": {
+            "name": "Твердая мебель",
+            "parent": 39,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "category_images/big_images/мебель_твердая.jpg",
+            "small_image": "",
+            "ordering": 1,
+            "created_at": "2025-02-03T11:28:01.879Z",
+            "updated_at": "2025-02-03T11:29:27.922Z",
+            "lft": 6,
+            "rght": 7,
+            "tree_id": 4,
+            "level": 1
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 54,
+        "fields": {
+            "name": "Тест",
+            "parent": 38,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/1200x600-zinnwaldite-brown-solid-color-background_n89pSNJ.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-06T04:04:57.173Z",
+            "updated_at": "2025-02-06T04:04:57.173Z",
+            "lft": 2,
+            "rght": 3,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "marketplace.category",
+        "pk": 55,
+        "fields": {
+            "name": "Туфли",
+            "parent": 30,
+            "description": "",
+            "page_identificator": null,
+            "big_image": "",
+            "small_image": "category_images/small_images/фон_для_мелких_CyCbuww.jpg",
+            "ordering": 0,
+            "created_at": "2025-02-21T13:27:05.855Z",
+            "updated_at": "2025-02-21T13:27:05.855Z",
+            "lft": 20,
+            "rght": 21,
+            "tree_id": 5,
+            "level": 3
+        }
+    },
+    {
+        "model": "marketplace.product",
+        "pk": 1,
+        "fields": {
+            "business": 1,
+            "category": 35,
+            "name": "Это будет типо шуба",
+            "description": "Вот тут должно быть длинное описание модели, наверное могло быть что то интересное не знаю",
+            "price": "1000000.00",
+            "discount": "5000.00",
+            "stock_quantity": 0,
+            "on_the_main": true,
+            "created_at": "2025-04-29T22:39:50.587Z",
+            "updated_at": "2025-04-29T22:39:50.587Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariant",
+        "pk": 1,
+        "fields": {
+            "product": 1,
+            "sku": null,
+            "price": "1111111.00",
+            "discount": "7777.00",
+            "stock_quantity": 31,
+            "created_at": "2025-04-29T22:41:31.921Z",
+            "updated_at": "2025-04-29T22:48:27.763Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariant",
+        "pk": 3,
+        "fields": {
+            "product": 1,
+            "sku": null,
+            "price": "33333.00",
+            "discount": "2222.00",
+            "stock_quantity": 1110,
+            "created_at": "2025-04-29T22:47:03.138Z",
+            "updated_at": "2025-04-29T22:48:20.499Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariant",
+        "pk": 4,
+        "fields": {
+            "product": 1,
+            "sku": null,
+            "price": "12000.00",
+            "discount": "9000.00",
+            "stock_quantity": 0,
+            "created_at": "2025-04-29T22:48:13.075Z",
+            "updated_at": "2025-04-29T22:48:13.075Z"
+        }
+    },
+    {
+        "model": "marketplace.attribute",
+        "pk": 1,
+        "fields": {
+            "name": "Размер",
+            "has_predefined_values": true
+        }
+    },
+    {
+        "model": "marketplace.attributevalue",
+        "pk": 1,
+        "fields": {
+            "attribute": 1,
+            "value": "XS"
+        }
+    },
+    {
+        "model": "marketplace.attributevalue",
+        "pk": 2,
+        "fields": {
+            "attribute": 1,
+            "value": "S"
+        }
+    },
+    {
+        "model": "marketplace.attributevalue",
+        "pk": 3,
+        "fields": {
+            "attribute": 1,
+            "value": "M"
+        }
+    },
+    {
+        "model": "marketplace.attributevalue",
+        "pk": 4,
+        "fields": {
+            "attribute": 1,
+            "value": "L"
+        }
+    },
+    {
+        "model": "marketplace.attributevalue",
+        "pk": 5,
+        "fields": {
+            "attribute": 1,
+            "value": "XXL"
+        }
+    },
+    {
+        "model": "marketplace.attributevalue",
+        "pk": 6,
+        "fields": {
+            "attribute": 1,
+            "value": "XL"
+        }
+    },
+    {
+        "model": "marketplace.categoryattribute",
+        "pk": 1,
+        "fields": {
+            "category": 33,
+            "attribute": 1,
+            "required": true
+        }
+    },
+    {
+        "model": "marketplace.productvariantattribute",
+        "pk": 3,
+        "fields": {
+            "variant": 1,
+            "category_attribute": 1,
+            "predefined_value": 2,
+            "custom_value": ""
+        }
+    },
+    {
+        "model": "marketplace.productvariantattribute",
+        "pk": 4,
+        "fields": {
+            "variant": 3,
+            "category_attribute": 1,
+            "predefined_value": 4,
+            "custom_value": ""
+        }
+    },
+    {
+        "model": "marketplace.productvariantimage",
+        "pk": 1,
+        "fields": {
+            "variant": 1,
+            "image": "imperia/variants/БелаяФутболка1.webp",
+            "is_main": true,
+            "created_at": "2025-04-29T22:41:31.924Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariantimage",
+        "pk": 2,
+        "fields": {
+            "variant": 1,
+            "image": "imperia/variants/БелаяФутболка2.webp",
+            "is_main": false,
+            "created_at": "2025-04-29T22:41:31.949Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariantimage",
+        "pk": 5,
+        "fields": {
+            "variant": 3,
+            "image": "imperia/variants/БелаяФутболка1_1kco9Kc.webp",
+            "is_main": false,
+            "created_at": "2025-04-29T22:47:03.143Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariantimage",
+        "pk": 6,
+        "fields": {
+            "variant": 3,
+            "image": "imperia/variants/БелаяФутболка2_8mDEo6h.webp",
+            "is_main": true,
+            "created_at": "2025-04-29T22:47:03.167Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariantimage",
+        "pk": 7,
+        "fields": {
+            "variant": 4,
+            "image": "imperia/variants/БелаяФутболка1_MX0cOf3.webp",
+            "is_main": true,
+            "created_at": "2025-04-29T22:48:13.077Z"
+        }
+    },
+    {
+        "model": "marketplace.productvariantimage",
+        "pk": 8,
+        "fields": {
+            "variant": 4,
+            "image": "imperia/variants/БелаяФутболка2_aX9Fqah.webp",
+            "is_main": false,
+            "created_at": "2025-04-29T22:48:13.100Z"
+        }
+    }
+]

@@ -127,25 +127,25 @@ WSGI_APPLICATION = 'VendorVillage.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db_0_1.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'vendorvillage',
-#         'USER': 'root',
-#         'PASSWORD': 'ensoxPER324',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#         'OPTIONS' : {
-#             'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
-#         }
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db_0_2.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vendorvillage3',
+        'USER': 'root',
+        'PASSWORD': 'ensoxPER324',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS' : {
+            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
+        }
+    }
+}
 
 
 # Password validation

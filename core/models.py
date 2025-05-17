@@ -14,6 +14,10 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}".strip()
+    
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
@@ -43,9 +47,11 @@ class BusinessType(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
     url = models.CharField(max_length=100, blank=True, null=True, default='no_url')
+    slug = models.SlugField(max_length=100, blank=True, null=True, default='no_slug')
 
     def __str__(self):
         return self.name
+    
 
 def business_logo_path(instance, filename):
     # Сохраняем логотип в "slug/logos/filename"
