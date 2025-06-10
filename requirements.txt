@@ -1,1 +1,25 @@
-wheel @ file:///opt/homebrew/Cellar/python%403.13/3.13.2/libexec/wheel-0.45.1-py3-none-any.whl#sha256=b9235939e2096903717cb6bfc132267f8a7e46deb2ec3ef9c5e234ea301795d0
+asgiref==3.8.1
+certifi==2025.1.31
+Django==5.1.2
+django-bootstrap5==24.3
+django-cors-headers==4.7.0
+django-debug-toolbar==4.4.6
+django-elasticsearch-dsl==8.0
+django-js-asset==3.0.1
+django-mptt==0.16.0
+django-widget-tweaks==1.5.0
+djangorestframework==3.16.0
+djangorestframework_simplejwt==5.5.0
+elastic-transport==8.17.1
+elasticsearch==8.18.0
+elasticsearch-dsl==8.18.0
+mysqlclient==2.2.6
+pillow==11.1.0
+PyJWT==2.9.0
+python-dateutil==2.9.0.post0
+six==1.17.0
+sorl-thumbnail==12.11.0
+sqlparse==0.5.1
+typing_extensions==4.13.2
+tzdata==2024.2
+urllib3==2.4.0
