@@ -1,0 +1,161 @@
+[
+{
+  "model": "core.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$KluqxbIynjDygJAqIkHvz1$8lV97XHtLSktCNRMkAm2EHPFGb8gc8Q9+b102e7XkoQ=",
+    "last_login": "2025-05-14T22:18:50.711Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-02-01T03:20:04Z",
+    "phone": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$joveHUPAANfFVjkN4LCYhD$Uu7SBSTUQUMPt2SjN3YpcZS87XDfGsu9IOg1MEB6kkE=",
+    "last_login": "2025-02-04T02:43:42Z",
+    "is_superuser": false,
+    "username": "Artur",
+    "first_name": "",
+    "last_name": "",
+    "email": "qwerty.gogi@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-02-03T11:59:00Z",
+    "phone": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$3ao51Y7zZzwYZEGhcOvJid$QCGmmgT+xIMRnXAIxktbejZVod/AQ5/h6BsZbYMag3c=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "rollsroyce1",
+    "first_name": "",
+    "last_name": "",
+    "email": "rollsroyce1@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-02T15:08:44.988Z",
+    "phone": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.role",
+  "pk": 1,
+  "fields": {
+    "name": "business_owner",
+    "users": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "core.businesstype",
+  "pk": 1,
+  "fields": {
+    "name": "Маркетплейс",
+    "description": "Маркетплейс - торговая площадка со всем - всеми товарами",
+    "url": "marketplace/categories",
+    "slug": "marketplace"
+  }
+},
+{
+  "model": "core.businesstype",
+  "pk": 2,
+  "fields": {
+    "name": "ТРЦ",
+    "description": "Исследуйте торговые центры своего города! Смотрите ассортимент товаров, и не упустите самые большие скидки!",
+    "url": "mall/main",
+    "slug": "no_slug"
+  }
+},
+{
+  "model": "core.businesstype",
+  "pk": 3,
+  "fields": {
+    "name": "Рестораны",
+    "description": "Хотите кушать? Тогда нажимай сюда, тут увидишь все рестораны своего города, сможешь заказать доставку и забронировать столик =)",
+    "url": "restaurants/main",
+    "slug": "no_slug"
+  }
+},
+{
+  "model": "core.business",
+  "pk": 1,
+  "fields": {
+    "owner": 3,
+    "business_type": 1,
+    "name": "Империя",
+    "description": "Магазин империя - один из лучших магазинов вехрней одежды нашего города!",
+    "address": "Гагарина",
+    "phone": "87073945075",
+    "business_logo": "",
+    "html_template": "",
+    "product_card_template": "",
+    "product_detail_template": "",
+    "background_image": "business/back_imperia.jpg",
+    "created_at": "2025-02-03T00:59:41.179Z",
+    "updated_at": "2025-05-08T21:17:32.575Z",
+    "slug": "imperia"
+  }
+},
+{
+  "model": "core.business",
+  "pk": 2,
+  "fields": {
+    "owner": 2,
+    "business_type": 1,
+    "name": "Hot_Shmot",
+    "description": "Hot_Shmot - magaz super hype odezhdii",
+    "address": "Malika gabdullina",
+    "phone": "87077077707",
+    "business_logo": "",
+    "html_template": "",
+    "product_card_template": "",
+    "product_detail_template": "",
+    "background_image": "business/лого_бэк.webp",
+    "created_at": "2025-02-03T06:03:44.504Z",
+    "updated_at": "2025-02-21T13:21:10.569Z",
+    "slug": "hot_shmot"
+  }
+},
+{
+  "model": "core.business",
+  "pk": 3,
+  "fields": {
+    "owner": 1,
+    "business_type": 1,
+    "name": "Атто",
+    "description": "Атто аоокщоащкоащкоа",
+    "address": "Габдулина 127А",
+    "phone": "9999999991",
+    "business_logo": "business_logo/мебель_твердая.jpg",
+    "html_template": "atto/own_site_files/test.html",
+    "product_card_template": "",
+    "product_detail_template": "business/test_wazMfOH.html",
+    "background_image": "business/мебель_твердая.jpg",
+    "created_at": "2025-02-22T10:06:27.869Z",
+    "updated_at": "2025-02-22T10:58:39.235Z",
+    "slug": "atto"
+  }
+}
+]
