@@ -4,7 +4,7 @@ from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 from django.core.exceptions import ValidationError
 from core.models import Business
-
+from django.http import Http404
 
 # Create your models here.
 class Category(MPTTModel):
@@ -83,34 +83,35 @@ class Product(models.Model):
     
     @property
     def available_attributes(self):
-        """Возвращает доступные атрибуты для вариаций, которые отмечены для отображения справа"""
-        if not self.category:
-            return {}
+        """Возвращает атрибуты для отображения справа, собранные по всем вариантам"""
+        attributes_data = {}
         
-        result = {}
-        print([i for i in self.variants.all()])
-        # Получаем атрибуты категории, где show_attribute_at_right=True
-        for cat_attr in self.category.category_attributes.all():
-            attr_name = cat_attr.attribute.name
-            
-            # Собираем все значения из вариантов этого товара
-            values = set()
-            for pva in ProductVariantAttribute.objects.filter(
-                variant__product=self,
-                category_attribute=cat_attr
-            ):
-                if pva.predefined_value:
-                    values.add(pva.predefined_value.value)
-                elif pva.custom_value:
-                    values.add(pva.custom_value)
-            
-            result[attr_name] = {
-                'values': list(values),
-                'required': cat_attr.required,
-                'attribute_id': cat_attr.attribute.id
-            }
-            
-        return result
+        # Проходим по всем вариантам товара
+        for variant in self.variants.all():
+            # Получаем атрибуты варианта, которые нужно показывать справа
+            for attr in variant.get_right_attributes():
+                attr_name = attr.category_attribute.attribute.name
+                
+                # Инициализируем запись для атрибута, если её ещё нет
+                if attr_name not in attributes_data:
+                    attributes_data[attr_name] = {
+                        'values': set(),
+                        'required': attr.category_attribute.required,
+                        'attribute_id': attr.category_attribute.attribute.id,
+                        'has_predefined_values': attr.category_attribute.attribute.has_predefined_values
+                    }
+                
+                # Добавляем значение атрибута
+                if attr.predefined_value:
+                    attributes_data[attr_name]['values'].add(attr.predefined_value.value)
+                elif attr.custom_value:
+                    attributes_data[attr_name]['values'].add(attr.custom_value)
+        
+        # Преобразуем множества в отсортированные списки
+        for attr_name, data in attributes_data.items():
+            data['values'] = sorted(data['values'])
+        
+        return attributes_data
     
     @property
     def default_variant(self):
@@ -118,11 +119,7 @@ class Product(models.Model):
         # Сначала ищем вариант с show_this=True
         variant = self.variants.filter(show_this=True, stock_quantity__gt=0).first()
         if not variant:
-            # Если такого нет, берем первый в наличии
-            variant = self.variants.filter(stock_quantity__gt=0).first()
-            if not variant:
-                # Если нет в наличии, берем любой
-                variant = self.variants.first()
+            raise Http404("Нет доступных вариантов для этого товара")
         return variant
     
     @property
@@ -370,6 +367,16 @@ class ProductVariant(models.Model):
     def is_in_stock(self):
         """Проверяет наличие на складе"""
         return self.stock_quantity > 0
+    
+    def get_right_attributes(self):
+        """Возвращает атрибуты варианта, которые нужно показывать справа"""
+        return self.attributes.filter(
+            category_attribute__show_attribute_at_right=True
+        ).select_related(
+            'category_attribute',
+            'category_attribute__attribute',
+            'predefined_value'
+        )
 
 
 class ProductVariantAttribute(models.Model):

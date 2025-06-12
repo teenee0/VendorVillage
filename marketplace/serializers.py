@@ -96,6 +96,7 @@ class ProductVariantSerializer(serializers.ModelSerializer):
             # Или для процентной скидки:
             return float(obj.price) * float(obj.discount)/100
         return 0
+
 class ProductListSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
     business_name = serializers.CharField(source='business.name', read_only=True)
@@ -107,26 +108,26 @@ class ProductListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = [
-            'id', 'name', 'description', 'on_the_main', 'is_active',
+            'id', 'name', 'description', "is_active",
             'category', 'category_name', 'business', 'business_name',
             'default_variant', 'min_price', 'max_price', 'created_at',
             'main_image'
         ]
-    
+
     def get_default_variant(self, obj):
         variant = obj.default_variant
-        if variant:
-            return ProductVariantSerializer(variant).data
-        return None
-    
+        
+        return ProductVariantSerializer(variant).data
+        
+
     def get_min_price(self, obj):
         min_price, _ = obj.price_range
         return min_price
-    
+
     def get_max_price(self, obj):
         _, max_price = obj.price_range
         return max_price
-    
+
     def get_main_image(self, obj):
         main_image = obj.main_image
         if main_image:

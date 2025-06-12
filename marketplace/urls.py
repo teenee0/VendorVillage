@@ -29,6 +29,9 @@ urlpatterns.extend([
     path('api/categories/<int:pk>/products/', views.category_products_api, name='category_products_api'),
     path('api/products/<int:pk>/', views.product_detail_api, name='product_detail_api'),
     path('api/categories/<int:pk>/filters/', views.get_category_filters),
+    # path('api/categories/<int:pk>/products_test/', views.get_category_filters_test1),
+    # path('api/categories/<int:pk>/filters_test/', views.get_category_filters_test),
+    
 
 ])
 
