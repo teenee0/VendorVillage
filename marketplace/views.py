@@ -44,7 +44,7 @@ def test_api(request):
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)
     page_obj, pagination = ProductSet.pagination_for_products(filtered_products, request)
-
+    filters = ProductSet.get_filters_by_products(filtered_products)
     category_serialized = CategorySerializer(category)
 
     products_page = ProductListSerializer(
@@ -62,6 +62,7 @@ def test_api(request):
         "products": products_page.data,
         "pagination": pagination,
         "applied_filters": applied_filters,
+        "filters": filters,
     })
 
 
@@ -100,7 +101,7 @@ def category_products_api(request, pk):
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)
     page_obj, pagination = ProductSet.pagination_for_products(filtered_products, request)
-    filters = ProductSet.get_filters_by_products(filtered_products, category)
+    filters = ProductSet.get_filters_by_products(filtered_products)
 
     category_serialized = CategorySerializer(category)
 

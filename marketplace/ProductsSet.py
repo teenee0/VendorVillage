@@ -132,85 +132,153 @@ class ProductSet:
         return same_products
 
     @staticmethod
-    def get_filters_by_products(products_qs, category):
-        product_ids = products_qs.values_list("id", flat=True)
+    def get_filters_by_products(products_qs, category=None):
+        if category:
+            product_ids = products_qs.values_list("id", flat=True)
 
-        # Находим все уникальные атрибуты для этих товаров
-        attributes = Attribute.objects.filter(
-            category_attributes__productvariantattribute__variant__product_id__in=product_ids,
-            is_filterable=True,
-        ).distinct()
-
-        filters = []
-
-        for attr in attributes:
-            # Получаем CategoryAttribute для этого атрибута в текущей категории
-            try:
-                cat_attr = CategoryAttribute.objects.get(
-                    attribute=attr, category=category
-                )
-                required = cat_attr.required
-            except CategoryAttribute.DoesNotExist:
-                required = False
-
-            # Предопределенные значения
-            predefined_values = AttributeValue.objects.filter(
-                attribute=attr,
-                productvariantattribute__variant__product_id__in=product_ids,
+            # Находим все уникальные атрибуты для этих товаров
+            attributes = Attribute.objects.filter(
+                category_attributes__productvariantattribute__variant__product_id__in=product_ids,
+                is_filterable=True,
             ).distinct()
 
-            # Кастомные значения
-            custom_values = (
-                ProductVariantAttribute.objects.filter(
-                    category_attribute__attribute=attr,
-                    variant__product_id__in=product_ids,
-                    custom_value__isnull=False,
-                )
-                .exclude(custom_value="")
-                .values_list("custom_value", flat=True)
-                .distinct()
-            )
+            filters = []
 
-            # Формируем список значений
-            values = []
-            for val in predefined_values:
-                values.append(
-                    {
-                        "id": val.id,
-                        "value": val.value,
-                        "attribute_name": attr.name,
-                        "color_code": val.color_code,
-                    }
-                )
+            for attr in attributes:
+                # Получаем CategoryAttribute для этого атрибута в текущей категории
+                try:
+                    cat_attr = CategoryAttribute.objects.get(
+                        attribute=attr, category=category
+                    )
+                    required = cat_attr.required
+                except CategoryAttribute.DoesNotExist:
+                    required = False
 
-            for custom_val in custom_values:
-                values.append(
-                    {
-                        "id": None,
-                        "value": custom_val,
-                        "attribute_name": attr.name,
-                        "color_code": None,
-                    }
+                # Предопределенные значения
+                predefined_values = AttributeValue.objects.filter(
+                    attribute=attr,
+                    productvariantattribute__variant__product_id__in=product_ids,
+                ).distinct()
+
+                # Кастомные значения
+                custom_values = (
+                    ProductVariantAttribute.objects.filter(
+                        category_attribute__attribute=attr,
+                        variant__product_id__in=product_ids,
+                        custom_value__isnull=False,
+                    )
+                    .exclude(custom_value="")
+                    .values_list("custom_value", flat=True)
+                    .distinct()
                 )
 
-            if values:
-                filters.append(
-                    {
-                        "id": attr.id,
-                        "name": attr.name,
-                        "type": "choice",
-                        "has_predefined_values": attr.has_predefined_values,
-                        "required": required,
-                        "values": values,
-                    }
+                # Формируем список значений
+                values = []
+                for val in predefined_values:
+                    values.append(
+                        {
+                            "id": val.id,
+                            "value": val.value,
+                            "attribute_name": attr.name,
+                            "color_code": val.color_code,
+                        }
+                    )
+
+                for custom_val in custom_values:
+                    values.append(
+                        {
+                            "id": None,
+                            "value": custom_val,
+                            "attribute_name": attr.name,
+                            "color_code": None,
+                        }
+                    )
+
+                if values:
+                    filters.append(
+                        {
+                            "id": attr.id,
+                            "name": attr.name,
+                            "type": "choice",
+                            "has_predefined_values": attr.has_predefined_values,
+                            "required": required,
+                            "values": values,
+                        }
+                    )
+
+            response = {
+                "category": {"id": category.id, "name": category.name},
+                "filters": sorted(filters, key=lambda x: x["name"]),
+            }
+
+            return response
+        else:
+            product_ids = products_qs.values_list("id", flat=True)
+
+            # Находим все уникальные атрибуты для этих товаров
+            attributes = Attribute.objects.filter(
+                category_attributes__productvariantattribute__variant__product_id__in=product_ids,
+                is_filterable=True,
+            ).distinct()
+
+            filters = []
+
+            for attr in attributes:
+                # Получаем все значения атрибута для этих товаров
+                predefined_values = AttributeValue.objects.filter(
+                    attribute=attr,
+                    productvariantattribute__variant__product_id__in=product_ids,
+                ).distinct()
+
+                # Кастомные значения
+                custom_values = (
+                    ProductVariantAttribute.objects.filter(
+                        category_attribute__attribute=attr,
+                        variant__product_id__in=product_ids,
+                        custom_value__isnull=False,
+                    )
+                    .exclude(custom_value="")
+                    .values_list("custom_value", flat=True)
+                    .distinct()
                 )
 
-        response = {
-            "category": {"id": category.id, "name": category.name},
-            "filters": sorted(filters, key=lambda x: x["name"]),
-        }
+                # Формируем список значений
+                values = []
+                for val in predefined_values:
+                    values.append(
+                        {
+                            "id": val.id,
+                            "value": val.value,
+                            "attribute_name": attr.name,
+                            "color_code": val.color_code,
+                        }
+                    )
 
-        return response
+                for custom_val in custom_values:
+                    values.append(
+                        {
+                            "id": None,
+                            "value": custom_val,
+                            "attribute_name": attr.name,
+                            "color_code": None,
+                        }
+                    )
+
+                if values:
+                    filters.append(
+                        {
+                            "id": attr.id,
+                            "name": attr.name,
+                            "type": "choice",
+                            "has_predefined_values": attr.has_predefined_values,
+                            "required": False,  # Без категории не можем определить обязательность
+                            "values": sorted(values, key=lambda x: x["value"]),
+                        }
+                    )
+
+            return {
+                "filters": sorted(filters, key=lambda x: x["name"]),
+            }
 
     @staticmethod
     def filter_products(products_qs, request):
