@@ -15,7 +15,7 @@ class ProductVariantCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductVariant
         fields = [
-            'sku', 'price', 'discount', 'stock_quantity', 'show_this',
+            'sku', 'price', 'discount', 'show_this',
             'has_custom_name', 'custom_name', 'has_custom_description', 'custom_description'
         ]
 

@@ -207,22 +207,36 @@ def get_product_attributes(request, business_slug, product_id):
             }
             attributes.append(attr_data)
 
-        # 2. Получаем существующие варианты товара с их атрибутами
+        # 2. Получаем существующие варианты товара с их атрибутами и информацией о складах
         existing_variants = []
         for variant in product.variants.all().prefetch_related(
-            "attributes__category_attribute__attribute", "attributes__predefined_value"
+            "attributes__category_attribute__attribute", 
+            "attributes__predefined_value",
+            "stocks__location"  # Добавляем prefetch для остатков
         ):
             variant_data = {
                 "id": variant.id,
                 "sku": variant.sku,
                 "price": str(variant.price),
                 "discount": str(variant.discount) if variant.discount else None,
-                "stock_quantity": variant.stock_quantity,
+                "stock_quantity": variant.stock_quantity,  # Общее количество на всех складах
+                "is_in_stock": variant.is_in_stock,  # Доступен ли для заказа
                 "show_this": variant.show_this,
                 "has_custom_name": variant.has_custom_name,
                 "custom_name": variant.custom_name,
                 "has_custom_description": variant.has_custom_description,
                 "custom_description": variant.custom_description,
+                "stocks": [  # Добавляем информацию по складам
+                    {
+                        "location_id": stock.location.id,
+                        "location_name": stock.location.name,
+                        "quantity": stock.quantity,
+                        "reserved_quantity": stock.reserved_quantity,
+                        "available_quantity": stock.available_quantity,
+                        "is_available_for_sale": stock.is_available_for_sale,
+                    }
+                    for stock in variant.stocks.all()
+                ],
                 "attributes": [],
             }
 
