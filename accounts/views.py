@@ -189,15 +189,21 @@ def logout_api(request):
     return response
 
 @api_view(['GET'])
+@authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def check_business_access(request, business_slug):
     try:
         business = Business.objects.get(slug=business_slug)
+
         if business.owner == request.user:
             return Response({'has_access': True}, status=status.HTTP_200_OK)
         return Response({'has_access': False}, status=status.HTTP_403_FORBIDDEN)
+
     except Business.DoesNotExist:
         return Response({'error': 'Business not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+
 
 # пример авторизации на класс вью
 # class AccountView(APIView):

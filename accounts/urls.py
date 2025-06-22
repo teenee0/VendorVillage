@@ -24,6 +24,6 @@ urlpatterns.extend([
     path('api/account/', views.account_info, name='account-info'),
     path('api/auth/me/', views.me, name='check_auth'),
     path('api/token/refresh/', CustomTokenRefreshView.as_view(), name='token_refresh'),
-    path('api/check-business-access/<str:business_slug>/', check_business_access, name='check_business_access'),
+    path('api/business/check-access/<str:business_slug>/', check_business_access, name='check_business_access'),
     # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 ])
