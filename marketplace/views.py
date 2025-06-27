@@ -1,38 +1,25 @@
-from django.core.paginator import Paginator
-from django.http import Http404, HttpResponseForbidden
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Category
 from .serializers import *
 
-from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.contrib.auth.decorators import login_required
-from core.models import Business
+from django.shortcuts import get_object_or_404
 from rest_framework import status
 from django.shortcuts import get_object_or_404
-from django.db.models import Q, F, Case, When, DecimalField, Min, Max
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.db.models import Subquery, OuterRef
-from .models import Category, Product, ProductVariant, AttributeValue
+from .models import Category, Product
 from .serializers import (
     ProductListSerializer,
     CategorySerializer,
-    AttributeValueSerializer,
+    ProductDetailSerializer,
 )
-from django.db.models import Q, Exists, OuterRef
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.core.cache import cache
-from django.db.models import Q, Case, When, F, DecimalField, Min, Max
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
-from django.db.models import Prefetch
-from django.db.models import Exists, OuterRef
 from .ProductsSet import ProductSet
 
 
@@ -43,7 +30,9 @@ def test_api(request):
     category = get_object_or_404(Category, pk=33, is_active=True)
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)
-    page_obj, pagination = ProductSet.pagination_for_products(filtered_products, request)
+    page_obj, pagination = ProductSet.pagination_for_products(
+        filtered_products, request
+    )
     filters = ProductSet.get_filters_by_products(filtered_products)
     category_serialized = CategorySerializer(category)
 
@@ -52,18 +41,20 @@ def test_api(request):
     )
 
     # Возвращаем сериализованные данные в ответе
-    return Response({
-        "category": category_serialized.data,
-        "breadcrumbs": breadcrumbs,
-        "subcategories": CategorySerializer(
+    return Response(
+        {
+            "category": category_serialized.data,
+            "breadcrumbs": breadcrumbs,
+            "subcategories": CategorySerializer(
                 category.children.filter(is_active=True).order_by("ordering", "name"),
                 many=True,
             ).data,
-        "products": products_page.data,
-        "pagination": pagination,
-        "applied_filters": applied_filters,
-        "filters": filters,
-    })
+            "products": products_page.data,
+            "pagination": pagination,
+            "applied_filters": applied_filters,
+            "filters": filters,
+        }
+    )
 
 
 @api_view(["GET"])
@@ -93,6 +84,7 @@ def child_category_api(request, pk):
             }
         )
 
+
 @api_view(["GET"])
 def category_products_api(request, pk):
     """API для получения товаров в указанной категории."""
@@ -100,7 +92,9 @@ def category_products_api(request, pk):
     category = get_object_or_404(Category, pk=pk, is_active=True)
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)
-    page_obj, pagination = ProductSet.pagination_for_products(filtered_products, request)
+    page_obj, pagination = ProductSet.pagination_for_products(
+        filtered_products, request
+    )
     filters = ProductSet.get_filters_by_products(filtered_products)
 
     category_serialized = CategorySerializer(category)
@@ -110,20 +104,24 @@ def category_products_api(request, pk):
     )
 
     # Возвращаем сериализованные данные в ответе
-    return Response({
-        "oldData": {
-            "category": category_serialized.data,
-            "breadcrumbs": breadcrumbs,
-            "subcategories": CategorySerializer(
-                    category.children.filter(is_active=True).order_by("ordering", "name"),
+    return Response(
+        {
+            "oldData": {
+                "category": category_serialized.data,
+                "breadcrumbs": breadcrumbs,
+                "subcategories": CategorySerializer(
+                    category.children.filter(is_active=True).order_by(
+                        "ordering", "name"
+                    ),
                     many=True,
                 ).data,
-            "products": products_page.data,
-            "pagination": pagination,
-            "applied_filters": applied_filters,
-        },
-        "filters": filters
-    })
+                "products": products_page.data,
+                "pagination": pagination,
+                "applied_filters": applied_filters,
+            },
+            "filters": filters,
+        }
+    )
 
 
 @api_view(["GET"])

@@ -134,21 +134,26 @@ class Product(models.Model):
 
     @property
     def price_range(self):
-        """Возвращает минимальную и максимальную цену среди вариантов"""
+        """Возвращает минимальную и максимальную цену среди вариантов с учетом наличия на складах"""
         from django.db.models import Sum, Q, F
-
+        
         # Аннотируем варианты товара с общим количеством на складах
         variants = self.variants.annotate(
             total_stock=Sum(
-                'stocks__quantity',
-                filter=Q(stocks__location__location_type__in=["warehouse", "mixed"])
+                "stocks__quantity",
+                filter=Q(stocks__location__location_type__is_warehouse=True),
             )
         ).filter(total_stock__gt=0)
 
         if not variants.exists():
             return None, None
 
-        prices = [variant.current_price for variant in variants if variant.current_price is not None]
+        # Получаем все актуальные цены
+        prices = [
+            variant.current_price
+            for variant in variants
+            if variant.current_price is not None
+        ]
 
         if not prices:
             return None, None
@@ -381,9 +386,11 @@ class ProductVariant(models.Model):
     @property
     def stock_quantity(self):
         """Общее количество на всех складах"""
+        from django.db.models import Sum
+
         return (
-            self.stocks.filter(location__location_type__in=["warehouse", "mixed"]).aggregate(
-                total=models.Sum("quantity")
+            self.stocks.filter(location__location_type__is_warehouse=True).aggregate(
+                total=Sum("quantity")
             )["total"]
             or 0
         )
@@ -391,28 +398,14 @@ class ProductVariant(models.Model):
     @property
     def is_in_stock(self):
         """Проверяет наличие товара на любом из складов"""
-        from django.db.models import Sum
-        total_available = self.stocks.filter(
-            location__location_type__in=["warehouse", "mixed"]
-        ).aggregate(
-            total=Sum('quantity') - Sum('reserved_quantity')
-        )['total'] or 0
+        from django.db.models import Sum, F
+
+        result = self.stocks.filter(
+            location__location_type__is_warehouse=True
+        ).aggregate(total=Sum(F("quantity") - F("reserved_quantity")))
+
+        total_available = result["total"] or 0
         return total_available > 0
-
-    def get_available_quantity(self, location=None):
-        """
-        Получить доступное количество в конкретной локации или общее
-        """
-        if location:
-            stock = self.stocks.filter(location=location).first()
-            return stock.available_quantity if stock else 0
-
-        return (
-            self.stocks.filter(location__location_type__in=["warehouse", "mixed"]).aggregate(
-                total=models.Sum("quantity") - models.Sum("reserved_quantity")
-            )["total"]
-            or 0
-        )
 
     def get_right_attributes(self):
         """Возвращает атрибуты варианта, которые нужно показывать справа"""

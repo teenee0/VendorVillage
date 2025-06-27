@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from accounts.forms import RegistrationForm
+
 # API
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -133,7 +134,7 @@ class LoginView(APIView):
             httponly=True,
             secure=not settings.DEBUG,
             samesite="Lax",
-            max_age=60 * 5,  # 5минут
+            max_age=60 * 20,  # 5минут
             path="/",
         )
 
@@ -188,7 +189,8 @@ def logout_api(request):
     response.delete_cookie("refresh", path="/accounts/api/token/refresh/")
     return response
 
-@api_view(['GET'])
+
+@api_view(["GET"])
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def check_business_access(request, business_slug):
@@ -196,13 +198,13 @@ def check_business_access(request, business_slug):
         business = Business.objects.get(slug=business_slug)
 
         if business.owner == request.user:
-            return Response({'has_access': True}, status=status.HTTP_200_OK)
-        return Response({'has_access': False}, status=status.HTTP_403_FORBIDDEN)
+            return Response({"has_access": True}, status=status.HTTP_200_OK)
+        return Response({"has_access": False}, status=status.HTTP_403_FORBIDDEN)
 
     except Business.DoesNotExist:
-        return Response({'error': 'Business not found'}, status=status.HTTP_404_NOT_FOUND)
-
-
+        return Response(
+            {"error": "Business not found"}, status=status.HTTP_404_NOT_FOUND
+        )
 
 
 # пример авторизации на класс вью

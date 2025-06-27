@@ -112,18 +112,31 @@ class Business(models.Model):
         return self.name
 
 
+class BusinessLocationType(models.Model):
+    """Модель для хранения типов локаций бизнеса"""
+
+    code = models.CharField(max_length=20, unique=True, verbose_name="Код типа")
+    name = models.CharField(max_length=100, verbose_name="Название типа")
+    description = models.TextField(blank=True, null=True, verbose_name="Описание типа")
+    is_warehouse = models.BooleanField(default=False, verbose_name="Является складом")
+    is_sales_point = models.BooleanField(
+        default=False, verbose_name="Является точкой продаж"
+    )
+    icon = models.CharField(max_length=50, blank=True, null=True, verbose_name="Иконка")
+
+    class Meta:
+        verbose_name = "Тип локации бизнеса"
+        verbose_name_plural = "Типы локаций бизнеса"
+
+    def __str__(self):
+        return self.name
+
+
 class BusinessLocation(models.Model):
     """
     Универсальная модель для складов и точек продаж бизнеса.
     На начальном этапе может выполнять обе роли.
     """
-
-    BUSINESS_LOCATION_TYPES = (
-        ("warehouse", "Склад"),
-        ("store", "Магазин"),
-        ("restaurant", "Ресторан"),
-        ("mixed", "Склад и точка продаж"),
-    )
 
     business = models.ForeignKey(
         Business,
@@ -132,11 +145,11 @@ class BusinessLocation(models.Model):
         verbose_name="Бизнес",
     )
     name = models.CharField(max_length=255, verbose_name="Название")
-    location_type = models.CharField(
-        max_length=20,
-        choices=BUSINESS_LOCATION_TYPES,
-        default="mixed",
+    location_type = models.ForeignKey(
+        BusinessLocationType,
+        on_delete=models.PROTECT,
         verbose_name="Тип локации",
+        related_name="locations"
     )
     address = models.CharField(max_length=500, verbose_name="Адрес")
     contact_phone = models.CharField(max_length=20, verbose_name="Контактный телефон")
@@ -164,7 +177,7 @@ class BusinessLocation(models.Model):
         ordering = ["-is_primary", "name"]
 
     def __str__(self):
-        return f"{self.name} ({self.get_location_type_display()})"
+        return f"{self.name}"
 
     def save(self, *args, **kwargs):
         # Если это основная локация, снимаем флаг с других локаций этого бизнеса
@@ -176,10 +189,10 @@ class BusinessLocation(models.Model):
 
     @property
     def is_warehouse(self):
-        """Является ли локация складом (или смешанным типом)"""
-        return self.location_type in ("warehouse", "mixed")
+        """Является ли локация складом"""
+        return self.location_type.is_warehouse
 
     @property
     def is_sales_point(self):
-        """Является ли локация точкой продаж (или смешанным типом)"""
-        return self.location_type in ("store", "restaurant", "mixed")
+        """Является ли локация точкой продаж"""
+        return self.location_type.is_sales_point

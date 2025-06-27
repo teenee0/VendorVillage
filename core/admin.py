@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from django.contrib import admin
-from .models import User, Role, BusinessType, Business, BusinessLocation
+from .models import User, Role, BusinessType, Business, BusinessLocation, BusinessLocationType
+from django.utils.html import format_html
 
 
 @admin.register(User)
@@ -29,27 +29,37 @@ class BusinessAdmin(admin.ModelAdmin):
     search_fields = ("name", "address", "phone")
 
 
-from django.contrib import admin
-from django.utils.html import format_html
-from .models import BusinessLocation
 
+@admin.register(BusinessLocationType)
+class BusinessLocationTypeAdmin(admin.ModelAdmin):
+    list_display = ("name", "code", "is_warehouse", "is_sales_point")
+    list_filter = ("is_warehouse", "is_sales_point")
+    search_fields = ("name", "code")
+    ordering = ("name",)
 
 @admin.register(BusinessLocation)
 class BusinessLocationAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "business",
-        "location_type_display",
+        "location_type_name",
         "address_short",
         "contact_phone",
         "is_active",
         "is_primary",
         "map_link",
     )
-    list_filter = ("is_active", "is_primary", "location_type", "business")
+    list_filter = (
+        "is_active", 
+        "is_primary", 
+        ("location_type", admin.RelatedOnlyFieldListFilter),
+        "business"
+    )
     search_fields = ("name", "address", "contact_phone", "business__name")
     list_editable = ("is_active", "is_primary")
     readonly_fields = ("created_at", "updated_at")
+    autocomplete_fields = ["location_type"]  # Добавляем автодополнение для типа локации
+    
     fieldsets = (
         (
             "Основная информация",
@@ -75,10 +85,11 @@ class BusinessLocationAdmin(admin.ModelAdmin):
     )
     actions = ["activate_locations", "deactivate_locations"]
 
-    def location_type_display(self, obj):
-        return obj.get_location_type_display()
-
-    location_type_display.short_description = "Тип локации"
+    def location_type_name(self, obj):
+        return obj.location_type.name if obj.location_type else "-"
+    
+    location_type_name.short_description = "Тип локации"
+    location_type_name.admin_order_field = "location_type__name"  # Добавляем возможность сортировки
 
     def address_short(self, obj):
         return obj.address[:50] + "..." if len(obj.address) > 50 else obj.address
@@ -102,4 +113,4 @@ class BusinessLocationAdmin(admin.ModelAdmin):
         queryset.update(is_active=False)
 
     def get_queryset(self, request):
-        return super().get_queryset(request).select_related("business")
+        return super().get_queryset(request).select_related("business", "location_type")
