@@ -1,3 +1,5 @@
+from contextlib import nullcontext
+
 from rest_framework.decorators import (
     api_view,
     permission_classes,
@@ -7,7 +9,6 @@ from accounts.permissions import IsBusinessOwner
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from django.db import transaction
 from django.shortcuts import get_object_or_404
 from marketplace.models import (
     Product,
@@ -21,6 +22,8 @@ from marketplace.models import (
 )
 from core.models import Business, BusinessLocation
 from .serializers import ProductCreateSerializer  # Используем тот же сериализатор
+from .exceptions import ProductError
+from .ProductCreateService import ProductService
 
 from accounts.JWT_AUTH import CookieJWTAuthentication
 
@@ -28,122 +31,99 @@ from accounts.JWT_AUTH import CookieJWTAuthentication
 @api_view(["POST"])
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated, IsBusinessOwner])
-@transaction.atomic
 def create_product(request, business_slug):
-    """
-    Создание нового товара с вариантами, атрибутами, остатками и изображениями
-    """
+    print("RAW DATA:", request.data)
+
+    # === Ручной парсер ===
+    data = {}
+    data['name'] = request.data.get('name')
+    data['description'] = request.data.get('description')
+    data['category'] = int(request.data.get('category'))
+    data['is_active'] = request.data.get('is_active') == 'true'
+    data['on_the_main'] = request.data.get('on_the_main') == 'true'
+
+    # Images
+    images = []
+    i = 0
+    while f'images[{i}][image]' in request.FILES:
+        images.append({
+            'image': request.FILES[f'images[{i}][image]'],
+            'is_main': request.data.get(f'images[{i}][is_main]') == 'true',
+            'display_order': int(request.data.get(f'images[{i}][display_order]', '0')),
+        })
+        i += 1
+    data['images'] = images
+
+    # Variants
+    variants = []
+    vi = 0
+    while f'variants[{vi}][sku]' in request.data:
+        variant = {
+            'sku': request.data.get(f'variants[{vi}][sku]'),
+            'price': request.data.get(f'variants[{vi}][price]'),
+            'discount': request.data.get(f'variants[{vi}][discount]'),
+            'show_this': request.data.get(f'variants[{vi}][show_this]') == 'true',
+            'description': request.data.get(f'variants[{vi}][description]', ''),
+            'attributes': [],
+            'stocks': [],
+        }
+
+        # Attributes
+        ai = 0
+        while f'variants[{vi}][attributes][{ai}][category_attribute]' in request.data:
+            predefined_value_raw = request.data.get(f'variants[{vi}][attributes][{ai}][predefined_value]', '')
+            if predefined_value_raw.strip() != '':
+                predefined_value = int(predefined_value_raw)
+            else:
+                predefined_value = None
+
+            attr = {
+                'category_attribute': int(request.data.get(f'variants[{vi}][attributes][{ai}][category_attribute]')),
+                'predefined_value': predefined_value,
+                'custom_value': request.data.get(f'variants[{vi}][attributes][{ai}][custom_value]', ''),
+            }
+            variant['attributes'].append(attr)
+            ai += 1
+
+        # Stocks
+        si = 0
+        while f'variants[{vi}][stocks][{si}][location_id]' in request.data:
+            stock = {
+                'location': int(request.data.get(f'variants[{vi}][stocks][{si}][location_id]')),
+                'quantity': int(request.data.get(f'variants[{vi}][stocks][{si}][quantity]')),
+                'reserved_quantity': int(request.data.get(f'variants[{vi}][stocks][{si}][reserved_quantity]', '0')),
+                'is_available_for_sale': request.data.get(f'variants[{vi}][stocks][{si}][is_available_for_sale]', 'true') == 'true',
+            }
+            variant['stocks'].append(stock)
+            si += 1
+
+        variants.append(variant)
+        vi += 1
+
+    data['variants'] = variants
+
+    print("PARSED DATA:", data)
+
+    # === Теперь сериализатор ===
+    serializer = ProductCreateSerializer(data=data, context={"request": request})
+    serializer.is_valid(raise_exception=True)
+
     try:
-        # Проверяем, что бизнес существует и пользователь имеет к нему доступ
-        business = get_object_or_404(Business, slug=business_slug)
-        if not request.user.businesses.filter(id=business.id).exists():
-            return Response(
-                {"detail": "У вас нет прав для добавления товаров в этот бизнес"},
-                status=status.HTTP_403_FORBIDDEN,
-            )
-
-        # Валидация данных
-        serializer = ProductCreateSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        data = serializer.validated_data
-
-        # Создаем продукт
-        product = Product.objects.create(
-            business=business,
-            category=data["category"],
-            name=data["name"],
-            description=data.get("description", ""),
-            on_the_main=data.get("on_the_main", False),
-            is_active=data.get("is_active", True),
+        product = ProductService.create_product(
+            request.user,
+            business_slug,
+            serializer.validated_data
         )
+        return Response({
+            "message": "Товар успешно создан",
+            "product_id": product.id
+        }, status=status.HTTP_201_CREATED)
+    except ProductError as e:
+        return Response({
+            "detail": str(e),
+            "errors": e.errors
+        }, status=status.HTTP_400_BAD_REQUEST)
 
-        # Обрабатываем варианты товара
-        for variant_data in data["variants"]:
-            variant = create_product_variant(product, variant_data)
-
-        # Обрабатываем изображения (если есть)
-        for image_data in data.get("images", []):
-            ProductImage.objects.create(
-                product=product,
-                image=image_data["image"],
-                is_main=image_data.get("is_main", False),
-                alt_text=image_data.get("alt_text"),
-                display_order=image_data.get("display_order", 0),
-            )
-
-        return Response(
-            {"id": product.id, "name": product.name, "message": "Товар успешно создан"},
-            status=status.HTTP_201_CREATED,
-        )
-
-    except Exception as e:
-        return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-
-def create_product_variant(product, variant_data):
-    """Создание варианта товара с атрибутами и остатками"""
-    variant = ProductVariant.objects.create(
-        product=product,
-        sku=variant_data.get("sku"),
-        has_custom_name=variant_data.get("has_custom_name", False),
-        custom_name=variant_data.get("custom_name"),
-        has_custom_description=variant_data.get("has_custom_description", False),
-        custom_description=variant_data.get("custom_description"),
-        price=variant_data["price"],
-        discount=variant_data.get("discount"),
-        show_this=variant_data.get("show_this", False),
-    )
-
-    # Добавляем атрибуты
-    for attr_data in variant_data["attributes"]:
-        create_variant_attribute(variant, attr_data, product.category)
-
-    # Добавляем остатки
-    for stock_data in variant_data.get("stocks", []):
-        ProductStock.objects.create(
-            variant=variant,
-            location=stock_data["location"],
-            quantity=stock_data.get("quantity", 0),
-            reserved_quantity=stock_data.get("reserved_quantity", 0),
-            is_available_for_sale=stock_data.get("is_available_for_sale", True),
-        )
-
-    return variant
-
-
-def create_variant_attribute(variant, attr_data, category):
-    """Создание атрибута для варианта товара"""
-    attribute_id = attr_data["category_attribute"]["attribute"]["id"]
-    value = attr_data["value"]
-
-    # Находим CategoryAttribute для категории товара
-    category_attribute = category.category_attributes.filter(
-        attribute_id=attribute_id
-    ).first()
-
-    if not category_attribute:
-        raise ValueError(f"Атрибут с ID {attribute_id} не найден для категории")
-
-    # Для атрибутов с предопределенными значениями
-    if category_attribute.attribute.has_predefined_values:
-        predefined_value = AttributeValue.objects.filter(
-            attribute_id=attribute_id, value=value
-        ).first()
-        if not predefined_value:
-            raise ValueError(
-                f"Значение '{value}' не найдено для атрибута '{category_attribute.attribute.name}'"
-            )
-
-        ProductVariantAttribute.objects.create(
-            variant=variant,
-            category_attribute=category_attribute,
-            predefined_value=predefined_value,
-        )
-    else:
-        # Для атрибутов с произвольными значениями
-        ProductVariantAttribute.objects.create(
-            variant=variant, category_attribute=category_attribute, custom_value=value
-        )
 
 
 from django.db.models import Count

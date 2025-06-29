@@ -1,22 +1,46 @@
 from rest_framework import serializers
 from .models import BusinessType
-from marketplace.models import Product, ProductVariant, ProductImage, ProductStock
+from marketplace.models import (
+    Product,
+    ProductVariant,
+    ProductImage,
+    ProductStock,
+    ProductVariantAttribute,
+)
 from marketplace.serializers import ProductVariantSerializer, ProductImageSerializer
 
 
-class BusinessTypeSerializer(serializers.ModelSerializer):
+# ✅ Для ProductImage
+class ProductImageCreateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BusinessType
-        fields = "__all__"  # Или укажите конкретные поля
+        model = ProductImage
+        fields = ["image", "is_main", "alt_text", "display_order"]
 
 
-class ProductCreateSerializer(serializers.ModelSerializer):
+# ✅ Для Stock
+class ProductStockSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
-        fields = ["name", "description", "category", "on_the_main", "is_active"]
+        model = ProductStock
+        fields = [
+            "location",
+            "quantity",
+            "reserved_quantity",
+            "is_available_for_sale",
+        ]
 
 
+# ✅ Для Variant Attributes
+class ProductVariantAttributeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductVariantAttribute
+        fields = ["category_attribute", "predefined_value", "custom_value"]
+
+
+# ✅ Для Variant
 class ProductVariantCreateSerializer(serializers.ModelSerializer):
+    attributes = ProductVariantAttributeSerializer(many=True, required=True)
+    stocks = ProductStockSerializer(many=True, required=False)
+
     class Meta:
         model = ProductVariant
         fields = [
@@ -28,27 +52,46 @@ class ProductVariantCreateSerializer(serializers.ModelSerializer):
             "custom_name",
             "has_custom_description",
             "custom_description",
+            "attributes",
+            "stocks",
         ]
 
 
-class ProductImageCreateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProductImage
-        fields = ["image", "is_main", "alt_text", "display_order"]
-
-class ProductStockSerializer(serializers.ModelSerializer):
-    location_name = serializers.CharField(source='location.name', read_only=True)
-    available_quantity = serializers.IntegerField(read_only=True)
+# ✅ Для Product
+class ProductCreateSerializer(serializers.ModelSerializer):
+    images = ProductImageCreateSerializer(many=True, required=False)
+    variants = ProductVariantCreateSerializer(many=True, required=True)
 
     class Meta:
-        model = ProductStock
-        fields = ['location_name', 'quantity', 'reserved_quantity', 'available_quantity']
+        model = Product
+        fields = [
+            "name",
+            "description",
+            "category",
+            "on_the_main",
+            "is_active",
+            "images",
+            "variants",
+        ]
+
+    def validate_variants(self, variants):
+        if not variants:
+            raise serializers.ValidationError("Товар должен содержать хотя бы один вариант.")
+        return variants
+
 
 class ExtendedBusinessProductVariantSerializer(ProductVariantSerializer):
     stocks = ProductStockSerializer(many=True, read_only=True)
 
     class Meta(ProductVariantSerializer.Meta):
-        fields = ProductVariantSerializer.Meta.fields + ['stocks']
+        fields = ProductVariantSerializer.Meta.fields + ["stocks"]
+
+
+class BusinessTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BusinessType
+        fields = "__all__"  # Или укажите конкретные поля
+
 
 class EnhancedProductListSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source="category.name", read_only=True)
