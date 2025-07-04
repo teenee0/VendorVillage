@@ -6,6 +6,7 @@ from .models import (
     ProductImage,  # Новая модель вместо ProductVariantImage
     ProductVariantAttribute,
     AttributeValue,
+    ProductStock,
     Attribute,
     CategoryAttribute
 )
@@ -57,8 +58,18 @@ class ProductImageSerializer(serializers.ModelSerializer):
         fields = ['id', 'image', 'is_main', 'alt_text', 'created_at']
 
 
+class ProductStockSerializer(serializers.ModelSerializer):
+    location_name = serializers.CharField(source='location.name', read_only=True)
+    available_quantity = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = ProductStock
+        fields = ['location_name', 'available_quantity']
+
+
 class ProductVariantSerializer(serializers.ModelSerializer):
     attributes = ProductVariantAttributeSerializer(many=True, read_only=True)
+    stocks = ProductStockSerializer(many=True, read_only=True)
     current_price = serializers.SerializerMethodField()
     discount_amount = serializers.SerializerMethodField()  # Исправлено название
     is_in_stock = serializers.BooleanField(read_only=True)
@@ -72,7 +83,7 @@ class ProductVariantSerializer(serializers.ModelSerializer):
             'attributes', 'current_price', 
             'is_in_stock', 'show_this', 'has_custom_name', 
             'custom_name', 'display_name', 'has_custom_description', 
-            'custom_description', 'display_description'
+            'custom_description', 'display_description', 'stocks'
         ]
     
     def get_display_name(self, obj):
@@ -171,48 +182,3 @@ class ProductDetailSerializer(serializers.ModelSerializer):
             'max_price': max_price,
             'is_range': min_price != max_price
         }
-
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
-        fields = [
-            'id', 'name', 'description', 'category', 
-            'on_the_main', 'is_active', 'created_at', 'updated_at'
-        ]
-        extra_kwargs = {
-            'created_at': {'read_only': True},
-            'updated_at': {'read_only': True},
-        } 
-
-    def validate_category(self, value):
-        """Проверка, что категория активна"""
-        if value and not value.is_active:
-            raise serializers.ValidationError("Нельзя выбрать неактивную категорию")
-        return value
-
-    def create(self, validated_data):
-        """Создание товара с привязкой к бизнесу"""
-        # Бизнес берется из контекста (передается в представлении)
-        business = self.context.get('business')
-        if not business:
-            raise serializers.ValidationError("Бизнес не указан")
-        
-        validated_data['business'] = business
-        return super().create(validated_data)
-
-    def to_representation(self, instance):
-        """Преобразование в представление с дополнительными полями"""
-        representation = super().to_representation(instance)
-        
-        # Добавляем дополнительные поля для чтения
-        representation['category_name'] = instance.category.name if instance.category else None
-        representation['business_name'] = instance.business.name if instance.business else None
-        
-        # Добавляем информацию о главном изображении
-        main_image = instance.main_image
-        if main_image:
-            representation['main_image'] = ProductImageSerializer(main_image).data
-        else:
-            representation['main_image'] = None
-            
-        return representation

@@ -21,112 +21,205 @@ from marketplace.models import (
     CategoryAttribute,
 )
 from core.models import Business, BusinessLocation
-from .serializers import ProductCreateSerializer  # Используем тот же сериализатор
+from .serializers import ProductCreateSerializer
+from .product_edit_serializers import ProductDetailSerializer, ProductCreateUpdateSerializer
 from .exceptions import ProductError
 from .ProductCreateService import ProductService
-
+from django.db.models import Count
 from accounts.JWT_AUTH import CookieJWTAuthentication
+
+
+def parse_product_formdata(request):
+    """
+    Универсальный парсер JSON данных + файлов для формы продукта:
+    - поддерживает existing_images и новые images
+    - поддерживает variants с id
+    """
+    data = {
+        "name": request.data.get("name"),
+        "description": request.data.get("description"),
+        "category": int(request.data.get("category")),
+        "is_active": request.data.get("is_active") == "true",
+        "on_the_main": request.data.get("on_the_main") == "true",
+        "images": [],
+        "variants": [],
+    }
+
+    # === Existing Images ===
+    existing_images = []
+    ei = 0
+    while f"existing_images[{ei}][id]" in request.data:
+        existing_images.append(
+            {
+                "id": int(request.data.get(f"existing_images[{ei}][id]")),
+                "is_main": request.data.get(f"existing_images[{ei}][is_main]")
+                == "true",
+                "display_order": int(
+                    request.data.get(f"existing_images[{ei}][display_order]", "0")
+                ),
+            }
+        )
+        ei += 1
+
+    # === New Images ===
+    new_images = []
+    for key in request.FILES:
+        if key.startswith("images[") and key.endswith("][image]"):
+            idx = key.split("[")[1].split("]")[0]
+            new_images.append(
+                {
+                    "image": request.FILES[key],
+                    "is_main": request.data.get(f"images[{idx}][is_main]", "false")
+                    == "true",
+                    "display_order": int(
+                        request.data.get(f"images[{idx}][display_order]", "0")
+                    ),
+                }
+            )
+
+    # Объединяем все фото
+    data["images"] = existing_images + new_images
+
+    # === Variants ===
+    vi = 0
+    while f"variants[{vi}][sku]" in request.data:
+        variant = {
+            "sku": request.data.get(f"variants[{vi}][sku]"),
+            "price": request.data.get(f"variants[{vi}][price]"),
+            "discount": request.data.get(f"variants[{vi}][discount]"),
+            "show_this": request.data.get(f"variants[{vi}][show_this]") == "true",
+            "description": request.data.get(f"variants[{vi}][description]", ""),
+            "attributes": [],
+            "stocks": [],
+        }
+        # ID варианта если есть
+        if f"variants[{vi}][id]" in request.data:
+            variant["id"] = int(request.data.get(f"variants[{vi}][id]"))
+
+        # Attributes
+        ai = 0
+        while f"variants[{vi}][attributes][{ai}][category_attribute]" in request.data:
+            attr = {
+                "category_attribute": int(
+                    request.data.get(
+                        f"variants[{vi}][attributes][{ai}][category_attribute]"
+                    )
+                ),
+                "predefined_value": (
+                    int(
+                        request.data.get(
+                            f"variants[{vi}][attributes][{ai}][predefined_value]"
+                        )
+                    )
+                    if request.data.get(
+                        f"variants[{vi}][attributes][{ai}][predefined_value]", ""
+                    ).strip()
+                    != ""
+                    else None
+                ),
+                "custom_value": request.data.get(
+                    f"variants[{vi}][attributes][{ai}][custom_value]", ""
+                ),
+            }
+            if f"variants[{vi}][attributes][{ai}][id]" in request.data:
+                attr["id"] = int(
+                    request.data.get(f"variants[{vi}][attributes][{ai}][id]")
+                )
+            variant["attributes"].append(attr)
+            ai += 1
+
+        # Stocks
+        si = 0
+        while f"variants[{vi}][stocks][{si}][location_id]" in request.data:
+            stock = {
+                "location": int(
+                    request.data.get(f"variants[{vi}][stocks][{si}][location_id]")
+                ),
+                "quantity": int(
+                    request.data.get(f"variants[{vi}][stocks][{si}][quantity]")
+                ),
+                "reserved_quantity": int(
+                    request.data.get(
+                        f"variants[{vi}][stocks][{si}][reserved_quantity]", "0"
+                    )
+                ),
+                "is_available_for_sale": request.data.get(
+                    f"variants[{vi}][stocks][{si}][is_available_for_sale]", "true"
+                )
+                == "true",
+            }
+            if f"variants[{vi}][stocks][{si}][id]" in request.data:
+                stock["id"] = int(request.data.get(f"variants[{vi}][stocks][{si}][id]"))
+            variant["stocks"].append(stock)
+            si += 1
+
+        data["variants"].append(variant)
+        vi += 1
+
+    return data
 
 
 @api_view(["POST"])
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated, IsBusinessOwner])
 def create_product(request, business_slug):
-    print("RAW DATA:", request.data)
+    print("RAW:", request.data)
+    data = parse_product_formdata(request)
+    print("PARSED:", data)
 
-    # === Ручной парсер ===
-    data = {}
-    data['name'] = request.data.get('name')
-    data['description'] = request.data.get('description')
-    data['category'] = int(request.data.get('category'))
-    data['is_active'] = request.data.get('is_active') == 'true'
-    data['on_the_main'] = request.data.get('on_the_main') == 'true'
-
-    # Images
-    images = []
-    i = 0
-    while f'images[{i}][image]' in request.FILES:
-        images.append({
-            'image': request.FILES[f'images[{i}][image]'],
-            'is_main': request.data.get(f'images[{i}][is_main]') == 'true',
-            'display_order': int(request.data.get(f'images[{i}][display_order]', '0')),
-        })
-        i += 1
-    data['images'] = images
-
-    # Variants
-    variants = []
-    vi = 0
-    while f'variants[{vi}][sku]' in request.data:
-        variant = {
-            'sku': request.data.get(f'variants[{vi}][sku]'),
-            'price': request.data.get(f'variants[{vi}][price]'),
-            'discount': request.data.get(f'variants[{vi}][discount]'),
-            'show_this': request.data.get(f'variants[{vi}][show_this]') == 'true',
-            'description': request.data.get(f'variants[{vi}][description]', ''),
-            'attributes': [],
-            'stocks': [],
-        }
-
-        # Attributes
-        ai = 0
-        while f'variants[{vi}][attributes][{ai}][category_attribute]' in request.data:
-            predefined_value_raw = request.data.get(f'variants[{vi}][attributes][{ai}][predefined_value]', '')
-            if predefined_value_raw.strip() != '':
-                predefined_value = int(predefined_value_raw)
-            else:
-                predefined_value = None
-
-            attr = {
-                'category_attribute': int(request.data.get(f'variants[{vi}][attributes][{ai}][category_attribute]')),
-                'predefined_value': predefined_value,
-                'custom_value': request.data.get(f'variants[{vi}][attributes][{ai}][custom_value]', ''),
-            }
-            variant['attributes'].append(attr)
-            ai += 1
-
-        # Stocks
-        si = 0
-        while f'variants[{vi}][stocks][{si}][location_id]' in request.data:
-            stock = {
-                'location': int(request.data.get(f'variants[{vi}][stocks][{si}][location_id]')),
-                'quantity': int(request.data.get(f'variants[{vi}][stocks][{si}][quantity]')),
-                'reserved_quantity': int(request.data.get(f'variants[{vi}][stocks][{si}][reserved_quantity]', '0')),
-                'is_available_for_sale': request.data.get(f'variants[{vi}][stocks][{si}][is_available_for_sale]', 'true') == 'true',
-            }
-            variant['stocks'].append(stock)
-            si += 1
-
-        variants.append(variant)
-        vi += 1
-
-    data['variants'] = variants
-
-    print("PARSED DATA:", data)
-
-    # === Теперь сериализатор ===
     serializer = ProductCreateSerializer(data=data, context={"request": request})
     serializer.is_valid(raise_exception=True)
 
     try:
         product = ProductService.create_product(
-            request.user,
-            business_slug,
-            serializer.validated_data
+            request.user, business_slug, serializer.validated_data
         )
-        return Response({
-            "message": "Товар успешно создан",
-            "product_id": product.id
-        }, status=status.HTTP_201_CREATED)
+        return Response(
+            {"message": "Товар успешно создан", "product_id": product.id},
+            status=status.HTTP_201_CREATED,
+        )
     except ProductError as e:
-        return Response({
-            "detail": str(e),
-            "errors": e.errors
-        }, status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            {"detail": str(e), "errors": e.errors}, status=status.HTTP_400_BAD_REQUEST
+        )
 
 
+@api_view(["POST"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def edit_product(request, business_slug, product_id):
+    print("RAW:", request.data)
+    parsed_data = parse_product_formdata(request)
+    print("PARSED:", parsed_data)
 
-from django.db.models import Count
+    serializer = ProductCreateUpdateSerializer(data=parsed_data, context={"request": request})
+    serializer.is_valid(raise_exception=True)
+
+    try:
+        product = ProductService.update_product(
+            request.user, business_slug, product_id, serializer.validated_data
+        )
+        return Response(
+            {"message": "Товар успешно изменён", "product_id": product.id},
+            status=status.HTTP_200_OK,
+        )
+    except ProductError as e:
+        return Response(
+            {"detail": str(e), "errors": e.errors}, status=status.HTTP_400_BAD_REQUEST
+        )
+
+
+@api_view(["DELETE"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def delete_product(request, business_slug, product_id):
+    try:
+        ProductService.delete_product(request.user, business_slug, product_id)
+        return Response({"message": "Товар успешно удалён"}, status=status.HTTP_200_OK)
+    except Product.DoesNotExist:
+        return Response({"detail": "Товар не найден"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["GET"])
@@ -180,14 +273,13 @@ def get_category_attributes(request, category_id):
             .select_related("attribute")
             .order_by(
                 "category__level", "display_order"
-            )  # Сортируем по уровню категории и порядку отображения
+            )
         )
 
         data = []
-        seen_attributes = set()  # Для отслеживания уже добавленных атрибутов
+        seen_attributes = set()
 
         for attr in attributes:
-            # Пропускаем дубликаты (на случай если distinct не сработал)
             if attr.attribute.id in seen_attributes:
                 continue
 
@@ -240,3 +332,25 @@ def get_business_locations(request, business_slug):
     ]
 
     return Response(data)
+
+
+@api_view(["GET"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def get_product(request, business_slug, product_id):
+    business = ProductService.get_business(request.user, business_slug)
+
+    try:
+        product = (
+            Product.objects.prefetch_related(
+                "variants__attributes", "variants__stocks", "images"
+            )
+            .select_related("category")
+            .get(id=product_id, business=business)
+        )
+    except Product.DoesNotExist:
+        return Response({"detail": "Товар не найден"}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ProductDetailSerializer(product, context={"request": request})
+
+    return Response(serializer.data, status=status.HTTP_200_OK)

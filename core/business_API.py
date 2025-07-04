@@ -11,7 +11,6 @@ from django.shortcuts import get_object_or_404
 from marketplace.models import Product, ProductVariant, ProductImage, Category
 from marketplace.serializers import (
     CategorySerializer,
-    ProductSerializer,
     ProductDetailSerializer,
     ProductListSerializer,
     ProductVariantSerializer,
@@ -21,6 +20,8 @@ from core.models import Business
 from accounts.JWT_AUTH import CookieJWTAuthentication
 from .serializers import EnhancedProductListSerializer
 from marketplace.ProductsSet import ProductSet
+from .ProductCreateService import ProductService
+from .product_detail_serializer import ProductDetailSerializer
 
 
 @api_view(["GET"])
@@ -52,3 +53,24 @@ def business_products_api(request, business_slug):
     }
     return Response(all_data)
 
+
+@api_view(["GET"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def get_info_product(request, business_slug, product_id):
+    business = ProductService.get_business(request.user, business_slug)
+
+    try:
+        product = (
+            Product.objects.prefetch_related(
+                "variants__attributes", "variants__stocks", "images"
+            )
+            .select_related("category")
+            .get(id=product_id, business=business)
+        )
+    except Product.DoesNotExist:
+        return Response({"detail": "Товар не найден"}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ProductDetailSerializer(product, context={"request": request})
+
+    return Response(serializer.data, status=status.HTTP_200_OK)

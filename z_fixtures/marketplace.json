@@ -658,6 +658,34 @@
   }
 },
 {
+  "model": "marketplace.product",
+  "pk": 18,
+  "fields": {
+    "business": 1,
+    "category": 45,
+    "name": "Собакина куртяу",
+    "description": "ор",
+    "on_the_main": true,
+    "is_active": true,
+    "created_at": "2025-06-29T08:17:59.345Z",
+    "updated_at": "2025-06-29T08:17:59.345Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 19,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "Норковая шуба с капюшоном Flaumfeder 716766003",
+    "description": "Лаконичная шуба из меха норки черного цвета. Модель прямого силуэта с капюшоном, прорезными карманами и застежкой на крючки.",
+    "on_the_main": true,
+    "is_active": true,
+    "created_at": "2025-07-01T03:21:04.457Z",
+    "updated_at": "2025-07-01T03:21:04.457Z"
+  }
+},
+{
   "model": "marketplace.attribute",
   "pk": 1,
   "fields": {
@@ -890,6 +918,74 @@
   }
 },
 {
+  "model": "marketplace.productvariant",
+  "pk": 19,
+  "fields": {
+    "product": 18,
+    "sku": "PROD-1",
+    "has_custom_name": false,
+    "custom_name": null,
+    "has_custom_description": false,
+    "custom_description": null,
+    "price": "5000.00",
+    "discount": "10.00",
+    "show_this": true,
+    "created_at": "2025-06-29T08:18:00.335Z",
+    "updated_at": "2025-06-29T08:18:00.335Z"
+  }
+},
+{
+  "model": "marketplace.productvariant",
+  "pk": 20,
+  "fields": {
+    "product": 19,
+    "sku": "PROD-111",
+    "has_custom_name": false,
+    "custom_name": null,
+    "has_custom_description": false,
+    "custom_description": null,
+    "price": "679990.00",
+    "discount": "11.00",
+    "show_this": true,
+    "created_at": "2025-07-01T03:21:04.458Z",
+    "updated_at": "2025-07-01T03:21:04.458Z"
+  }
+},
+{
+  "model": "marketplace.productvariant",
+  "pk": 21,
+  "fields": {
+    "product": 19,
+    "sku": "PROD-111-COPY-2",
+    "has_custom_name": false,
+    "custom_name": null,
+    "has_custom_description": false,
+    "custom_description": null,
+    "price": "679990.00",
+    "discount": "11.00",
+    "show_this": true,
+    "created_at": "2025-07-01T03:21:04.468Z",
+    "updated_at": "2025-07-01T03:21:04.468Z"
+  }
+},
+{
+  "model": "marketplace.productvariant",
+  "pk": 22,
+  "fields": {
+    "product": 19,
+    "sku": "PROD-111-COPY-2-COPY-3",
+    "has_custom_name": false,
+    "custom_name": null,
+    "has_custom_description": false,
+    "custom_description": null,
+    "price": "679990.00",
+    "discount": "11.00",
+    "show_this": true,
+    "created_at": "2025-07-01T03:21:04.477Z",
+    "updated_at": "2025-07-01T03:21:04.477Z"
+  }
+},
+{
   "model": "marketplace.productstock",
   "pk": 1,
   "fields": {
@@ -935,6 +1031,54 @@
     "reserved_quantity": 70,
     "is_available_for_sale": true,
     "last_updated": "2025-06-27T00:16:28.132Z"
+  }
+},
+{
+  "model": "marketplace.productstock",
+  "pk": 5,
+  "fields": {
+    "variant": 19,
+    "location": 2,
+    "quantity": 56,
+    "reserved_quantity": 4,
+    "is_available_for_sale": true,
+    "last_updated": "2025-06-29T08:18:08.756Z"
+  }
+},
+{
+  "model": "marketplace.productstock",
+  "pk": 6,
+  "fields": {
+    "variant": 20,
+    "location": 2,
+    "quantity": 43,
+    "reserved_quantity": 0,
+    "is_available_for_sale": true,
+    "last_updated": "2025-07-01T03:21:04.468Z"
+  }
+},
+{
+  "model": "marketplace.productstock",
+  "pk": 7,
+  "fields": {
+    "variant": 21,
+    "location": 2,
+    "quantity": 43,
+    "reserved_quantity": 0,
+    "is_available_for_sale": true,
+    "last_updated": "2025-07-01T03:21:04.476Z"
+  }
+},
+{
+  "model": "marketplace.productstock",
+  "pk": 8,
+  "fields": {
+    "variant": 22,
+    "location": 2,
+    "quantity": 43,
+    "reserved_quantity": 0,
+    "is_available_for_sale": true,
+    "last_updated": "2025-07-01T03:21:04.486Z"
   }
 },
 {
@@ -1048,6 +1192,166 @@
   }
 },
 {
+  "model": "marketplace.productvariantattribute",
+  "pk": 36,
+  "fields": {
+    "variant": 19,
+    "category_attribute": 1,
+    "predefined_value": 3,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 37,
+  "fields": {
+    "variant": 19,
+    "category_attribute": 2,
+    "predefined_value": null,
+    "custom_value": "СОБАКА"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 38,
+  "fields": {
+    "variant": 19,
+    "category_attribute": 3,
+    "predefined_value": 10,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 39,
+  "fields": {
+    "variant": 19,
+    "category_attribute": 4,
+    "predefined_value": null,
+    "custom_value": "ЛоБАКА"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 40,
+  "fields": {
+    "variant": 20,
+    "category_attribute": 1,
+    "predefined_value": 3,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 41,
+  "fields": {
+    "variant": 20,
+    "category_attribute": 2,
+    "predefined_value": null,
+    "custom_value": "52 см"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 42,
+  "fields": {
+    "variant": 20,
+    "category_attribute": 3,
+    "predefined_value": 9,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 43,
+  "fields": {
+    "variant": 20,
+    "category_attribute": 4,
+    "predefined_value": null,
+    "custom_value": "Норка"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 44,
+  "fields": {
+    "variant": 21,
+    "category_attribute": 1,
+    "predefined_value": 7,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 45,
+  "fields": {
+    "variant": 21,
+    "category_attribute": 2,
+    "predefined_value": null,
+    "custom_value": "52 см"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 46,
+  "fields": {
+    "variant": 21,
+    "category_attribute": 3,
+    "predefined_value": 9,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 47,
+  "fields": {
+    "variant": 21,
+    "category_attribute": 4,
+    "predefined_value": null,
+    "custom_value": "Норка"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 48,
+  "fields": {
+    "variant": 22,
+    "category_attribute": 1,
+    "predefined_value": 2,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 49,
+  "fields": {
+    "variant": 22,
+    "category_attribute": 2,
+    "predefined_value": null,
+    "custom_value": "52 см"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 50,
+  "fields": {
+    "variant": 22,
+    "category_attribute": 3,
+    "predefined_value": 9,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 51,
+  "fields": {
+    "variant": 22,
+    "category_attribute": 4,
+    "predefined_value": null,
+    "custom_value": "Норка"
+  }
+},
+{
   "model": "marketplace.productimage",
   "pk": 1,
   "fields": {
@@ -1117,6 +1421,138 @@
     "alt_text": "",
     "display_order": 0,
     "created_at": "2025-05-11T17:56:27.575Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 18,
+    "image": "imperia/products/империя_2.jpg",
+    "is_main": true,
+    "alt_text": "",
+    "display_order": 0,
+    "created_at": "2025-06-29T08:18:22.263Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 18,
+    "image": "imperia/products/империя_3_8nI9wpl.jpg",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 1,
+    "created_at": "2025-06-29T08:18:24.032Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 18,
+    "image": "imperia/products/империя_4_XwxCEcs.jpg",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 2,
+    "created_at": "2025-06-29T08:18:25.356Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 18,
+    "image": "imperia/products/империя_5.jpg",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 3,
+    "created_at": "2025-06-29T08:18:26.555Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/b5944160017af2b61638b41445f0d345d7bb2288_sl_716766003_1_1.webp",
+    "is_main": true,
+    "alt_text": "",
+    "display_order": 0,
+    "created_at": "2025-07-01T03:21:04.488Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 12,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/1a617f0ce2c22c2f359005f95ff1c6d199d2f4cc_sl_716766003_5.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 1,
+    "created_at": "2025-07-01T03:21:04.490Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 13,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/11ec7bf340780daca735a4da23661a70469c94c3_sl_716766003_3.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 2,
+    "created_at": "2025-07-01T03:21:04.491Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 14,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/118a9a3945209ac294a0f65fd0e282a40e0c39fe_sl_716766003_2.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 3,
+    "created_at": "2025-07-01T03:21:04.492Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 15,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/9c2d83d54bf8b2280d4bb0ac8b8550a228181653_sl_716766003_4.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 4,
+    "created_at": "2025-07-01T03:21:04.495Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 16,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/6d34aec89b9508dcd3693d3b3f5a32b634197ff5_sl_716766003_6.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 5,
+    "created_at": "2025-07-01T03:21:04.495Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 17,
+  "fields": {
+    "product": 19,
+    "image": "imperia/products/9db1eeae49b11f8fd23bb47a9fc0ab19b298772e_sl_716766003_7.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 6,
+    "created_at": "2025-07-01T03:21:04.497Z"
   }
 }
 ]

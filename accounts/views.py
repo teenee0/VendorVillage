@@ -24,6 +24,8 @@ from .serializers import UserSerializer, BusinessSerializer
 from core.models import User
 from django.shortcuts import get_object_or_404
 from .serializers import UserSerializer
+import time
+from VendorVillage.settings import FRONTEND_AUTH_DEBUG
 
 
 @login_required
@@ -194,6 +196,8 @@ def logout_api(request):
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def check_business_access(request, business_slug):
+    if FRONTEND_AUTH_DEBUG:
+        time.sleep(5*360)
     try:
         business = Business.objects.get(slug=business_slug)
 

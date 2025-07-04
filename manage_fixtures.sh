@@ -15,7 +15,7 @@ fi
 export_fixtures() {
     echo "📦 Создание фикстур..."
     mkdir -p "$FIXTURES_DIR"
-    
+    source .venv/Scripts/activate
     for app in "${APPS[@]}"; do
         echo " ➡️  Выгружаем $app..."
         python manage.py dumpdata "$app" --indent "$INDENT" --output "$FIXTURES_DIR/${app}.json" 2>/dev/null || echo "⚠️  Нет данных для $app"
@@ -27,7 +27,7 @@ export_fixtures() {
 # Загрузка фикстур (импорт)
 import_fixtures() {
     echo "🔄 Загрузка фикстур..."
-    
+    source .venv/Scripts/activate
     for app in "${APPS[@]}"; do
         if [ -f "$FIXTURES_DIR/${app}.json" ]; then
             echo " ➡️  Загружаем $app..."

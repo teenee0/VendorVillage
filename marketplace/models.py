@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from core.models import Business
 from django.http import Http404
 from core.models import BusinessLocation
+from .EAN_13_barcode_generator import generate_ean13_code, generate_barcode_image
 
 
 # Create your models here.
@@ -126,11 +127,12 @@ class Product(models.Model):
 
     @property
     def default_variant(self):
-        """Более простая реализация"""
+        """Возвращает первый доступный вариант, если есть, иначе None"""
         for variant in self.variants.filter(show_this=True):
-            if variant.stock_quantity > 0:  # Используем свойство @property
+            if variant.stock_quantity > 0:
                 return variant
-        raise Http404("Нет доступных вариантов для этого товара")
+        return None
+
 
     @property
     def price_range(self):
@@ -274,6 +276,10 @@ class CategoryAttribute(models.Model):
     def __str__(self):
         return f"{self.category.name} - {self.attribute.name} ({'обязательно' if self.required else 'не обязательно'})"
 
+def variants_barcode_path(instance, filename):
+    # instance.product.business.slug -> получаем slug бизнеса
+    slug = instance.product.business.slug
+    return f"{slug}/barcodes/{filename}"
 
 class ProductVariant(models.Model):
     """Вариант товара с разными атрибутами (размер, цвет и т.д.)"""
@@ -288,6 +294,9 @@ class ProductVariant(models.Model):
         related_name="product_variants",
         verbose_name="Локации",
     )
+
+    barcode = models.CharField(max_length=32, unique=True, blank=True, null=True)
+    barcode_image = models.ImageField(upload_to=variants_barcode_path, blank=True, null=True)
 
     sku = models.CharField(
         max_length=100, unique=True, blank=True, null=True, verbose_name="Артикул"
@@ -342,6 +351,15 @@ class ProductVariant(models.Model):
             models.Index(fields=["has_custom_name"]),
             models.Index(fields=["has_custom_description"]),
         ]
+
+    def save(self, *args, **kwargs):
+        if not self.barcode:
+            self.barcode = generate_ean13_code()
+        super().save(*args, **kwargs)
+
+        if not self.barcode_image:
+            image_file = generate_barcode_image(self.barcode)
+            self.barcode_image.save(image_file.name, image_file, save=True)
 
     def __str__(self):
         if self.has_custom_name and self.custom_name:
@@ -463,7 +481,6 @@ class ProductStock(models.Model):
     def available_quantity(self):
         """Доступное количество (общее минус зарезервированное)"""
         return self.quantity - self.reserved_quantity
-
 
 class ProductVariantAttribute(models.Model):
     """Связь между вариантом товара и значением атрибута"""

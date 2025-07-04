@@ -76,12 +76,35 @@ class ProductCreateSerializer(serializers.ModelSerializer):
 
     def validate_variants(self, variants):
         if not variants:
-            raise serializers.ValidationError("Товар должен содержать хотя бы один вариант.")
+            raise serializers.ValidationError(
+                "Товар должен содержать хотя бы один вариант."
+            )
         return variants
 
 
+class ProductDetailSerializer(ProductCreateSerializer):
+    category_name = serializers.CharField(source="category.name", read_only=True)
+
+    class Meta(ProductCreateSerializer.Meta):
+        fields = ProductCreateSerializer.Meta.fields + ["category_name"]
+
+
+class ProductListStockSerializer(serializers.ModelSerializer):
+    location_name = serializers.CharField(source="location.name", read_only=True)
+    available_quantity = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = ProductStock
+        fields = [
+            "location_name",
+            "quantity",
+            "reserved_quantity",
+            "available_quantity",
+        ]
+
+
 class ExtendedBusinessProductVariantSerializer(ProductVariantSerializer):
-    stocks = ProductStockSerializer(many=True, read_only=True)
+    stocks = ProductListStockSerializer(many=True, read_only=True)
 
     class Meta(ProductVariantSerializer.Meta):
         fields = ProductVariantSerializer.Meta.fields + ["stocks"]
