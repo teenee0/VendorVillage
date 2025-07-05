@@ -26,7 +26,7 @@ from .ProductsSet import ProductSet
 @api_view(["GET"])
 def test_api(request):
     """API для товаров"""
-    products = ProductSet.get_products_by_category(33)
+    products = ProductSet.get_products_by_category(33, visibility="marketplace")
     category = get_object_or_404(Category, pk=33, is_active=True)
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)
@@ -88,7 +88,7 @@ def child_category_api(request, pk):
 @api_view(["GET"])
 def category_products_api(request, pk):
     """API для получения товаров в указанной категории."""
-    products = ProductSet.get_products_by_category(pk)
+    products = ProductSet.get_products_by_category(pk, visibility="marketplace")
     category = get_object_or_404(Category, pk=pk, is_active=True)
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)

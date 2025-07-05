@@ -26,7 +26,7 @@ from django.http import QueryDict
 
 class ProductSet:
     @staticmethod
-    def get_products_by_category(category_pk):
+    def get_products_by_category(category_pk, visibility="all"):
         # Получаем категорию по первичному ключу
         category = get_object_or_404(Category, pk=category_pk, is_active=True)
 
@@ -37,6 +37,12 @@ class ProductSet:
         products = Product.objects.filter(
             category_id__in=descendant_ids, is_active=True
         )
+
+        # Применяем фильтрацию по типу отображения товара
+        if visibility == "marketplace":
+            products = products.filter(is_visible_on_marketplace=True)
+        elif visibility == "own_site":
+            products = products.filter(is_visible_on_own_site=True)
 
         # Фильтруем товары по наличию доступных вариантов
         filtered_products = ProductSet.filter_products_by_variants(products)
