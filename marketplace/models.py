@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from core.models import Business
 from django.http import Http404
 from core.models import BusinessLocation
-from .EAN_13_barcode_generator import generate_ean13_code, generate_barcode_image
+from .EAN_13_barcode_generator import generate_barcode
 
 
 # Create your models here.
@@ -353,13 +353,13 @@ class ProductVariant(models.Model):
         ]
 
     def save(self, *args, **kwargs):
-        if not self.barcode:
-            self.barcode = generate_ean13_code()
-        super().save(*args, **kwargs)
+        if not self.barcode or not self.barcode_image:
 
-        if not self.barcode_image:
-            image_file = generate_barcode_image(self.barcode)
-            self.barcode_image.save(image_file.name, image_file, save=True)
+            ean_code, image = generate_barcode()
+            self.barcode = ean_code
+            self.barcode_image.save(image.name, image, save=False)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         if self.has_custom_name and self.custom_name:

@@ -659,20 +659,6 @@
 },
 {
   "model": "marketplace.product",
-  "pk": 18,
-  "fields": {
-    "business": 1,
-    "category": 45,
-    "name": "Собакина куртяу",
-    "description": "ор",
-    "on_the_main": true,
-    "is_active": true,
-    "created_at": "2025-06-29T08:17:59.345Z",
-    "updated_at": "2025-06-29T08:17:59.345Z"
-  }
-},
-{
-  "model": "marketplace.product",
   "pk": 19,
   "fields": {
     "business": 1,
@@ -682,7 +668,7 @@
     "on_the_main": true,
     "is_active": true,
     "created_at": "2025-07-01T03:21:04.457Z",
-    "updated_at": "2025-07-01T03:21:04.457Z"
+    "updated_at": "2025-07-04T08:48:39.785Z"
   }
 },
 {
@@ -720,6 +706,16 @@
   "pk": 4,
   "fields": {
     "name": "Материал",
+    "has_predefined_values": false,
+    "is_filterable": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "marketplace.attribute",
+  "pk": 5,
+  "fields": {
+    "name": "Производитель (страна)",
     "has_predefined_values": false,
     "is_filterable": true,
     "display_order": 0
@@ -850,10 +846,23 @@
   }
 },
 {
+  "model": "marketplace.categoryattribute",
+  "pk": 5,
+  "fields": {
+    "category": 33,
+    "attribute": 5,
+    "required": true,
+    "display_order": 0,
+    "show_attribute_at_right": false
+  }
+},
+{
   "model": "marketplace.productvariant",
   "pk": 1,
   "fields": {
     "product": 2,
+    "barcode": null,
+    "barcode_image": "",
     "sku": "Черный жи есть",
     "has_custom_name": false,
     "custom_name": null,
@@ -871,6 +880,8 @@
   "pk": 2,
   "fields": {
     "product": 2,
+    "barcode": null,
+    "barcode_image": "",
     "sku": "тоже верная только л",
     "has_custom_name": false,
     "custom_name": null,
@@ -888,6 +899,8 @@
   "pk": 3,
   "fields": {
     "product": 3,
+    "barcode": null,
+    "barcode_image": "",
     "sku": "размер л",
     "has_custom_name": false,
     "custom_name": null,
@@ -905,6 +918,8 @@
   "pk": 4,
   "fields": {
     "product": 3,
+    "barcode": null,
+    "barcode_image": "",
     "sku": "wwsx52sS",
     "has_custom_name": false,
     "custom_name": null,
@@ -919,36 +934,21 @@
 },
 {
   "model": "marketplace.productvariant",
-  "pk": 19,
-  "fields": {
-    "product": 18,
-    "sku": "PROD-1",
-    "has_custom_name": false,
-    "custom_name": null,
-    "has_custom_description": false,
-    "custom_description": null,
-    "price": "5000.00",
-    "discount": "10.00",
-    "show_this": true,
-    "created_at": "2025-06-29T08:18:00.335Z",
-    "updated_at": "2025-06-29T08:18:00.335Z"
-  }
-},
-{
-  "model": "marketplace.productvariant",
   "pk": 20,
   "fields": {
     "product": 19,
+    "barcode": "2004695489065",
+    "barcode_image": "imperia/barcodes/2004695489065.png",
     "sku": "PROD-111",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
     "custom_description": null,
     "price": "679990.00",
-    "discount": "11.00",
+    "discount": "51.00",
     "show_this": true,
     "created_at": "2025-07-01T03:21:04.458Z",
-    "updated_at": "2025-07-01T03:21:04.458Z"
+    "updated_at": "2025-07-04T08:48:39.810Z"
   }
 },
 {
@@ -956,6 +956,8 @@
   "pk": 21,
   "fields": {
     "product": 19,
+    "barcode": "2007675294998",
+    "barcode_image": "imperia/barcodes/2007675294998.png",
     "sku": "PROD-111-COPY-2",
     "has_custom_name": false,
     "custom_name": null,
@@ -965,7 +967,7 @@
     "discount": "11.00",
     "show_this": true,
     "created_at": "2025-07-01T03:21:04.468Z",
-    "updated_at": "2025-07-01T03:21:04.468Z"
+    "updated_at": "2025-07-04T08:48:39.850Z"
   }
 },
 {
@@ -973,6 +975,8 @@
   "pk": 22,
   "fields": {
     "product": 19,
+    "barcode": "2000662179906",
+    "barcode_image": "imperia/barcodes/2000662179906.png",
     "sku": "PROD-111-COPY-2-COPY-3",
     "has_custom_name": false,
     "custom_name": null,
@@ -982,7 +986,7 @@
     "discount": "11.00",
     "show_this": true,
     "created_at": "2025-07-01T03:21:04.477Z",
-    "updated_at": "2025-07-01T03:21:04.477Z"
+    "updated_at": "2025-07-04T08:48:39.888Z"
   }
 },
 {
@@ -1035,18 +1039,6 @@
 },
 {
   "model": "marketplace.productstock",
-  "pk": 5,
-  "fields": {
-    "variant": 19,
-    "location": 2,
-    "quantity": 56,
-    "reserved_quantity": 4,
-    "is_available_for_sale": true,
-    "last_updated": "2025-06-29T08:18:08.756Z"
-  }
-},
-{
-  "model": "marketplace.productstock",
   "pk": 6,
   "fields": {
     "variant": 20,
@@ -1054,7 +1046,7 @@
     "quantity": 43,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-01T03:21:04.468Z"
+    "last_updated": "2025-07-04T08:48:39.838Z"
   }
 },
 {
@@ -1066,7 +1058,7 @@
     "quantity": 43,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-01T03:21:04.476Z"
+    "last_updated": "2025-07-04T08:48:39.877Z"
   }
 },
 {
@@ -1078,7 +1070,7 @@
     "quantity": 43,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-01T03:21:04.486Z"
+    "last_updated": "2025-07-04T08:48:39.919Z"
   }
 },
 {
@@ -1189,46 +1181,6 @@
     "category_attribute": 3,
     "predefined_value": 10,
     "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 36,
-  "fields": {
-    "variant": 19,
-    "category_attribute": 1,
-    "predefined_value": 3,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 37,
-  "fields": {
-    "variant": 19,
-    "category_attribute": 2,
-    "predefined_value": null,
-    "custom_value": "СОБАКА"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 38,
-  "fields": {
-    "variant": 19,
-    "category_attribute": 3,
-    "predefined_value": 10,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 39,
-  "fields": {
-    "variant": 19,
-    "category_attribute": 4,
-    "predefined_value": null,
-    "custom_value": "ЛоБАКА"
   }
 },
 {
@@ -1352,6 +1304,36 @@
   }
 },
 {
+  "model": "marketplace.productvariantattribute",
+  "pk": 76,
+  "fields": {
+    "variant": 20,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Турция"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 77,
+  "fields": {
+    "variant": 21,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Турция"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 78,
+  "fields": {
+    "variant": 22,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Турция"
+  }
+},
+{
   "model": "marketplace.productimage",
   "pk": 1,
   "fields": {
@@ -1421,54 +1403,6 @@
     "alt_text": "",
     "display_order": 0,
     "created_at": "2025-05-11T17:56:27.575Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 7,
-  "fields": {
-    "product": 18,
-    "image": "imperia/products/империя_2.jpg",
-    "is_main": true,
-    "alt_text": "",
-    "display_order": 0,
-    "created_at": "2025-06-29T08:18:22.263Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 8,
-  "fields": {
-    "product": 18,
-    "image": "imperia/products/империя_3_8nI9wpl.jpg",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 1,
-    "created_at": "2025-06-29T08:18:24.032Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 9,
-  "fields": {
-    "product": 18,
-    "image": "imperia/products/империя_4_XwxCEcs.jpg",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 2,
-    "created_at": "2025-06-29T08:18:25.356Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 10,
-  "fields": {
-    "product": 18,
-    "image": "imperia/products/империя_5.jpg",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 3,
-    "created_at": "2025-06-29T08:18:26.555Z"
   }
 },
 {

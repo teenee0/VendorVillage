@@ -298,6 +298,7 @@ class ProductSet:
                 Q(name__icontains=search_query)
                 | Q(description__icontains=search_query)
                 | Q(variants__custom_name__icontains=search_query)
+                | Q(variants__barcode__icontains=search_query)
             ).distinct()
 
         # Фильтрация по цене
