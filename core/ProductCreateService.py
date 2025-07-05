@@ -34,7 +34,8 @@ class ProductService:
             category=category,
             name=data["name"],
             description=data.get("description", ""),
-            on_the_main=data.get("on_the_main", False),
+            is_visible_on_marketplace=data.get("is_visible_on_marketplace", False),
+            is_visible_on_own_site=data.get("is_visible_on_own_site", False),
             is_active=data.get("is_active", True),
         )
 
@@ -66,7 +67,8 @@ class ProductService:
         product.name = data["name"]
         product.description = data.get("description", "")
         product.category_id = data["category"]
-        product.on_the_main = data.get("on_the_main", False)
+        product.is_visible_on_marketplace = data.get("is_visible_on_marketplace", False)
+        product.is_visible_on_own_site = data.get("is_visible_on_own_site", False)
         product.is_active = data.get("is_active", True)
         product.save()
 

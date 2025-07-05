@@ -3,11 +3,11 @@
   "model": "marketplace.category",
   "pk": 25,
   "fields": {
-    "name": "Одежда и обувь",
+    "name": "РћРґРµР¶РґР° Рё РѕР±СѓРІСЊ",
     "parent": null,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/одежда.png",
+    "big_image": "category_images/big_images/РѕРґРµР¶РґР°.png",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -24,11 +24,11 @@
   "model": "marketplace.category",
   "pk": 26,
   "fields": {
-    "name": "Женская",
+    "name": "Р–РµРЅСЃРєР°СЏ",
     "parent": 25,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/женская.png",
+    "big_image": "category_images/big_images/Р¶РµРЅСЃРєР°СЏ.png",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -45,11 +45,11 @@
   "model": "marketplace.category",
   "pk": 28,
   "fields": {
-    "name": "Мужская",
+    "name": "РњСѓР¶СЃРєР°СЏ",
     "parent": 25,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/мужская.png",
+    "big_image": "category_images/big_images/РјСѓР¶СЃРєР°СЏ.png",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -66,12 +66,12 @@
   "model": "marketplace.category",
   "pk": 29,
   "fields": {
-    "name": "Обувь",
+    "name": "РћР±СѓРІСЊ",
     "parent": 28,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_zpKbEqd.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_zpKbEqd.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:14:08.451Z",
@@ -87,12 +87,12 @@
   "model": "marketplace.category",
   "pk": 30,
   "fields": {
-    "name": "Обувь",
+    "name": "РћР±СѓРІСЊ",
     "parent": 26,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_vhkxvhp.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_vhkxvhp.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:14:25.233Z",
@@ -108,12 +108,12 @@
   "model": "marketplace.category",
   "pk": 31,
   "fields": {
-    "name": "Кроссовки",
+    "name": "РљСЂРѕСЃСЃРѕРІРєРё",
     "parent": 30,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_3XciXRl.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_3XciXRl.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:14:33.648Z",
@@ -129,7 +129,7 @@
   "model": "marketplace.category",
   "pk": 32,
   "fields": {
-    "name": "Кроссовки",
+    "name": "РљСЂРѕСЃСЃРѕРІРєРё",
     "parent": 29,
     "description": "",
     "page_identificator": null,
@@ -150,12 +150,12 @@
   "model": "marketplace.category",
   "pk": 33,
   "fields": {
-    "name": "Верхняя одежда",
+    "name": "Р’РµСЂС…РЅСЏСЏ РѕРґРµР¶РґР°",
     "parent": 26,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС….jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:14:49.211Z",
@@ -171,12 +171,12 @@
   "model": "marketplace.category",
   "pk": 34,
   "fields": {
-    "name": "Верхняя одежда",
+    "name": "Р’РµСЂС…РЅСЏСЏ РѕРґРµР¶РґР°",
     "parent": 28,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_lxCc03x.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_lxCc03x.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:14:58.618Z",
@@ -192,12 +192,12 @@
   "model": "marketplace.category",
   "pk": 35,
   "fields": {
-    "name": "Шубы",
+    "name": "РЁСѓР±С‹",
     "parent": 33,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_XDvAdLm.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_XDvAdLm.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:15:11.647Z",
@@ -213,12 +213,12 @@
   "model": "marketplace.category",
   "pk": 36,
   "fields": {
-    "name": "Куртки на синтепоне",
+    "name": "РљСѓСЂС‚РєРё РЅР° СЃРёРЅС‚РµРїРѕРЅРµ",
     "parent": 33,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_txWRPz9.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_txWRPz9.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:15:19.806Z",
@@ -234,12 +234,12 @@
   "model": "marketplace.category",
   "pk": 37,
   "fields": {
-    "name": "Куртки",
+    "name": "РљСѓСЂС‚РєРё",
     "parent": 34,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_L1XWrc1.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_L1XWrc1.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T04:15:36.837Z",
@@ -255,11 +255,11 @@
   "model": "marketplace.category",
   "pk": 38,
   "fields": {
-    "name": "Автотовары",
+    "name": "РђРІС‚РѕС‚РѕРІР°СЂС‹",
     "parent": null,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/автозапчасти.jpg",
+    "big_image": "category_images/big_images/Р°РІС‚РѕР·Р°РїС‡Р°СЃС‚Рё.jpg",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -276,11 +276,11 @@
   "model": "marketplace.category",
   "pk": 39,
   "fields": {
-    "name": "Мебель",
+    "name": "РњРµР±РµР»СЊ",
     "parent": null,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/мебель_GVl0HZu.png",
+    "big_image": "category_images/big_images/РјРµР±РµР»СЊ_GVl0HZu.png",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -297,11 +297,11 @@
   "model": "marketplace.category",
   "pk": 40,
   "fields": {
-    "name": "Для дачи",
+    "name": "Р”Р»СЏ РґР°С‡Рё",
     "parent": null,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/дача.jpg",
+    "big_image": "category_images/big_images/РґР°С‡Р°.jpg",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -318,11 +318,11 @@
   "model": "marketplace.category",
   "pk": 41,
   "fields": {
-    "name": "Электроника",
+    "name": "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
     "parent": null,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/ноутбук.jpg",
+    "big_image": "category_images/big_images/РЅРѕСѓС‚Р±СѓРє.jpg",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -339,12 +339,12 @@
   "model": "marketplace.category",
   "pk": 42,
   "fields": {
-    "name": "Дубленки",
+    "name": "Р”СѓР±Р»РµРЅРєРё",
     "parent": 33,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_QC50Neq.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_QC50Neq.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T09:04:21.297Z",
@@ -360,12 +360,12 @@
   "model": "marketplace.category",
   "pk": 43,
   "fields": {
-    "name": "Парки",
+    "name": "РџР°СЂРєРё",
     "parent": 33,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_O34kMIM.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_O34kMIM.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T09:04:42.485Z",
@@ -381,12 +381,12 @@
   "model": "marketplace.category",
   "pk": 44,
   "fields": {
-    "name": "Утепленные пальто",
+    "name": "РЈС‚РµРїР»РµРЅРЅС‹Рµ РїР°Р»СЊС‚Рѕ",
     "parent": 33,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_VQv6MCW.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_VQv6MCW.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T09:05:01.335Z",
@@ -402,12 +402,12 @@
   "model": "marketplace.category",
   "pk": 45,
   "fields": {
-    "name": "Горнолыжные куртки",
+    "name": "Р“РѕСЂРЅРѕР»С‹Р¶РЅС‹Рµ РєСѓСЂС‚РєРё",
     "parent": 33,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_T1uNZxV.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_T1uNZxV.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T09:05:18.946Z",
@@ -423,12 +423,12 @@
   "model": "marketplace.category",
   "pk": 46,
   "fields": {
-    "name": "Брюки",
+    "name": "Р‘СЂСЋРєРё",
     "parent": 28,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_xCfp0zv.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_xCfp0zv.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T09:59:16.823Z",
@@ -444,12 +444,12 @@
   "model": "marketplace.category",
   "pk": 47,
   "fields": {
-    "name": "Кофты",
+    "name": "РљРѕС„С‚С‹",
     "parent": 28,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_APZBj4k.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_APZBj4k.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T09:59:46.897Z",
@@ -465,12 +465,12 @@
   "model": "marketplace.category",
   "pk": 48,
   "fields": {
-    "name": "Джинсы",
+    "name": "Р”Р¶РёРЅСЃС‹",
     "parent": 28,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_RfNMtZu.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_RfNMtZu.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T10:00:04.836Z",
@@ -486,12 +486,12 @@
   "model": "marketplace.category",
   "pk": 49,
   "fields": {
-    "name": "Домашняя одежда",
+    "name": "Р”РѕРјР°С€РЅСЏСЏ РѕРґРµР¶РґР°",
     "parent": 28,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_4gCnCGW.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_4gCnCGW.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-03T10:00:27.758Z",
@@ -507,11 +507,11 @@
   "model": "marketplace.category",
   "pk": 50,
   "fields": {
-    "name": "Аксессуары",
+    "name": "РђРєСЃРµСЃСЃСѓР°СЂС‹",
     "parent": null,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/аксессуары.jpg",
+    "big_image": "category_images/big_images/Р°РєСЃРµСЃСЃСѓР°СЂС‹.jpg",
     "small_image": "",
     "ordering": 0,
     "is_active": true,
@@ -528,12 +528,12 @@
   "model": "marketplace.category",
   "pk": 51,
   "fields": {
-    "name": "Кухонная мебель",
+    "name": "РљСѓС…РѕРЅРЅР°СЏ РјРµР±РµР»СЊ",
     "parent": 39,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/кух_мебель.jpg",
-    "small_image": "category_images/small_images/фон_для_мелких_5ECKDjF.jpg",
+    "big_image": "category_images/big_images/РєСѓС…_РјРµР±РµР»СЊ.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_5ECKDjF.jpg",
     "ordering": 3,
     "is_active": true,
     "created_at": "2025-02-03T11:19:07.976Z",
@@ -549,11 +549,11 @@
   "model": "marketplace.category",
   "pk": 52,
   "fields": {
-    "name": "Мягкая мебель",
+    "name": "РњСЏРіРєР°СЏ РјРµР±РµР»СЊ",
     "parent": 39,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/Мягк_мебель.webp",
+    "big_image": "category_images/big_images/РњСЏРіРє_РјРµР±РµР»СЊ.webp",
     "small_image": "",
     "ordering": 2,
     "is_active": true,
@@ -570,11 +570,11 @@
   "model": "marketplace.category",
   "pk": 53,
   "fields": {
-    "name": "Твердая мебель",
+    "name": "РўРІРµСЂРґР°СЏ РјРµР±РµР»СЊ",
     "parent": 39,
     "description": "",
     "page_identificator": null,
-    "big_image": "category_images/big_images/мебель_твердая.jpg",
+    "big_image": "category_images/big_images/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
     "small_image": "",
     "ordering": 1,
     "is_active": true,
@@ -591,7 +591,7 @@
   "model": "marketplace.category",
   "pk": 54,
   "fields": {
-    "name": "Тест",
+    "name": "РўРµСЃС‚",
     "parent": 38,
     "description": "",
     "page_identificator": null,
@@ -612,12 +612,12 @@
   "model": "marketplace.category",
   "pk": 55,
   "fields": {
-    "name": "Туфли",
+    "name": "РўСѓС„Р»Рё",
     "parent": 30,
     "description": "",
     "page_identificator": null,
     "big_image": "",
-    "small_image": "category_images/small_images/фон_для_мелких_CyCbuww.jpg",
+    "small_image": "category_images/small_images/С„РѕРЅ_РґР»СЏ_РјРµР»РєРёС…_CyCbuww.jpg",
     "ordering": 0,
     "is_active": true,
     "created_at": "2025-02-21T13:27:05.855Z",
@@ -635,12 +635,13 @@
   "fields": {
     "business": 1,
     "category": 33,
-    "name": "Футболка Белая",
-    "description": "Футболка из хлопка, хорошо подходит как для ежедневной носки, так и для похода на мероприятия, легкий хлопок хорошо дышит, что особенно хорошо в жаркую погоду, наши личные лекала создают красивый оверсайз силуэт, который будет хорошо сидеть на любой фигуре.",
-    "on_the_main": true,
+    "name": "Р¤СѓС‚Р±РѕР»РєР° Р‘РµР»Р°СЏ",
+    "description": "Р¤СѓС‚Р±РѕР»РєР° РёР· С…Р»РѕРїРєР°, С…РѕСЂРѕС€Рѕ РїРѕРґС…РѕРґРёС‚ РєР°Рє РґР»СЏ РµР¶РµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё, С‚Р°Рє Рё РґР»СЏ РїРѕС…РѕРґР° РЅР° РјРµСЂРѕРїСЂРёСЏС‚РёСЏ, Р»РµРіРєРёР№ С…Р»РѕРїРѕРє С…РѕСЂРѕС€Рѕ РґС‹С€РёС‚, С‡С‚Рѕ РѕСЃРѕР±РµРЅРЅРѕ С…РѕСЂРѕС€Рѕ РІ Р¶Р°СЂРєСѓСЋ РїРѕРіРѕРґСѓ, РЅР°С€Рё Р»РёС‡РЅС‹Рµ Р»РµРєР°Р»Р° СЃРѕР·РґР°СЋС‚ РєСЂР°СЃРёРІС‹Р№ РѕРІРµСЂСЃР°Р№Р· СЃРёР»СѓСЌС‚, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ С…РѕСЂРѕС€Рѕ СЃРёРґРµС‚СЊ РЅР° Р»СЋР±РѕР№ С„РёРіСѓСЂРµ.",
+    "is_visible_on_marketplace": false,
+    "is_visible_on_own_site": false,
     "is_active": true,
     "created_at": "2025-05-01T23:29:43.716Z",
-    "updated_at": "2025-05-13T15:21:42.993Z"
+    "updated_at": "2025-07-04T12:42:58.062Z"
   }
 },
 {
@@ -649,12 +650,13 @@
   "fields": {
     "business": 1,
     "category": 35,
-    "name": "Шуба Соболь и очень длинное названиееее",
-    "description": "",
-    "on_the_main": true,
+    "name": "РЁСѓР±Р° РЎРѕР±РѕР»СЊ Рё РѕС‡РµРЅСЊ РґР»РёРЅРЅРѕРµ РЅР°Р·РІР°РЅРёРµРµРµРµ",
+    "description": "Р›СЏР»СЏР»СЏ",
+    "is_visible_on_marketplace": false,
+    "is_visible_on_own_site": false,
     "is_active": true,
     "created_at": "2025-05-02T19:45:13.121Z",
-    "updated_at": "2025-05-17T10:08:45.180Z"
+    "updated_at": "2025-07-04T12:52:46.348Z"
   }
 },
 {
@@ -663,19 +665,20 @@
   "fields": {
     "business": 1,
     "category": 35,
-    "name": "Норковая шуба с капюшоном Flaumfeder 716766003",
-    "description": "Лаконичная шуба из меха норки черного цвета. Модель прямого силуэта с капюшоном, прорезными карманами и застежкой на крючки.",
-    "on_the_main": true,
+    "name": "РќРѕСЂРєРѕРІР°СЏ С€СѓР±Р° СЃ РєР°РїСЋС€РѕРЅРѕРј Flaumfeder 716766003",
+    "description": "Р›Р°РєРѕРЅРёС‡РЅР°СЏ С€СѓР±Р° РёР· РјРµС…Р° РЅРѕСЂРєРё С‡РµСЂРЅРѕРіРѕ С†РІРµС‚Р°. РњРѕРґРµР»СЊ РїСЂСЏРјРѕРіРѕ СЃРёР»СѓСЌС‚Р° СЃ РєР°РїСЋС€РѕРЅРѕРј, РїСЂРѕСЂРµР·РЅС‹РјРё РєР°СЂРјР°РЅР°РјРё Рё Р·Р°СЃС‚РµР¶РєРѕР№ РЅР° РєСЂСЋС‡РєРё.",
+    "is_visible_on_marketplace": false,
+    "is_visible_on_own_site": false,
     "is_active": true,
     "created_at": "2025-07-01T03:21:04.457Z",
-    "updated_at": "2025-07-04T08:48:39.785Z"
+    "updated_at": "2025-07-04T12:49:15.262Z"
   }
 },
 {
   "model": "marketplace.attribute",
   "pk": 1,
   "fields": {
-    "name": "Размер",
+    "name": "Р Р°Р·РјРµСЂ",
     "has_predefined_values": true,
     "is_filterable": true,
     "display_order": 0
@@ -685,7 +688,7 @@
   "model": "marketplace.attribute",
   "pk": 2,
   "fields": {
-    "name": "Длина Рукова",
+    "name": "Р”Р»РёРЅР° Р СѓРєРѕРІР°",
     "has_predefined_values": false,
     "is_filterable": true,
     "display_order": 0
@@ -695,7 +698,7 @@
   "model": "marketplace.attribute",
   "pk": 3,
   "fields": {
-    "name": "Цвет",
+    "name": "Р¦РІРµС‚",
     "has_predefined_values": true,
     "is_filterable": true,
     "display_order": 0
@@ -705,7 +708,7 @@
   "model": "marketplace.attribute",
   "pk": 4,
   "fields": {
-    "name": "Материал",
+    "name": "РњР°С‚РµСЂРёР°Р»",
     "has_predefined_values": false,
     "is_filterable": true,
     "display_order": 0
@@ -715,8 +718,18 @@
   "model": "marketplace.attribute",
   "pk": 5,
   "fields": {
-    "name": "Производитель (страна)",
+    "name": "РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ (СЃС‚СЂР°РЅР°)",
     "has_predefined_values": false,
+    "is_filterable": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "marketplace.attribute",
+  "pk": 6,
+  "fields": {
+    "name": "РљР°РїСЋС€РѕРЅ",
+    "has_predefined_values": true,
     "is_filterable": true,
     "display_order": 0
   }
@@ -766,7 +779,7 @@
   "pk": 8,
   "fields": {
     "attribute": 3,
-    "value": "Синий",
+    "value": "РЎРёРЅРёР№",
     "display_order": 0,
     "color_code": null
   }
@@ -776,7 +789,7 @@
   "pk": 9,
   "fields": {
     "attribute": 3,
-    "value": "Черный",
+    "value": "Р§РµСЂРЅС‹Р№",
     "display_order": 0,
     "color_code": null
   }
@@ -786,7 +799,7 @@
   "pk": 10,
   "fields": {
     "attribute": 3,
-    "value": "Белый",
+    "value": "Р‘РµР»С‹Р№",
     "display_order": 0,
     "color_code": null
   }
@@ -797,6 +810,26 @@
   "fields": {
     "attribute": 4,
     "value": "-",
+    "display_order": 0,
+    "color_code": null
+  }
+},
+{
+  "model": "marketplace.attributevalue",
+  "pk": 12,
+  "fields": {
+    "attribute": 6,
+    "value": "Р•СЃС‚СЊ",
+    "display_order": 0,
+    "color_code": null
+  }
+},
+{
+  "model": "marketplace.attributevalue",
+  "pk": 13,
+  "fields": {
+    "attribute": 6,
+    "value": "РќРµС‚",
     "display_order": 0,
     "color_code": null
   }
@@ -857,22 +890,33 @@
   }
 },
 {
+  "model": "marketplace.categoryattribute",
+  "pk": 6,
+  "fields": {
+    "category": 33,
+    "attribute": 6,
+    "required": true,
+    "display_order": 0,
+    "show_attribute_at_right": false
+  }
+},
+{
   "model": "marketplace.productvariant",
   "pk": 1,
   "fields": {
     "product": 2,
-    "barcode": null,
-    "barcode_image": "",
-    "sku": "Черный жи есть",
+    "barcode": "2001324977014",
+    "barcode_image": "imperia/barcodes/2001324977014.png",
+    "sku": "Р§РµСЂРЅС‹Р№ Р¶Рё РµСЃС‚СЊ",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
-    "custom_description": "",
+    "custom_description": null,
     "price": "30000.00",
     "discount": "0.00",
     "show_this": true,
     "created_at": "2025-05-01T23:33:41.499Z",
-    "updated_at": "2025-05-11T18:20:39.577Z"
+    "updated_at": "2025-07-04T12:42:58.135Z"
   }
 },
 {
@@ -880,18 +924,18 @@
   "pk": 2,
   "fields": {
     "product": 2,
-    "barcode": null,
-    "barcode_image": "",
-    "sku": "тоже верная только л",
+    "barcode": "2003058996163",
+    "barcode_image": "imperia/barcodes/2003058996163.png",
+    "sku": "С‚РѕР¶Рµ РІРµСЂРЅР°СЏ С‚РѕР»СЊРєРѕ Р»",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
-    "custom_description": "",
+    "custom_description": null,
     "price": "990.00",
     "discount": "5.00",
     "show_this": false,
     "created_at": "2025-05-02T15:13:30.935Z",
-    "updated_at": "2025-05-02T15:14:52.888Z"
+    "updated_at": "2025-07-04T12:42:58.105Z"
   }
 },
 {
@@ -899,18 +943,18 @@
   "pk": 3,
   "fields": {
     "product": 3,
-    "barcode": null,
-    "barcode_image": "",
-    "sku": "размер л",
+    "barcode": "2007227020451",
+    "barcode_image": "imperia/barcodes/2007227020451.png",
+    "sku": "СЂР°Р·РјРµСЂ Р»",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
-    "custom_description": "",
+    "custom_description": null,
     "price": "500000.00",
-    "discount": null,
+    "discount": "0.00",
     "show_this": true,
     "created_at": "2025-05-02T19:46:19.143Z",
-    "updated_at": "2025-05-11T20:08:49.191Z"
+    "updated_at": "2025-07-04T12:52:46.353Z"
   }
 },
 {
@@ -918,18 +962,18 @@
   "pk": 4,
   "fields": {
     "product": 3,
-    "barcode": null,
-    "barcode_image": "",
+    "barcode": "2006375683907",
+    "barcode_image": "imperia/barcodes/2006375683907.png",
     "sku": "wwsx52sS",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
-    "custom_description": "",
+    "custom_description": null,
     "price": "500000.00",
-    "discount": null,
+    "discount": "0.00",
     "show_this": true,
     "created_at": "2025-05-11T20:04:51.514Z",
-    "updated_at": "2025-05-11T20:47:32.291Z"
+    "updated_at": "2025-07-04T12:52:46.369Z"
   }
 },
 {
@@ -937,8 +981,8 @@
   "pk": 20,
   "fields": {
     "product": 19,
-    "barcode": "2004695489065",
-    "barcode_image": "imperia/barcodes/2004695489065.png",
+    "barcode": "2007349087257",
+    "barcode_image": "imperia/barcodes/2007349087257.png",
     "sku": "PROD-111",
     "has_custom_name": false,
     "custom_name": null,
@@ -948,7 +992,7 @@
     "discount": "51.00",
     "show_this": true,
     "created_at": "2025-07-01T03:21:04.458Z",
-    "updated_at": "2025-07-04T08:48:39.810Z"
+    "updated_at": "2025-07-04T12:49:15.278Z"
   }
 },
 {
@@ -956,8 +1000,8 @@
   "pk": 21,
   "fields": {
     "product": 19,
-    "barcode": "2007675294998",
-    "barcode_image": "imperia/barcodes/2007675294998.png",
+    "barcode": "2003139492249",
+    "barcode_image": "imperia/barcodes/2003139492249.png",
     "sku": "PROD-111-COPY-2",
     "has_custom_name": false,
     "custom_name": null,
@@ -967,7 +1011,7 @@
     "discount": "11.00",
     "show_this": true,
     "created_at": "2025-07-01T03:21:04.468Z",
-    "updated_at": "2025-07-04T08:48:39.850Z"
+    "updated_at": "2025-07-04T12:49:15.312Z"
   }
 },
 {
@@ -975,8 +1019,8 @@
   "pk": 22,
   "fields": {
     "product": 19,
-    "barcode": "2000662179906",
-    "barcode_image": "imperia/barcodes/2000662179906.png",
+    "barcode": "2009889654036",
+    "barcode_image": "imperia/barcodes/2009889654036.png",
     "sku": "PROD-111-COPY-2-COPY-3",
     "has_custom_name": false,
     "custom_name": null,
@@ -986,7 +1030,7 @@
     "discount": "11.00",
     "show_this": true,
     "created_at": "2025-07-01T03:21:04.477Z",
-    "updated_at": "2025-07-04T08:48:39.888Z"
+    "updated_at": "2025-07-04T12:49:15.345Z"
   }
 },
 {
@@ -998,7 +1042,7 @@
     "quantity": 600,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-06-27T00:15:58.215Z"
+    "last_updated": "2025-07-04T12:42:58.128Z"
   }
 },
 {
@@ -1010,7 +1054,7 @@
     "quantity": 800,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-06-27T00:16:07.777Z"
+    "last_updated": "2025-07-04T12:42:58.155Z"
   }
 },
 {
@@ -1022,7 +1066,7 @@
     "quantity": 565,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-06-27T00:16:15.128Z"
+    "last_updated": "2025-07-04T12:52:46.367Z"
   }
 },
 {
@@ -1034,7 +1078,7 @@
     "quantity": 678,
     "reserved_quantity": 70,
     "is_available_for_sale": true,
-    "last_updated": "2025-06-27T00:16:28.132Z"
+    "last_updated": "2025-07-04T12:52:46.392Z"
   }
 },
 {
@@ -1046,7 +1090,7 @@
     "quantity": 43,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-04T08:48:39.838Z"
+    "last_updated": "2025-07-04T12:49:15.310Z"
   }
 },
 {
@@ -1058,7 +1102,7 @@
     "quantity": 43,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-04T08:48:39.877Z"
+    "last_updated": "2025-07-04T12:49:15.344Z"
   }
 },
 {
@@ -1070,7 +1114,7 @@
     "quantity": 43,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-04T08:48:39.919Z"
+    "last_updated": "2025-07-04T12:49:15.374Z"
   }
 },
 {
@@ -1080,7 +1124,7 @@
     "variant": 1,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "10 см"
+    "custom_value": "10 СЃРј"
   }
 },
 {
@@ -1140,7 +1184,7 @@
     "variant": 3,
     "category_attribute": 4,
     "predefined_value": null,
-    "custom_value": "Соболь 100%"
+    "custom_value": "РЎРѕР±РѕР»СЊ 100%"
   }
 },
 {
@@ -1160,7 +1204,7 @@
     "variant": 4,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "12 см"
+    "custom_value": "12 СЃРј"
   }
 },
 {
@@ -1170,7 +1214,7 @@
     "variant": 4,
     "category_attribute": 4,
     "predefined_value": null,
-    "custom_value": "Соболь 100%"
+    "custom_value": "РЎРѕР±РѕР»СЊ 100%"
   }
 },
 {
@@ -1200,7 +1244,7 @@
     "variant": 20,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "52 см"
+    "custom_value": "52 СЃРј"
   }
 },
 {
@@ -1220,7 +1264,7 @@
     "variant": 20,
     "category_attribute": 4,
     "predefined_value": null,
-    "custom_value": "Норка"
+    "custom_value": "РќРѕСЂРєР°"
   }
 },
 {
@@ -1240,7 +1284,7 @@
     "variant": 21,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "52 см"
+    "custom_value": "52 СЃРј"
   }
 },
 {
@@ -1260,7 +1304,7 @@
     "variant": 21,
     "category_attribute": 4,
     "predefined_value": null,
-    "custom_value": "Норка"
+    "custom_value": "РќРѕСЂРєР°"
   }
 },
 {
@@ -1280,7 +1324,7 @@
     "variant": 22,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "52 см"
+    "custom_value": "52 СЃРј"
   }
 },
 {
@@ -1300,7 +1344,7 @@
     "variant": 22,
     "category_attribute": 4,
     "predefined_value": null,
-    "custom_value": "Норка"
+    "custom_value": "РќРѕСЂРєР°"
   }
 },
 {
@@ -1310,7 +1354,7 @@
     "variant": 20,
     "category_attribute": 5,
     "predefined_value": null,
-    "custom_value": "Турция"
+    "custom_value": "РўСѓСЂС†РёСЏ"
   }
 },
 {
@@ -1320,7 +1364,7 @@
     "variant": 21,
     "category_attribute": 5,
     "predefined_value": null,
-    "custom_value": "Турция"
+    "custom_value": "РўСѓСЂС†РёСЏ"
   }
 },
 {
@@ -1330,7 +1374,97 @@
     "variant": 22,
     "category_attribute": 5,
     "predefined_value": null,
-    "custom_value": "Турция"
+    "custom_value": "РўСѓСЂС†РёСЏ"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 143,
+  "fields": {
+    "variant": 3,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "РўСѓСЂС†РёСЏ"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 144,
+  "fields": {
+    "variant": 4,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "РўСѓСЂС†РёСЏ"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 145,
+  "fields": {
+    "variant": 2,
+    "category_attribute": 4,
+    "predefined_value": null,
+    "custom_value": "РљРѕС‚С‚РѕРЅ"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 146,
+  "fields": {
+    "variant": 2,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Р’СЊРµС‚РЅР°Рј"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 147,
+  "fields": {
+    "variant": 1,
+    "category_attribute": 4,
+    "predefined_value": null,
+    "custom_value": "РљРѕС‚С‚РѕРЅ"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 148,
+  "fields": {
+    "variant": 1,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Р’СЊРµС‚РЅР°Рј"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 149,
+  "fields": {
+    "variant": 20,
+    "category_attribute": 6,
+    "predefined_value": 12,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 150,
+  "fields": {
+    "variant": 21,
+    "category_attribute": 6,
+    "predefined_value": 12,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 151,
+  "fields": {
+    "variant": 22,
+    "category_attribute": 6,
+    "predefined_value": 12,
+    "custom_value": ""
   }
 },
 {
@@ -1338,7 +1472,7 @@
   "pk": 1,
   "fields": {
     "product": 2,
-    "image": "imperia/products/БелаяФутболка1.webp",
+    "image": "imperia/products/Р‘РµР»Р°СЏР¤СѓС‚Р±РѕР»РєР°1.webp",
     "is_main": true,
     "alt_text": null,
     "display_order": 0,
@@ -1350,10 +1484,10 @@
   "pk": 2,
   "fields": {
     "product": 2,
-    "image": "imperia/products/БелаяФутболка2.webp",
+    "image": "imperia/products/Р‘РµР»Р°СЏР¤СѓС‚Р±РѕР»РєР°2.webp",
     "is_main": false,
     "alt_text": null,
-    "display_order": 0,
+    "display_order": 1,
     "created_at": "2025-05-01T23:29:43.719Z"
   }
 },
@@ -1362,10 +1496,10 @@
   "pk": 3,
   "fields": {
     "product": 2,
-    "image": "imperia/products/БелаяФутболка3.webp",
+    "image": "imperia/products/Р‘РµР»Р°СЏР¤СѓС‚Р±РѕР»РєР°3.webp",
     "is_main": false,
     "alt_text": null,
-    "display_order": 0,
+    "display_order": 2,
     "created_at": "2025-05-01T23:29:43.720Z"
   }
 },
@@ -1374,7 +1508,7 @@
   "pk": 4,
   "fields": {
     "product": 3,
-    "image": "imperia/products/империя_3.jpg",
+    "image": "imperia/products/РёРјРїРµСЂРёСЏ_3.jpg",
     "is_main": false,
     "alt_text": null,
     "display_order": 0,
@@ -1386,10 +1520,10 @@
   "pk": 5,
   "fields": {
     "product": 3,
-    "image": "imperia/products/империя_4.jpg",
+    "image": "imperia/products/РёРјРїРµСЂРёСЏ_4.jpg",
     "is_main": false,
     "alt_text": null,
-    "display_order": 0,
+    "display_order": 1,
     "created_at": "2025-05-02T19:45:13.123Z"
   }
 },
@@ -1398,10 +1532,10 @@
   "pk": 6,
   "fields": {
     "product": 2,
-    "image": "imperia/products/женская.png",
+    "image": "imperia/products/Р¶РµРЅСЃРєР°СЏ.png",
     "is_main": false,
     "alt_text": "",
-    "display_order": 0,
+    "display_order": 3,
     "created_at": "2025-05-11T17:56:27.575Z"
   }
 },

@@ -40,7 +40,8 @@ def parse_product_formdata(request):
         "description": request.data.get("description"),
         "category": int(request.data.get("category")),
         "is_active": request.data.get("is_active") == "true",
-        "on_the_main": request.data.get("on_the_main") == "true",
+        "is_visible_on_marketplace": request.data.get("is_visible_on_marketplace") == "true",
+        "is_visible_on_own_site": request.data.get("is_visible_on_own_site") == "true",
         "images": [],
         "variants": [],
     }

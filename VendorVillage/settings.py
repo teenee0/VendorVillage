@@ -137,7 +137,7 @@ WSGI_APPLICATION = 'VendorVillage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vendorvillage4',
+        'NAME': 'vv5',
         'USER': 'root',
         'PASSWORD': 'ensoxPER324',
         'HOST': '127.0.0.1',

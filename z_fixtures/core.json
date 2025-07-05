@@ -72,8 +72,8 @@
   "model": "core.businesstype",
   "pk": 1,
   "fields": {
-    "name": "Маркетплейс",
-    "description": "Маркетплейс - торговая площадка со всем - всеми товарами",
+    "name": "РњР°СЂРєРµС‚РїР»РµР№СЃ",
+    "description": "РњР°СЂРєРµС‚РїР»РµР№СЃ - С‚РѕСЂРіРѕРІР°СЏ РїР»РѕС‰Р°РґРєР° СЃРѕ РІСЃРµРј - РІСЃРµРјРё С‚РѕРІР°СЂР°РјРё",
     "url": "marketplace/categories",
     "slug": "marketplace"
   }
@@ -82,8 +82,8 @@
   "model": "core.businesstype",
   "pk": 2,
   "fields": {
-    "name": "ТРЦ",
-    "description": "Исследуйте торговые центры своего города! Смотрите ассортимент товаров, и не упустите самые большие скидки!",
+    "name": "РўР Р¦",
+    "description": "РСЃСЃР»РµРґСѓР№С‚Рµ С‚РѕСЂРіРѕРІС‹Рµ С†РµРЅС‚СЂС‹ СЃРІРѕРµРіРѕ РіРѕСЂРѕРґР°! РЎРјРѕС‚СЂРёС‚Рµ Р°СЃСЃРѕСЂС‚РёРјРµРЅС‚ С‚РѕРІР°СЂРѕРІ, Рё РЅРµ СѓРїСѓСЃС‚РёС‚Рµ СЃР°РјС‹Рµ Р±РѕР»СЊС€РёРµ СЃРєРёРґРєРё!",
     "url": "mall/main",
     "slug": "no_slug"
   }
@@ -92,8 +92,8 @@
   "model": "core.businesstype",
   "pk": 3,
   "fields": {
-    "name": "Рестораны",
-    "description": "Хотите кушать? Тогда нажимай сюда, тут увидишь все рестораны своего города, сможешь заказать доставку и забронировать столик =)",
+    "name": "Р РµСЃС‚РѕСЂР°РЅС‹",
+    "description": "РҐРѕС‚РёС‚Рµ РєСѓС€Р°С‚СЊ? РўРѕРіРґР° РЅР°Р¶РёРјР°Р№ СЃСЋРґР°, С‚СѓС‚ СѓРІРёРґРёС€СЊ РІСЃРµ СЂРµСЃС‚РѕСЂР°РЅС‹ СЃРІРѕРµРіРѕ РіРѕСЂРѕРґР°, СЃРјРѕР¶РµС€СЊ Р·Р°РєР°Р·Р°С‚СЊ РґРѕСЃС‚Р°РІРєСѓ Рё Р·Р°Р±СЂРѕРЅРёСЂРѕРІР°С‚СЊ СЃС‚РѕР»РёРє =)",
     "url": "restaurants/main",
     "slug": "no_slug"
   }
@@ -104,9 +104,9 @@
   "fields": {
     "owner": 3,
     "business_type": 1,
-    "name": "Империя",
-    "description": "Магазин империя - один из лучших магазинов вехрней одежды нашего города!",
-    "address": "Гагарина",
+    "name": "РРјРїРµСЂРёСЏ",
+    "description": "РњР°РіР°Р·РёРЅ РёРјРїРµСЂРёСЏ - РѕРґРёРЅ РёР· Р»СѓС‡С€РёС… РјР°РіР°Р·РёРЅРѕРІ РІРµС…СЂРЅРµР№ РѕРґРµР¶РґС‹ РЅР°С€РµРіРѕ РіРѕСЂРѕРґР°!",
+    "address": "Р“Р°РіР°СЂРёРЅР°",
     "phone": "87073945075",
     "business_logo": "",
     "html_template": "",
@@ -132,7 +132,7 @@
     "html_template": "",
     "product_card_template": "",
     "product_detail_template": "",
-    "background_image": "business/лого_бэк.webp",
+    "background_image": "business/Р»РѕРіРѕ_Р±СЌРє.webp",
     "created_at": "2025-02-03T06:03:44.504Z",
     "updated_at": "2025-07-01T05:41:49.079Z",
     "slug": "hot_shmot"
@@ -144,15 +144,15 @@
   "fields": {
     "owner": 1,
     "business_type": 1,
-    "name": "Атто",
-    "description": "Атто аоокщоащкоащкоа",
-    "address": "Габдулина 127А",
+    "name": "РђС‚С‚Рѕ",
+    "description": "РђС‚С‚Рѕ Р°РѕРѕРєС‰РѕР°С‰РєРѕР°С‰РєРѕР°",
+    "address": "Р“Р°Р±РґСѓР»РёРЅР° 127Рђ",
     "phone": "9999999991",
-    "business_logo": "business_logo/мебель_твердая.jpg",
+    "business_logo": "business_logo/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
     "html_template": "atto/own_site_files/test.html",
     "product_card_template": "",
     "product_detail_template": "business/test_wazMfOH.html",
-    "background_image": "business/мебель_твердая.jpg",
+    "background_image": "business/РјРµР±РµР»СЊ_С‚РІРµСЂРґР°СЏ.jpg",
     "created_at": "2025-02-22T10:06:27.869Z",
     "updated_at": "2025-02-22T10:58:39.235Z",
     "slug": "atto"
@@ -163,7 +163,7 @@
   "pk": 1,
   "fields": {
     "code": "warehouse_and_stock",
-    "name": "Склад и точка продаж",
+    "name": "РЎРєР»Р°Рґ Рё С‚РѕС‡РєР° РїСЂРѕРґР°Р¶",
     "description": "",
     "is_warehouse": true,
     "is_sales_point": true,
@@ -175,9 +175,9 @@
   "pk": 2,
   "fields": {
     "business": 1,
-    "name": "Империя на Гагарина",
+    "name": "РРјРїРµСЂРёСЏ РЅР° Р“Р°РіР°СЂРёРЅР°",
     "location_type": 1,
-    "address": "Гагарина 188",
+    "address": "Р“Р°РіР°СЂРёРЅР° 188",
     "contact_phone": "9992323454",
     "is_active": true,
     "is_primary": false,

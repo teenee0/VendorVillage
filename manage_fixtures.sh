@@ -18,9 +18,24 @@ export_fixtures() {
     source .venv/Scripts/activate
     for app in "${APPS[@]}"; do
         echo " ➡️  Выгружаем $app..."
-        python manage.py dumpdata "$app" --indent "$INDENT" --output "$FIXTURES_DIR/${app}.json" 2>/dev/null || echo "⚠️  Нет данных для $app"
+        OUTPUT_FILE="$FIXTURES_DIR/${app}.json"
+
+        # Сохраняем в файл и подавляем весь stdout (и stderr при пустом дампе)
+        python manage.py dumpdata "$app" --indent "$INDENT" --output "$OUTPUT_FILE" >/dev/null 2>&1
+
+        if [ $? -ne 0 ] || [ ! -s "$OUTPUT_FILE" ]; then
+            echo "⚠️  Нет данных для $app"
+            rm -f "$OUTPUT_FILE"
+            continue
+        fi
+
+        # Принудительная перекодировка в UTF-8 (если требуется)
+        if file -bi "$OUTPUT_FILE" | grep -vi 'utf-8' > /dev/null; then
+            echo "    🔄 Перекодировка $app.json в UTF-8..."
+            python -c "import sys; f=sys.argv[1]; data=open(f, 'rb').read(); open(f, 'wb').write(data.decode('cp1251', errors='ignore').encode('utf-8'))" "$OUTPUT_FILE"
+        fi
     done
-    
+
     echo "✅ Готово! Фикстуры сохранены в $FIXTURES_DIR/"
 }
 
@@ -36,7 +51,7 @@ import_fixtures() {
             echo "⚠️  Файл $FIXTURES_DIR/${app}.json не найден!"
         fi
     done
-    
+
     echo "✅ Готово! Данные загружены."
 }
 

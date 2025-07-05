@@ -74,7 +74,14 @@ class Product(models.Model):
     )
     name = models.CharField(max_length=200, verbose_name="Название")
     description = models.TextField(blank=True, null=True, verbose_name="Описание")
-    on_the_main = models.BooleanField(default=False, verbose_name="На главной странице")
+    is_visible_on_marketplace = models.BooleanField(
+        default=False,
+        verbose_name="Показывать на маркетплейсе",
+    )
+    is_visible_on_own_site = models.BooleanField(
+        default=False,
+        verbose_name="Показывать на личном сайте",
+    )
     is_active = models.BooleanField(default=True, verbose_name="Активен")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
@@ -84,7 +91,8 @@ class Product(models.Model):
         verbose_name_plural = "Товары"
         indexes = [
             models.Index(fields=["is_active"]),
-            models.Index(fields=["on_the_main"]),
+            models.Index(fields=["is_visible_on_marketplace"]),
+            models.Index(fields=["is_visible_on_own_site"]),
             models.Index(fields=["created_at"]),
         ]
 

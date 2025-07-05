@@ -158,10 +158,23 @@ class ProductDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = [
-            'id', 'name', 'description', 'on_the_main', 'is_active',
-            'category', 'category_name', 'business', 'business_name',
-            'variants', 'available_attributes', 'default_variant',
-            'price_range', 'created_at', 'updated_at', 'images'
+            'id',
+            'name',
+            'description',
+            'is_visible_on_marketplace',
+            'is_visible_on_own_site',
+            'is_active',
+            'category',
+            'category_name',
+            'business',
+            'business_name',
+            'variants',
+            'available_attributes',
+            'default_variant',
+            'price_range',
+            'created_at',
+            'updated_at',
+            'images',
         ]
     
     def get_available_attributes(self, obj):
