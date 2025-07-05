@@ -33,7 +33,7 @@ def business_categories_api(request):
 
 def business_site(request, slug):
     business = get_object_or_404(Business, slug=slug)
-    products = business.products.filter(on_the_main=True)
+    products = business.products.filter(is_visible_on_own_site=True)
     # print(business.html_template)
     if business.html_template:
         print(business.html_template)

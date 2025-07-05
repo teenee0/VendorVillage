@@ -289,7 +289,7 @@ class ProductSet:
         # Фильтр "только на главной"
         main_only = request.GET.get("main_only") == "1"
         if main_only:
-            products_qs = products_qs.filter(on_the_main=True)
+            products_qs = products_qs.filter(is_visible_on_marketplace=True)
 
         # Поиск по названию и описанию
         search_query = request.GET.get("search", "")

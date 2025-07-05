@@ -73,7 +73,8 @@ class ProductDetailSerializer(serializers.ModelSerializer):
             "description",
             "category",
             "category_name",
-            "on_the_main",
+            "is_visible_on_marketplace",
+            "is_visible_on_own_site",
             "is_active",
             "images",
             "variants",
@@ -122,7 +123,8 @@ class ProductCreateUpdateSerializer(serializers.Serializer):
     name = serializers.CharField()
     description = serializers.CharField(allow_blank=True, required=False)
     category = serializers.IntegerField()
-    on_the_main = serializers.BooleanField()
+    is_visible_on_marketplace = serializers.BooleanField()
+    is_visible_on_own_site = serializers.BooleanField()
     is_active = serializers.BooleanField()
     images = ProductImageInputSerializer(many=True)
     variants = ProductVariantInputSerializer(many=True)

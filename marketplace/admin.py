@@ -42,9 +42,16 @@ class ProductVariantAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("name", "business", "category", "on_the_main", "image_count")
+    list_display = (
+        "name",
+        "business",
+        "category",
+        "is_visible_on_marketplace",
+        "is_visible_on_own_site",
+        "image_count",
+    )
     search_fields = ("name",)
-    list_filter = ("business", "category", "on_the_main")
+    list_filter = ("business", "category", "is_visible_on_marketplace", "is_visible_on_own_site")
     inlines = [ProductImageInline]
 
     def image_count(self, obj):
