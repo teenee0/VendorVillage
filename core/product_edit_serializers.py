@@ -106,7 +106,6 @@ class ProductVariantAttributeInputSerializer(serializers.Serializer):
 
 class ProductVariantInputSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=False)
-    sku = serializers.CharField(allow_blank=True)
     price = serializers.DecimalField(max_digits=10, decimal_places=2)
     discount = serializers.DecimalField(max_digits=10, decimal_places=2, required=False)
     show_this = serializers.BooleanField()

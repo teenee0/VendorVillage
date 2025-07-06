@@ -6,7 +6,7 @@ from marketplace.models import (
     ProductImage,
     ProductStock,
     ProductVariantAttribute,
-    Category,
+    ProductDefect,
 )
 
 # Serializers
@@ -15,8 +15,16 @@ class ProductImageSerializer(serializers.ModelSerializer):
         model = ProductImage
         fields = ['id', 'image', 'is_main', 'alt_text', 'display_order']
 
+
+class ProductDefectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductDefect
+        fields = ['id', 'quantity', 'reason', 'created_at']
+
+
 class ProductStockSerializer(serializers.ModelSerializer):
     location = serializers.SerializerMethodField()
+    defects = ProductDefectSerializer(many=True, read_only=True)
 
     def get_location(self, obj):
         return {
@@ -26,7 +34,16 @@ class ProductStockSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductStock
-        fields = ['id', 'location', 'quantity', 'reserved_quantity', 'is_available_for_sale']
+        fields = [
+            'id',
+            'location',
+            'quantity',
+            'reserved_quantity',
+            'defect_quantity',
+            'available_quantity',
+            'is_available_for_sale',
+            'defects',
+        ]
 
 
 class ProductVariantAttributeSerializer(serializers.ModelSerializer):

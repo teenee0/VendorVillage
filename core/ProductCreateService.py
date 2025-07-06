@@ -106,7 +106,6 @@ class ProductService:
         # variant_data — объект или OrderedDict с валидированными полями из сериализатора
         variant = ProductVariant.objects.create(
             product=product,
-            sku=variant_data.get("sku"),
             has_custom_name=variant_data.get("has_custom_name", False),
             custom_name=variant_data.get("custom_name"),
             has_custom_description=variant_data.get("has_custom_description", False),
@@ -147,7 +146,6 @@ class ProductService:
     @staticmethod
     def update_variant(product, v_data):
         variant = get_object_or_404(ProductVariant, id=v_data["id"], product=product)
-        variant.sku = v_data.get("sku")
         variant.price = v_data["price"]
         variant.discount = v_data.get("discount")
         variant.show_this = v_data.get("show_this", True)

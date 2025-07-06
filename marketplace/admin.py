@@ -12,6 +12,7 @@ from .models import (
     ProductVariantAttribute,
     ProductImage,  # Новая модель
     ProductStock,
+    ProductDefect
 )
 
 
@@ -109,6 +110,7 @@ class ProductStockAdmin(admin.ModelAdmin):
         "location",
         "quantity",
         "reserved_quantity",
+        "defect_quantity",
         "available_quantity",
         "is_available_for_sale",
         "last_updated",
@@ -116,13 +118,10 @@ class ProductStockAdmin(admin.ModelAdmin):
     list_filter = ("is_available_for_sale", "location")
     search_fields = ("variant__name", "variant__sku", "location__name")
     list_editable = ("is_available_for_sale",)
-    readonly_fields = ("available_quantity", "last_updated")
+    readonly_fields = ("available_quantity", "last_updated", "defect_quantity")
     fieldsets = (
         (None, {"fields": ("variant", "location")}),
-        (
-            "Количества",
-            {"fields": ("quantity", "reserved_quantity", "available_quantity")},
-        ),
+        ("Количества", {"fields": ("quantity", "reserved_quantity", "available_quantity", "defect_quantity")}),
         ("Настройки", {"fields": ("is_available_for_sale", "last_updated")}),
     )
 
@@ -133,3 +132,9 @@ class ProductStockAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         return super().get_queryset(request).select_related("variant", "location")
+
+
+@admin.register(ProductDefect)
+class ProductDefectAdmin(admin.ModelAdmin):
+    list_display = ("stock", "quantity", "reason", "created_at")
+

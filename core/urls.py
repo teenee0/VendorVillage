@@ -28,6 +28,30 @@ urlpatterns.extend([
     path('api/business/<slug:business_slug>/products/<int:product_id>/info', business_API.get_info_product, name='info-product'),
     path('api/business/<slug:business_slug>/products/<int:product_id>/edit', business_product_CRUD_API.edit_product, name='edit-product'),
     path("api/business/<slug:business_slug>/products/<int:product_id>/delete", business_product_CRUD_API.delete_product, name="delete-product"),
+    path("api/business/<slug:business_slug>/products/<int:product_id>/toggle-status/", business_product_CRUD_API.toggle_status_product, name="toggle-status-product"),
+        # Брак
+    path(
+        "api/business/<slug:business_slug>/stocks/<int:stock_id>/defects/create/",
+        business_product_CRUD_API.create_stock_defect,
+        name="create-stock-defect"
+    ),
+    path(
+        "api/business/<slug:business_slug>/stocks/<int:defect_id>/defects/remove/",
+        business_product_CRUD_API.remove_stock_defect,
+        name="remove-stock-defect"
+    ),
+
+    # Резерв
+    path(
+        "api/business/<slug:business_slug>/stocks/<int:stock_id>/reserve/",
+        business_product_CRUD_API.reserve_stock,
+        name="reserve-stock"
+    ),
+    path(
+        "api/business/<slug:business_slug>/stocks/<int:stock_id>/reserve/remove/",
+        business_product_CRUD_API.remove_stock_reserve,
+        name="remove-stock-reserve"
+    ),
     # path('api/business/<slug:business_slug>/products/<int:product_id>/variants/<int:variant_id>/', business_API.product_variant_detail_api, name='product_variant_detail_api'),
     # path('api/business/<slug:business_slug>/products/<int:product_id>/images/', business_API.product_images_api, name='product_images_api'),
     # path('api/business/<slug:business_slug>/products/<int:product_id>/images/<int:image_id>/', business_API.product_image_detail_api, name='product_image_detail_api'),

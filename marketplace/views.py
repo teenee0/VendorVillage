@@ -88,7 +88,7 @@ def child_category_api(request, pk):
 @api_view(["GET"])
 def category_products_api(request, pk):
     """API для получения товаров в указанной категории."""
-    products = ProductSet.get_products_by_category(pk)
+    products = ProductSet.get_products_by_category(pk, "marketplace")
     category = get_object_or_404(Category, pk=pk, is_active=True)
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
     filtered_products, applied_filters = ProductSet.filter_products(products, request)

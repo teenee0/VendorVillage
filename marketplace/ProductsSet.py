@@ -6,9 +6,7 @@ from django.db.models import (
     DecimalField,
     Min,
     Max,
-    Sum,
-    Exists,
-    OuterRef,
+    Prefetch
 )
 from django.shortcuts import get_object_or_404
 from .models import (
@@ -21,27 +19,34 @@ from .models import (
     ProductVariantAttribute,
 )
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import QueryDict
 
 
 class ProductSet:
     @staticmethod
-    def get_products_by_category(category_pk):
-        # Получаем категорию по первичному ключу
+    def get_products_by_category(category_pk, visibility="all"):
+        # Получаем категорию
         category = get_object_or_404(Category, pk=category_pk, is_active=True)
 
-        # Получаем список ID всех подкатегорий, включая текущую категорию
+        # Получаем ID текущей категории и всех её подкатегорий
         descendant_ids = ProductSet.get_descendant_ids(category)
 
-        # Получаем товары, которые принадлежат категории или её подкатегориям и активны
+        # Базовый фильтр
         products = Product.objects.filter(
-            category_id__in=descendant_ids, is_active=True
+            category_id__in=descendant_ids,
+            is_active=True
         )
 
-        # Фильтруем товары по наличию доступных вариантов
+        # Фильтрация по видимости
+        if visibility == "marketplace":
+            products = products.filter(is_visible_on_marketplace=True)
+        elif visibility == "own_site":
+            products = products.filter(is_visible_on_own_site=True)
+
+        # Фильтрация по вариантам (наличие, активность и т.д.)
         filtered_products = ProductSet.filter_products_by_variants(products)
 
         return filtered_products
+
 
     @staticmethod
     def get_descendant_ids(category):
@@ -50,23 +55,30 @@ class ProductSet:
         return [desc.id for desc in descendants]
 
     @staticmethod
-    def filter_products_by_variants(products):
-        # Создаем подзапрос для проверки наличия варианта с доступным количеством > 0 и show_this=True
-        variant_subquery = (
-            ProductVariant.objects.filter(product=OuterRef("pk"), show_this=True)
-            .annotate(
-                total_available=Sum("stocks__quantity")
-                - Sum("stocks__reserved_quantity")
+    def filter_products_by_variants(products_queryset):
+        """
+        Фильтрует продукты, у которых есть хотя бы один вариант с show_this=True и доступным количеством > 0.
+        Возвращает QuerySet продуктов.
+        """
+        # Получаем список подходящих продуктов в виде их id
+        valid_product_ids = []
+
+        products = products_queryset.prefetch_related(
+            Prefetch(
+                "variants",
+                queryset=ProductVariant.objects.filter(show_this=True).prefetch_related(
+                    "stocks", "stocks__location"
+                ),
             )
-            .filter(total_available__gt=0)
         )
 
-        # Аннотируем и фильтруем продукты, у которых есть хотя бы один подходящий вариант
-        filtered_products = products.annotate(
-            has_valid_variant=Exists(variant_subquery)
-        ).filter(has_valid_variant=True)
+        for product in products:
+            for variant in product.variants.all():
+                if variant.available_quantity > 0:
+                    valid_product_ids.append(product.id)
+                    break
 
-        return filtered_products
+        return products_queryset.filter(id__in=valid_product_ids)
 
     @staticmethod
     def get_breadcrumbs_by_category(category):

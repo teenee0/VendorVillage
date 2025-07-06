@@ -7,6 +7,7 @@ from core.models import Business
 from django.http import Http404
 from core.models import BusinessLocation
 from .EAN_13_barcode_generator import generate_barcode
+from django.db.models import Sum
 
 
 # Create your models here.
@@ -137,7 +138,7 @@ class Product(models.Model):
     def default_variant(self):
         """Возвращает первый доступный вариант, если есть, иначе None"""
         for variant in self.variants.filter(show_this=True):
-            if variant.stock_quantity > 0:
+            if variant.available_quantity > 0:
                 return variant
         return None
 
@@ -145,25 +146,17 @@ class Product(models.Model):
     @property
     def price_range(self):
         """Возвращает минимальную и максимальную цену среди вариантов с учетом наличия на складах"""
-        from django.db.models import Sum, Q, F
-        
-        # Аннотируем варианты товара с общим количеством на складах
-        variants = self.variants.annotate(
-            total_stock=Sum(
-                "stocks__quantity",
-                filter=Q(stocks__location__location_type__is_warehouse=True),
-            )
-        ).filter(total_stock__gt=0)
+        variants = [
+            v
+            for v in self.variants.filter(show_this=True)
+            if v.available_quantity > 0
+        ]
 
-        if not variants.exists():
+        if not variants:
             return None, None
 
         # Получаем все актуальные цены
-        prices = [
-            variant.current_price
-            for variant in variants
-            if variant.current_price is not None
-        ]
+        prices = [v.current_price for v in variants if v.current_price is not None]
 
         if not prices:
             return None, None
@@ -361,6 +354,8 @@ class ProductVariant(models.Model):
         ]
 
     def save(self, *args, **kwargs):
+        is_new = self.pk is None
+
         if not self.barcode or not self.barcode_image:
 
             ean_code, image = generate_barcode()
@@ -368,6 +363,10 @@ class ProductVariant(models.Model):
             self.barcode_image.save(image.name, image, save=False)
 
         super().save(*args, **kwargs)
+
+        if is_new and not self.sku:
+            self.sku = f"{self.product.business.slug}-{self.pk}"
+            ProductVariant.objects.filter(pk=self.pk).update(sku=self.sku)
 
     def __str__(self):
         if self.has_custom_name and self.custom_name:
@@ -412,26 +411,27 @@ class ProductVariant(models.Model):
     @property
     def stock_quantity(self):
         """Общее количество на всех складах"""
-        from django.db.models import Sum
+        total = 0
+        for stock in self.stocks.filter(
+            location__location_type__is_warehouse=True
+        ).select_related('location'):
+            total += stock.quantity - stock.defect_quantity
+        return total
 
-        return (
-            self.stocks.filter(location__location_type__is_warehouse=True).aggregate(
-                total=Sum("quantity")
-            )["total"]
-            or 0
-        )
+    @property
+    def available_quantity(self):
+        """Доступное количество на всех складах"""
+        total = 0
+        for stock in self.stocks.filter(
+            location__location_type__is_warehouse=True
+        ).select_related('location'):
+            total += stock.available_quantity
+        return total
 
     @property
     def is_in_stock(self):
         """Проверяет наличие товара на любом из складов"""
-        from django.db.models import Sum, F
-
-        result = self.stocks.filter(
-            location__location_type__is_warehouse=True
-        ).aggregate(total=Sum(F("quantity") - F("reserved_quantity")))
-
-        total_available = result["total"] or 0
-        return total_available > 0
+        return self.available_quantity > 0
 
     def get_right_attributes(self):
         """Возвращает атрибуты варианта, которые нужно показывать справа"""
@@ -486,9 +486,58 @@ class ProductStock(models.Model):
         return f"{self.variant} в {self.location}: {self.available_quantity}"
 
     @property
+    def defect_quantity(self):
+        """Общее количество брака для этой записи"""
+
+        return (
+            self.defects.aggregate(total=Sum("quantity"))
+            .get("total")
+            or 0
+        )
+
+    @property
     def available_quantity(self):
-        """Доступное количество (общее минус зарезервированное)"""
-        return self.quantity - self.reserved_quantity
+        """Доступное количество (с учётом брака и резерва)"""
+        return self.quantity - self.reserved_quantity - self.defect_quantity
+
+
+class ProductDefect(models.Model):
+    """Информация о бракованном товаре"""
+
+    stock = models.ForeignKey(
+        ProductStock,
+        on_delete=models.CASCADE,
+        related_name="defects",
+        verbose_name="Остаток",
+    )
+    quantity = models.PositiveIntegerField(default=0, verbose_name="Количество")
+    reason = models.TextField(blank=True, verbose_name="Причина")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+
+    class Meta:
+        verbose_name = "Брак товара"
+        verbose_name_plural = "Брак товара"
+
+    def __str__(self):
+        return f"Брак {self.quantity} шт. для {self.stock}"
+    
+    def clean(self):
+        if self.quantity < 0:
+            raise ValidationError("Количество брака не может быть отрицательным.")
+
+        current_defect = (
+            self.stock.defects.exclude(pk=self.pk).aggregate(total=Sum("quantity"))["total"] or 0
+        )
+        total_defect_after_save = current_defect + self.quantity
+        available_after_defect = self.stock.quantity - self.stock.reserved_quantity - total_defect_after_save
+
+        if available_after_defect < 0:
+            raise ValidationError("Недостаточно доступного количества для такого объёма брака.")
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
+
 
 class ProductVariantAttribute(models.Model):
     """Связь между вариантом товара и значением атрибута"""
