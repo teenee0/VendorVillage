@@ -158,7 +158,7 @@ class Product(models.Model):
             print(f"[ДЕАКТИВАЦИЯ] '{self.name}' выключен, нет доступных вариантов.")
 
     @property
-    def default_variant(self, strict=True):
+    def default_variant(self):
         for variant in self.variants.filter(show_this=True):
             if variant.available_quantity > 0:
                 return variant
