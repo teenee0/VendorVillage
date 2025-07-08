@@ -371,7 +371,6 @@ def toggle_status_product(request, business_slug, product_id):
     Ожидает JSON: { "is_active": true/false }
     """
     business = ProductService.get_business(request.user, business_slug)
-
     product = get_object_or_404(Product, id=product_id, business=business)
 
     is_active = request.data.get("is_active")
@@ -381,12 +380,25 @@ def toggle_status_product(request, business_slug, product_id):
             status=status.HTTP_400_BAD_REQUEST,
         )
 
+    # Проверка при активации: есть ли доступные варианты
+    if is_active:
+        has_available_variant = any(
+            variant.available_quantity > 0 and variant.show_this
+            for variant in product.variants.all()
+        )
+        if not has_available_variant:
+            return Response(
+                {"error": "Нельзя активировать товар без доступных вариантов."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
     product.is_active = bool(is_active)
     product.save()
 
     return Response(
         {"id": product.id, "name": product.name, "is_active": product.is_active}
     )
+
 
 
 @api_view(["POST"])

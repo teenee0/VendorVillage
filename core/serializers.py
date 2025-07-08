@@ -150,7 +150,7 @@ class EnhancedProductListSerializer(serializers.ModelSerializer):
         ]
 
     def get_default_variant(self, obj):
-        variant = obj.default_variant
+        variant = obj.get_default_variant(strict=False)
         return ProductVariantSerializer(variant).data if variant else None
 
     def get_min_price(self, obj):

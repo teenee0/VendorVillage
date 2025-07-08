@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'restaurants',
     'core',
-    'marketplace',
+    'marketplace.apps.MarketplaceConfig',
     'mall',
     'mptt',
     'accounts',

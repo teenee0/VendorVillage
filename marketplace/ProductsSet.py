@@ -6,6 +6,9 @@ from django.db.models import (
     DecimalField,
     Min,
     Max,
+    Sum,
+    Exists,
+    OuterRef,
     Prefetch
 )
 from django.shortcuts import get_object_or_404
@@ -19,6 +22,7 @@ from .models import (
     ProductVariantAttribute,
 )
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import QueryDict
 
 
 class ProductSet:
@@ -57,26 +61,21 @@ class ProductSet:
     @staticmethod
     def filter_products_by_variants(products_queryset):
         """
-        Фильтрует продукты, у которых есть хотя бы один вариант с show_this=True и доступным количеством > 0.
+        Фильтрует продукты, у которых есть хотя бы один вариант с show_this=True.
         Возвращает QuerySet продуктов.
         """
-        # Получаем список подходящих продуктов в виде их id
         valid_product_ids = []
 
         products = products_queryset.prefetch_related(
             Prefetch(
                 "variants",
-                queryset=ProductVariant.objects.filter(show_this=True).prefetch_related(
-                    "stocks", "stocks__location"
-                ),
+                queryset=ProductVariant.objects.filter(show_this=True),
             )
         )
 
         for product in products:
-            for variant in product.variants.all():
-                if variant.available_quantity > 0:
-                    valid_product_ids.append(product.id)
-                    break
+            if product.variants.exists():
+                valid_product_ids.append(product.id)
 
         return products_queryset.filter(id__in=valid_product_ids)
 

@@ -134,13 +134,44 @@ class Product(models.Model):
 
         return attributes_data
 
+    def update_is_active(self):
+        """
+        Обновляет поле is_active в зависимости от наличия доступных вариантов.
+        Активен, если хотя бы один вариант с show_this=True и available_quantity > 0.
+        Также выводит лог с названием товара, варианта и доступным количеством.
+        """
+        for variant in self.variants.filter(show_this=True):
+            qty = variant.available_quantity
+            print(f"[Проверка] Товар: {self.name} | Вариант: {variant} | Доступно: {qty}")
+
+            if qty > 0:
+                if not self.is_active:
+                    self.is_active = True
+                    self.save(update_fields=["is_active"])
+                    print(f"[АКТИВАЦИЯ] '{self.name}' включён, есть доступный вариант: {variant}")
+                return
+
+        # Ни один подходящий вариант не найден
+        if self.is_active:
+            self.is_active = False
+            self.save(update_fields=["is_active"])
+            print(f"[ДЕАКТИВАЦИЯ] '{self.name}' выключен, нет доступных вариантов.")
+
     @property
-    def default_variant(self):
-        """Возвращает первый доступный вариант, если есть, иначе None"""
+    def default_variant(self, strict=True):
         for variant in self.variants.filter(show_this=True):
             if variant.available_quantity > 0:
                 return variant
         return None
+
+    def get_default_variant(self, strict=True):
+        """
+        strict=True — только доступный.
+        strict=False — любой видимый или просто первый.
+        """
+        if strict:
+            return self.default_variant
+        return self.variants.filter(show_this=True).first() or self.variants.first()
 
 
     @property
