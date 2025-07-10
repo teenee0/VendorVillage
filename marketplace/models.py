@@ -737,6 +737,12 @@ class Receipt(models.Model):
     customer_name = models.CharField(max_length=255, blank=True, verbose_name="Имя клиента (если нет аккаунта)")
     customer_phone = models.CharField(max_length=20, blank=True, verbose_name="Телефон клиента")
 
+    is_online = models.BooleanField(
+        default=False,
+        verbose_name="Онлайн покупка",
+        help_text="True если заказ сделан через интернет"
+    )
+
     class Meta:
         verbose_name = "Чек"
         verbose_name_plural = "Чеки"
@@ -784,11 +790,6 @@ class ProductSale(models.Model):
         blank=True
     )
 
-    is_online = models.BooleanField(
-        default=False,
-        verbose_name="Онлайн покупка",
-        help_text="True если заказ сделан через интернет"
-    )
 
     class Meta:
         verbose_name = "Продажа"
