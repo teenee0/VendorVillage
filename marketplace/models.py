@@ -3,7 +3,7 @@ from django.db import models
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 from django.core.exceptions import ValidationError
-from core.models import Business
+from core.models import Business, User
 from django.http import Http404
 from core.models import BusinessLocation
 from .EAN_13_barcode_generator import generate_barcode
@@ -689,3 +689,116 @@ class ProductImage(models.Model):
                 id=self.id
             ).update(is_main=False)
         super().save(*args, **kwargs)
+
+
+class PaymentMethod(models.Model):
+    code = models.CharField(
+        max_length=32,
+        unique=True,
+        verbose_name="Код",
+        help_text="Уникальный идентификатор, например 'cash', 'card', 'kaspi_qr'"
+    )
+    name = models.CharField(
+        max_length=64,
+        verbose_name="Название",
+        help_text="Отображаемое название способа оплаты"
+    )
+    is_active = models.BooleanField(default=True, verbose_name="Активен")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Способ оплаты"
+        verbose_name_plural = "Способы оплаты"
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+class Receipt(models.Model):
+    """
+    Чек, объединяющий одну или несколько продаж (например, покупка нескольких товаров).
+    """
+    number = models.CharField(max_length=100, unique=True, verbose_name="Номер чека")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    total_amount = models.DecimalField(max_digits=12, decimal_places=2, verbose_name="Итоговая сумма")
+    payment_method = models.ForeignKey(
+        "PaymentMethod",
+        on_delete=models.PROTECT,
+        verbose_name="Способ оплаты"
+    )
+    is_paid = models.BooleanField(default=False, verbose_name="Оплачено")
+    customer = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Покупатель"
+    )
+    customer_name = models.CharField(max_length=255, blank=True, verbose_name="Имя клиента (если нет аккаунта)")
+    customer_phone = models.CharField(max_length=20, blank=True, verbose_name="Телефон клиента")
+
+    class Meta:
+        verbose_name = "Чек"
+        verbose_name_plural = "Чеки"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"Чек #{self.number} от {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+
+
+class ProductSale(models.Model):
+    """
+    Запись о продаже конкретного варианта товара.
+    """
+    variant = models.ForeignKey(
+        "ProductVariant",
+        on_delete=models.PROTECT,
+        related_name="sales",
+        verbose_name="Вариант товара"
+    )
+    location = models.ForeignKey(
+        "core.BusinessLocation",
+        on_delete=models.PROTECT,
+        related_name="sales",
+        verbose_name="Локация продажи"
+    )
+    quantity = models.PositiveIntegerField(verbose_name="Количество")
+    price_per_unit = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Цена за единицу"
+    )
+    total_price = models.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        verbose_name="Сумма продажи"
+    )
+    sale_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата продажи")
+    is_paid = models.BooleanField(default=False)
+    receipt = models.ForeignKey(
+        "Receipt",
+        on_delete=models.PROTECT,
+        related_name="sales",
+        verbose_name="Чек",
+        null=True,
+        blank=True
+    )
+
+    is_online = models.BooleanField(
+        default=False,
+        verbose_name="Онлайн покупка",
+        help_text="True если заказ сделан через интернет"
+    )
+
+    class Meta:
+        verbose_name = "Продажа"
+        verbose_name_plural = "Продажи"
+        ordering = ["-sale_date"]
+
+    def save(self, *args, **kwargs):
+        if not self.total_price:
+            self.total_price = self.quantity * float(self.price_per_unit)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.variant} — {self.quantity} шт."
