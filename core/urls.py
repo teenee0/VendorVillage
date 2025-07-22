@@ -5,62 +5,127 @@ from django.urls import path
 from . import views
 from . import business_API
 from . import business_product_CRUD_API
+from . import sale_product_API
 
-app_name = 'core'
+app_name = "core"
 urlpatterns = [
-    path('', views.home, name='main'),
-
-    path('bussiness_categories', views.bussiness_categories_list, name='bussiness_categories_list'),
-    path('business/edit/<int:pk>/', views.edit_business, name='edit_business'),
-    path('sites/', views.sites, name='sites'),
-    path('site/<slug:slug>/', views.business_site, name='site'),
+    path("", views.home, name="main"),
+    path(
+        "bussiness_categories",
+        views.bussiness_categories_list,
+        name="bussiness_categories_list",
+    ),
+    path("business/edit/<int:pk>/", views.edit_business, name="edit_business"),
+    path("sites/", views.sites, name="sites"),
+    path("site/<slug:slug>/", views.business_site, name="site"),
 ]
 # API
-urlpatterns.extend([
-    path('api/business-categories/', views.business_categories_api, name='business_categories_api'),
-    # PRODUCT_CRUD
-    path('api/business/<slug:business_slug>/products/', business_API.business_products_api, name='business_products_api'),
-    path('api/business/<slug:business_slug>/categories/', business_product_CRUD_API.get_business_categories, name='business-categories'),
-    path('api/categories/<int:category_id>/attributes/', business_product_CRUD_API.get_category_attributes, name='category-attributes'),
-    path('api/business/<slug:business_slug>/locations/', business_product_CRUD_API.get_business_locations, name='business-locations'),
-    path('api/business/<slug:business_slug>/products/create/', business_product_CRUD_API.create_product, name='create-product'),
-    path('api/business/<slug:business_slug>/products/<int:product_id>/', business_product_CRUD_API.get_product, name='detail-product'),
-    path('api/business/<slug:business_slug>/products/<int:product_id>/info', business_API.get_info_product, name='info-product'),
-    path('api/business/<slug:business_slug>/products/<int:product_id>/edit', business_product_CRUD_API.edit_product, name='edit-product'),
-    path("api/business/<slug:business_slug>/products/<int:product_id>/delete", business_product_CRUD_API.delete_product, name="delete-product"),
-    path("api/business/<slug:business_slug>/products/<int:product_id>/toggle-status/", business_product_CRUD_API.toggle_status_product, name="toggle-status-product"),
+urlpatterns.extend(
+    [
+        path(
+            "api/business-categories/",
+            views.business_categories_api,
+            name="business_categories_api",
+        ),
+        # PRODUCT_CRUD
+        path(
+            "api/business/<slug:business_slug>/products/",
+            business_API.business_products_api,
+            name="business_products_api",
+        ),
+        path(
+            "api/business/<slug:business_slug>/categories/",
+            business_product_CRUD_API.get_business_categories,
+            name="business-categories",
+        ),
+        path(
+            "api/categories/<int:category_id>/attributes/",
+            business_product_CRUD_API.get_category_attributes,
+            name="category-attributes",
+        ),
+        path(
+            "api/business/<slug:business_slug>/locations/",
+            business_product_CRUD_API.get_business_locations,
+            name="business-locations",
+        ),
+        path(
+            "api/business/<slug:business_slug>/products/create/",
+            business_product_CRUD_API.create_product,
+            name="create-product",
+        ),
+        path(
+            "api/business/<slug:business_slug>/products/<int:product_id>/",
+            business_product_CRUD_API.get_product,
+            name="detail-product",
+        ),
+        path(
+            "api/business/<slug:business_slug>/products/<int:product_id>/info",
+            business_API.get_info_product,
+            name="info-product",
+        ),
+        path(
+            "api/business/<slug:business_slug>/products/<int:product_id>/edit",
+            business_product_CRUD_API.edit_product,
+            name="edit-product",
+        ),
+        path(
+            "api/business/<slug:business_slug>/products/<int:product_id>/delete",
+            business_product_CRUD_API.delete_product,
+            name="delete-product",
+        ),
+        path(
+            "api/business/<slug:business_slug>/products/<int:product_id>/toggle-status/",
+            business_product_CRUD_API.toggle_status_product,
+            name="toggle-status-product",
+        ),
         # Брак
-    path(
-        "api/business/<slug:business_slug>/stocks/<int:stock_id>/defects/create/",
-        business_product_CRUD_API.create_stock_defect,
-        name="create-stock-defect"
-    ),
-    path(
-        "api/business/<slug:business_slug>/stocks/<int:defect_id>/defects/remove/",
-        business_product_CRUD_API.remove_stock_defect,
-        name="remove-stock-defect"
-    ),
-
-    # Резерв
-    path(
-        "api/business/<slug:business_slug>/stocks/<int:stock_id>/reserve/",
-        business_product_CRUD_API.reserve_stock,
-        name="reserve-stock"
-    ),
-    path(
-        "api/business/<slug:business_slug>/stocks/<int:stock_id>/reserve/remove/",
-        business_product_CRUD_API.remove_stock_reserve,
-        name="remove-stock-reserve"
-    ),
-    # path('api/business/<slug:business_slug>/products/<int:product_id>/variants/<int:variant_id>/', business_API.product_variant_detail_api, name='product_variant_detail_api'),
-    # path('api/business/<slug:business_slug>/products/<int:product_id>/images/', business_API.product_images_api, name='product_images_api'),
-    # path('api/business/<slug:business_slug>/products/<int:product_id>/images/<int:image_id>/', business_API.product_image_detail_api, name='product_image_detail_api'),
-    # path('api/products/categories/', business_API.product_categories_api, name='product_categories_api'),
-    # path(
-    #     'api/business/<slug:business_slug>/products/<int:product_id>/attributes/',
-    #     business_API.get_product_attributes,
-    #     name='product-attributes'
-    # ),
-])
+        path(
+            "api/business/<slug:business_slug>/stocks/<int:stock_id>/defects/create/",
+            business_product_CRUD_API.create_stock_defect,
+            name="create-stock-defect",
+        ),
+        path(
+            "api/business/<slug:business_slug>/stocks/<int:defect_id>/defects/remove/",
+            business_product_CRUD_API.remove_stock_defect,
+            name="remove-stock-defect",
+        ),
+        # Резерв
+        path(
+            "api/business/<slug:business_slug>/stocks/<int:stock_id>/reserve/",
+            business_product_CRUD_API.reserve_stock,
+            name="reserve-stock",
+        ),
+        path(
+            "api/business/<slug:business_slug>/stocks/<int:stock_id>/reserve/remove/",
+            business_product_CRUD_API.remove_stock_reserve,
+            name="remove-stock-reserve",
+        ),
+        # Продажа
+        path(
+            "api/business/<slug:business_slug>/sales-products/",
+            sale_product_API.sales_products_api,
+            name="sales_products_api",
+        ),
+        path(
+            "api/business/<slug:business_slug>/create-receipt/",
+            sale_product_API.create_receipt,
+            name="create-receipt",
+        ),
+        path(
+            "api/business/payment-methods/",
+            sale_product_API.get_active_payment_methods,
+            name="payment-methods",
+        ),
+        # path('api/business/<slug:business_slug>/products/<int:product_id>/variants/<int:variant_id>/', business_API.product_variant_detail_api, name='product_variant_detail_api'),
+        # path('api/business/<slug:business_slug>/products/<int:product_id>/images/', business_API.product_images_api, name='product_images_api'),
+        # path('api/business/<slug:business_slug>/products/<int:product_id>/images/<int:image_id>/', business_API.product_image_detail_api, name='product_image_detail_api'),
+        # path('api/products/categories/', business_API.product_categories_api, name='product_categories_api'),
+        # path(
+        #     'api/business/<slug:business_slug>/products/<int:product_id>/attributes/',
+        #     business_API.get_product_attributes,
+        #     name='product-attributes'
+        # ),
+    ]
+)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

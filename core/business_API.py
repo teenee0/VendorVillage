@@ -33,7 +33,17 @@ def business_products_api(request, business_slug):
 
     # Получение списка товаров бизнеса
     products = Product.objects.filter(business=business).order_by("-created_at")
-    filtered_products, applied_filters = ProductSet.filter_products(products, request)
+    filtered_products, applied_filters = ProductSet.filter_products(
+        products,
+        request,
+        price=True,
+        search=True,
+        barcode=True,
+        attributes=True,
+        in_stock=True,
+        main=True,
+        sort=True,
+    )
     page_obj, pagination = ProductSet.pagination_for_products(
         filtered_products, request
     )

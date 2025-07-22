@@ -138,3 +138,55 @@ class ProductStockAdmin(admin.ModelAdmin):
 class ProductDefectAdmin(admin.ModelAdmin):
     list_display = ("stock", "quantity", "reason", "created_at")
 
+from .models import PaymentMethod, Receipt, ProductSale
+
+
+@admin.register(PaymentMethod)
+class PaymentMethodAdmin(admin.ModelAdmin):
+    list_display = ['code', 'name', 'is_active', 'created_at']
+    list_filter = ['is_active']
+    search_fields = ['code', 'name']
+    ordering = ['name']
+
+
+class ProductSaleInline(admin.TabularInline):
+    model = ProductSale
+    extra = 0
+    readonly_fields = ['sale_date']
+    fields = [
+        'variant', 'location', 'quantity',
+        'price_per_unit', 'discount_amount', 'discount_percent',
+        'total_price', 'sale_date', 'is_paid'
+    ]
+    autocomplete_fields = ['variant', 'location']
+    show_change_link = True
+
+
+@admin.register(Receipt)
+class ReceiptAdmin(admin.ModelAdmin):
+    list_display = [
+        'number', 'created_at', 'total_amount',
+        'payment_method', 'is_paid', 'is_online',
+        'customer', 'discount_amount', 'discount_percent'
+    ]
+    list_filter = ['is_paid', 'is_online', 'payment_method', 'created_at']
+    search_fields = ['number', 'customer_name', 'customer_phone']
+    autocomplete_fields = ['payment_method', 'customer']
+    inlines = [ProductSaleInline]
+    readonly_fields = ['created_at']
+    ordering = ['-created_at']
+
+
+@admin.register(ProductSale)
+class ProductSaleAdmin(admin.ModelAdmin):
+    list_display = [
+        'variant', 'location', 'quantity',
+        'price_per_unit', 'discount_amount',
+        'discount_percent', 'total_price',
+        'sale_date', 'is_paid', 'receipt'
+    ]
+    list_filter = ['is_paid', 'location', 'sale_date']
+    search_fields = ['variant__sku', 'receipt__number']
+    autocomplete_fields = ['variant', 'location', 'receipt']
+    readonly_fields = ['sale_date']
+    ordering = ['-sale_date']

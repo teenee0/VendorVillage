@@ -9,7 +9,7 @@ from django.db.models import (
     Sum,
     Exists,
     OuterRef,
-    Prefetch
+    Prefetch,
 )
 from django.shortcuts import get_object_or_404
 from .models import (
@@ -36,8 +36,7 @@ class ProductSet:
 
         # Базовый фильтр
         products = Product.objects.filter(
-            category_id__in=descendant_ids,
-            is_active=True
+            category_id__in=descendant_ids, is_active=True
         )
 
         # Фильтрация по видимости
@@ -50,7 +49,6 @@ class ProductSet:
         filtered_products = ProductSet.filter_products_by_variants(products)
 
         return filtered_products
-
 
     @staticmethod
     def get_descendant_ids(category):
@@ -116,7 +114,7 @@ class ProductSet:
         }
 
         return page_obj, pagination
-    
+
     @staticmethod
     def get_product_detail(pk):
         product = (
@@ -132,7 +130,7 @@ class ProductSet:
             .get(pk=pk)
         )
         return product
-    
+
     @staticmethod
     def get_same_products(product):
         same_products = (
@@ -292,29 +290,44 @@ class ProductSet:
             }
 
     @staticmethod
-    def filter_products(products_qs, request):
+    def filter_products(
+        products_qs,
+        request,
+        *,
+        price=False,
+        search=False,
+        barcode=False,
+        attributes=False,
+        in_stock=False,
+        main=False,
+        sort=False,
+    ):
+        """Фильтрация товаров с возможностью включать/выключать отдельные блоки."""
         in_stock_only = request.GET.get("in_stock") == "1"
-        if in_stock_only:
+        if in_stock and in_stock_only:
             products_qs = products_qs.filter(variants__stock_quantity__gt=0).distinct()
 
         # Фильтр "только на главной"
         main_only = request.GET.get("main_only") == "1"
-        if main_only:
+        if main and main_only:
             products_qs = products_qs.filter(is_visible_on_marketplace=True)
 
         # Поиск по названию и описанию
         search_query = request.GET.get("search", "")
-        if search_query:
-            products_qs = products_qs.filter(
-                Q(name__icontains=search_query)
-                | Q(description__icontains=search_query)
-                | Q(variants__custom_name__icontains=search_query)
-                | Q(variants__barcode__icontains=search_query)
-            ).distinct()
+        if search_query and (search or barcode):
+            q_objects = Q()
+            if search:
+                q_objects |= Q(name__icontains=search_query)
+                q_objects |= Q(description__icontains=search_query)
+                q_objects |= Q(variants__custom_name__icontains=search_query)
+            if barcode:
+                q_objects |= Q(variants__barcode__icontains=search_query)
+            if q_objects:
+                products_qs = products_qs.filter(q_objects).distinct()
 
         # Фильтрация по цене
         price_min = request.GET.get("price_min")
-        if price_min:
+        if price and price_min:
             try:
                 # Учитываем скидки при фильтрации по минимальной цене
                 products_qs = products_qs.annotate(
@@ -333,7 +346,7 @@ class ProductSet:
                 pass
 
         price_max = request.GET.get("price_max")
-        if price_max:
+        if price and price_max:
             try:
                 # Учитываем скидки при фильтрации по максимальной цене
                 products_qs = products_qs.annotate(
@@ -352,71 +365,66 @@ class ProductSet:
                 pass
 
         # Фильтрация по атрибутам
-        for key, value in request.GET.items():
-            if key.startswith("attr_") and value:
-                try:
-                    attr_id = int(key.replace("attr_", ""))
-                    attr_values = request.GET.getlist(
-                        key
-                    )  # Получаем все значения для этого атрибута
+        if attributes:
+            for key, value in request.GET.items():
+                if key.startswith("attr_") and value:
+                    try:
+                        attr_id = int(key.replace("attr_", ""))
+                        attr_values = request.GET.getlist(key)
 
-                    # Создаем Q-объекты для фильтрации
-                    q_objects = Q()
+                        q_objects = Q()
+                        for val in attr_values:
+                            if val.startswith("val_"):
+                                text_value = val.replace("val_", "")
+                                q_objects |= Q(
+                                    variants__attributes__category_attribute__attribute_id=attr_id,
+                                    variants__attributes__custom_value=text_value,
+                                )
+                            else:
+                                q_objects |= Q(
+                                    variants__attributes__category_attribute__attribute_id=attr_id,
+                                    variants__attributes__predefined_value__id=val,
+                                )
 
-                    for val in attr_values:
-                        if val.startswith("val_"):
-                            # Обработка текстовых значений (с префиксом val_)
-                            text_value = val.replace("val_", "")
-                            q_objects |= Q(
-                                variants__attributes__category_attribute__attribute_id=attr_id,
-                                variants__attributes__custom_value=text_value,
-                            )
-                        else:
-                            # Обработка числовых ID (без префикса)
-                            q_objects |= Q(
-                                variants__attributes__category_attribute__attribute_id=attr_id,
-                                variants__attributes__predefined_value__id=val,
-                            )
+                        if q_objects:
+                            products_qs = products_qs.filter(q_objects).distinct()
 
-                    if q_objects:
-                        products_qs = products_qs.filter(q_objects).distinct()
-
-                except (ValueError, TypeError) as e:
-                    print(f"Error processing attribute filter: {e}")
-                    continue
+                    except (ValueError, TypeError) as e:
+                        print(f"Error processing attribute filter: {e}")
+                        continue
 
         # Сортировка
         sort_option = request.GET.get("sort", "-created_at")
-        if sort_option == "price":
-            # Сортировка по минимальной цене с учетом скидок
-            products_qs = products_qs.annotate(
-                sort_price=Min(
-                    Case(
-                        When(
-                            variants__discount__isnull=False,
-                            then=F("variants__price") - F("variants__discount"),
-                        ),
-                        default=F("variants__price"),
-                        output_field=DecimalField(),
+        if sort:
+            if sort_option == "price":
+                products_qs = products_qs.annotate(
+                    sort_price=Min(
+                        Case(
+                            When(
+                                variants__discount__isnull=False,
+                                then=F("variants__price") - F("variants__discount"),
+                            ),
+                            default=F("variants__price"),
+                            output_field=DecimalField(),
+                        )
                     )
-                )
-            ).order_by("sort_price")
-        elif sort_option == "-price":
-            # Сортировка по максимальной цене с учетом скидок
-            products_qs = products_qs.annotate(
-                sort_price=Max(
-                    Case(
-                        When(
-                            variants__discount__isnull=False,
-                            then=F("variants__price") - F("variants__discount"),
-                        ),
-                        default=F("variants__price"),
-                        output_field=DecimalField(),
+                ).order_by("sort_price")
+            elif sort_option == "-price":
+                # Сортировка по максимальной цене с учетом скидок
+                products_qs = products_qs.annotate(
+                    sort_price=Max(
+                        Case(
+                            When(
+                                variants__discount__isnull=False,
+                                then=F("variants__price") - F("variants__discount"),
+                            ),
+                            default=F("variants__price"),
+                            output_field=DecimalField(),
+                        )
                     )
-                )
-            ).order_by("-sort_price")
-        elif sort_option in ["name", "-name", "created_at", "-created_at"]:
-            products_qs = products_qs.order_by(sort_option)
+                ).order_by("-sort_price")
+            elif sort_option in ["name", "-name", "created_at", "-created_at"]:
+                products_qs = products_qs.order_by(sort_option)
 
         # Формируем объект applied_filters
         applied_filters = {

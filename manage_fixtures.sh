@@ -15,19 +15,29 @@ fi
 export_fixtures() {
     echo "📦 Создание фикстур..."
     mkdir -p "$FIXTURES_DIR"
+    # Активация venv (можно сделать универсальнее при необходимости)
     source .venv/Scripts/activate
     for app in "${APPS[@]}"; do
         echo " ➡️  Выгружаем $app..."
         OUTPUT_FILE="$FIXTURES_DIR/${app}.json"
 
-        # Сохраняем в файл и подавляем весь stdout (и stderr при пустом дампе)
-        python manage.py dumpdata "$app" --indent "$INDENT" --output "$OUTPUT_FILE" >/dev/null 2>&1
+        # Сохраняем ошибку в отдельный файл
+        ERROR_LOG="$FIXTURES_DIR/${app}_error.log"
+        python manage.py dumpdata "$app" --indent "$INDENT" --output "$OUTPUT_FILE" >"$ERROR_LOG" 2>&1
 
+        # Если экспорт неудачный — показать ошибку
         if [ $? -ne 0 ] || [ ! -s "$OUTPUT_FILE" ]; then
             echo "⚠️  Нет данных для $app"
+            if [ -s "$ERROR_LOG" ]; then
+                echo "❌ Ошибка для $app:"
+                cat "$ERROR_LOG"
+            fi
             rm -f "$OUTPUT_FILE"
+            rm -f "$ERROR_LOG"
             continue
         fi
+
+        rm -f "$ERROR_LOG"
 
         # Принудительная перекодировка в UTF-8 (если требуется)
         if file -bi "$OUTPUT_FILE" | grep -vi 'utf-8' > /dev/null; then
@@ -38,6 +48,7 @@ export_fixtures() {
 
     echo "✅ Готово! Фикстуры сохранены в $FIXTURES_DIR/"
 }
+
 
 # Загрузка фикстур (импорт)
 import_fixtures() {

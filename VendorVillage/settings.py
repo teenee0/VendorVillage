@@ -27,8 +27,10 @@ SECRET_KEY = 'django-insecure-7gt8gic8*7r_xh=fzplybh1($q#)do^b-g)cg!ms3x&zex=4jz
 DEBUG = True
 FRONTEND_DEBUG = True
 FRONTEND_AUTH_DEBUG = False
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
 
+
+POPPLER_PATH = 'C:\\poppler-24.08.0\\Library\\bin'
 
 # Application definition
 
@@ -68,7 +70,7 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
+    'http://localhost:8080',
 ]
 
 SESSION_COOKIE_SAMESITE = 'Lax'

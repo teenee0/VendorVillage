@@ -458,6 +458,15 @@ class ProductVariant(models.Model):
         ).select_related('location'):
             total += stock.available_quantity
         return total
+    
+    @property
+    def sold_quantity(self):
+        """Общее количество проданного товара"""
+        return (
+            self.sales.aggregate(total=Sum("quantity"))
+            .get("total")
+            or 0
+        )
 
     @property
     def is_in_stock(self):
@@ -525,11 +534,26 @@ class ProductStock(models.Model):
             .get("total")
             or 0
         )
+    
+    @property
+    def sold_quantity(self):
+        """Количество уже проданного товара для этой локации"""
+        return (
+            self.variant.sales.filter(location=self.location)
+            .aggregate(total=Sum("quantity"))
+            .get("total")
+            or 0
+        )
 
     @property
     def available_quantity(self):
         """Доступное количество (с учётом брака и резерва)"""
-        return self.quantity - self.reserved_quantity - self.defect_quantity
+        return (
+            self.quantity
+            - self.reserved_quantity
+            - self.defect_quantity
+            - self.sold_quantity
+        )
 
 
 class ProductDefect(models.Model):
@@ -714,6 +738,25 @@ class PaymentMethod(models.Model):
     def __str__(self):
         return self.name
 
+
+def receipt_pdf_path(instance, filename):
+    # Получаем первый sale для этого чека
+    first_sale = instance.sales.select_related('variant__product__business').first()
+    if not first_sale:
+        # если вдруг чека нет — кидаем ошибку или кладём в unknown
+        return f"unknown_business/receipts/{filename}"
+    business_slug = first_sale.variant.product.business.slug
+    return f"{business_slug}/receipts/{filename}"
+
+
+def receipt_preview_path(instance, filename):
+    first_sale = instance.sales.select_related('variant__product__business').first()
+    if not first_sale:
+        return f"unknown_business/receipts/previews/{filename}"
+    business_slug = first_sale.variant.product.business.slug
+    return f"{business_slug}/receipts/previews/{filename}"
+
+
 class Receipt(models.Model):
     """
     Чек, объединяющий одну или несколько продаж (например, покупка нескольких товаров).
@@ -734,14 +777,20 @@ class Receipt(models.Model):
         blank=True,
         verbose_name="Покупатель"
     )
-    customer_name = models.CharField(max_length=255, blank=True, verbose_name="Имя клиента (если нет аккаунта)")
-    customer_phone = models.CharField(max_length=20, blank=True, verbose_name="Телефон клиента")
+    customer_name = models.CharField(max_length=255, blank=True, null=True, verbose_name="Имя клиента (если нет аккаунта)")
+    customer_phone = models.CharField(max_length=20, blank=True, null=True, verbose_name="Телефон клиента")
+
+    receipt_preview_image = models.ImageField(upload_to=receipt_preview_path, blank=True, null=True, verbose_name="Превью чека (jpg/png)")
+    receipt_pdf_file = models.FileField(upload_to=receipt_pdf_path, blank=True, null=True, verbose_name="Файл PDF чека")
 
     is_online = models.BooleanField(
         default=False,
         verbose_name="Онлайн покупка",
         help_text="True если заказ сделан через интернет"
     )
+
+    discount_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    discount_percent = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
     class Meta:
         verbose_name = "Чек"
@@ -781,6 +830,8 @@ class ProductSale(models.Model):
     )
     sale_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата продажи")
     is_paid = models.BooleanField(default=False)
+    discount_percent = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    discount_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     receipt = models.ForeignKey(
         "Receipt",
         on_delete=models.PROTECT,

@@ -91,7 +91,17 @@ def category_products_api(request, pk):
     products = ProductSet.get_products_by_category(pk, "marketplace")
     category = get_object_or_404(Category, pk=pk, is_active=True)
     breadcrumbs = ProductSet.get_breadcrumbs_by_category(category)
-    filtered_products, applied_filters = ProductSet.filter_products(products, request)
+    filtered_products, applied_filters = ProductSet.filter_products(
+        products,
+        request,
+        price=True,
+        search=True,
+        barcode=True,
+        attributes=True,
+        in_stock=True,
+        main=True,
+        sort=True,
+    )
     page_obj, pagination = ProductSet.pagination_for_products(
         filtered_products, request
     )

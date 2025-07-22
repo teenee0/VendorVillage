@@ -104,6 +104,15 @@ class Business(models.Model):
     background_image = models.ImageField(
         upload_to=business_bg_path, blank=True, null=True
     )
+    receipt_html_template = models.TextField(
+        blank=True, null=True, verbose_name="HTML шаблон чека",
+        help_text="HTML шаблон для генерации PDF чека"
+    )
+    receipt_css_template = models.TextField(
+        blank=True, null=True, verbose_name="CSS стили чека",
+        help_text="CSS стили для генерации PDF чека"
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)

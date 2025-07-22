@@ -631,47 +631,32 @@
 },
 {
   "model": "marketplace.product",
-  "pk": 2,
-  "fields": {
-    "business": 1,
-    "category": 33,
-    "name": "Футболка Белая",
-    "description": "Футболка из хлопка, хорошо подходит как для ежедневной носки, так и для похода на мероприятия, легкий хлопок хорошо дышит, что особенно хорошо в жаркую погоду, наши личные лекала создают красивый оверсайз силуэт, который будет хорошо сидеть на любой фигуре.",
-    "is_visible_on_marketplace": false,
-    "is_visible_on_own_site": false,
-    "is_active": true,
-    "created_at": "2025-05-01T23:29:43.716Z",
-    "updated_at": "2025-07-04T12:42:58.062Z"
-  }
-},
-{
-  "model": "marketplace.product",
-  "pk": 3,
-  "fields": {
-    "business": 1,
-    "category": 35,
-    "name": "Шуба Соболь и очень длинное названиееее",
-    "description": "Ляляля",
-    "is_visible_on_marketplace": false,
-    "is_visible_on_own_site": false,
-    "is_active": true,
-    "created_at": "2025-05-02T19:45:13.121Z",
-    "updated_at": "2025-07-04T12:52:46.348Z"
-  }
-},
-{
-  "model": "marketplace.product",
-  "pk": 19,
+  "pk": 27,
   "fields": {
     "business": 1,
     "category": 35,
     "name": "Норковая шуба с капюшоном Flaumfeder 716766003",
-    "description": "Лаконичная шуба из меха норки черного цвета. Модель прямого силуэта с капюшоном, прорезными карманами и застежкой на крючки.",
-    "is_visible_on_marketplace": false,
-    "is_visible_on_own_site": false,
+    "description": "Укороченная шуба из меха норки черного цвета. Модель прямого силуэта с застежкой на крючки и крупную пуговицу, прорезными карманами, дополненная теплым капюшоном и кулиской по низу.",
+    "is_visible_on_marketplace": true,
+    "is_visible_on_own_site": true,
     "is_active": true,
-    "created_at": "2025-07-01T03:21:04.457Z",
-    "updated_at": "2025-07-04T12:49:15.262Z"
+    "created_at": "2025-07-06T11:07:09.450Z",
+    "updated_at": "2025-07-08T09:15:38.440Z"
+  }
+},
+{
+  "model": "marketplace.product",
+  "pk": 28,
+  "fields": {
+    "business": 1,
+    "category": 35,
+    "name": "Шуба Соболь и очень длинное названиееее",
+    "description": "Шуба",
+    "is_visible_on_marketplace": true,
+    "is_visible_on_own_site": true,
+    "is_active": true,
+    "created_at": "2025-07-07T11:29:46.073Z",
+    "updated_at": "2025-07-07T11:29:46.073Z"
   }
 },
 {
@@ -902,256 +887,193 @@
 },
 {
   "model": "marketplace.productvariant",
-  "pk": 1,
+  "pk": 36,
   "fields": {
-    "product": 2,
-    "barcode": "2001324977014",
-    "barcode_image": "imperia/barcodes/2001324977014.png",
-    "sku": "Черный жи есть",
+    "product": 27,
+    "barcode": "2006767309682",
+    "barcode_image": "imperia/barcodes/2006767309682.png",
+    "sku": "imperia-36",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
     "custom_description": null,
-    "price": "30000.00",
-    "discount": "0.00",
+    "price": "689990.00",
+    "discount": "10.00",
     "show_this": true,
-    "created_at": "2025-05-01T23:33:41.499Z",
-    "updated_at": "2025-07-04T12:42:58.135Z"
+    "created_at": "2025-07-06T11:07:09.469Z",
+    "updated_at": "2025-07-08T09:15:38.448Z"
   }
 },
 {
   "model": "marketplace.productvariant",
-  "pk": 2,
+  "pk": 37,
   "fields": {
-    "product": 2,
-    "barcode": "2003058996163",
-    "barcode_image": "imperia/barcodes/2003058996163.png",
-    "sku": "тоже верная только л",
+    "product": 27,
+    "barcode": "2004394410023",
+    "barcode_image": "imperia/barcodes/2004394410023.png",
+    "sku": "imperia-37",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
     "custom_description": null,
-    "price": "990.00",
-    "discount": "5.00",
-    "show_this": false,
-    "created_at": "2025-05-02T15:13:30.935Z",
-    "updated_at": "2025-07-04T12:42:58.105Z"
-  }
-},
-{
-  "model": "marketplace.productvariant",
-  "pk": 3,
-  "fields": {
-    "product": 3,
-    "barcode": "2007227020451",
-    "barcode_image": "imperia/barcodes/2007227020451.png",
-    "sku": "размер л",
-    "has_custom_name": false,
-    "custom_name": null,
-    "has_custom_description": false,
-    "custom_description": null,
-    "price": "500000.00",
-    "discount": "0.00",
+    "price": "689990.00",
+    "discount": "10.00",
     "show_this": true,
-    "created_at": "2025-05-02T19:46:19.143Z",
-    "updated_at": "2025-07-04T12:52:46.353Z"
+    "created_at": "2025-07-06T11:07:09.503Z",
+    "updated_at": "2025-07-08T09:15:38.477Z"
   }
 },
 {
   "model": "marketplace.productvariant",
-  "pk": 4,
+  "pk": 38,
   "fields": {
-    "product": 3,
-    "barcode": "2006375683907",
-    "barcode_image": "imperia/barcodes/2006375683907.png",
-    "sku": "wwsx52sS",
+    "product": 27,
+    "barcode": "2002301514895",
+    "barcode_image": "imperia/barcodes/2002301514895.png",
+    "sku": "imperia-38",
     "has_custom_name": false,
     "custom_name": null,
     "has_custom_description": false,
     "custom_description": null,
-    "price": "500000.00",
-    "discount": "0.00",
+    "price": "689990.00",
+    "discount": "10.00",
     "show_this": true,
-    "created_at": "2025-05-11T20:04:51.514Z",
-    "updated_at": "2025-07-04T12:52:46.369Z"
+    "created_at": "2025-07-06T11:07:09.540Z",
+    "updated_at": "2025-07-08T09:15:38.506Z"
   }
 },
 {
   "model": "marketplace.productvariant",
+  "pk": 39,
+  "fields": {
+    "product": 28,
+    "barcode": "2000634070057",
+    "barcode_image": "imperia/barcodes/2000634070057.png",
+    "sku": "imperia-39",
+    "has_custom_name": false,
+    "custom_name": null,
+    "has_custom_description": false,
+    "custom_description": null,
+    "price": "24000.00",
+    "discount": "90.00",
+    "show_this": true,
+    "created_at": "2025-07-07T11:29:46.090Z",
+    "updated_at": "2025-07-07T11:29:46.090Z"
+  }
+},
+{
+  "model": "marketplace.productstock",
   "pk": 20,
   "fields": {
-    "product": 19,
-    "barcode": "2007349087257",
-    "barcode_image": "imperia/barcodes/2007349087257.png",
-    "sku": "PROD-111",
-    "has_custom_name": false,
-    "custom_name": null,
-    "has_custom_description": false,
-    "custom_description": null,
-    "price": "679990.00",
-    "discount": "51.00",
-    "show_this": true,
-    "created_at": "2025-07-01T03:21:04.458Z",
-    "updated_at": "2025-07-04T12:49:15.278Z"
+    "variant": 36,
+    "location": 2,
+    "quantity": 30,
+    "reserved_quantity": 20,
+    "is_available_for_sale": true,
+    "last_updated": "2025-07-08T09:17:01.545Z"
   }
 },
 {
-  "model": "marketplace.productvariant",
+  "model": "marketplace.productstock",
   "pk": 21,
   "fields": {
-    "product": 19,
-    "barcode": "2003139492249",
-    "barcode_image": "imperia/barcodes/2003139492249.png",
-    "sku": "PROD-111-COPY-2",
-    "has_custom_name": false,
-    "custom_name": null,
-    "has_custom_description": false,
-    "custom_description": null,
-    "price": "679990.00",
-    "discount": "11.00",
-    "show_this": true,
-    "created_at": "2025-07-01T03:21:04.468Z",
-    "updated_at": "2025-07-04T12:49:15.312Z"
+    "variant": 37,
+    "location": 2,
+    "quantity": 30,
+    "reserved_quantity": 0,
+    "is_available_for_sale": true,
+    "last_updated": "2025-07-08T09:15:38.498Z"
   }
 },
 {
-  "model": "marketplace.productvariant",
+  "model": "marketplace.productstock",
   "pk": 22,
   "fields": {
-    "product": 19,
-    "barcode": "2009889654036",
-    "barcode_image": "imperia/barcodes/2009889654036.png",
-    "sku": "PROD-111-COPY-2-COPY-3",
-    "has_custom_name": false,
-    "custom_name": null,
-    "has_custom_description": false,
-    "custom_description": null,
-    "price": "679990.00",
-    "discount": "11.00",
-    "show_this": true,
-    "created_at": "2025-07-01T03:21:04.477Z",
-    "updated_at": "2025-07-04T12:49:15.345Z"
-  }
-},
-{
-  "model": "marketplace.productstock",
-  "pk": 1,
-  "fields": {
-    "variant": 2,
+    "variant": 38,
     "location": 2,
-    "quantity": 600,
+    "quantity": 30,
     "reserved_quantity": 0,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:42:58.128Z"
+    "last_updated": "2025-07-08T09:15:38.527Z"
   }
 },
 {
   "model": "marketplace.productstock",
-  "pk": 2,
+  "pk": 23,
   "fields": {
-    "variant": 1,
+    "variant": 39,
     "location": 2,
-    "quantity": 800,
-    "reserved_quantity": 0,
+    "quantity": 30,
+    "reserved_quantity": 15,
     "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:42:58.155Z"
+    "last_updated": "2025-07-07T11:32:59.686Z"
   }
 },
 {
-  "model": "marketplace.productstock",
-  "pk": 3,
+  "model": "marketplace.productdefect",
+  "pk": 22,
   "fields": {
-    "variant": 3,
-    "location": 2,
-    "quantity": 565,
-    "reserved_quantity": 0,
-    "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:52:46.367Z"
+    "stock": 20,
+    "quantity": 2,
+    "reason": "Возврат: сломана пуговица",
+    "created_at": "2025-07-07T11:23:33.009Z"
   }
 },
 {
-  "model": "marketplace.productstock",
-  "pk": 4,
+  "model": "marketplace.productdefect",
+  "pk": 23,
   "fields": {
-    "variant": 4,
-    "location": 2,
-    "quantity": 678,
-    "reserved_quantity": 70,
-    "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:52:46.392Z"
+    "stock": 20,
+    "quantity": 1,
+    "reason": "ап",
+    "created_at": "2025-07-07T11:23:39.069Z"
   }
 },
 {
-  "model": "marketplace.productstock",
-  "pk": 6,
+  "model": "marketplace.productdefect",
+  "pk": 24,
   "fields": {
-    "variant": 20,
-    "location": 2,
-    "quantity": 43,
-    "reserved_quantity": 0,
-    "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:49:15.310Z"
+    "stock": 20,
+    "quantity": 1,
+    "reason": "вап",
+    "created_at": "2025-07-07T11:23:40.975Z"
   }
 },
 {
-  "model": "marketplace.productstock",
-  "pk": 7,
+  "model": "marketplace.productdefect",
+  "pk": 25,
   "fields": {
-    "variant": 21,
-    "location": 2,
-    "quantity": 43,
-    "reserved_quantity": 0,
-    "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:49:15.344Z"
+    "stock": 20,
+    "quantity": 1,
+    "reason": "ва",
+    "created_at": "2025-07-07T11:23:43.607Z"
   }
 },
 {
-  "model": "marketplace.productstock",
-  "pk": 8,
+  "model": "marketplace.productdefect",
+  "pk": 28,
   "fields": {
-    "variant": 22,
-    "location": 2,
-    "quantity": 43,
-    "reserved_quantity": 0,
-    "is_available_for_sale": true,
-    "last_updated": "2025-07-04T12:49:15.374Z"
+    "stock": 20,
+    "quantity": 5,
+    "reason": "5",
+    "created_at": "2025-07-08T09:53:14.309Z"
+  }
+},
+{
+  "model": "marketplace.productdefect",
+  "pk": 29,
+  "fields": {
+    "stock": 23,
+    "quantity": 1,
+    "reason": "хз",
+    "created_at": "2025-07-11T13:48:26.058Z"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 2,
+  "pk": 236,
   "fields": {
-    "variant": 1,
-    "category_attribute": 2,
-    "predefined_value": null,
-    "custom_value": "10 см"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 3,
-  "fields": {
-    "variant": 2,
-    "category_attribute": 1,
-    "predefined_value": 2,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 4,
-  "fields": {
-    "variant": 2,
-    "category_attribute": 2,
-    "predefined_value": null,
-    "custom_value": "12"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 5,
-  "fields": {
-    "variant": 1,
+    "variant": 36,
     "category_attribute": 1,
     "predefined_value": 3,
     "custom_value": ""
@@ -1159,69 +1081,19 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 6,
+  "pk": 237,
   "fields": {
-    "variant": 3,
-    "category_attribute": 1,
-    "predefined_value": 7,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 8,
-  "fields": {
-    "variant": 2,
-    "category_attribute": 3,
-    "predefined_value": 9,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 9,
-  "fields": {
-    "variant": 3,
-    "category_attribute": 4,
-    "predefined_value": null,
-    "custom_value": "Соболь 100%"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 10,
-  "fields": {
-    "variant": 4,
-    "category_attribute": 1,
-    "predefined_value": 3,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 11,
-  "fields": {
-    "variant": 4,
+    "variant": 36,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "12 см"
+    "custom_value": "23 см"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 12,
+  "pk": 238,
   "fields": {
-    "variant": 4,
-    "category_attribute": 4,
-    "predefined_value": null,
-    "custom_value": "Соболь 100%"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 13,
-  "fields": {
-    "variant": 4,
+    "variant": 36,
     "category_attribute": 3,
     "predefined_value": 10,
     "custom_value": ""
@@ -1229,39 +1101,9 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 40,
+  "pk": 239,
   "fields": {
-    "variant": 20,
-    "category_attribute": 1,
-    "predefined_value": 3,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 41,
-  "fields": {
-    "variant": 20,
-    "category_attribute": 2,
-    "predefined_value": null,
-    "custom_value": "52 см"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 42,
-  "fields": {
-    "variant": 20,
-    "category_attribute": 3,
-    "predefined_value": 9,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 43,
-  "fields": {
-    "variant": 20,
+    "variant": 36,
     "category_attribute": 4,
     "predefined_value": null,
     "custom_value": "Норка"
@@ -1269,9 +1111,29 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 44,
+  "pk": 240,
   "fields": {
-    "variant": 21,
+    "variant": 36,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Китай"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 241,
+  "fields": {
+    "variant": 36,
+    "category_attribute": 6,
+    "predefined_value": 12,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 242,
+  "fields": {
+    "variant": 37,
     "category_attribute": 1,
     "predefined_value": 7,
     "custom_value": ""
@@ -1279,29 +1141,29 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 45,
+  "pk": 243,
   "fields": {
-    "variant": 21,
+    "variant": 37,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "52 см"
+    "custom_value": "23 см"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 46,
+  "pk": 244,
   "fields": {
-    "variant": 21,
+    "variant": 37,
     "category_attribute": 3,
-    "predefined_value": 9,
+    "predefined_value": 10,
     "custom_value": ""
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 47,
+  "pk": 245,
   "fields": {
-    "variant": 21,
+    "variant": 37,
     "category_attribute": 4,
     "predefined_value": null,
     "custom_value": "Норка"
@@ -1309,9 +1171,29 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 48,
+  "pk": 246,
   "fields": {
-    "variant": 22,
+    "variant": 37,
+    "category_attribute": 5,
+    "predefined_value": null,
+    "custom_value": "Китай"
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 247,
+  "fields": {
+    "variant": 37,
+    "category_attribute": 6,
+    "predefined_value": 12,
+    "custom_value": ""
+  }
+},
+{
+  "model": "marketplace.productvariantattribute",
+  "pk": 248,
+  "fields": {
+    "variant": 38,
     "category_attribute": 1,
     "predefined_value": 2,
     "custom_value": ""
@@ -1319,29 +1201,29 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 49,
+  "pk": 249,
   "fields": {
-    "variant": 22,
+    "variant": 38,
     "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "52 см"
+    "custom_value": "23 см"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 50,
+  "pk": 250,
   "fields": {
-    "variant": 22,
+    "variant": 38,
     "category_attribute": 3,
-    "predefined_value": 9,
+    "predefined_value": 10,
     "custom_value": ""
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 51,
+  "pk": 251,
   "fields": {
-    "variant": 22,
+    "variant": 38,
     "category_attribute": 4,
     "predefined_value": null,
     "custom_value": "Норка"
@@ -1349,119 +1231,79 @@
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 76,
+  "pk": 252,
   "fields": {
-    "variant": 20,
+    "variant": 38,
     "category_attribute": 5,
     "predefined_value": null,
-    "custom_value": "Турция"
+    "custom_value": "Китай"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 77,
+  "pk": 253,
   "fields": {
-    "variant": 21,
-    "category_attribute": 5,
-    "predefined_value": null,
-    "custom_value": "Турция"
+    "variant": 38,
+    "category_attribute": 6,
+    "predefined_value": 12,
+    "custom_value": ""
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 78,
+  "pk": 254,
   "fields": {
-    "variant": 22,
-    "category_attribute": 5,
-    "predefined_value": null,
-    "custom_value": "Турция"
+    "variant": 39,
+    "category_attribute": 1,
+    "predefined_value": 3,
+    "custom_value": ""
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 143,
+  "pk": 255,
   "fields": {
-    "variant": 3,
-    "category_attribute": 5,
+    "variant": 39,
+    "category_attribute": 2,
     "predefined_value": null,
-    "custom_value": "Турция"
+    "custom_value": "23"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 144,
+  "pk": 256,
   "fields": {
-    "variant": 4,
-    "category_attribute": 5,
-    "predefined_value": null,
-    "custom_value": "Турция"
+    "variant": 39,
+    "category_attribute": 3,
+    "predefined_value": 8,
+    "custom_value": ""
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 145,
+  "pk": 257,
   "fields": {
-    "variant": 2,
+    "variant": 39,
     "category_attribute": 4,
     "predefined_value": null,
-    "custom_value": "Коттон"
+    "custom_value": "Соболь"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 146,
+  "pk": 258,
   "fields": {
-    "variant": 2,
+    "variant": 39,
     "category_attribute": 5,
     "predefined_value": null,
-    "custom_value": "Вьетнам"
+    "custom_value": "Турция"
   }
 },
 {
   "model": "marketplace.productvariantattribute",
-  "pk": 147,
+  "pk": 259,
   "fields": {
-    "variant": 1,
-    "category_attribute": 4,
-    "predefined_value": null,
-    "custom_value": "Коттон"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 148,
-  "fields": {
-    "variant": 1,
-    "category_attribute": 5,
-    "predefined_value": null,
-    "custom_value": "Вьетнам"
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 149,
-  "fields": {
-    "variant": 20,
-    "category_attribute": 6,
-    "predefined_value": 12,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 150,
-  "fields": {
-    "variant": 21,
-    "category_attribute": 6,
-    "predefined_value": 12,
-    "custom_value": ""
-  }
-},
-{
-  "model": "marketplace.productvariantattribute",
-  "pk": 151,
-  "fields": {
-    "variant": 22,
+    "variant": 39,
     "category_attribute": 6,
     "predefined_value": 12,
     "custom_value": ""
@@ -1469,158 +1311,122 @@
 },
 {
   "model": "marketplace.productimage",
-  "pk": 1,
+  "pk": 63,
   "fields": {
-    "product": 2,
-    "image": "imperia/products/БелаяФутболка1.webp",
-    "is_main": true,
-    "alt_text": null,
-    "display_order": 0,
-    "created_at": "2025-05-01T23:29:43.719Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 2,
-  "fields": {
-    "product": 2,
-    "image": "imperia/products/БелаяФутболка2.webp",
-    "is_main": false,
-    "alt_text": null,
-    "display_order": 1,
-    "created_at": "2025-05-01T23:29:43.719Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 3,
-  "fields": {
-    "product": 2,
-    "image": "imperia/products/БелаяФутболка3.webp",
-    "is_main": false,
-    "alt_text": null,
-    "display_order": 2,
-    "created_at": "2025-05-01T23:29:43.720Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 4,
-  "fields": {
-    "product": 3,
-    "image": "imperia/products/империя_3.jpg",
-    "is_main": false,
-    "alt_text": null,
-    "display_order": 0,
-    "created_at": "2025-05-02T19:45:13.122Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 5,
-  "fields": {
-    "product": 3,
-    "image": "imperia/products/империя_4.jpg",
-    "is_main": false,
-    "alt_text": null,
-    "display_order": 1,
-    "created_at": "2025-05-02T19:45:13.123Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 6,
-  "fields": {
-    "product": 2,
-    "image": "imperia/products/женская.png",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 3,
-    "created_at": "2025-05-11T17:56:27.575Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 11,
-  "fields": {
-    "product": 19,
-    "image": "imperia/products/b5944160017af2b61638b41445f0d345d7bb2288_sl_716766003_1_1.webp",
-    "is_main": true,
-    "alt_text": "",
-    "display_order": 0,
-    "created_at": "2025-07-01T03:21:04.488Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 12,
-  "fields": {
-    "product": 19,
-    "image": "imperia/products/1a617f0ce2c22c2f359005f95ff1c6d199d2f4cc_sl_716766003_5.webp",
+    "product": 27,
+    "image": "imperia/products/1a617f0ce2c22c2f359005f95ff1c6d199d2f4cc_sl_716766003_5_K8HV3PW.webp",
     "is_main": false,
     "alt_text": "",
     "display_order": 1,
-    "created_at": "2025-07-01T03:21:04.490Z"
+    "created_at": "2025-07-06T11:07:09.572Z"
   }
 },
 {
   "model": "marketplace.productimage",
-  "pk": 13,
+  "pk": 64,
   "fields": {
-    "product": 19,
-    "image": "imperia/products/11ec7bf340780daca735a4da23661a70469c94c3_sl_716766003_3.webp",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 2,
-    "created_at": "2025-07-01T03:21:04.491Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 14,
-  "fields": {
-    "product": 19,
-    "image": "imperia/products/118a9a3945209ac294a0f65fd0e282a40e0c39fe_sl_716766003_2.webp",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 3,
-    "created_at": "2025-07-01T03:21:04.492Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 15,
-  "fields": {
-    "product": 19,
-    "image": "imperia/products/9c2d83d54bf8b2280d4bb0ac8b8550a228181653_sl_716766003_4.webp",
-    "is_main": false,
-    "alt_text": "",
-    "display_order": 4,
-    "created_at": "2025-07-01T03:21:04.495Z"
-  }
-},
-{
-  "model": "marketplace.productimage",
-  "pk": 16,
-  "fields": {
-    "product": 19,
-    "image": "imperia/products/6d34aec89b9508dcd3693d3b3f5a32b634197ff5_sl_716766003_6.webp",
+    "product": 27,
+    "image": "imperia/products/6d34aec89b9508dcd3693d3b3f5a32b634197ff5_sl_716766003_6_KzEJ77O.webp",
     "is_main": false,
     "alt_text": "",
     "display_order": 5,
-    "created_at": "2025-07-01T03:21:04.495Z"
+    "created_at": "2025-07-06T11:07:09.575Z"
   }
 },
 {
   "model": "marketplace.productimage",
-  "pk": 17,
+  "pk": 65,
   "fields": {
-    "product": 19,
-    "image": "imperia/products/9db1eeae49b11f8fd23bb47a9fc0ab19b298772e_sl_716766003_7.webp",
+    "product": 27,
+    "image": "imperia/products/9c2d83d54bf8b2280d4bb0ac8b8550a228181653_sl_716766003_4_Rh6UrPX.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 4,
+    "created_at": "2025-07-06T11:07:09.577Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 66,
+  "fields": {
+    "product": 27,
+    "image": "imperia/products/9db1eeae49b11f8fd23bb47a9fc0ab19b298772e_sl_716766003_7_QZ3rfc0.webp",
     "is_main": false,
     "alt_text": "",
     "display_order": 6,
-    "created_at": "2025-07-01T03:21:04.497Z"
+    "created_at": "2025-07-06T11:07:09.579Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 67,
+  "fields": {
+    "product": 27,
+    "image": "imperia/products/11ec7bf340780daca735a4da23661a70469c94c3_sl_716766003_3_C4t24cn.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 3,
+    "created_at": "2025-07-06T11:07:09.581Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 68,
+  "fields": {
+    "product": 27,
+    "image": "imperia/products/118a9a3945209ac294a0f65fd0e282a40e0c39fe_sl_716766003_2_2RcWF48.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 2,
+    "created_at": "2025-07-06T11:07:09.582Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 69,
+  "fields": {
+    "product": 27,
+    "image": "imperia/products/b5944160017af2b61638b41445f0d345d7bb2288_sl_716766003_1_1_WEG6I3t.webp",
+    "is_main": true,
+    "alt_text": "",
+    "display_order": 0,
+    "created_at": "2025-07-06T11:07:09.584Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 70,
+  "fields": {
+    "product": 28,
+    "image": "imperia/products/11ec7bf340780daca735a4da23661a70469c94c3_sl_716766003_3_jSOAI1A.webp",
+    "is_main": true,
+    "alt_text": "",
+    "display_order": 0,
+    "created_at": "2025-07-07T11:29:46.121Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 71,
+  "fields": {
+    "product": 28,
+    "image": "imperia/products/118a9a3945209ac294a0f65fd0e282a40e0c39fe_sl_716766003_2_AmD74Gl.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 1,
+    "created_at": "2025-07-07T11:29:46.122Z"
+  }
+},
+{
+  "model": "marketplace.productimage",
+  "pk": 72,
+  "fields": {
+    "product": 28,
+    "image": "imperia/products/b5944160017af2b61638b41445f0d345d7bb2288_sl_716766003_1_1_jRHOTwN.webp",
+    "is_main": false,
+    "alt_text": "",
+    "display_order": 2,
+    "created_at": "2025-07-07T11:29:46.124Z"
   }
 }
 ]
