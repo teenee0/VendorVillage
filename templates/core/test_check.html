@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    /* Стили остаются такими же */
+    @page {
+      size: 58mm 1000mm;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      width: 54mm;
+      margin: 0 auto;
+      padding: 1mm 0;
+      font-family: "Arial", sans-serif;
+      font-size: 10pt;
+      line-height: 1.2;
+      color: #000;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2mm;
+    }
+    
+    .receipt-number {
+      font-weight: bold;
+      font-size: 11pt;
+    }
+    
+    .receipt-date {
+      font-size: 9pt;
+      margin-bottom: 3mm;
+    }
+    
+    .item-section {
+      margin-bottom: 3mm;
+    }
+    
+    .item-name {
+      font-weight: bold;
+      margin-bottom: 1mm;
+    }
+    
+    .item-attribute {
+      margin-left: 2mm;
+      font-size: 9pt;
+    }
+    
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 1mm 0;
+    }
+    
+    .discount-row {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 5mm;
+      font-size: 9pt;
+      color: #555;
+    }
+    
+    .item-total {
+      font-weight: bold;
+      text-align: right;
+      margin: 1mm 0 2mm;
+      border-top: 1px dashed #ccc;
+      padding-top: 1mm;
+    }
+    
+    .divider {
+      border-top: 1px dashed #000;
+      margin: 2mm 0;
+    }
+    
+    .summary-section {
+      margin-top: 3mm;
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 1mm 0;
+    }
+    
+    .final-total {
+      font-weight: bold;
+      font-size: 11pt;
+      margin-top: 2mm;
+      border-top: 1px solid #000;
+      padding-top: 2mm;
+    }
+    
+    .thank-you {
+      text-align: center;
+      margin-top: 3mm;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="receipt-number">Чек #{{ receipt.number }}</div>
+    <div class="receipt-date">{{ now.strftime("%d.%m.%Y, %H:%M:%S") }}</div>
+  </div>
+
+  {% for sale in sales %}
+    <div class="item-section">
+      <div class="item-name">{{ sale.variant.name }}</div>
+      
+      <!-- Изменено: используем variant.price вместо sale.price_per_unit -->
+      <div class="item-row">
+        <span>{{ sale.quantity }} × {{ "%.0f"|format(sale.variant.price|float) }} ₸</span>
+        <span>{{ "%.0f"|format((sale.variant.price * sale.quantity)|float) }} ₸</span>
+      </div>
+      
+      {% if sale.discount_percent or sale.discount_amount or sale.variant.discount %}
+        <div class="discount-row">
+          <span>
+            {% if sale.variant.discount %}Скидка {{ sale.variant.discount }}%{% endif %}
+            {% if sale.discount_percent %}
+              {% if sale.variant.discount %}+{% else %}Скидка{% endif %}
+              {{ sale.discount_percent }}%
+            {% endif %}
+            {% if sale.discount_amount %}
+              {% if sale.variant.discount or sale.discount_percent %}+{% else %}Скидка{% endif %}
+              {{ "%.0f"|format(sale.discount_amount|float) }} ₸
+            {% endif %}
+          </span>
+          <span>
+            -{{ "%.0f"|format(
+              (sale.variant.price * sale.quantity * sale.variant.discount / 100 if sale.variant.discount else 0) +
+              (sale.variant.price * sale.quantity * sale.discount_percent / 100 if sale.discount_percent else 0) +
+              (sale.discount_amount if sale.discount_amount else 0)
+            ) }}&nbsp;₸
+          </span>
+        </div>
+      {% endif %}
+      
+      <div class="item-total">Итого за товар: {{ "%.0f"|format(sale.total_price|float) }} ₸</div>
+      
+      {% if not loop.last %}
+        <div class="divider"></div>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <div class="divider"></div>
+  
+  <div class="summary-section">
+    <div class="summary-row">
+      <span>Товары:</span>
+      <span>{{ "%.0f"|format(price_without_any_discounts|float) }} ₸</span>
+    </div>
+    
+    <div class="summary-row">
+      <span>Скидка на товары:</span>
+      <span>-{{ "%.0f"|format(total_discount|float) }} ₸</span>
+    </div>
+
+    {% if receipt.discount_percent %}
+        <div class="summary-row">
+            <span>Скидка на чек:</span>
+            <span>
+            -{{ "%.0f"|format(receipt.discount_percent|float) }}%
+            ({{ "%.0f"|format(receipt_discount|float) }} ₸)
+            </span>
+        </div>
+        {% elif receipt.discount_amount %}
+        <div class="summary-row">
+            <span>Скидка на чек:</span>
+            <span>-{{ "%.0f"|format(receipt_discount|float) }} ₸</span>
+        </div>
+    {% endif %}
+
+    
+    <div class="final-total">
+      <span>Итого к оплате:</span>
+      <span>{{ "%.0f"|format(receipt.total_amount|float) }} ₸</span>
+    </div>
+  </div>
+  <div class="summary-row">
+    <span>Способ оплаты:</span>
+    <span>{{ receipt.payment_method.name }}</span>
+ </div>
+  
+  <div class="thank-you">Спасибо за покупку!</div>
+</body>
+</html>

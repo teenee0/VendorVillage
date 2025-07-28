@@ -6,6 +6,8 @@ from . import views
 from . import business_API
 from . import business_product_CRUD_API
 from . import sale_product_API
+from . import analytics_API
+from . import settings_API
 
 app_name = "core"
 urlpatterns = [
@@ -43,11 +45,11 @@ urlpatterns.extend(
             business_product_CRUD_API.get_category_attributes,
             name="category-attributes",
         ),
-        path(
-            "api/business/<slug:business_slug>/locations/",
-            business_product_CRUD_API.get_business_locations,
-            name="business-locations",
-        ),
+        # path(
+        #     "api/business/<slug:business_slug>/locations/",
+        #     business_product_CRUD_API.get_business_locations,
+        #     name="business-locations",
+        # ),
         path(
             "api/business/<slug:business_slug>/products/create/",
             business_product_CRUD_API.create_product,
@@ -116,6 +118,36 @@ urlpatterns.extend(
             sale_product_API.get_active_payment_methods,
             name="payment-methods",
         ),
+        path(
+            "api/business/<slug:business_slug>/dashboard/",
+            analytics_API.business_dashboard,
+            name="business-dashboard",
+        ),
+        path(
+            "api/business/<slug:business_slug>/receipts/<str:number>/",
+            analytics_API.receipt_detail,
+            name="receipt-detail",
+        ),
+        path(
+            "api/business/<slug:business_slug>/settings/",
+            settings_API.business_detail_or_update,
+            name="business-detail-or-update",
+        ),
+        path(
+            "api/business/<slug:business_slug>/locations/",
+            settings_API.business_locations,
+            name="business-location-list-create",
+        ),
+        path(
+            "api/business/<slug:business_slug>/locations/<int:pk>/",
+            settings_API.business_location_detail,
+            name="business-location-detail",
+        ),
+        path(
+            "api/location-types/",
+            settings_API.location_type_list,
+            name="location-type-list",
+        ),
         # path('api/business/<slug:business_slug>/products/<int:product_id>/variants/<int:variant_id>/', business_API.product_variant_detail_api, name='product_variant_detail_api'),
         # path('api/business/<slug:business_slug>/products/<int:product_id>/images/', business_API.product_images_api, name='product_images_api'),
         # path('api/business/<slug:business_slug>/products/<int:product_id>/images/<int:image_id>/', business_API.product_image_detail_api, name='product_image_detail_api'),
@@ -125,6 +157,8 @@ urlpatterns.extend(
         #     business_API.get_product_attributes,
         #     name='product-attributes'
         # ),
+        path("debug/receipt/<int:receipt_id>/html/", views.business_check, name="receipt-preview"),
+
     ]
 )
 if settings.DEBUG:

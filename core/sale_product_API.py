@@ -1,40 +1,39 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-from rest_framework import status
+import uuid
+from datetime import datetime
+from decimal import Decimal
 
-from .product_sale_serializer import ReceiptCreateSerializer, ReceiptDetailSerializer, PaymentMethodSerializer
+from accounts.JWT_AUTH import CookieJWTAuthentication
+from accounts.permissions import IsBusinessOwner
+from django.core.exceptions import ValidationError
 from django.db import transaction
+from django.shortcuts import get_object_or_404
+from marketplace.models import (
+    PaymentMethod,
+    Product,
+    ProductSale,
+    ProductStock,
+    ProductVariant,
+    Receipt,
+)
+from marketplace.ProductsSet import ProductSet
 from rest_framework import status
 from rest_framework.decorators import (
     api_view,
-    permission_classes,
     authentication_classes,
+    permission_classes,
 )
-from datetime import datetime
 from rest_framework.permissions import IsAuthenticated
-from accounts.permissions import IsBusinessOwner
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-from marketplace.models import (
-    Product,
-    ProductVariant,
-    Receipt,
-    PaymentMethod,
-    ProductSale,
-    ProductStock
-)
+
 from .models import Business
-from accounts.JWT_AUTH import CookieJWTAuthentication
 from .product_sale_serializer import (
     EnhancedProductListSerializer,
+    PaymentMethodSerializer,
     ProductVariantSerializer,
+    ReceiptCreateSerializer,
+    ReceiptDetailSerializer,
 )
-from marketplace.ProductsSet import ProductSet
-import uuid
 from .ProductCreateService import ProductService
-from django.core.exceptions import ValidationError
-from decimal import Decimal
 from .utils.generate_receipt_pdf import generate_receipt_pdf
 
 
@@ -109,101 +108,107 @@ def sales_products_api(request, business_slug):
     )
 
 
+import uuid
+from decimal import Decimal
+
+from django.db import transaction
+from rest_framework import status
+from rest_framework.response import Response
+
+# … остальные импорты опущены …
+
 
 @api_view(["POST"])
 @transaction.atomic
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated, IsBusinessOwner])
 def create_receipt(request, business_slug):
-    print(request.data)
     business = ProductService.get_business(request.user, business_slug)
 
-    serializer = ReceiptCreateSerializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
+    ser = ReceiptCreateSerializer(data=request.data)
+    ser.is_valid(raise_exception=True)
+    v = ser.validated_data
 
-    validated_data = serializer.validated_data
-    sales_data = validated_data.pop('items')
-    receipt_discount_amount = validated_data.pop("discount_amount", 0)
-    receipt_discount_percent = validated_data.pop("discount_percent", 0)
+    sales_data = v.pop("items")
+    rcpt_disc_amount = Decimal(v.pop("discount_amount", 0))
+    rcpt_disc_percent = Decimal(v.pop("discount_percent", 0))
 
-    total_amount = 0
-    product_sales = []
-
-    # Генерация номера чека
-    number = f"CHK-{uuid.uuid4().hex[:8].upper()}"
-
-    customer = validated_data.get('customer', None)
-
+    # ---------- создаём сам чек ----------
     receipt = Receipt.objects.create(
-        number=number,
-        payment_method=validated_data['payment_method'],
-        customer=customer,
-        customer_name=validated_data.get('customer_name', ''),
-        customer_phone=validated_data.get('customer_phone', ''),
+        number=f"CHK-{uuid.uuid4().hex[:8].upper()}",
+        payment_method=v["payment_method"],
+        customer=v.get("customer"),
+        customer_name=v.get("customer_name", ""),
+        customer_phone=v.get("customer_phone", ""),
         is_online=False,
         is_paid=True,
-        total_amount=0  # временно 0, позже обновим
+        total_amount=0,  # обновим ниже
+        discount_amount=rcpt_disc_amount,
+        discount_percent=rcpt_disc_percent,
     )
 
+    total_amount = Decimal("0")
+    product_sales = []
+    affected_products = set()  # ← будем хранить Product-ы
+
+    # ---------- валидация + подготовка ----------
     for item in sales_data:
-        variant = item['variant']
-        location = item['location']
-        quantity = item['quantity']
-        discount_amount = item.get("discount_amount", 0)
-        discount_percent = item.get("discount_percent", 0)
+        var: ProductVariant = item["variant"]
+        loc: BusinessLocation = item["location"]
+        qty = item["quantity"]
+        disc_amount = Decimal(str(item.get("discount_amount", 0)))
+        disc_percent = Decimal(str(item.get("discount_percent", 0)))
 
-        price = Decimal(str(variant.current_price))
-        discount_percent = Decimal(str(discount_percent))
-        discount_amount = Decimal(str(discount_amount))
+        # проверки принадлежности и наличия
+        if loc.business != business:
+            raise ValidationError(f"Локация '{loc}' не принадлежит бизнесу.")
 
-        unit_discount = price * discount_percent / Decimal('100') + discount_amount
-        unit_price_final = max(price - unit_discount, Decimal('0'))
-        total_price = unit_price_final * quantity
+        if var.product.business != business:
+            raise ValidationError(f"Вариант '{var}' не принадлежит бизнесу.")
 
-        # 🔒 Проверка: принадлежит ли локация бизнесу
-        if location.business != business:
-            raise ValidationError(f"Локация '{location}' не принадлежит бизнесу '{business.name}'.")
-
-        # 🔒 Проверка: принадлежит ли вариант бизнесу
-        if variant.product.business != business:
-            raise ValidationError(f"Вариант товара '{variant}' не принадлежит бизнесу '{business.name}'.")
-
-        # 🔒 Проверка: есть ли вариант на нужной локации
-        try:
-            stock = ProductStock.objects.select_for_update().get(variant=variant, location=location)
-        except ProductStock.DoesNotExist:
-            raise ValidationError(f"Вариант '{variant}' не найден на складе '{location.name}'.")
-
-        # 🔒 Проверка доступности по количеству
-        if stock.available_quantity < quantity:
+        stock = ProductStock.objects.select_for_update().get(variant=var, location=loc)
+        if stock.available_quantity < qty:
             raise ValidationError(
-                f"Недостаточно товара '{variant}' в '{location.name}'. Доступно: {stock.available_quantity}"
+                f"Недостаточно '{var}' на '{loc}'. Доступно: {stock.available_quantity}"
             )
 
-        product_sale = ProductSale(
-            receipt=receipt,
-            variant=variant,
-            location=location,
-            quantity=quantity,
-            price_per_unit=price,
-            discount_percent=discount_percent,
-            discount_amount=discount_amount,
-            total_price=total_price,
-            is_paid=True
-        )
-        product_sales.append(product_sale)
-        total_amount += total_price
+        price = Decimal(str(var.current_price))
+        unit_disc = price * disc_percent / 100 + disc_amount
+        final_price = max(price - unit_disc, 0)
+        line_total = final_price * qty
 
+        product_sales.append(
+            ProductSale(
+                receipt=receipt,
+                variant=var,
+                location=loc,
+                quantity=qty,
+                price_per_unit=price,
+                discount_percent=disc_percent,
+                discount_amount=disc_amount,
+                total_price=line_total,
+                is_paid=True,
+            )
+        )
+        total_amount += line_total
+        affected_products.add(var.product)  # запоминаем товар
+
+    # ---------- массовое создание продаж ----------
     ProductSale.objects.bulk_create(product_sales)
 
-    if receipt_discount_percent:
-        total_amount -= total_amount * receipt_discount_percent / 100
-    total_amount -= receipt_discount_amount
+    # ---------- перерасчёт итогов чека ----------
+    if rcpt_disc_percent:
+        total_amount -= total_amount * rcpt_disc_percent / 100
+    total_amount -= rcpt_disc_amount
     receipt.total_amount = max(total_amount, 0)
     receipt.save(update_fields=["total_amount"])
-
     generate_receipt_pdf(receipt.id, save=True)
-
     receipt.refresh_from_db()
 
-    return Response(ReceiptDetailSerializer(receipt).data, status=status.HTTP_201_CREATED)
+    # ---------- ручной update_is_active ----------
+    for product in affected_products:
+        product.update_is_active()
+
+    return Response(
+        ReceiptDetailSerializer(receipt).data, status=status.HTTP_201_CREATED
+    )

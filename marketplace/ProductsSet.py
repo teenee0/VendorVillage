@@ -92,9 +92,9 @@ class ProductSet:
         return breadcrumbs
 
     @staticmethod
-    def pagination_for_products(products, request):
+    def pagination_for_products(products, request, quantity=12):
 
-        per_page = int(request.GET.get("per_page", 12))
+        per_page = int(request.GET.get("per_page", quantity))
         paginator = Paginator(products, per_page)
         page_number = request.GET.get("page", 1)
         try:

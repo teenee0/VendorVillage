@@ -316,28 +316,28 @@ def get_category_attributes(request, category_id):
             {"detail": "Категория не найдена"}, status=status.HTTP_404_NOT_FOUND
         )
 
+# больше вроде не нужное апи
+# @api_view(["GET"])
+# @authentication_classes([CookieJWTAuthentication])
+# @permission_classes([IsAuthenticated, IsBusinessOwner])
+# def get_business_locations(request, business_slug):
+#     """
+#     Получение всех складов/локаций бизнеса
+#     """
+#     business = get_object_or_404(Business, slug=business_slug)
+#     locations = BusinessLocation.objects.filter(business=business).order_by("name")
 
-@api_view(["GET"])
-@authentication_classes([CookieJWTAuthentication])
-@permission_classes([IsAuthenticated, IsBusinessOwner])
-def get_business_locations(request, business_slug):
-    """
-    Получение всех складов/локаций бизнеса
-    """
-    business = get_object_or_404(Business, slug=business_slug)
-    locations = BusinessLocation.objects.filter(business=business).order_by("name")
+#     data = [
+#         {
+#             "id": loc.id,
+#             "name": loc.name,
+#             "address": loc.address,
+#             "location_type": loc.location_type.name,
+#         }
+#         for loc in locations
+#     ]
 
-    data = [
-        {
-            "id": loc.id,
-            "name": loc.name,
-            "address": loc.address,
-            "location_type": loc.location_type.name,
-        }
-        for loc in locations
-    ]
-
-    return Response(data)
+#     return Response(data)
 
 
 @api_view(["GET"])
