@@ -95,13 +95,14 @@ class SaleLineSerializer(serializers.ModelSerializer):
     Одна позиция продажи из таблицы ProductSale
     + вложенный вариант с картинками/скидками.
     """
+
     variant = VariantInReceiptSerializer(read_only=True)
 
     class Meta:
-        model  = ProductSale
+        model = ProductSale
         fields = [
             "id",
-            "variant",           # ← всё, что мы собрали выше
+            "variant",  # ← всё, что мы собрали выше
             "location_id",
             "quantity",
             "price_per_unit",
@@ -116,13 +117,14 @@ class ReceiptDetailSerializer(serializers.ModelSerializer):
     """
     Полная информация о чеке: шапка + позиции.
     """
-    sales           = SaleLineSerializer(many=True, read_only=True)
-    payment_method  = serializers.CharField(source="payment_method.name", read_only=True)
-    customer_name   = serializers.CharField(read_only=True)
-    customer_phone  = serializers.CharField(read_only=True)
+
+    sales = SaleLineSerializer(many=True, read_only=True)
+    payment_method = serializers.CharField(source="payment_method.name", read_only=True)
+    customer_name = serializers.CharField(read_only=True)
+    customer_phone = serializers.CharField(read_only=True)
 
     class Meta:
-        model  = Receipt
+        model = Receipt
         fields = [
             "id",
             "number",
@@ -136,15 +138,17 @@ class ReceiptDetailSerializer(serializers.ModelSerializer):
             "discount_amount",
             "receipt_preview_image",
             "receipt_pdf_file",
-            "sales",                # список позиций чека
+            "sales",  # список позиций чека
         ]
         read_only_fields = fields
 
 
 # --- (опционально) компактный список чеков ---------------------------
 class ReceiptListSerializer(serializers.ModelSerializer):
+    payment_method = serializers.CharField(source="payment_method.name", read_only=True)
+
     class Meta:
-        model  = Receipt
+        model = Receipt
         fields = [
             "id",
             "number",
@@ -152,5 +156,6 @@ class ReceiptListSerializer(serializers.ModelSerializer):
             "total_amount",
             "is_paid",
             "payment_method_id",
+            "payment_method",
         ]
         read_only_fields = fields

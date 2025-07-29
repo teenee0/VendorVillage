@@ -201,6 +201,7 @@ def create_receipt(request, business_slug):
         total_amount -= total_amount * rcpt_disc_percent / 100
     total_amount -= rcpt_disc_amount
     receipt.total_amount = max(total_amount, 0)
+    receipt._history_user = request.user
     receipt.save(update_fields=["total_amount"])
     generate_receipt_pdf(receipt.id, save=True)
     receipt.refresh_from_db()

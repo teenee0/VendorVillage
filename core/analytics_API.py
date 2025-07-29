@@ -131,6 +131,7 @@ def business_dashboard(request, business_slug):
     # ---------------------------- последние 5 чеков
     transactions = [
         {
+            "id": r.id,
             "number": r.number,
             "amount": float(r.total_amount),
             "is_refund": r.total_amount < 0,

@@ -8,6 +8,7 @@ from django.http import Http404
 from core.models import BusinessLocation
 from .EAN_13_barcode_generator import generate_barcode
 from django.db.models import Sum
+from simple_history.models import HistoricalRecords
 
 
 # Create your models here.
@@ -764,6 +765,7 @@ class Receipt(models.Model):
     number = models.CharField(max_length=100, unique=True, verbose_name="Номер чека")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     total_amount = models.DecimalField(max_digits=12, decimal_places=2, verbose_name="Итоговая сумма")
+    is_deleted = models.BooleanField(default=False, verbose_name="Удалён")
     payment_method = models.ForeignKey(
         "PaymentMethod",
         on_delete=models.PROTECT,
@@ -791,7 +793,7 @@ class Receipt(models.Model):
 
     discount_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     discount_percent = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-
+    history = HistoricalRecords(inherit=True, cascade_delete_history=False)
     class Meta:
         verbose_name = "Чек"
         verbose_name_plural = "Чеки"
@@ -799,6 +801,10 @@ class Receipt(models.Model):
 
     def __str__(self):
         return f"Чек #{self.number} от {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+    
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.save(update_fields=["is_deleted"])
 
 
 class ProductSale(models.Model):
@@ -834,7 +840,7 @@ class ProductSale(models.Model):
     discount_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     receipt = models.ForeignKey(
         "Receipt",
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name="sales",
         verbose_name="Чек",
         null=True,

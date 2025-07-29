@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django_elasticsearch_dsl',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
+    "simple_history",
 
 ]
 
@@ -103,6 +104,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 ROOT_URLCONF = 'VendorVillage.urls'

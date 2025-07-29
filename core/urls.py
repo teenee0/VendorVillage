@@ -8,6 +8,7 @@ from . import business_product_CRUD_API
 from . import sale_product_API
 from . import analytics_API
 from . import settings_API
+from . import receipt_API
 
 app_name = "core"
 urlpatterns = [
@@ -123,11 +124,11 @@ urlpatterns.extend(
             analytics_API.business_dashboard,
             name="business-dashboard",
         ),
-        path(
-            "api/business/<slug:business_slug>/receipts/<str:number>/",
-            analytics_API.receipt_detail,
-            name="receipt-detail",
-        ),
+        # path(
+        #     "api/business/<slug:business_slug>/receipts-in-analitycs/<str:number>/", # надо переделать в одно апи для чеков
+        #     analytics_API.receipt_detail,
+        #     name="receipt-detail",
+        # ),
         path(
             "api/business/<slug:business_slug>/settings/",
             settings_API.business_detail_or_update,
@@ -148,6 +149,21 @@ urlpatterns.extend(
             settings_API.location_type_list,
             name="location-type-list",
         ),
+        path(
+            "api/business/<slug:business_slug>/receipts/",
+            receipt_API.receipt_list,
+            name="receipt-list",
+        ),
+        path(
+            "api/business/<slug:business_slug>/receipts/<int:receipt_id>/",
+            receipt_API.receipt_detail,
+            name="receipt-detail",
+        ),
+        path(
+            "api/business/<slug:business_slug>/receipts/history/",
+            receipt_API.grouped_receipt_history,
+            name="receipt-history",
+        ),
         # path('api/business/<slug:business_slug>/products/<int:product_id>/variants/<int:variant_id>/', business_API.product_variant_detail_api, name='product_variant_detail_api'),
         # path('api/business/<slug:business_slug>/products/<int:product_id>/images/', business_API.product_images_api, name='product_images_api'),
         # path('api/business/<slug:business_slug>/products/<int:product_id>/images/<int:image_id>/', business_API.product_image_detail_api, name='product_image_detail_api'),
@@ -157,8 +173,11 @@ urlpatterns.extend(
         #     business_API.get_product_attributes,
         #     name='product-attributes'
         # ),
-        path("debug/receipt/<int:receipt_id>/html/", views.business_check, name="receipt-preview"),
-
+        path(
+            "debug/receipt/<int:receipt_id>/html/",
+            views.business_check,
+            name="receipt-preview",
+        ),
     ]
 )
 if settings.DEBUG:

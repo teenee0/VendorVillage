@@ -1,0 +1,215 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from rest_framework.response import Response
+from marketplace.models import Receipt, ProductSale
+from accounts.JWT_AUTH import CookieJWTAuthentication
+from accounts.permissions import IsBusinessOwner
+from core.models import Business
+from django.shortcuts import get_object_or_404
+from rest_framework.decorators import (api_view, authentication_classes,
+                                       permission_classes)
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from .analytics_serializators import ReceiptDetailSerializer, ReceiptListSerializer
+from django.db.models import Prefetch
+from rest_framework import status
+
+
+def paginate_receipts(request, queryset=None, quantity=12):
+    """
+    Возвращает чеков по страницам (например, для бесконечной прокрутки).
+    """
+    if queryset is None:
+        queryset = Receipt.objects.all()
+
+    per_page = int(request.GET.get("per_page", quantity))
+    paginator = Paginator(queryset, per_page)
+    page_number = request.GET.get("page", 1)
+
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+
+    serialized = ReceiptListSerializer(page_obj, many=True)
+
+    pagination = {
+        "current_page": page_obj.number,
+        "total_pages": paginator.num_pages,
+        "total_items": paginator.count,
+        "has_next": page_obj.has_next(),
+        "has_previous": page_obj.has_previous(),
+        "per_page": per_page,
+    }
+
+    return serialized.data, pagination
+
+
+@api_view(["GET"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def receipt_list(request, business_slug):
+    """
+    GET /api/business/<slug>/receipts/
+    Список чеков с пагинацией (по 12 по умолчанию)
+    """
+    business = get_object_or_404(Business, slug=business_slug)
+
+    receipts = (
+        Receipt.objects
+        .filter(sales__variant__product__business=business)
+        .select_related("payment_method")
+        .distinct()
+        .order_by("-created_at")
+    )
+
+    data, pagination = paginate_receipts(request, receipts, quantity=12)
+
+    return Response({
+        "results": data,
+        "pagination": pagination,
+    })
+
+
+@api_view(["GET", "DELETE"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def receipt_detail(request, business_slug: str, receipt_id: int):
+    """
+    GET /api/business/<slug>/receipts/<id>/
+    DELETE /api/business/<slug>/receipts/<id>/
+
+    Просмотр или удаление чека (если принадлежит бизнесу пользователя)
+    """
+    business = get_object_or_404(Business, slug=business_slug)
+
+    if business.owner != request.user:
+        return Response({"detail": "У вас нет доступа к этому бизнесу."}, status=status.HTTP_403_FORBIDDEN)
+
+    receipt = (
+        Receipt.objects
+        .filter(id=receipt_id, sales__variant__product__business=business)
+        .distinct()
+        .select_related("payment_method")
+        .prefetch_related(
+            Prefetch(
+                "sales",
+                queryset=ProductSale.objects
+                    .select_related("variant__product")
+                    .prefetch_related(
+                        "variant__product__images",
+                        "variant__attributes__category_attribute__attribute",
+                        "variant__stocks",
+                    ),
+            )
+        )
+        .first()
+    )
+
+    if not receipt:
+        return Response({"detail": "Чек не найден."}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == "DELETE":
+        from simple_history.utils import update_change_reason
+
+        # 1. Указываем пользователя, от имени которого фиксируем изменение
+        receipt._history_user = request.user
+
+        # 2. Указываем причину изменения
+        update_change_reason(receipt, "Удаление чека через API")
+
+        # 3. Сохраняем, чтобы зафиксировать в истории
+        receipt.save()
+
+        # 4. Теперь удаляем сам объект
+        receipt.delete()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    sales_map = {sale.variant_id: sale for sale in receipt.sales.all()}
+
+    data = ReceiptDetailSerializer(
+        receipt,
+        context={
+            "sales_map": sales_map,
+            "receipt": receipt,
+        },
+    ).data
+
+    return Response(data)
+
+
+@api_view(["GET"])
+@authentication_classes([CookieJWTAuthentication])
+@permission_classes([IsAuthenticated, IsBusinessOwner])
+def grouped_receipt_history(request, business_slug):
+    """
+    GET /api/business/<slug>/receipts/history/
+    Группированная история изменений по каждому чеку.
+    """
+    business = get_object_or_404(Business, slug=business_slug)
+
+    # Получаем id всех чеков этого бизнеса
+    receipt_ids = (
+        ProductSale.objects
+        .filter(variant__product__business=business, receipt__isnull=False)
+        .values_list("receipt_id", flat=True)
+        .distinct()
+    )
+
+# История чеков (включая удалённые)
+    history_qs = (
+        Receipt.history
+        .filter(id__in=receipt_ids)
+        .order_by("-history_date")
+    )
+
+    # Группируем по чеку
+    history_grouped = {}
+    for entry in history_qs:
+        rid = entry.id
+        if rid not in history_grouped:
+            history_grouped[rid] = []
+        history_grouped[rid].append({
+            "type": entry.history_type,
+            "date": entry.history_date,
+            "user": str(entry.history_user) if entry.history_user else None,
+            "total_amount": str(entry.total_amount),
+            "discount_percent": float(entry.discount_percent),
+            "discount_amount": float(entry.discount_amount),
+        })
+
+    grouped_data = [
+        {
+            "receipt_id": rid,
+            "history": records
+        }
+        for rid, records in history_grouped.items()
+    ]
+
+    # Пагинация
+    per_page = int(request.GET.get("per_page", 10))
+    page_number = request.GET.get("page", 1)
+    paginator = Paginator(grouped_data, per_page)
+
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+
+    pagination = {
+        "current_page": page_obj.number,
+        "total_pages": paginator.num_pages,
+        "total_items": paginator.count,
+        "has_next": page_obj.has_next(),
+        "has_previous": page_obj.has_previous(),
+        "per_page": per_page,
+    }
+
+    return Response({
+        "results": page_obj.object_list,
+        "pagination": pagination,
+    })
