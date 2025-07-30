@@ -464,7 +464,8 @@ class ProductVariant(models.Model):
     def sold_quantity(self):
         """Общее количество проданного товара"""
         return (
-            self.sales.aggregate(total=Sum("quantity"))
+            self.sales.filter(receipt__is_deleted=False)
+            .aggregate(total=Sum("quantity"))
             .get("total")
             or 0
         )
@@ -540,7 +541,9 @@ class ProductStock(models.Model):
     def sold_quantity(self):
         """Количество уже проданного товара для этой локации"""
         return (
-            self.variant.sales.filter(location=self.location)
+            self.variant.sales.filter(
+                location=self.location, receipt__is_deleted=False
+            )
             .aggregate(total=Sum("quantity"))
             .get("total")
             or 0
@@ -803,6 +806,8 @@ class Receipt(models.Model):
         return f"Чек #{self.number} от {self.created_at.strftime('%Y-%m-%d %H:%M')}"
     
     def delete(self, using=None, keep_parents=False):
+        if self.is_deleted:
+            return
         self.is_deleted = True
         self.save(update_fields=["is_deleted"])
 

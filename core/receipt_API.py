@@ -59,6 +59,7 @@ def receipt_list(request, business_slug):
     receipts = (
         Receipt.objects
         .filter(sales__variant__product__business=business)
+        .filter(is_deleted=False)
         .select_related("payment_method")
         .distinct()
         .order_by("-created_at")
@@ -144,13 +145,8 @@ def receipt_detail(request, business_slug: str, receipt_id: int):
 @authentication_classes([CookieJWTAuthentication])
 @permission_classes([IsAuthenticated, IsBusinessOwner])
 def grouped_receipt_history(request, business_slug):
-    """
-    GET /api/business/<slug>/receipts/history/
-    Группированная история изменений по каждому чеку.
-    """
     business = get_object_or_404(Business, slug=business_slug)
 
-    # Получаем id всех чеков этого бизнеса
     receipt_ids = (
         ProductSale.objects
         .filter(variant__product__business=business, receipt__isnull=False)
@@ -158,35 +154,62 @@ def grouped_receipt_history(request, business_slug):
         .distinct()
     )
 
-# История чеков (включая удалённые)
+    # Получаем активные (не удалённые) и soft-deleted чеки
+    receipts = Receipt.objects.filter(id__in=receipt_ids)
+    receipt_map = {
+        receipt.id: ReceiptListSerializer(receipt).data
+        for receipt in receipts
+    }
+
     history_qs = (
         Receipt.history
         .filter(id__in=receipt_ids)
-        .order_by("-history_date")
+        .order_by("history_date")
     )
 
-    # Группируем по чеку
+    # Группировка и диффы
     history_grouped = {}
+    prev_state = {}
+
     for entry in history_qs:
         rid = entry.id
+        changes = {}
+
+        if rid in prev_state:
+            prev = prev_state[rid]
+            for field in ["total_amount", "discount_amount", "discount_percent", "is_deleted"]:
+                old = getattr(prev, field, None)
+                new = getattr(entry, field, None)
+                if old != new:
+                    changes[field] = {
+                        "from": str(old),
+                        "to": str(new)
+                    }
+
+        prev_state[rid] = entry
+
         if rid not in history_grouped:
             history_grouped[rid] = []
+
         history_grouped[rid].append({
             "type": entry.history_type,
             "date": entry.history_date,
             "user": str(entry.history_user) if entry.history_user else None,
+            "is_deleted": entry.is_deleted,
             "total_amount": str(entry.total_amount),
             "discount_percent": float(entry.discount_percent),
             "discount_amount": float(entry.discount_amount),
+            "changes": changes
         })
 
-    grouped_data = [
-        {
-            "receipt_id": rid,
-            "history": records
-        }
-        for rid, records in history_grouped.items()
-    ]
+    # Объединяем данные: чек + история
+    grouped_data = []
+    for rid, history in history_grouped.items():
+        receipt_data = receipt_map.get(rid, {"receipt_id": rid, "deleted": True})
+        grouped_data.append({
+            "receipt": receipt_data,
+            "history": history
+        })
 
     # Пагинация
     per_page = int(request.GET.get("per_page", 10))

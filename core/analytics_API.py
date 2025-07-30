@@ -74,6 +74,7 @@ def business_dashboard(request, business_slug):
             sales__variant__product__business=business,
             created_at__gte=start_utc,
             created_at__lt=end_utc,
+            is_deleted=False,
             is_paid=True,
         )
         .distinct()
@@ -85,6 +86,7 @@ def business_dashboard(request, business_slug):
         variant__product__business=business,
         sale_date__gte=start_utc,
         sale_date__lt=end_utc,
+        receipt__is_deleted=False,
         is_paid=True,
     ).values("quantity", "sale_date")
 
@@ -169,6 +171,7 @@ def receipt_detail(request, business_slug: str, number: str):
         .filter(
             number=number,
             sales__variant__product__business=business,
+            is_deleted=False,
         )
         .distinct()                         # ← УБИРАЕТ дубли
         .select_related("payment_method")
