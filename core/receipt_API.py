@@ -12,6 +12,8 @@ from rest_framework.response import Response
 from .analytics_serializators import ReceiptDetailSerializer, ReceiptListSerializer
 from django.db.models import Prefetch
 from rest_framework import status
+from datetime import datetime
+from django.utils.dateparse import parse_datetime
 
 
 def paginate_receipts(request, queryset=None, quantity=12):
@@ -51,8 +53,8 @@ def paginate_receipts(request, queryset=None, quantity=12):
 @permission_classes([IsAuthenticated, IsBusinessOwner])
 def receipt_list(request, business_slug):
     """
-    GET /api/business/<slug>/receipts/
-    Список чеков с пагинацией (по 12 по умолчанию)
+    GET /api/business/<slug>/receipts/?start=<ISO8601>&end=<ISO8601>
+    Список чеков с фильтрацией по диапазону даты и времени и пагинацией
     """
     business = get_object_or_404(Business, slug=business_slug)
 
@@ -62,8 +64,26 @@ def receipt_list(request, business_slug):
         .filter(is_deleted=False)
         .select_related("payment_method")
         .distinct()
-        .order_by("-created_at")
     )
+
+    # Фильтрация по диапазону времени
+    start_param = request.GET.get("start")
+    end_param = request.GET.get("end")
+
+    try:
+        if start_param:
+            start_datetime = parse_datetime(start_param)
+            if start_datetime:
+                receipts = receipts.filter(created_at__gte=start_datetime)
+
+        if end_param:
+            end_datetime = parse_datetime(end_param)
+            if end_datetime:
+                receipts = receipts.filter(created_at__lte=end_datetime)
+    except Exception as e:
+        return Response({"error": "Некорректные параметры времени"}, status=400)
+
+    receipts = receipts.order_by("-created_at")
 
     data, pagination = paginate_receipts(request, receipts, quantity=12)
 
@@ -71,6 +91,7 @@ def receipt_list(request, business_slug):
         "results": data,
         "pagination": pagination,
     })
+
 
 
 @api_view(["GET", "DELETE"])

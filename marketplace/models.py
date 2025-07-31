@@ -373,6 +373,7 @@ class ProductVariant(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
+    history = HistoricalRecords(inherit=True, cascade_delete_history=False)
 
     class Meta:
         verbose_name = "Вариант товара"
@@ -514,6 +515,7 @@ class ProductStock(models.Model):
     last_updated = models.DateTimeField(
         auto_now=True, verbose_name="Последнее обновление"
     )
+    history = HistoricalRecords(inherit=True, cascade_delete_history=False)
 
     class Meta:
         verbose_name = "Остаток товара"
@@ -572,6 +574,7 @@ class ProductDefect(models.Model):
     quantity = models.PositiveIntegerField(default=0, verbose_name="Количество")
     reason = models.TextField(blank=True, verbose_name="Причина")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    history = HistoricalRecords(inherit=True, cascade_delete_history=False)
 
     class Meta:
         verbose_name = "Брак товара"
@@ -702,6 +705,7 @@ class ProductImage(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
+
     class Meta:
         verbose_name = "Изображение продукта"
         verbose_name_plural = "Изображения продуктов"
@@ -733,6 +737,7 @@ class PaymentMethod(models.Model):
     )
     is_active = models.BooleanField(default=True, verbose_name="Активен")
     created_at = models.DateTimeField(auto_now_add=True)
+    
 
     class Meta:
         verbose_name = "Способ оплаты"
